@@ -1,0 +1,88 @@
+---
+title: "AI Agents in Economics and Business Research"
+subtitle: "Day 2 - Advanced Practice"
+author: "Tinbergen Institute"
+format:
+  revealjs:
+    footer: "Tinbergen Institute | Day 2"
+---
+
+## {.center}
+
+::: {.r-fit-text}
+Design robust agent systems.
+:::
+
+## Day 2 goals
+
+- Build multi-step workflows
+- Use tools and memory well
+- Evaluate reliability and risks
+
+## Agent system design
+
+- Decompose tasks into modules
+- Define contracts between agents
+- Add checks at boundaries
+
+## Memory patterns
+
+- Short-term for current session
+- Long-term for reusable context
+- Store only useful summaries
+
+## LangChain and OpenClaw
+
+- Start with minimal pipelines
+- Add tools step by step
+- Log traces for debugging
+
+## AI in research pipeline
+
+- Ideate testable research ideas
+- Draft stimuli and protocols
+- Simulate dry-run interviews
+
+## Synthetic respondents
+
+- Useful for early exploration
+- Not human replacement evidence
+- Always validate against humans
+
+## Reliability and evaluation
+
+- Test with adversarial cases
+- Track failure categories weekly
+- Keep a rollback plan
+
+## Sustainability and cognition
+
+- Match model to task
+- Limit unnecessary token usage
+- Protect deep thinking time
+
+## Task {.center background-color="black"}
+
+**Exercise 5: Build a Mini Agent**
+
+- Define one workflow goal
+- Add one external tool
+- Submit trace and output
+
+*Groups of 3. 20 minutes.*
+
+## Task {.center background-color="black"}
+
+**Exercise 6: Research Integration**
+
+- Pick one live study step
+- Insert agent support safely
+- Submit risks and safeguards
+
+*Groups of 3. 15 minutes.*
+
+## Close
+
+- Small reliable systems win
+- Humans keep final judgment
+- Build, test, iterate, document

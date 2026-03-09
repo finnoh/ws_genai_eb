@@ -1,0 +1,25 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Quarto
+.quarto/
+_site/
+slides/*.html
+
+# Node
+node_modules/
+website/node_modules/
+
+# Build artifacts
+website/build/
+website/.docusaurus/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+/.quarto/

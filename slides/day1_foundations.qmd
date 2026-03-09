@@ -1,0 +1,82 @@
+---
+title: "AI Agents in Economics and Business Research"
+subtitle: "Day 1 - Foundations"
+author: "Tinbergen Institute"
+format:
+  revealjs:
+    footer: "Tinbergen Institute | Day 1"
+---
+
+## {.center}
+
+::: {.r-fit-text}
+Build strong foundations first.
+:::
+
+## Day 1 goals
+
+- Understand LLM mechanics
+- Define practical AI agents
+- Prompt with clear structure
+
+## LLMs: what matters
+
+- Pattern completion at scale
+- Context shapes every answer
+- Sampling controls output behavior
+
+## AI agents: minimal definition
+
+- LLM plus task context
+- LLM plus tool access
+- LLM plus memory loops
+
+## Context engineering essentials
+
+- Define task and constraints
+- Provide examples and format
+- Keep context clean, specific
+
+## MCP and tools
+
+- Models can call APIs
+- Tools expand real capabilities
+- Reliability needs guardrails
+
+## IDE agents in practice
+
+- Scope tasks into chunks
+- Verify generated code quickly
+- Keep git history clean
+
+## Danger zones
+
+- Never leak private data
+- Watch copyright and licensing
+- Avoid automation overtrust
+
+## Task {.center background-color="black"}
+
+**Exercise 1: Prompt Repair**
+
+- Open `Live Exercises`
+- Submit one improved prompt
+- Include one failure mode
+
+*Groups of 3. 12 minutes.*
+
+## Task {.center background-color="black"}
+
+**Exercise 2: Coding Agent Sprint**
+
+- Use VS Code or Cursor
+- Complete one micro task
+- Submit approach and output
+
+*Groups of 3. 15 minutes.*
+
+## Wrap-up
+
+- Foundation beats tool hype
+- Clear prompts reduce errors
+- Verification is non-negotiable

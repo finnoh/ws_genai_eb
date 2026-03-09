@@ -1,0 +1,12 @@
+project:
+  type: default
+
+format:
+  revealjs:
+    slide-number: true
+    progress: true
+    controls: true
+    transition: fade
+    center: true
+    embed-resources: true
+    theme: default
