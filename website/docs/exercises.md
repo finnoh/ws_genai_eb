@@ -6,6 +6,8 @@ sidebar_position: 3
 
 The workshop has 8 exercises (`E1` to `E8`), one per block.
 
+Each exercise now has a canonical block page under [Exercise Blocks (E1-E8)](/docs/blocks/e1-prompt-anatomy-lab).
+
 Every exercise follows the same teaching OS:
 
 - one micro artifact
@@ -19,6 +21,17 @@ Every exercise follows the same teaching OS:
 - Rubrics: `exercises/rubrics.md`
 - Patterns: `/docs/patterns`
 - Failure library: `/docs/failure-library`
+
+## Canonical block pages
+
+- [E1 Prompt anatomy lab](/docs/blocks/e1-prompt-anatomy-lab)
+- [E2 Prompt rewrite challenge](/docs/blocks/e2-prompt-rewrite-challenge)
+- [E3 IDE coding sprint](/docs/blocks/e3-ide-coding-sprint)
+- [E4 Draft + verify paragraph](/docs/blocks/e4-draft-verify-paragraph)
+- [E5 Design an agent workflow](/docs/blocks/e5-design-agent-workflow)
+- [E6 Build a mini pipeline](/docs/blocks/e6-build-mini-pipeline)
+- [E7 Evaluate two outputs](/docs/blocks/e7-evaluate-two-outputs)
+- [E8 Resilience protocol plan](/docs/blocks/e8-resilience-protocol-plan)
 
 ## AI grading
 

@@ -13,6 +13,20 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Exercise Blocks (E1-E8)',
+      items: [
+        'blocks/e1-prompt-anatomy-lab',
+        'blocks/e2-prompt-rewrite-challenge',
+        'blocks/e3-ide-coding-sprint',
+        'blocks/e4-draft-verify-paragraph',
+        'blocks/e5-design-agent-workflow',
+        'blocks/e6-build-mini-pipeline',
+        'blocks/e7-evaluate-two-outputs',
+        'blocks/e8-resilience-protocol-plan',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Self-Study and Portfolio',
       items: [
         'self-study',

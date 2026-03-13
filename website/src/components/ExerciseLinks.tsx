@@ -1,19 +1,10 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import {exercises} from '@site/src/data/exercises';
+import {exercises, type ExerciseItem} from '@site/src/data/exercises';
 
 import styles from './ExerciseLinks.module.css';
 
-type ExerciseLink = {
-  id: string;
-  title: string;
-  day: 'Day 1' | 'Day 2';
-  durationMinutes: number;
-  href: string;
-  qrHref: string;
-  answerType: 'text' | 'code' | 'link';
-  prompt: string;
-};
+type ExerciseLink = ExerciseItem & {href: string; qrHref: string};
 
 const STORAGE_ACTIVE_KEY = 'ti.live.activeExercise';
 const STORAGE_GROUP_KEY = 'ti.live.groupCode';
@@ -293,6 +284,9 @@ export default function ExerciseLinks(): React.ReactElement {
             <a href={activeLink.href} target="_blank" rel="noreferrer" className={styles.primaryButton}>
               Open active form
             </a>
+            <a href={activeLink.detailPath} className={styles.secondaryButton}>
+              Block details
+            </a>
             <button type="button" className={styles.secondaryButton} onClick={() => setShowAll(!showAll)}>
               {showAll ? 'Show active only' : 'Show all exercises'}
             </button>
@@ -318,6 +312,9 @@ export default function ExerciseLinks(): React.ReactElement {
               <div className={styles.actions}>
                 <a href={link.href} target="_blank" rel="noreferrer" className={styles.primaryButton}>
                   Open form
+                </a>
+                <a href={link.detailPath} className={styles.secondaryButton}>
+                  Block details
                 </a>
                 <button
                   type="button"
