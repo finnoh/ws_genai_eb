@@ -2,38 +2,53 @@
 sidebar_position: 3
 ---
 
-import ActiveFormLink from '@site/src/components/ActiveFormLink';
+import ExerciseLinks from '@site/src/components/ExerciseLinks';
 
 # Live Exercises
 
-Use this page during class. Each link points to the same Google Form with a different prefilled `exercise_id`.
+Use this page during class. Each card points to the same Google Form with a prefilled `exercise_id`.
 
-## Current form URL
+Need the full flow? Return to [Live Hub](/docs/live-hub).
 
-<ActiveFormLink />
+## Block operating loop
 
-## Submission link template
+- Observe one decision
+- Build one artifact
+- Fail one assumption
+- Verify one method
+- Reflect one pattern
 
-Replace with your real prefill link once the form fields are fixed:
+## Exercise links
+
+<ExerciseLinks />
+
+## Teaching controls
+
+- Add `?exercise=E3` to highlight one active exercise.
+- Add `&start=2026-03-09T09:30:00` to show a countdown for the active card.
+- Add `&group=G4` to prefill a group code.
+
+## Setup
+
+Set these variables before build/deploy:
 
 ```text
-https://docs.google.com/forms/d/e/<FORM_ID>/viewform?usp=pp_url&entry.<EXERCISE_FIELD>=E1
+GOOGLE_FORM_URL=https://docs.google.com/forms/d/e/<FORM_ID>/viewform?usp=pp_url
+GOOGLE_FORM_EXERCISE_FIELD=<EXERCISE_FIELD>
+GOOGLE_FORM_GROUP_FIELD=<GROUP_FIELD>   # optional
+ACTIVE_EXERCISE_ID=E1                   # optional
 ```
-
-## Day 1
-
-- Exercise 1: Prompt repair (E1)
-- Exercise 2: Coding agent sprint (E2)
-- Exercise 3: Safety checklist (E3)
-
-## Day 2
-
-- Exercise 4: Tool + MCP flow (E4)
-- Exercise 5: Mini agent build (E5)
-- Exercise 6: Research integration (E6)
 
 ## Fallback
 
 - Share the direct form link.
 - Use a QR code from the same URL.
 - If needed, collect one spokesperson response per group.
+
+## Required telemetry fields
+
+To support live debrief diagnostics, ask groups to always submit:
+
+- confidence (1-5)
+- one uncertainty/failure note
+- one verification method used

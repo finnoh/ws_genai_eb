@@ -31,12 +31,21 @@ function valueFor(row: Submission, keys: string[]): string {
 
 export default function LiveResultsBoard(): React.ReactElement {
   const {siteConfig} = useDocusaurusContext();
+  const csvUrl =
+    ((siteConfig.customFields?.liveResultsSheetCsvUrl as string | undefined) || '').trim();
   const endpoint =
     ((siteConfig.customFields?.liveResultsJsonUrl as string | undefined) || '').trim();
 
   const [rows, setRows] = useState<Submission[]>([]);
   const [status, setStatus] = useState<string>('Idle');
   const [lastUpdated, setLastUpdated] = useState<string>('');
+  const [lastUpdatedMs, setLastUpdatedMs] = useState<number>(0);
+  const [selectedExercise, setSelectedExercise] = useState<string>(() => {
+    if (typeof window === 'undefined') {
+      return 'all';
+    }
+    return (new URLSearchParams(window.location.search).get('exercise') || 'all').trim() || 'all';
+  });
 
   useEffect(() => {
     if (!endpoint) {
@@ -56,6 +65,7 @@ export default function LiveResultsBoard(): React.ReactElement {
         if (!cancelled) {
           setRows(normalizeRows(data));
           setStatus('Live');
+          setLastUpdatedMs(Date.now());
           setLastUpdated(new Date().toLocaleTimeString());
         }
       } catch (error) {
@@ -74,7 +84,37 @@ export default function LiveResultsBoard(): React.ReactElement {
     };
   }, [endpoint]);
 
-  const latestRows = useMemo(() => rows.slice(-MAX_ROWS).reverse(), [rows]);
+  const exerciseValues = useMemo(() => {
+    const unique = new Set<string>();
+    for (const row of rows) {
+      const value = valueFor(row, ['exercise_id', 'exercise', 'Exercise ID']);
+      if (value) {
+        unique.add(value);
+      }
+    }
+    return Array.from(unique).sort();
+  }, [rows]);
+
+  const latestRows = useMemo(() => {
+    const filtered =
+      selectedExercise === 'all'
+        ? rows
+        : rows.filter(
+            (row) => valueFor(row, ['exercise_id', 'exercise', 'Exercise ID']) === selectedExercise,
+          );
+    return filtered.slice(-MAX_ROWS).reverse();
+  }, [rows, selectedExercise]);
+
+  const freshness = useMemo(() => {
+    if (!lastUpdatedMs) {
+      return 'No updates yet';
+    }
+    const ageSeconds = Math.round((Date.now() - lastUpdatedMs) / 1000);
+    if (ageSeconds <= Math.round((REFRESH_MS * 2) / 1000)) {
+      return `Fresh (${ageSeconds}s ago)`;
+    }
+    return `Stale (${ageSeconds}s ago)`;
+  }, [lastUpdatedMs, rows]);
 
   if (!endpoint) {
     return (
@@ -83,6 +123,11 @@ export default function LiveResultsBoard(): React.ReactElement {
           Configure <code>liveResultsJsonUrl</code> in <code>website/docusaurus.config.ts</code>{' '}
           to enable the table.
         </p>
+        {csvUrl ? (
+          <p>
+            Fallback: open published sheet CSV at <a href={csvUrl}>{csvUrl}</a>.
+          </p>
+        ) : null}
       </div>
     );
   }
@@ -92,7 +137,19 @@ export default function LiveResultsBoard(): React.ReactElement {
       <p>
         Status: <strong>{status}</strong>
         {lastUpdated ? ` | Last update: ${lastUpdated}` : ''}
+        {lastUpdatedMs ? ` | ${freshness}` : ''}
       </p>
+      <label>
+        Exercise:{' '}
+        <select value={selectedExercise} onChange={(event) => setSelectedExercise(event.target.value)}>
+          <option value="all">All</option>
+          {exerciseValues.map((value) => (
+            <option key={value} value={value}>
+              {value}
+            </option>
+          ))}
+        </select>
+      </label>
       <div style={{overflowX: 'auto'}}>
         <table>
           <thead>
@@ -115,6 +172,11 @@ export default function LiveResultsBoard(): React.ReactElement {
           </tbody>
         </table>
       </div>
+      {csvUrl ? (
+        <p>
+          Fallback CSV: <a href={csvUrl}>open published sheet</a>
+        </p>
+      ) : null}
     </div>
   );
 }
