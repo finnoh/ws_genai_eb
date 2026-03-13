@@ -2,9 +2,20 @@
 sidebar_position: 1
 ---
 
+import ExerciseLinks from '@site/src/components/ExerciseLinks';
+import LiveResultsBoard from '@site/src/components/LiveResultsBoard';
+
 # Live Hub
 
 Keep this page open during class. It is the quickest route from task launch to submission to debrief.
+
+## Active launcher
+
+<ExerciseLinks />
+
+## Live submissions
+
+<LiveResultsBoard />
 
 ## Classroom flow
 

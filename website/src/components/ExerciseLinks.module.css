@@ -1,0 +1,139 @@
+.hint {
+  margin: 0.3rem 0 1rem;
+  font-size: 0.92rem;
+}
+
+.participantBar,
+.hostPanel {
+  border: 1px solid var(--ti-border-soft);
+  border-radius: 12px;
+  padding: 0.8rem 0.9rem;
+  margin: 0 0 0.8rem;
+}
+
+.participantBar label,
+.hostPanel label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.participantBar input,
+.hostPanel input,
+.hostPanel select {
+  border: 1px solid var(--ti-border-soft);
+  border-radius: 8px;
+  padding: 0.42rem 0.5rem;
+  font-size: 0.92rem;
+}
+
+.hostControls {
+  margin: 0.6rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.statusBanner {
+  border: 1px solid color-mix(in srgb, var(--ifm-color-primary) 38%, var(--ti-border-soft));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--ifm-color-primary) 8%, transparent);
+  padding: 0.8rem 0.9rem;
+  margin: 0 0 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.statusBanner p {
+  margin: 0;
+}
+
+.statusActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.card {
+  border: 1px solid var(--ti-border-soft);
+  border-radius: 12px;
+  padding: 0.95rem;
+  background: color-mix(in srgb, var(--ifm-background-surface-color) 92%, transparent);
+}
+
+.active {
+  border-color: color-mix(in srgb, var(--ifm-color-primary) 44%, var(--ti-border-soft));
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--ifm-color-primary) 24%, transparent);
+}
+
+.meta {
+  margin: 0;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+}
+
+.card h3 {
+  margin: 0.42rem 0 0.75rem;
+  font-size: 1.03rem;
+}
+
+.prompt {
+  margin: 0 0 0.8rem;
+  font-size: 0.93rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton {
+  border: 1px solid var(--ti-border-soft);
+  border-radius: 8px;
+  padding: 0.4rem 0.68rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.primaryButton {
+  background: var(--ifm-color-primary);
+  color: white;
+  border-color: color-mix(in srgb, var(--ifm-color-primary) 54%, #000000 0%);
+}
+
+.primaryButton:hover {
+  color: white;
+}
+
+.secondaryButton {
+  color: var(--ifm-font-color-base);
+}
+
+@media (max-width: 996px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hostControls {
+    grid-template-columns: 1fr;
+  }
+}
