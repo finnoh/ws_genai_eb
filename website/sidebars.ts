@@ -13,7 +13,25 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Exercise Blocks (E1-E8)',
+      label: 'Course Content by Block',
+      items: [
+        'content/day1-block-1-orientation',
+        'content/day1-block-2-fundamentals',
+        'content/day1-block-3-prompting-i',
+        'content/day1-block-4-prompting-ii',
+        'content/day1-block-5-tools-mcp-coding',
+        'content/day1-block-6-writing-safety',
+        'content/day2-block-1-reliability-recap',
+        'content/day2-block-2-orchestration-i',
+        'content/day2-block-3-orchestration-ii',
+        'content/day2-block-4-pipeline-i',
+        'content/day2-block-5-pipeline-ii',
+        'content/day2-block-6-evaluation-adoption',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Exercises (E1-E8)',
       items: [
         'blocks/e1-prompt-anatomy-lab',
         'blocks/e2-prompt-rewrite-challenge',
@@ -27,20 +45,21 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Self-Study and Portfolio',
+      label: 'Self-Study Beyond Workshop',
       items: [
         'self-study',
-        'public-course-summary',
-        'slides-and-assets',
+        'self-study-roadmap',
+        'self-study-projects',
         'resources',
         'patterns',
         'failure-library',
+        'slides-and-assets',
       ],
     },
     {
       type: 'category',
       label: 'Instructor Toolkit',
-      items: ['materials-index', 'exercises', 'block-template', 'run-this-workshop'],
+      items: ['materials-index', 'exercises', 'block-template', 'block-drafts', 'run-this-workshop', 'public-course-summary'],
     },
   ],
 };

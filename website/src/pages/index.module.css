@@ -1,18 +1,28 @@
 .page {
   margin: 0 auto;
-  max-width: 1120px;
-  padding: 2.75rem 1rem 4rem;
+  max-width: 1200px;
+  padding: 2.25rem 1rem 4rem;
 }
 
-.hero {
-  background:
-    radial-gradient(circle at 10% 8%, rgba(73, 133, 255, 0.24), transparent 38%),
-    radial-gradient(circle at 88% 18%, rgba(40, 178, 157, 0.2), transparent 42%),
-    color-mix(in srgb, var(--ifm-background-surface-color) 90%, transparent);
+.heroShell {
   border: 1px solid var(--ti-border-soft);
-  border-radius: 18px;
-  padding: clamp(1.75rem, 3vw, 2.75rem);
-  overflow: hidden;
+  border-radius: 26px;
+  padding: clamp(1.4rem, 3vw, 2.4rem);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1.25fr 1fr;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(245, 247, 246, 0.76));
+  overflow: clip;
+}
+
+[data-theme='dark'] .heroShell {
+  background: linear-gradient(135deg, rgba(16, 23, 26, 0.92), rgba(18, 17, 15, 0.85));
+}
+
+.heroCopy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .kicker {
@@ -24,7 +34,7 @@
   letter-spacing: 0.07em;
   text-transform: uppercase;
   font-weight: 700;
-  background: color-mix(in srgb, var(--ifm-color-primary) 12%, transparent);
+  background: color-mix(in srgb, var(--ifm-color-primary) 14%, transparent);
   color: var(--ifm-heading-color);
 }
 
@@ -39,13 +49,13 @@
 .tagline {
   color: var(--ifm-font-color-base);
   font-size: clamp(1rem, 2.2vw, 1.22rem);
-  margin: 0.95rem 0 0.75rem;
-  max-width: 48ch;
+  margin: 0.95rem 0 0.7rem;
+  max-width: 44ch;
 }
 
 .contextLine {
-  margin: 0 0 1.25rem;
-  max-width: 56ch;
+  margin: 0 0 1.35rem;
+  max-width: 52ch;
 }
 
 .actions {
@@ -56,9 +66,9 @@
 
 .primaryAction,
 .ghostAction {
-  border-radius: 10px;
+  border-radius: 999px;
   border: 1px solid var(--ti-border-soft);
-  padding: 0.62rem 0.92rem;
+  padding: 0.68rem 1.05rem;
   text-decoration: none;
   font-weight: 600;
   transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
@@ -66,7 +76,7 @@
 
 .primaryAction {
   background: var(--ifm-color-primary);
-  border-color: color-mix(in srgb, var(--ifm-color-primary) 45%, #000000 0%);
+  border-color: color-mix(in srgb, var(--ifm-color-primary) 52%, #000000 0%);
   color: white;
 }
 
@@ -77,7 +87,7 @@
 
 .ghostAction {
   color: var(--ifm-font-color-base);
-  background: color-mix(in srgb, var(--ifm-background-surface-color) 88%, transparent);
+  background: color-mix(in srgb, var(--ifm-background-surface-color) 92%, transparent);
 }
 
 .ghostAction:hover {
@@ -87,16 +97,16 @@
 }
 
 .pathways {
-  margin-top: 1rem;
+  margin-top: 1.15rem;
   display: grid;
-  gap: 0.9rem;
+  gap: 1rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .pathwayCard {
   border: 1px solid var(--ti-border-soft);
-  border-radius: 14px;
-  padding: 1rem;
+  border-radius: 16px;
+  padding: 1.1rem;
   background: color-mix(in srgb, var(--ifm-background-surface-color) 92%, transparent);
 }
 
@@ -136,14 +146,14 @@
 .linkGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.9rem;
-  margin-top: 1rem;
+  gap: 1rem;
+  margin-top: 1.15rem;
 }
 
 .linkCard {
   border: 1px solid var(--ti-border-soft);
-  border-radius: 14px;
-  padding: 1rem;
+  border-radius: 16px;
+  padding: 1.1rem;
   text-decoration: none;
   color: inherit;
   background: color-mix(in srgb, var(--ifm-background-surface-color) 92%, transparent);
@@ -181,10 +191,10 @@
 }
 
 .proof {
-  margin-top: 1rem;
+  margin-top: 1.15rem;
   border: 1px solid var(--ti-border-soft);
-  border-radius: 14px;
-  padding: 1rem;
+  border-radius: 16px;
+  padding: 1.1rem;
   background: color-mix(in srgb, var(--ifm-background-surface-color) 92%, transparent);
 }
 
@@ -197,9 +207,96 @@
   margin: 0 0 0.85rem;
 }
 
+.heroPanel {
+  border: 1px solid color-mix(in srgb, var(--ti-border-soft) 85%, white);
+  border-radius: 18px;
+  padding: 1rem;
+  background: color-mix(in srgb, var(--ifm-background-surface-color) 94%, transparent);
+  box-shadow: 0 16px 38px rgba(27, 35, 47, 0.08);
+}
+
+[data-theme='dark'] .heroPanel {
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.34);
+}
+
+.panelLabel {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.69rem;
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+}
+
+.metricRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.55rem;
+  margin-top: 0.7rem;
+}
+
+.metricCard {
+  border: 1px solid var(--ti-border-soft);
+  border-radius: 12px;
+  padding: 0.75rem 0.78rem;
+  background: color-mix(in srgb, var(--ifm-background-color) 72%, transparent);
+}
+
+.metricCard p {
+  margin: 0;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.metricCard strong {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 1.28rem;
+  line-height: 1.1;
+  color: var(--ifm-heading-color);
+}
+
+.metricCard span {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.86rem;
+}
+
+.miniTimeline {
+  margin-top: 0.72rem;
+  border-top: 1px dashed var(--ti-border-soft);
+  padding-top: 0.8rem;
+}
+
+.miniTimeline h2 {
+  margin: 0;
+  font-size: 1.04rem;
+}
+
+.miniTimeline ol {
+  margin: 0.6rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.miniTimeline li + li {
+  margin-top: 0.24rem;
+}
+
+.inlineLink {
+  display: inline-flex;
+  margin-top: 0.72rem;
+  font-weight: 600;
+}
+
 @media (max-width: 996px) {
   .page {
     padding-top: 1.8rem;
+  }
+
+  .heroShell {
+    grid-template-columns: 1fr;
+    border-radius: 20px;
   }
 
   .pathways,

@@ -33,6 +33,17 @@ Every exercise follows the same teaching OS:
 - [E7 Evaluate two outputs](/docs/blocks/e7-evaluate-two-outputs)
 - [E8 Resilience protocol plan](/docs/blocks/e8-resilience-protocol-plan)
 
+## Synced Google assets
+
+- Exercise drafts (Google Doc): https://docs.google.com/document/d/1PfuDG0jYjvYtXJFAxofZ1eh9gN6STWeckrrMFDFDmRM/edit
+- Exercise drafts table (Google Sheet): https://docs.google.com/spreadsheets/d/1qqicPGhyus2fT0RVaOQgHbPStTSJMKnFlCbTJgM2W1k/edit
+
+These links are synced from `exercises/drafts.md` with:
+
+```bash
+./scripts/google/sync_exercises.sh --source exercises/drafts.md --targets docs,sheets
+```
+
 ## AI grading
 
 Exercise 2 (`E2`) can be graded with AI using:

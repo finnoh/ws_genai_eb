@@ -10,79 +10,68 @@ format:
 ## {.center}
 
 ::: {.r-fit-text}
-Design robust agent systems.
+From useful prototypes to robust systems.
 :::
 
-## Day 2 goals
+## Day 2 structure
 
-- Build multi-step workflows
-- Use tools and memory well
-- Evaluate reliability and risks
+- Six blocks, 60 minutes each
+- 20 lecture, 30 hands-on, 10 debrief
+- Reliability evidence in every block
 
-## Agent system design
+## Storyline
 
-- Decompose tasks into modules
-- Define contracts between agents
-- Add checks at boundaries
+- Recap day-1 artifacts quickly
+- Build orchestration and pipelines
+- End with adoption and resilience
 
-## Memory patterns
+## Blocks 1-3 (morning)
 
-- Short-term for current session
-- Long-term for reusable context
-- Store only useful summaries
+- B1 Recap + reliability mindset
+- B2 Agent systems and orchestration I
+- B3 Orchestration II with failures (E5)
 
-## LangChain and OpenClaw
+## Blocks 4-6 (afternoon)
 
-- Start with minimal pipelines
-- Add tools step by step
-- Log traces for debugging
+- B4 Research pipeline design I
+- B5 Research pipeline design II (E6)
+- B6 Evaluation, economics, sustainability (E7/E8)
 
-## AI in research pipeline
+## Media placeholders (day opener)
 
-- Ideate testable research ideas
-- Draft stimuli and protocols
-- Simulate dry-run interviews
-
-## Synthetic respondents
-
-- Useful for early exploration
-- Not human replacement evidence
-- Always validate against humans
-
-## Reliability and evaluation
-
-- Test with adversarial cases
-- Track failure categories weekly
-- Keep a rollback plan
-
-## Sustainability and cognition
-
-- Match model to task
-- Limit unnecessary token usage
-- Protect deep thinking time
+- [PLACEHOLDER] `slides/assets/media/day2/diagrams/d2_b2_single_vs_multi_agent_v01.png`
+- [PLACEHOLDER] `slides/assets/media/day2/diagrams/d2_b3_retry_timeout_fallback_v01.png`
+- [PLACEHOLDER] `slides/assets/media/day2/videos/d2_b3_resilience_demo_v01.mp4`
 
 ## Task {.center background-color="black"}
 
-**Exercise 5: Build a Mini Agent**
+**Exercise flow for Day 2**
 
-- Define one workflow goal
-- Add one external tool
-- Submit trace and output
+- E5 architecture with failure handling
+- E6 pilot stimuli + protocol note
+- E7 scoring + memo, E8 resilience plan
 
-*Groups of 3. 20 minutes.*
+*Groups of 3. Artifacts submitted per block.*
 
-## Task {.center background-color="black"}
+## Resource anchors in this deck
 
-**Exercise 6: Research Integration**
+- Systems: R004, R018, R023, R035
+- Research pipeline: R009/R010, R011, R022, R038, R044/R045
+- Evaluation and adoption: R017, R040, R043/R046, R055
 
-- Pick one live study step
-- Insert agent support safely
-- Submit risks and safeguards
+## Block deck links
 
-*Groups of 3. 15 minutes.*
+- `/slides/blocks/day2/day2_b1_recap_reliability.html`
+- `/slides/blocks/day2/day2_b2_orchestration_i.html`
+- `/slides/blocks/day2/day2_b3_orchestration_ii.html`
+
+## Block deck links (cont.)
+
+- `/slides/blocks/day2/day2_b4_pipeline_i.html`
+- `/slides/blocks/day2/day2_b5_pipeline_ii.html`
+- `/slides/blocks/day2/day2_b6_evaluation_adoption_resilience.html`
 
 ## Close
 
-- Small reliable systems win
-- Humans keep final judgment
-- Build, test, iterate, document
+- Measure before deciding at scale
+- Keep humans responsible for decisions

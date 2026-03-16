@@ -6,6 +6,7 @@ Repository for workshop materials and source references.
 
 - `links.md`: curated links by topic.
 - `registry.csv`: machine-readable index of resources.
+- `docs/`: indexed framework/API docs + generated context packs for slides.
 - `papers/`: open-access PDFs only.
 
 ## Public-safety rules

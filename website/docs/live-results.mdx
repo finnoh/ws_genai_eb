@@ -17,3 +17,11 @@ Use this with [Live Hub](/docs/live-hub) so groups can move from launch to debri
 ## Sheet fallback
 
 If the table endpoint is not configured, use the published Google Sheet CSV or open the response sheet directly.
+
+## Instructor refresh command
+
+```bash
+./scripts/google/sync_live_results.sh
+```
+
+This updates `website/static/data/live-results.json` from the Google Forms API when `WORKSHOP_FORM_ID` is set.

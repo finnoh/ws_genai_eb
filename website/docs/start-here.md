@@ -4,35 +4,57 @@ sidebar_position: 2
 
 # Start Here
 
-Use this page if you are in the live workshop.
+<div className="courseHero">
+  <p className="courseKicker">Live Workshop Setup</p>
+  <p className="courseLead">
+    If you keep one page open during class, keep <a href="/docs/live-hub">Live Hub</a> open.
+  </p>
+</div>
 
-If you only keep one tab open, use [Live Hub](/docs/live-hub).
+<div className="courseGrid">
+  <section className="courseCard">
+    <h3>Before class starts</h3>
+    <ul>
+      <li>Use Chrome, Edge, or Firefox</li>
+      <li>Join your table and confirm one group code</li>
+      <li>Pin this site in your browser</li>
+    </ul>
+  </section>
+  <section className="courseCard">
+    <h3>During each block</h3>
+    <ol>
+      <li>Open <a href="/docs/live-exercises">Live Exercises</a>.</li>
+      <li>Launch the active card.</li>
+      <li>Submit one group response.</li>
+      <li>Track examples in <a href="/docs/live-results">Live Results</a>.</li>
+    </ol>
+  </section>
+</div>
 
-## Before class
+## Submission quality check
 
-- Bring a laptop with Chrome, Edge, or Firefox.
-- Join your group and agree on a group code.
-- Open this site and keep it pinned.
+<div className="courseGrid">
+  <section className="courseCard">
+    <h3>Required fields</h3>
+    <ul>
+      <li>Correct <code>exercise_id</code></li>
+      <li>Group code in <code>group_id</code></li>
+      <li>Expected answer type</li>
+      <li>Confidence score (1-5)</li>
+    </ul>
+  </section>
+  <section className="courseCard">
+    <h3>Reliability fields</h3>
+    <ul>
+      <li>Artifact link when relevant</li>
+      <li>One uncertainty or failure note</li>
+      <li>One verification method used</li>
+    </ul>
+  </section>
+</div>
 
-## During exercise blocks
-
-1. Open [Live Exercises](/docs/live-exercises).
-2. Select the active exercise card.
-3. Submit one group response in the form.
-4. Check [Live Results](/docs/live-results) for discussion.
-
-## Submission checklist
-
-- Confirm correct `exercise_id`.
-- Include group code in `group_id`.
-- Use expected answer type shown on the card.
-- Add artifact link when relevant.
-- Add confidence score (1-5).
-- Add one uncertainty/failure note.
-- Add one verification method used.
-
-## If something fails
-
-- Use the fallback direct form link.
-- Submit one spokesperson response per group.
-- Ask staff to confirm the sheet is receiving entries.
+<div className="courseBand">
+  <p>
+    If something fails: use the direct form link, submit one spokesperson response per table, and ask staff to verify the response sheet is receiving entries.
+  </p>
+</div>

@@ -12,7 +12,7 @@ const liveResultsJsonUrl = process.env.LIVE_RESULTS_JSON_URL ?? '';
 const config: Config = {
   title: 'TI AI Agents Workshop',
   tagline: 'Companion site for slides, exercises, and live results',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
   future: {
     v4: true,
   },
@@ -41,8 +41,8 @@ const config: Config = {
       hideOnScroll: true,
       title: 'TI AI Agents',
       logo: {
-        alt: 'TI Workshop Logo',
-        src: 'img/logo.svg',
+        alt: 'Sparkles logo',
+        src: 'img/favicon.svg',
       },
       items: [
         {to: '/', label: 'Home', position: 'left'},

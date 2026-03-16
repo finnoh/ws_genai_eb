@@ -1,30 +1,409 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-color-primary: #1f8aa1;
+  --ifm-color-primary-dark: #1a7890;
+  --ifm-color-primary-darker: #156a80;
+  --ifm-color-primary-darkest: #0f5264;
+  --ifm-color-primary-light: #2c9cb3;
+  --ifm-color-primary-lighter: #39aac0;
+  --ifm-color-primary-lightest: #5ec0d2;
+  --ifm-font-family-base: 'Space Grotesk', 'Avenir Next', 'Segoe UI', sans-serif;
+  --ifm-font-family-monospace: 'IBM Plex Mono', 'SFMono-Regular', 'Consolas', monospace;
+  --ifm-heading-font-family: 'Space Grotesk', 'Avenir Next', 'Segoe UI', sans-serif;
+  --ifm-code-font-size: 92%;
+  --ifm-background-color: #faf8f5;
+  --ifm-background-surface-color: #f4f2ed;
+  --ifm-navbar-background-color: rgba(250, 248, 245, 0.84);
+  --ifm-footer-background-color: #151313;
+  --ifm-border-color: #d4d0c8;
+  --ifm-font-color-base: #4f4a44;
+  --ifm-heading-color: #201d1d;
+  --ifm-menu-color-active: var(--ifm-color-primary-darker);
+  --ifm-menu-color-background-active: rgba(31, 138, 161, 0.1);
+  --ifm-toc-border-color: #e6e3e3;
+  --ifm-table-border-color: #dfdddd;
+  --ifm-global-radius: 10px;
+  --ifm-container-width-xl: 1320px;
+  --ifm-navbar-height: 60px;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.08);
+  --ti-border-soft: rgba(74, 69, 58, 0.24);
+  --ti-surface-strong: rgba(255, 255, 255, 0.76);
+  --ti-sidebar-bg: rgba(247, 243, 236, 0.9);
+  --ti-sidebar-hover: rgba(31, 138, 161, 0.08);
+  --ti-sidebar-active: rgba(31, 138, 161, 0.16);
+  --ti-search-overlay: rgba(18, 20, 24, 0.34);
+  --search-local-modal-width: 820px;
+  --search-local-modal-width-sm: 360px;
+  --search-local-spacing: 10px;
+  --search-local-hit-height: 50px;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #3ca7be;
+  --ifm-color-primary-dark: #2f98af;
+  --ifm-color-primary-darker: #288ca2;
+  --ifm-color-primary-darkest: #1f7184;
+  --ifm-color-primary-light: #56b4c8;
+  --ifm-color-primary-lighter: #70c0d2;
+  --ifm-color-primary-lightest: #94d0de;
+  --ifm-background-color: #151311;
+  --ifm-background-surface-color: #1f1c19;
+  --ifm-navbar-background-color: rgba(21, 19, 17, 0.82);
+  --ifm-footer-background-color: #0f0d0b;
+  --ifm-border-color: #4d4840;
+  --ifm-font-color-base: #bab3a8;
+  --ifm-heading-color: #f4ede4;
+  --ifm-menu-color: #bab3a8;
+  --ifm-menu-color-active: #f4ede4;
+  --ifm-menu-color-background-active: rgba(60, 167, 190, 0.18);
+  --ifm-toc-border-color: #454037;
+  --ifm-table-border-color: #454037;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
+  --ti-border-soft: rgba(255, 255, 255, 0.11);
+  --ti-surface-strong: rgba(27, 24, 24, 0.8);
+  --ti-sidebar-bg: rgba(34, 30, 26, 0.86);
+  --ti-sidebar-hover: rgba(60, 167, 190, 0.16);
+  --ti-sidebar-active: rgba(60, 167, 190, 0.26);
+  --ti-search-overlay: rgba(0, 0, 0, 0.52);
+}
+
+html,
+body {
+  background: var(--ifm-background-color);
+}
+
+body {
+  color: var(--ifm-font-color-base);
+}
+
+.container {
+  max-width: var(--ifm-container-width-xl);
+}
+
+a {
+  text-underline-offset: 0.18em;
+}
+
+.navbar {
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--ti-border-soft);
+}
+
+.navbar__title {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.navbar__item.navbar__link {
+  font-weight: 500;
+}
+
+.navbar__items--right .navbar__item {
+  margin-left: 0.25rem;
+}
+
+.navbar__search {
+  min-width: 160px;
+}
+
+.navbar__search-input {
+  border-radius: 8px;
+}
+
+body:has(.navbar__search.dropdown--show)::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: var(--ti-search-overlay);
+  backdrop-filter: blur(4px);
+  z-index: 95;
+}
+
+.navbar__search.dropdown--show {
+  z-index: 110;
+}
+
+.navbar__search.dropdown--show .dropdown__menu,
+.navbar__search.dropdown--show [class*='dropdownMenu'] {
+  position: fixed !important;
+  top: max(4.8rem, 7vh);
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%);
+  width: min(780px, calc(100vw - 2rem)) !important;
+  max-height: 84vh;
+  overflow-y: auto;
+  border-radius: 14px;
+  z-index: 111;
+}
+
+.navbar__search.dropdown--show [class*='dropdownMenu'] [class*='hitTitle'] {
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.navbar__search.dropdown--show [class*='dropdownMenu'] [class*='hitPath'] {
+  font-size: 0.72rem;
+  opacity: 0.86;
+}
+
+.navbar__item[class*='colorModeToggle'] {
+  border: 1px solid var(--ti-border-soft);
+  border-radius: 8px;
+}
+
+.theme-doc-sidebar-container {
+  background: linear-gradient(180deg, var(--ti-sidebar-bg), color-mix(in srgb, var(--ti-sidebar-bg) 88%, transparent));
+  border-right: 1px solid var(--ti-border-soft);
+}
+
+.theme-doc-sidebar-menu {
+  padding: 1rem 0.75rem 1.25rem;
+}
+
+.menu {
+  font-size: 0.92rem;
+  padding: 0.85rem;
+  border: 1px solid var(--ti-border-soft);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--ifm-background-color) 80%, transparent);
+}
+
+.menu__link {
+  border-radius: 10px;
+  font-weight: 500;
+  padding: 0.48rem 0.58rem;
+}
+
+.menu__link:hover {
+  background: var(--ti-sidebar-hover);
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  background: var(--ti-sidebar-active);
+  color: var(--ifm-heading-color);
+  font-weight: 650;
+}
+
+.menu__list-item-collapsible {
+  border-radius: 10px;
+}
+
+.menu__list-item-collapsible:hover {
+  background: var(--ti-sidebar-hover);
+}
+
+.menu__list-item-collapsible .menu__link {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--ifm-font-color-base) 84%, var(--ifm-heading-color));
+}
+
+.menu__list .menu__list {
+  margin-left: 0.55rem;
+  border-left: 1px dashed var(--ti-border-soft);
+  padding-left: 0.45rem;
+}
+
+.menu__caret:before {
+  background-size: 1.2rem 1.2rem;
+}
+
+.theme-doc-markdown {
+  max-width: 62rem;
+  margin: 0 auto;
+}
+
+.theme-doc-markdown > h1:first-child {
+  margin-top: 0.4rem;
+}
+
+.courseHero {
+  border: 1px solid var(--ti-border-soft);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  background: color-mix(in srgb, var(--ifm-background-surface-color) 96%, transparent);
+  margin: 0.75rem 0 1rem;
+}
+
+.courseKicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.69rem;
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+}
+
+.courseLead {
+  margin: 0.45rem 0 0;
+  font-size: 1.04rem;
+  line-height: 1.45;
+}
+
+.courseGrid {
+  display: block;
+  margin: 1rem 0;
+}
+
+.courseCard {
+  border: 0;
+  border-top: 1px solid var(--ti-border-soft);
+  border-radius: 0;
+  padding: 0.8rem 0 0;
+  background: transparent;
+  margin: 0 0 0.95rem;
+}
+
+.courseCard h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.courseCard p {
+  margin: 0.48rem 0 0;
+}
+
+.courseCard ul,
+.courseCard ol {
+  margin: 0.58rem 0 0;
+}
+
+.courseBand {
+  border-left: 3px solid color-mix(in srgb, var(--ifm-color-primary) 55%, var(--ti-border-soft));
+  border-radius: 0;
+  padding: 0.35rem 0 0.35rem 0.75rem;
+  background: transparent;
+  margin: 1rem 0;
+}
+
+.courseBand p {
+  margin: 0;
+}
+
+main:has(.courseHero) .breadcrumbs {
+  display: none;
+}
+
+main:has(.courseHero) .theme-doc-markdown > h1:first-child {
+  display: none;
+}
+
+main:has(.courseHero) .theme-doc-markdown {
+  padding-top: 0.35rem;
+}
+
+.theme-doc-markdown h1 {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  letter-spacing: -0.02em;
+}
+
+.theme-doc-markdown h2 {
+  border-top: 1px solid var(--ti-border-soft);
+  margin-top: 2.75rem;
+  padding-top: 1.65rem;
+}
+
+.theme-doc-markdown h3 {
+  letter-spacing: -0.01em;
+}
+
+.table-of-contents {
+  border-left: 1px solid var(--ifm-toc-border-color);
+  font-size: 0.83rem;
+  padding: 0.65rem 0 0.65rem 0.9rem;
+  margin-left: 0.2rem;
+}
+
+.table-of-contents__title {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ifm-font-color-base);
+  font-weight: 700;
+}
+
+.table-of-contents__link {
+  line-height: 1.3;
+  border-radius: 8px;
+  padding: 0.25rem 0.35rem;
+  margin-left: -0.35rem;
+  display: inline-block;
+}
+
+.table-of-contents__link:hover {
+  background: var(--ti-sidebar-hover);
+}
+
+.theme-doc-toc-desktop {
+  top: calc(var(--ifm-navbar-height) + 1rem);
+}
+
+.theme-doc-toc-desktop .table-of-contents {
+  border: 1px solid var(--ti-border-soft);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--ifm-background-surface-color) 85%, transparent);
+}
+
+.theme-doc-toc-mobile {
+  margin-bottom: 1rem;
+}
+
+pre,
+.theme-code-block,
+div[class*='codeBlockContainer'] {
+  border: 1px solid var(--ti-border-soft);
+  border-radius: 12px;
+}
+
+code {
+  border: 1px solid var(--ti-border-soft);
+  border-radius: 6px;
+  padding: 0.15rem 0.35rem;
+}
+
+pre code {
+  border: 0;
+  padding: 0;
+}
+
+table {
+  border-radius: 10px;
+  display: table;
+  overflow: hidden;
+}
+
+thead {
+  background: color-mix(in srgb, var(--ifm-color-primary) 14%, transparent);
+}
+
+th,
+td {
+  border-color: var(--ifm-table-border-color);
+}
+
+.pagination-nav__link,
+.card {
+  border-color: var(--ti-border-soft);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--ifm-background-surface-color) 94%, transparent);
+}
+
+.footer {
+  border-top: 1px solid var(--ti-border-soft);
+}
+
+@media (max-width: 996px) {
+  .theme-doc-sidebar-container {
+    background: transparent;
+    border-right: 0;
+  }
+
+  .theme-doc-markdown {
+    max-width: 100%;
+  }
+
 }

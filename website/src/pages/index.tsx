@@ -28,6 +28,24 @@ const quickAccess = [
   },
 ];
 
+const highlights = [
+  {
+    label: 'Live cohorts',
+    value: '2 days',
+    note: 'Foundations + advanced system design',
+  },
+  {
+    label: 'Exercise flow',
+    value: 'E1-E8',
+    note: 'Single-form submissions with live review',
+  },
+  {
+    label: 'Teaching loop',
+    value: '20/30/10',
+    note: 'Lecture, build sprint, adversarial debrief',
+  },
+];
+
 const pathways = [
   {
     title: 'Join Live Workshop',
@@ -67,20 +85,48 @@ export default function Home(): ReactNode {
   return (
     <Layout title={siteConfig.title} description="Companion website for AI agents workshop">
       <main className={styles.page}>
-        <section className={styles.hero}>
-          <p className={styles.kicker}>Tinbergen Institute</p>
-          <h1>{siteConfig.title}</h1>
-          <p className={styles.tagline}>{siteConfig.tagline}</p>
-          <p className={styles.contextLine}>
-            This site is the workshop companion and a reusable public mini-course.
-          </p>
-          <div className={styles.actions}>
-            <Link className={styles.primaryAction} to="/docs/live-hub">
-              Open live hub
-            </Link>
-            <Link className={styles.ghostAction} to="/docs/self-study">
-              Start self-study
-            </Link>
+        <section className={styles.heroShell}>
+          <div className={styles.heroCopy}>
+            <p className={styles.kicker}>Tinbergen Institute</p>
+            <h1>{siteConfig.title}</h1>
+            <p className={styles.tagline}>{siteConfig.tagline}</p>
+            <p className={styles.contextLine}>
+              A practical course website for live classroom delivery, reproducible self-study,
+              and rapid artifact review.
+            </p>
+            <div className={styles.actions}>
+              <Link className={styles.primaryAction} to="/docs/live-hub">
+                Open live hub
+              </Link>
+              <Link className={styles.ghostAction} to="/docs/self-study">
+                Start self-study
+              </Link>
+            </div>
+          </div>
+
+          <div className={styles.heroPanel}>
+            <p className={styles.panelLabel}>Course control panel</p>
+            <div className={styles.metricRow}>
+              {highlights.map((item) => (
+                <article key={item.label} className={styles.metricCard}>
+                  <p>{item.label}</p>
+                  <strong>{item.value}</strong>
+                  <span>{item.note}</span>
+                </article>
+              ))}
+            </div>
+
+            <article className={styles.miniTimeline}>
+              <h2>This hour in class</h2>
+              <ol>
+                <li>Observe one concrete decision.</li>
+                <li>Build one micro artifact.</li>
+                <li>Verify with explicit evidence.</li>
+              </ol>
+              <Link className={styles.inlineLink} to="/docs/schedule">
+                View full two-day schedule
+              </Link>
+            </article>
           </div>
         </section>
 

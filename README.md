@@ -2,6 +2,28 @@
 
 Public workshop repository for the Tinbergen Institute 2-day course on AI agents in economics and business research.
 
+## Student Quick Start
+
+If you're a student looking for the exercise workspace:
+
+**Option 1: Download and Install (Recommended)**
+1. Download the latest release from [github.com/finnoh/ti-student-agent-pack](https://github.com/finnoh/ti-student-agent-pack/releases)
+2. Extract the zip file to a new folder
+3. Open a terminal in that folder
+4. Run:
+   ```bash
+   chmod +x install.sh
+   ./install.sh
+   ```
+
+**Option 2: Use this repository**
+```bash
+./scripts/course_pack/package_student_agent_pack.sh
+unzip outputs/course-pack/ti-student-agent-pack-latest.zip
+chmod +x install.sh
+./install.sh
+```
+
 ## What is in this repository
 
 - `AGENTS.md`: single source of truth for course outline, schedule, and teaching operations.
@@ -9,6 +31,7 @@ Public workshop repository for the Tinbergen Institute 2-day course on AI agents
 - `website/`: Docusaurus companion website for participants.
 - `resources/`: curated links, paper registry, and open-access PDFs.
 - `scripts/`: helper scripts for slide rendering and Google Forms/Sheets workflow.
+- `student-agent-pack/`: portable student workspace (also available as a [separate repository](https://github.com/finnoh/ti-student-agent-pack)).
 
 ## Course structure
 
@@ -47,3 +70,29 @@ On pushes to `main`, it:
 ## Submission workflow
 
 We use Google Forms + Google Sheets for reliability in live teaching. The full operational details are in `AGENTS.md` under "Exercise Submission Workflow".
+
+Recommended ingestion path is Form-first (not direct Sheet writes):
+
+- Students submit through prefilled Google Form links.
+- Form responses flow into the linked Google Sheet.
+- This avoids per-student API auth and protects sheet structure during class.
+
+## Student agent pack
+
+This repo includes a portable student workspace in `student-agent-pack/`.
+
+- Students can open that directory directly in their coding agent.
+- Submissions are helper-driven via browser-confirmed Google Form prefill.
+- Removal is simple: close the workspace and delete the directory.
+
+**Separate GitHub repository:** The student agent pack is also available as a standalone repository at [github.com/finnoh/ti-student-agent-pack](https://github.com/finnoh/ti-student-agent-pack).
+
+To package it for distribution:
+
+```bash
+./scripts/course_pack/package_student_agent_pack.sh
+```
+
+The packagen script creates a zip file with:
+- Root-level `install.sh` for easy one-line installation
+- `student-agent-pack/` directory with all exercise files and tools

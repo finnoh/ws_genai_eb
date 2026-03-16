@@ -23,3 +23,10 @@ yarn-error.log*
 pnpm-debug.log*
 
 /.quarto/
+
+# Student pack local index
+student-agent-pack/.index/
+
+# Student pack submissions (student-specific data)
+student-agent-pack/submissions/*.json
+student-agent-pack/submissions/receipts/*.json
