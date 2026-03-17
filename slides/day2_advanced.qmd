@@ -1,6 +1,6 @@
 ---
 title: "AI Agents in Economics and Business Research"
-subtitle: "Day 2 - Advanced Practice"
+subtitle: "Day 2 - AI agents in Research"
 author: "Tinbergen Institute"
 format:
   revealjs:
@@ -27,15 +27,15 @@ From useful prototypes to robust systems.
 
 ## Blocks 1-3 (morning)
 
-- B1 Recap + reliability mindset
-- B2 Agent systems and orchestration I
-- B3 Orchestration II with failures (E5)
+- B1 Ideation and idea validation
+- B2 Data collection (design, synthetic respondents, ...) (E6)
+- B3 Literature review and research (E4)
 
 ## Blocks 4-6 (afternoon)
 
-- B4 Research pipeline design I
-- B5 Research pipeline design II (E6)
-- B6 Evaluation, economics, sustainability (E7/E8)
+- B4 Data analysis & Coding 1 (E5)
+- B5 Data analysis & Coding 2
+- B6 Writing & Valorization (E7/E8)
 
 ## Media placeholders (day opener)
 
@@ -47,8 +47,9 @@ From useful prototypes to robust systems.
 
 **Exercise flow for Day 2**
 
-- E5 architecture with failure handling
 - E6 pilot stimuli + protocol note
+- E4 evidence paragraph with provenance
+- E5 architecture with failure handling
 - E7 scoring + memo, E8 resilience plan
 
 *Groups of 3. Artifacts submitted per block.*
@@ -61,15 +62,15 @@ From useful prototypes to robust systems.
 
 ## Block deck links
 
-- `/slides/blocks/day2/day2_b1_recap_reliability.html`
-- `/slides/blocks/day2/day2_b2_orchestration_i.html`
-- `/slides/blocks/day2/day2_b3_orchestration_ii.html`
+- `/slides/blocks/day2/day2_block1.html`
+- `/slides/blocks/day2/day2_block2.html`
+- `/slides/blocks/day2/day2_block3.html`
 
 ## Block deck links (cont.)
 
-- `/slides/blocks/day2/day2_b4_pipeline_i.html`
-- `/slides/blocks/day2/day2_b5_pipeline_ii.html`
-- `/slides/blocks/day2/day2_b6_evaluation_adoption_resilience.html`
+- `/slides/blocks/day2/day2_block4.html`
+- `/slides/blocks/day2/day2_block5.html`
+- `/slides/blocks/day2/day2_block6.html`
 
 ## Close
 

@@ -10,6 +10,9 @@ BLOCKS_OUTPUT_DIR="${OUTPUT_DIR}/blocks"
 mkdir -p "${OUTPUT_DIR}"
 mkdir -p "${BLOCKS_OUTPUT_DIR}"
 
+# Copy assets for both main decks and blocks
+cp -r "${SLIDES_DIR}/assets" "${OUTPUT_DIR}/"
+
 python3 "${ROOT_DIR}/scripts/resources/registry_context.py" --active-only sync
 python3 "${ROOT_DIR}/scripts/resources/doc_context.py" index
 python3 "${ROOT_DIR}/scripts/resources/doc_context.py" context \

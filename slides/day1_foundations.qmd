@@ -1,6 +1,6 @@
 ---
 title: "AI Agents in Economics and Business Research"
-subtitle: "Day 1 - Foundations"
+subtitle: "Day 1 - Building AI Agents"
 author: "Tinbergen Institute"
 format:
   revealjs:
@@ -27,15 +27,15 @@ Build reliable habits before speed.
 
 ## Blocks 1-3 (morning)
 
-- B1 Orientation + baseline setup
-- B2 LLM and agent fundamentals (E1)
-- B3 Prompting and context engineering I
+- B1 Intro
+- B2 LLMs and AI Agents (E1)
+- B3 Context (E2)
 
 ## Blocks 4-6 (afternoon)
 
-- B4 Prompting and context engineering II (E2)
-- B5 Tools, MCP, coding agents (E3)
-- B6 Writing, citations, and safety (E4)
+- B4 Tools 1 (E3)
+- B5 Tools 2
+- B6 Memory (E4 adapted)
 
 ## Block rhythm slide (repeat pattern)
 
@@ -73,15 +73,15 @@ Build reliable habits before speed.
 
 ## Block deck links
 
-- `/slides/blocks/day1/day1_b1_orientation.html`
-- `/slides/blocks/day1/day1_b2_llm_fundamentals.html`
-- `/slides/blocks/day1/day1_b3_prompting_i.html`
+- `/slides/blocks/day1/day1_block1.html`
+- `/slides/blocks/day1/day1_block2.html`
+- `/slides/blocks/day1/day1_block3.html`
 
 ## Block deck links (cont.)
 
-- `/slides/blocks/day1/day1_b4_prompting_ii.html`
-- `/slides/blocks/day1/day1_b5_tools_mcp_ide.html`
-- `/slides/blocks/day1/day1_b6_writing_safety.html`
+- `/slides/blocks/day1/day1_block4.html`
+- `/slides/blocks/day1/day1_block5.html`
+- `/slides/blocks/day1/day1_block6.html`
 
 ## Wrap-up
 

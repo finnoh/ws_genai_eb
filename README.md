@@ -6,17 +6,23 @@ Public workshop repository for the Tinbergen Institute 2-day course on AI agents
 
 If you're a student looking for the exercise workspace:
 
-**Option 1: Download and Install (Recommended)**
+**Option 1: One-line Install (Recommended)**
+```bash
+curl -sL https://raw.githubusercontent.com/finnoh/ti-student-agent-pack/main/install.sh | bash
+```
+
+This will clone the repository to `student-agent-pack/` and set up your environment.
+
+**Option 2: Download and Install**
 1. Download the latest release from [github.com/finnoh/ti-student-agent-pack](https://github.com/finnoh/ti-student-agent-pack/releases)
 2. Extract the zip file to a new folder
-3. Open a terminal in that folder
-4. Run:
+3. Run:
    ```bash
    chmod +x install.sh
    ./install.sh
    ```
 
-**Option 2: Use this repository**
+**Option 3: Use this repository**
 ```bash
 ./scripts/course_pack/package_student_agent_pack.sh
 unzip outputs/course-pack/ti-student-agent-pack-latest.zip
