@@ -1,8 +1,9 @@
 # AI Agents in Economics and Business Research
 
-[Public workshop repository for the Tinbergen Institute 2-day course on AI agents in economics and business research.](https://businessdatascience.nl/ai-agents-in-economics-and-business-research)
-
-<img src="https://businessdatascience.nl/media/content/image/mcith/genai_spring_school_ad2.jpg" width="300">
+<figure>
+  <img src="https://businessdatascience.nl/media/content/image/mcith/genai_spring_school_ad2.jpg" width="300">
+  <figcaption>[Public workshop repository for the Tinbergen Institute 2-day course on AI agents in economics and business research.](https://businessdatascience.nl/ai-agents-in-economics-and-business-research)</figcaption>
+</figure>
 
 ## Student Quick Start
 
