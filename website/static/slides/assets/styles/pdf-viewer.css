@@ -1,0 +1,154 @@
+/* PDF Viewer Styles - assisted by Cursor AI */
+
+/* PDF container and thumbnail styles */
+.pdf-container {
+  position: relative;
+  display: inline-block;
+}
+
+.pdf-thumbnail {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 4px;
+}
+
+.pdf-thumbnail:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.pdf-overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.pdf-container:hover .pdf-overlay {
+  opacity: 1;
+}
+
+/* Modal overlay */
+.pdf-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 10000;
+  cursor: zoom-out;
+  overflow: auto;
+}
+
+.pdf-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdf-modal-content {
+  position: relative;
+  max-width: 95%;
+  max-height: 95vh;
+  margin: auto;
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+.pdf-modal-content img {
+  max-width: 100%;
+  max-height: 95vh;
+  width: auto;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* Zoom controls */
+.pdf-zoom-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10001;
+  display: flex;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.pdf-zoom-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.pdf-zoom-btn:hover {
+  background-color: #555;
+}
+
+.pdf-zoom-btn:active {
+  background-color: #222;
+}
+
+.pdf-close-btn {
+  background-color: #d32f2f;
+}
+
+.pdf-close-btn:hover {
+  background-color: #b71c1c;
+}
+
+/* Prevent reveal.js navigation when modal is open */
+body.pdf-modal-open {
+  overflow: hidden;
+}
+
+/* Ensure modal works with reveal.js */
+.reveal .pdf-modal {
+  z-index: 10000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pdf-zoom-controls {
+    top: 10px;
+    right: 10px;
+    padding: 8px;
+    gap: 8px;
+  }
+  
+  .pdf-zoom-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+  
+  .pdf-overlay {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+}
+

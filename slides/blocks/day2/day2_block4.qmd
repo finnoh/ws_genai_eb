@@ -1,0 +1,55 @@
+---
+title: "Day 2 - Block 4"
+subtitle: "Data Analysis & Coding 1"
+format:
+  revealjs:
+    footer: "TI Workshop | D2 B4"
+---
+
+## Objective
+
+- Design an orchestrated analysis workflow
+- Define tool and memory contracts
+- Submit E5 architecture artifact
+
+## API-first scaffold
+
+```python
+# assisted by Cursor AI
+
+def run_analysis_task(data, task_spec):
+    response = client.chat.completions.create(
+        model="gpt-4",
+        messages=[
+            {"role": "system", "content": "You are a reproducible analysis assistant."},
+            {"role": "user", "content": f"Task: {task_spec}\nData summary: {data}"}
+        ],
+        temperature=0.2,
+    )
+    return response.choices[0].message.content
+```
+
+## Workflow contract
+
+- Owner per stage
+- Input/output schema per handoff
+- Escalation target on failure
+- Required logging fields
+
+## Test-first acceptance checklist
+
+- Correctness check defined before generation
+- One edge case included
+- One residual risk recorded
+- Re-run steps documented
+
+## Hands-on (E5)
+
+- Architecture sketch + one contract + one fallback path
+- Submission: `/docs/live-exercises?exercise=E5`
+
+## Debrief
+
+- Which split paid off first?
+- What would falsify this architecture?
+- Where is mandatory human escalation?

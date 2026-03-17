@@ -1,0 +1,48 @@
+---
+title: "Day 2 - Block 3"
+subtitle: "Literature Review and Research"
+format:
+  revealjs:
+    footer: "TI Workshop | D2 B3"
+---
+
+## Objective
+
+- Build retrieval workflow and claim-evidence ledger
+- Improve source triage and provenance
+- Produce one traceable synthesis artifact
+
+## Retrieval workflow
+
+```{mermaid}
+flowchart LR
+  Q[Research question] --> R[Retrieve]
+  R --> T[Triage]
+  T --> L[Claim-evidence ledger]
+  L --> S[Synthesis paragraph]
+```
+
+## RAG framing for literature work
+
+- Retrieval-augmented generation reduces unsupported claims
+- Use external source snippets for every factual statement
+- Keep exact quote and source id in ledger
+
+## Provenance fields (minimum)
+
+- Source title and id
+- Exact supporting sentence
+- Why the sentence supports the claim
+- Uncertainty note if evidence is weak
+
+## Hands-on
+
+- Build ledger with 3 claim rows
+- Draft one paragraph from ledger only
+- Add one uncertainty/disclosure line
+
+## Debrief
+
+- Which claim had weakest evidence?
+- What would falsify the paragraph?
+- Which step should remain human-owned?

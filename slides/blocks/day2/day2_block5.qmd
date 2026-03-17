@@ -1,0 +1,56 @@
+---
+title: "Day 2 - Block 5"
+subtitle: "Data Analysis & Coding 2"
+format:
+  revealjs:
+    footer: "TI Workshop | D2 B5"
+---
+
+## Objective
+
+- Add reliability controls to analysis agents
+- Balance speed, cost, and reproducibility
+- Stress one failure pathway
+
+## Reliability control loop
+
+```{mermaid}
+flowchart LR
+  A[Run stage] --> B{Timeout?}
+  B -->|No| C[Accept]
+  B -->|Yes| D[Retry budget check]
+  D -->|left| E[Backoff + rerun]
+  E --> B
+  D -->|empty| F[Fallback output]
+  F --> G[Human review flag]
+```
+
+## Efficiency guardrails (from prior workshop)
+
+**DO**
+- Right-size models for task complexity
+- Use efficient hardware and precision
+- Prefer batching and caching when possible
+
+**DON'T**
+- Use largest model by default
+- Use reasoning models for simple tasks
+- Generate large outputs without purpose
+
+## Batching and caching
+
+- Batch non-urgent workloads
+- Cache deterministic intermediate results
+- Reuse embeddings/retrieval results across runs
+
+## Hands-on
+
+- Add timeout/retry/fallback policy
+- Run one failure injection
+- Capture logs: stage, attempt, latency, fallback reason
+
+## Debrief
+
+- What failed first?
+- Which safeguard helped most?
+- Which simplification gives biggest gain?

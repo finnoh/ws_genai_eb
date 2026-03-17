@@ -1,0 +1,66 @@
+---
+title: "Day 2 - Block 6"
+subtitle: "Writing & Valorization"
+format:
+  revealjs:
+    footer: "TI Workshop | D2 B6"
+---
+
+## Objective
+
+- Evaluate outputs with evidence-first rubric
+- Draft adoption memo with governance controls
+- Produce resilience protocol (E8)
+
+## Evaluation flow
+
+```{mermaid}
+flowchart LR
+  A[Two outputs] --> B[Blind scoring]
+  B --> C[Disagreement log]
+  C --> D[Evidence re-check]
+  D --> E[Adoption memo]
+  E --> F[Personal verification protocol]
+```
+
+## LLM usage documentation template
+
+```markdown
+## Model Information
+- Model:
+- Provider:
+- Date:
+- Temperature:
+
+## Usage Purpose
+- Drafting / coding / retrieval
+
+## Verification
+- Checks performed:
+- Remaining uncertainty:
+```
+
+## Uncertainty standard
+
+- Ask for explicit confidence level
+- Require one uncertainty explanation
+- Reject confident claims without evidence
+
+## Adoption decision contract
+
+- `owner`
+- `audit_rate`
+- `stop_rule`
+- one explicit `do_not_delegate` boundary
+
+## Hands-on (E7 + E8)
+
+- E7: score two outputs + memo
+- E8: personal verification protocol
+- Submissions: `/docs/live-exercises?exercise=E7`, `/docs/live-exercises?exercise=E8`
+
+## Debrief
+
+- Where did raters disagree and why?
+- Which governance control is non-negotiable?
+- What is your personal stop rule?

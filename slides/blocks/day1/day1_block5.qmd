@@ -1,0 +1,90 @@
+---
+title: "Day 1 - Block 5"
+subtitle: "Tools 2"
+format:
+  revealjs:
+    footer: "TI Workshop | D1 B5"
+    bibliography: ../../../resources/workshop-citations.bib
+    embed-resources: true
+---
+
+## Multi-agent needs orchestration {.center}
+
+::: {.r-fit-text}
+Parallelism without contracts creates chaos.
+:::
+
+## Objective
+
+- Use advanced tool patterns
+- Run parallel agents safely
+- Customize AGENTS.md constraints
+
+## Parallel strategy
+
+- Split tasks by boundary
+- Merge with explicit contracts
+- Keep one shared verifier
+
+## Tree-of-thought to agent branches
+
+```{mermaid}
+flowchart TD
+  I[Input task] --> A[Branch A]
+  I --> B[Branch B]
+  I --> C[Branch C]
+  B --> D[Best branch selected]
+  D --> E[Verifier check]
+```
+
+- Branch only with selection rules
+- Keep logs for reproducibility
+
+## Self-feedback loop
+
+- Generate a first pass
+- Ask model for specific critique
+- Revise once, then stop on criteria
+
+## Backlog scheduling
+
+- Queue small, testable issues
+- Prioritize risk and dependency
+- Use idle windows for low-risk
+
+## AGENTS.md customization (example)
+
+```yaml
+code_style:
+  prefer: explicit assumptions
+  require: reproducible scripts
+  avoid: hidden state
+testing:
+  require: at least one check per change
+handoff:
+  require: residual risk note
+```
+
+## Hands-on
+
+- Run two agents in parallel on independent subtasks
+- Merge outputs through one verifier
+- Submit coordination note + verification trace
+
+## Registry references {.smaller}
+
+- Agentic engineering patterns: R004
+- Architecture comparisons: R003
+- Coding-assistance evidence: R012
+
+## Common failure modes
+
+- Agents overwrite each other
+- Missing merge contract
+- No shared acceptance tests
+
+## Debrief
+
+- Which split paid off?
+- Which split increased risk?
+- What to simplify next run?

@@ -42,6 +42,11 @@ while IFS= read -r block_qmd; do
   quarto render "${block_qmd}"
   cp "${block_qmd%.qmd}.html" "${BLOCKS_OUTPUT_DIR}/${rel_no_ext}.html"
 
+  # Copy assets to block output directory
+  block_out_dir="$(dirname "${BLOCKS_OUTPUT_DIR}/${rel_no_ext}")"
+  mkdir -p "${block_out_dir}/assets/images"
+  cp -r "${SLIDES_DIR}/assets/images/"* "${block_out_dir}/assets/images/"
+
   if [[ -f "${block_qmd%.qmd}.pdf" ]]; then
     cp "${block_qmd%.qmd}.pdf" "${BLOCKS_OUTPUT_DIR}/${rel_no_ext}.pdf"
   fi

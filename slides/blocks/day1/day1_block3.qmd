@@ -1,0 +1,97 @@
+---
+title: "Day 1 - Block 3"
+subtitle: "Context"
+format:
+  revealjs:
+    footer: "TI Workshop | D1 B3"
+    bibliography: ../../../resources/workshop-citations.bib
+    embed-resources: true
+---
+
+## Context decides output {.center}
+
+::: {.r-fit-text}
+Structure beats clever wording.
+:::
+
+## Objective
+
+- Turn weak prompts into specs
+- Apply instruction hierarchy cleanly
+- Compare A/B with one rubric
+
+## Inputs
+
+- One weak domain prompt
+- One source pack: table/memo/transcript
+- Fixed settings for A/B runs
+
+## What models care about
+
+- First/last prompt zones dominate
+- Structure beats clever wording
+- Keep constraints explicit and testable
+
+## Instruction hierarchy
+
+```{mermaid}
+flowchart TD
+  A[Role and objective] --> B[Task and scope]
+  B --> C[Constraints and evidence rules]
+  C --> D[Output schema]
+  D --> E[Stop rule and self-check]
+```
+
+## Reusable prompting techniques
+
+- Few-shot sets target distribution
+- Chain-of-thought decomposes tasks
+- Meta-prompting templates structure
+
+## Weak to strong rewrite pattern
+
+```text
+Weak: "Read this earnings call and give insights."
+
+Stronger:
+Role: Research assistant.
+Task: Code statements into labels: demand, pricing, costs, guidance, risk.
+Constraints:
+1) Use exact quotes only.
+2) If absent, return "not found".
+3) No causal claims without textual support.
+Output: markdown table (label | quote | confidence_1_to_5 | analyst_note)
+Quality check: final line = "main uncertainty: ..."
+```
+
+## A/B method (one-variable changes)
+
+| Round | Variant A | Variant B | Hold constant |
+|---|---|---|---|
+| 1 | no role line | role line added | data, settings |
+| 2 | free output | fixed schema | data, settings |
+| 3 | no check | self-check line | data, settings |
+
+## Hands-on (E2) {background-color="black"}
+
+- Rewrite one weak prompt
+- Run three fair A/B comparisons
+- Submit pair + A/B table: `/docs/live-exercises?exercise=E2`
+
+## Registry references {.smaller}
+
+- Prompting + personas: R005, R030
+- In-context behavior: R032
+- Foundation context: R031
+
+## Common failure modes
+
+- Too many variables changed
+- Constraints conflict internally
+- Failure explanation stays vague
+
+## Debrief
+
+- What assumption failed first?
+- What evidence would falsify output?
+- What should not be delegated?

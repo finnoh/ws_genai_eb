@@ -1,0 +1,8 @@
+.highlight {
+    background-color: #fff9b1; /* mild yellow */
+    padding: 0.1em 0.2em;
+    border-radius: 0.2em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    /* assisted by Cursor AI */
+} 

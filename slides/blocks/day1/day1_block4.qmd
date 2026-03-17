@@ -1,0 +1,99 @@
+---
+title: "Day 1 - Block 4"
+subtitle: "Tools 1"
+format:
+  revealjs:
+    footer: "TI Workshop | D1 B4"
+    bibliography: ../../../resources/workshop-citations.bib
+    embed-resources: true
+---
+
+## Tools turn text into action {.center}
+
+::: {.r-fit-text}
+Capability grows only with verification.
+:::
+
+## Objective
+
+- Explain the tool-calling lifecycle
+- Distinguish RAG, skills, MCP
+- Complete one verified E3 sprint
+
+## Tool-calling lifecycle
+
+```{mermaid}
+flowchart LR
+  A[Task statement] --> B[Scope and constraints]
+  B --> C[Choose mechanism]
+  C --> D[Plan mode]
+  D --> E[Apply minimal patch]
+  E --> F[Run checks]
+  F --> G[Record trace]
+  G --> H[Submit]
+  F -->|fails| B
+```
+
+## Tool use in decoding
+
+```{mermaid}
+flowchart LR
+  P[PROMPT: What time is it?] --> A[The current]
+  A --> B1[time (0.6)]
+  A --> B2[weather (0.3)]
+  B1 -->|call time_tool()| C[is (0.9)]
+  C --> D[3:45 PM]
+```
+
+## RAG vs Skills vs MCP
+
+| Mechanism | Main use | Failure if misused |
+|---|---|---|
+| RAG | retrieve missing context | stale/off-topic retrieval |
+| Skill | reusable workflow template | cargo-cult execution |
+| MCP | standardized tool bridge | bad permissions/mapping |
+
+## IDE with AI vs coding agent
+
+| Feature | IDE with AI | Coding agent |
+|---|---|---|
+| Autonomy | assists human | can execute plan |
+| Tool loop | manual prompting | autonomous calls |
+| Verification | mostly human | can self-check + report |
+
+## API vs chat mode
+
+- Chat: fast exploration, low setup
+- API: controlled, repeatable workflows
+- Pipelines usually need API control
+
+## Prompt template for coding sprint
+
+```text
+Role: Senior pair programmer.
+Task: Fix <bug_id> with minimal blast radius.
+Constraints:
+1) Show plan before edits.
+2) Touch only necessary files.
+3) Add/update one failing test first.
+4) Return verification trace with residual risk.
+Definition of done: checks pass and risk note is explicit.
+```
+
+## Hands-on (E3) {background-color="black"}
+
+- Pick one reproducible defect
+- Ship minimal patch with one check
+- Submit trace: `/docs/live-exercises?exercise=E3`
+
+## Registry references {.smaller}
+
+- Coding evidence: R012
+- Agent patterns: R004
+- Architecture framing: R003
+
+## Debrief
+
+- What failed first?
+- What evidence supports confidence?
+- What action stays human-owned?

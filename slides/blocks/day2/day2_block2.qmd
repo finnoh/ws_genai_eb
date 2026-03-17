@@ -1,0 +1,47 @@
+---
+title: "Day 2 - Block 2"
+subtitle: "Data Collection"
+format:
+  revealjs:
+    footer: "TI Workshop | D2 B2"
+---
+
+## Objective
+
+- Design robust stimuli and instruments
+- Use synthetic respondents for stress tests
+- Guard against contamination and overclaiming
+
+## Synthetic respondents: scope
+
+- Useful: wording checks, edge-case detection
+- Not sufficient: population inference, causal estimation
+- Treat as pretest tool, not evidence of effects
+
+## Contamination risks
+
+- AI-assisted respondents in online pools
+- Weak attention checks can be bypassed
+- Include checks that require human grounding
+
+## Stimulus stress-test protocol
+
+- Generate 3 clean stimuli
+- Generate 3 intentionally flawed stimuli
+- Score clarity/neutrality/failure mode
+- Revise and document one limitation
+
+## Boundary rule
+
+Use synthetic respondents for instrument stress tests only; do not infer population behavior or treatment effects.
+
+## Hands-on (E6)
+
+- Deliverable: 6 stimuli + limitation note + validation table
+- Submission: `/docs/live-exercises?exercise=E6`
+
+## Debrief
+
+- Which flaw was hardest to detect?
+- What cannot be replaced by synthetic responses?
+- What human validation is required next?

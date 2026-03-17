@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "E2GradingResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "group_id",
+    "exercise_id",
+    "scores",
+    "total_score",
+    "confidence",
+    "strengths",
+    "next_steps",
+    "summary"
+  ],
+  "properties": {
+    "group_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "exercise_id": {
+      "type": "string",
+      "const": "E2"
+    },
+    "scores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "constraint_quality",
+        "ab_test_quality",
+        "failure_analysis_depth",
+        "iteration_quality"
+      ],
+      "properties": {
+        "constraint_quality": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "ab_test_quality": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "failure_analysis_depth": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "iteration_quality": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        }
+      }
+    },
+    "total_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 12
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+    "strengths": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 180
+      }
+    },
+    "next_steps": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 180
+      }
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300
+    }
+  }
+}

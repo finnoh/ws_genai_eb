@@ -1,0 +1,91 @@
+---
+title: "Day 1 - Block 6"
+subtitle: "Memory"
+format:
+  revealjs:
+    footer: "TI Workshop | D1 B6"
+    bibliography: ../../../resources/workshop-citations.bib
+    embed-resources: true
+---
+
+## Memory is leverage and risk {.center}
+
+::: {.r-fit-text}
+Persist only what you can defend.
+:::
+
+## Objective
+
+- Separate working and persistent memory
+- Mitigate stale memory risks
+- Apply memory-safe writing (E4)
+
+## Working vs persistent memory
+
+| Type | Scope | Risk |
+|---|---|---|
+| Working memory | current task/session | stale context in long threads |
+| Persistent memory | cross-session/project | privacy leaks, irrelevant carryover |
+
+## Privacy red flags
+
+- Early paper drafts
+- Raw NDA data
+- Personal data (names/emails/addresses)
+
+## Safe alternatives
+
+- Institutional secure chat instances
+- Local models (e.g., Ollama)
+- Cluster-hosted open models
+
+## Writing workflow
+
+```{mermaid}
+flowchart TD
+  A[Draft claim] --> B[Attach source]
+  B --> C[Check citation scope]
+  C --> D[Add uncertainty line]
+  D --> E[Add disclosure line]
+```
+
+## Transparency and authorship
+
+- Disclose model, version, provider
+- Document prompt and verification
+- LLMs are not authors
+
+## Documentation template
+
+```markdown
+## Model Information
+- Model:
+- Provider:
+- Date:
+- Temperature:
+
+## Usage Purpose
+- Drafting / coding / retrieval
+
+## Verification
+- Checks performed:
+- Remaining uncertainty:
+```
+
+## Hands-on (E4) {background-color="black"}
+
+- Draft one evidence-backed paragraph
+- Add claim-evidence table + disclosure
+- Submit: `/docs/live-exercises?exercise=E4`
+
+## Registry references {.smaller}
+
+- Memory + learning risk: R024
+- Appropriate reliance: R041, R042
+- Safety warning signs: R051, R052
+
+## Debrief
+
+- Which sentence was hardest to verify?
+- What evidence would falsify your claim?
+- Where should delegation stop?

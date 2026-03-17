@@ -1,0 +1,5 @@
+id,name,url,topic,tags,status
+D001,OpenCode Docs,https://opencode.ai/docs/,coding-agents,"opencode,agent,ide",active
+D002,OpenClaw Docs,https://docs.openclaw.ai/,agent-systems,"openclaw,framework,orchestration",active
+D003,Claude Platform Docs,https://platform.claude.com/docs/en/home,api-platform,"claude,anthropic,api",active
+D004,OpenAI API Docs,https://developers.openai.com/api/docs/,api-platform,"openai,api,tool-calling",active
