@@ -1,8 +1,19 @@
+<table>
+  <tr>
+    <td style="vertical-align: top; padding-right: 20px;">
+
 # AI Agents in Economics and Business Research
+
+[Public workshop repository for the Tinbergen Institute 2-day course on AI agents in economics and business research.](https://businessdatascience.nl/ai-agents-in-economics-and-business-research)
+
+    </td>
+    <td style="vertical-align: top;">
 
 <img src="https://businessdatascience.nl/media/content/image/mcith/genai_spring_school_ad2.jpg" width="300">
 
-[Public workshop repository for the Tinbergen Institute 2-day course on AI agents in economics and business research.](https://businessdatascience.nl/ai-agents-in-economics-and-business-research)
+    </td>
+  </tr>
+</table>
 
 ## Student Quick Start
 
