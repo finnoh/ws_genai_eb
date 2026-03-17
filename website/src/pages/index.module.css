@@ -64,6 +64,42 @@
   gap: 0.72rem;
 }
 
+.installBox {
+  margin-top: 1rem;
+  border: 1px solid var(--ti-border-soft);
+  border-radius: 14px;
+  padding: 0.8rem;
+  background: color-mix(in srgb, var(--ifm-background-surface-color) 94%, transparent);
+}
+
+.installLabel {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.69rem;
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+}
+
+.installCommand {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0.62rem 0.7rem;
+  border-radius: 10px;
+  border: 1px solid var(--ti-border-soft);
+  background: color-mix(in srgb, #0f172a 94%, #111827);
+  color: #e2e8f0;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.installHint {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+}
+
 .primaryAction,
 .ghostAction {
   border-radius: 999px;

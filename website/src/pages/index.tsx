@@ -46,6 +46,9 @@ const highlights = [
   },
 ];
 
+const janInstallCommand =
+  'curl -sL https://raw.githubusercontent.com/finnoh/ti-student-agent-pack/main/install.sh | bash';
+
 const pathways = [
   {
     title: 'Join Live Workshop',
@@ -101,6 +104,13 @@ export default function Home(): ReactNode {
               <Link className={styles.ghostAction} to="/docs/self-study">
                 Start self-study
               </Link>
+            </div>
+            <div className={styles.installBox}>
+              <p className={styles.installLabel}>Install Jan agent (copy/paste)</p>
+              <code className={styles.installCommand}>{janInstallCommand}</code>
+              <p className={styles.installHint}>
+                Opens the student workspace locally with Jan and all E1-E8 materials.
+              </p>
             </div>
           </div>
 
