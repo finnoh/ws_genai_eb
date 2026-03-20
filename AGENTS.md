@@ -27,33 +27,7 @@ Each 60-minute block uses the same rhythm:
 Timing guardrails:
 
 - Keep one submission target per block (micro artifact)
-- Use group spokesperson reporting in debrief
 - Park advanced questions for break or end-of-day
-
-### Teaching Operating System (applies to all blocks)
-
-Use this loop every hour:
-
-- Observe: frame one concrete decision
-- Build: produce one micro artifact
-- Fail: surface one likely failure mode
-- Verify: document one validation method
-- Reflect: capture one reusable pattern
-
-Debrief prompts should be adversarial, not presentational:
-
-- What assumption failed?
-- What evidence would falsify this?
-- Where could this hallucinate?
-- What should not be delegated?
-- What is the cheapest simplification?
-
-Canonical evaluation frame (all exercises):
-
-- usefulness (does it help the task?)
-- correctness (is it factually/procedurally right?)
-- reproducibility (can another group rerun it?)
-- risk awareness (did they identify and mitigate key risks?)
 
 ### Canonical Block Template (for slide + website pages)
 
@@ -65,62 +39,68 @@ Each block page should use this exact structure:
 - Timebox (20/30/10)
 - Submission link (prefilled `exercise_id`)
 - Evaluation rubric (4-dimension base + block-specific criteria)
-- Common failure modes
 - Extension task (optional)
 
 ### Day 1 - Building AI Agents (basic to intermediate)
 
 #### Day 1 Block 1: Intro
 
-- Lecture (20): course framing, outcomes, workflow norms, reliability mindset
-- Hands-on (30): tool access check, group role assignment, baseline prompt test
-- Debrief (10): blockers board and readiness check
+- Lecture (20): course setup and admin, motivation and relevance of AI agents in research
+- Hands-on (30): install and get familiar with Jan; explore how an agent works
 
 #### Day 1 Block 2: LLMs and AI Agents
 
+monitor token usage and context window, running LLMs locally, sustainability?
+
 - Lecture (20): next-token prediction, alignment overview, what counts as an agent, LM formula and fine-tuning
 - Hands-on (30): prompt anatomy lab, classify context/tool/memory needs (E1)
-- Debrief (10): compare two prompt rewrites
 
 #### Day 1 Block 3: Context
 
-- Lecture (20): instruction hierarchy, role/persona prompting, constraint writing, solution space narrowing
-- Hands-on (30): rewrite weak prompts and run A/B variants
-- Debrief (10): failure patterns and fixes
+- Lecture (20): instruction hierarchy, solution space narrowing, agents collecting their own context (web, docs, codebases, web-search, browser use,...), context window fatigue, AGENTS.md customization
+- Hands-on (30): Compressing context, parsing context to markdown, codebases as context, preventing files from entering context
 
 #### Day 1 Block 4: Tools 1
 
-- Lecture (20): tool-calling lifecycle, MCP basics, IDE agent vs coding agent, plan mode
-- Hands-on (30): coding sprint (one bugfix/refactor + verification trace) (E3)
-- Debrief (10): what failed and why
+Introduce MCPs and Skills for coding agents
+
+- Lecture (20): Claude cowork, Gallery of usefull tools, chrome dev tools, MCP basics, Skills
+- Hands-on (30): Install agent skills, search arxiv, editing excel w/o Microsoft permission (via python excel modules ...)
 
 #### Day 1 Block 5: Tools 2
 
-- Lecture (20): advanced tool use, parallel agents, backlog scheduling, AGENTS.md customization
-- Hands-on (30): multi-agent coding exercise, verification traces
-- Debrief (10): lessons learned
+Build a custom MCP and use it with LangChain?
+
+- Lecture (20): advanced tool use, agent teams (orchestrator, recent distributed systems paper), parallel agents
+- Hands-on (30): build an agent team with LangChain, build your own MCP server and let an agent work with it (FastAPI locally, something easy but "econ" like, for example and ARIMA simulator, a NPV calculator, a dice roll, ...)
 
 #### Day 1 Block 6: Memory
 
-- Lecture (20): working vs persistent memory, stale memory risks, memory safety, disclosure
-- Hands-on (30): memory-aware writing and verification (E4 adapted)
-- Debrief (10): citation integrity checklist
+TODO: Check how memory is relevant?
+Show how memory can help for coding agents; build small RAG system
+
+- Lecture (20): context vs memory, MEMORY.md (openclaw), RAG systems
+- Hands-on (30): AGENTS.md instruction for populating memory, build a small RAG system
 
 ### Day 2 - AI agents in Research (intermediate to advanced)
 
 #### Day 2 Block 1: Ideation and idea validation
 
-- Lecture (20): ideation funnel, fast kill criteria, falsifiability gates
-- Hands-on (30): idea audit and validation micro artifact
-- Debrief (10): which assumptions failed first?
+Follow the Stremersch 2024 paper and walk people through pipeline with AI support
+
+- Lecture (20): overview of Stremersch 2024 paper; idea that AI agents can help
+- Hands-on (30): ChatGPT projects, ideation start with domain mapping (deep research), maturation, validation, positioning,...
 
 #### Day 2 Block 2: Data collection (design, synthetic respondents, ...)
 
-- Lecture (20): instrument design, synthetic pretesting boundaries, contamination risks, attention checks
-- Hands-on (30): synthetic stimulus design and stress test (E6)
-- Debrief (10): discuss replacement fallacies
+Can we integrate directly with qualtrics for a study design; Construct a synthetic respondent dataset; Qualitative interviews?
+
+- Lecture (20): AI for data collection: facilitate human data collection, imitate humans, synthetic respondents overview, dangers of AI supported stimuli design, APIs to directly integrate with qualitrics / prolific, conveo for qualitative interviews at large scale
+- Hands-on (30): synthetic stimulus design and synthetic respondents (Moon et al. 2024 background story), interviewing a synthetic respondents (E6)
 
 #### Day 2 Block 3: Literature review and research
+
+Introduce zotero and arxiv MCP, talk about copyright, (deep) research, prompt for paywalls
 
 - Lecture (20): retrieval workflow, claim-evidence ledger, source triage, traceable synthesis
 - Hands-on (30): evidence paragraph with provenance (non-E micro artifact)
@@ -128,17 +108,27 @@ Each block page should use this exact structure:
 
 #### Day 2 Block 4: Data analysis & Coding 1
 
+Show IDE, show coding agents, show background agents; Customize setup to nudge towards more ECON style programming
+
+IDE agent vs coding agent, plan mode
 - Lecture (20): analysis plan scaffolding, reproducible code prompts, test-first checks
 - Hands-on (30): orchestrated workflow design with contracts (E5)
 - Debrief (10): architecture tradeoff review
 
 #### Day 2 Block 5: Data analysis & Coding 2
 
+Introduce Handy, introduce (ghostty) terminal splits -> move to coding across multiple projects, integration with Github
+
 - Lecture (20): reliability controls (timeouts, retries, fallbacks, logging), parallel execution economics
 - Hands-on (30): reliability-enhanced analysis agent
 - Debrief (10): red-team one design assumption
 
 #### Day 2 Block 6: Writing & Valorization
+
+Giving and receiving human feedback, writing style of LLMs, writing workflow, Handy
+Turn your paper into a website, app, product, ...
+
+Write a 3 page brief om your research agenda
 
 - Lecture (20): output evaluation, LLM-as-judge limits, adoption memo, governance, companion websites
 - Hands-on (30): score two outputs + draft adoption memo (E7) + personal verification protocol (E8)

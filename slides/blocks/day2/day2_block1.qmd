@@ -8,38 +8,56 @@ format:
 
 ## Objective
 
-- Turn ideas into falsifiable hypotheses
-- Apply fast kill criteria
-- Produce one idea-audit artifact
+- Apply Stremersch ideation pipeline
+- Move from ideas to tests
+- Produce one micro artifact
 
-## Ideation funnel
+## Inputs
 
-- Generate many candidate ideas
-- Screen with feasibility checks
-- Validate with falsifiability gates
-- Keep only high-potential candidates
+- Stremersch (2024) ideation paper
+- Your domain and collaborator map
+- One target stakeholder context
 
-## Practical ideation uses
+## Core Moves (Stremersch 4S)
 
-- Map trends and white spaces
-- Ask for plausible findings and contradictions
-- Document design choices before coding
+- Isolate -> immerse
+- Few/narrow -> many/wide
+- Late share -> early share
 
-## Fast kill criteria
+## Three-Phase Workflow
 
-- No feasible data source
-- Cannot operationalize key variable
-- No plausible falsification test
-- Ethical boundary unclear
+- Domain exploration
+- Domain immersion
+- Project design
 
-## Hands-on
+## Deliverable
 
-- Build idea audit for one candidate
-- Include one disconfirming test
-- Include one lowest-cost next check
+- One-page idea pipeline card
+- 1 insight + 2 HMW prompts
+- 1 falsifiable research question
 
-## Debrief
+## Timebox
 
-- Which assumption failed first?
-- What evidence would falsify it?
-- What stays human-owned?
+- 20 min lecture input
+- 30 min group build
+- 10 min debrief
+
+## Submission link
+
+- `/docs/live-exercises?exercise=MICRO_D2B1`
+
+## Evaluation rubric
+
+- Relevance to stakeholder problem
+- Falsifiability and testability
+- Feasibility this semester
+
+## Resource anchors
+
+- R004, R009/R010, R022
+- R038, R044/R045
+
+## Extension task (optional)
+
+- Add one dark-horse variant
+- Add one kill criterion

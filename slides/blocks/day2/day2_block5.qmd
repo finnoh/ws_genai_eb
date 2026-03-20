@@ -12,6 +12,12 @@ format:
 - Balance speed, cost, and reproducibility
 - Stress one failure pathway
 
+## Inputs
+
+- Existing workflow from D2B4
+- Reliability policy template
+- Logging schema (stage/attempt/latency)
+
 ## Reliability control loop
 
 ```{mermaid}
@@ -48,6 +54,38 @@ flowchart LR
 - Add timeout/retry/fallback policy
 - Run one failure injection
 - Capture logs: stage, attempt, latency, fallback reason
+
+## Deliverable
+
+- Reliability-enhanced workflow spec
+- One injected failure test result
+- One log excerpt with diagnosis
+
+## Timebox
+
+- 20 min lecture input
+- 30 min group build
+- 10 min debrief
+
+## Submission link
+
+- `/docs/live-exercises?exercise=MICRO_D2B5`
+
+## Evaluation rubric
+
+- Control-loop completeness
+- Failure handling transparency
+- Cost-speed tradeoff justification
+
+## Extension task (optional)
+
+- Add second fallback strategy
+- Compare latency/cost outcomes
+
+## Resource anchors
+
+- R004, R018, R023
+- R027, R028, R040
 
 ## Debrief
 

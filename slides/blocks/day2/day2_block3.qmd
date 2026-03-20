@@ -12,6 +12,12 @@ format:
 - Improve source triage and provenance
 - Produce one traceable synthesis artifact
 
+## Inputs
+
+- One focused research question
+- 4-6 candidate sources
+- Claim-evidence ledger template
+
 ## Retrieval workflow
 
 ```{mermaid}
@@ -40,6 +46,38 @@ flowchart LR
 - Build ledger with 3 claim rows
 - Draft one paragraph from ledger only
 - Add one uncertainty/disclosure line
+
+## Deliverable
+
+- One evidence paragraph with provenance
+- One claim-evidence ledger (3 rows)
+- One verification + disclosure line
+
+## Timebox
+
+- 20 min lecture input
+- 30 min group build
+- 10 min debrief
+
+## Submission link
+
+- `/docs/live-exercises?exercise=MICRO_D2B3`
+
+## Evaluation rubric
+
+- Claims grounded in cited evidence
+- Provenance trace is reproducible
+- Uncertainty stated concretely
+
+## Extension task (optional)
+
+- Add one contradictory source
+- Revise claim after contradiction
+
+## Resource anchors
+
+- R017, R022, R035
+- R055, R063, R064
 
 ## Debrief
 

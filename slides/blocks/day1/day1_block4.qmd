@@ -67,6 +67,25 @@ flowchart LR
 - API: controlled, repeatable workflows
 - Pipelines usually need API control
 
+## Tool spotlight: Google Workspace CLI
+
+- Repo: `https://github.com/googleworkspace/cli`
+- What it is: terminal tools for Gmail/Drive/Docs/Sheets/Calendar
+- How it works: agent calls CLI commands via a shell tool
+
+## Setup in practice
+
+- Install from the repository instructions
+- Run auth login once (OAuth)
+- Test with one read call before write actions
+
+```bash
+# example flow
+gws --help
+gws auth login
+gws calendar agenda
+```
+
 ## Prompt template for coding sprint
 
 ```text

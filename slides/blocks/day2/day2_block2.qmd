@@ -18,6 +18,12 @@ format:
 - Not sufficient: population inference, causal estimation
 - Treat as pretest tool, not evidence of effects
 
+## Inputs
+
+- One target construct and population
+- 3 clean + 3 flawed stimuli
+- Validation checklist + risk note
+
 ## Contamination risks
 
 - AI-assisted respondents in online pools
@@ -39,6 +45,28 @@ Use synthetic respondents for instrument stress tests only; do not infer populat
 
 - Deliverable: 6 stimuli + limitation note + validation table
 - Submission: `/docs/live-exercises?exercise=E6`
+
+## Timebox
+
+- 20 min lecture input
+- 30 min group build
+- 10 min debrief
+
+## Evaluation rubric
+
+- Stimulus clarity and neutrality
+- Limits stated without overclaiming
+- Human validation next-step quality
+
+## Extension task (optional)
+
+- Add one interview protocol prompt
+- Add one contamination mitigation
+
+## Resource anchors
+
+- R011, R038, R047
+- R053, R054, R057
 
 ## Debrief
 

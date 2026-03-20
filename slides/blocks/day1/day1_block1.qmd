@@ -41,10 +41,11 @@ format:
 
 ::: {.column width="65%"}
 
-LLMs for Market Research:
+LLMs for Innovation:
 
-- Augmenting conjoint with LLMs (Prof. Donkers, Prof. Fok)
-- Sensitive topics with LLMs (Prof. de Jong, Prof. Pieters)
+- Ideation with AI Agent teams (Dr. van Crombrugge, Dr. Wichmann, Prof. Stremersch)
+- Refining and validating ideas for marketing texts (Prof. Donkers, Prof. Fok)
+- Synthetic respondents for sensitive topics (Prof. de Jong, Prof. Pieters)
 
 :::
 
@@ -100,6 +101,11 @@ ggplot(ddBenefits, aes(x = reorder(sBenefit, dPercent), y = dPercent)) +
     panel.grid.minor = element_blank()
   )
 ```
+
+
+## {background-iframe="https://openai.com/index/new-result-theoretical-physics/" interactive=true}
+
+
 
 ## Course Structure {.smaller}
 

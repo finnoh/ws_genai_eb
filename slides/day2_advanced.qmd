@@ -27,9 +27,9 @@ From useful prototypes to robust systems.
 
 ## Blocks 1-3 (morning)
 
-- B1 Ideation and idea validation
+- B1 Ideation via Stremersch (2024)
 - B2 Data collection (design, synthetic respondents, ...) (E6)
-- B3 Literature review and research (E4)
+- B3 Literature review and research (micro artifact)
 
 ## Blocks 4-6 (afternoon)
 
@@ -48,7 +48,7 @@ From useful prototypes to robust systems.
 **Exercise flow for Day 2**
 
 - E6 pilot stimuli + protocol note
-- E4 evidence paragraph with provenance
+- Evidence paragraph with provenance
 - E5 architecture with failure handling
 - E7 scoring + memo, E8 resilience plan
 

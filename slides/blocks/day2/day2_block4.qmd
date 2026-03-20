@@ -12,6 +12,12 @@ format:
 - Define tool and memory contracts
 - Submit E5 architecture artifact
 
+## Inputs
+
+- One analysis question
+- Data schema and constraints
+- Tool/memory contract template
+
 ## API-first scaffold
 
 ```python
@@ -47,6 +53,34 @@ def run_analysis_task(data, task_spec):
 
 - Architecture sketch + one contract + one fallback path
 - Submission: `/docs/live-exercises?exercise=E5`
+
+## Deliverable
+
+- Workflow architecture diagram
+- One stage contract with schema
+- One fallback and escalation path
+
+## Timebox
+
+- 20 min lecture input
+- 30 min group build
+- 10 min debrief
+
+## Evaluation rubric
+
+- Contract clarity at handoffs
+- Reproducibility of workflow steps
+- Risk and escalation completeness
+
+## Extension task (optional)
+
+- Add one monitoring metric
+- Add one rollback rule
+
+## Resource anchors
+
+- R004, R018, R023
+- R035, R044/R045
 
 ## Debrief
 

@@ -12,6 +12,12 @@ format:
 - Draft adoption memo with governance controls
 - Produce resilience protocol (E8)
 
+## Inputs
+
+- Two model outputs to score
+- Shared scoring rubric
+- Governance memo template
+
 ## Evaluation flow
 
 ```{mermaid}
@@ -58,6 +64,34 @@ flowchart LR
 - E7: score two outputs + memo
 - E8: personal verification protocol
 - Submissions: `/docs/live-exercises?exercise=E7`, `/docs/live-exercises?exercise=E8`
+
+## Deliverable
+
+- E7 scored comparison + memo
+- E8 personal verification protocol
+- One explicit do-not-delegate rule
+
+## Timebox
+
+- 20 min lecture input
+- 30 min group build
+- 10 min debrief
+
+## Evaluation rubric
+
+- Scoring consistency and evidence use
+- Adoption memo decision quality
+- Verification protocol practicality
+
+## Extension task (optional)
+
+- Add peer challenge to memo
+- Revise governance stop rule
+
+## Resource anchors
+
+- R017, R055
+- R043/R046, R040, R025
 
 ## Debrief
 
