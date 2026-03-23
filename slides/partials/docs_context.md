@@ -1,6 +1,6 @@
 ## Context Pack: tool calling and agent orchestration
 
-Generated: 2026-03-23T13:35:10+00:00
+Generated: 2026-03-23T17:12:03+00:00
 
 Query terms: agent, calling, orchestration, tool
 

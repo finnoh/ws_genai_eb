@@ -8,90 +8,83 @@ format:
     embed-resources: true
 ---
 
-## Context decides output {.center}
+## Context is king {.center}
+
+. . .
 
 ::: {.r-fit-text}
-Structure beats clever wording.
+Engineer context, not just prompts.
 :::
 
-## Objective
+## From prompt to context engineering
 
-- Turn weak prompts into specs
-- Apply instruction hierarchy cleanly
-- Compare A/B with one rubric
+![@anthropicContextEngineering2025](../../assets/images/context_engineering.png)
 
-## Inputs
+## Context for coding agents
 
-- One weak domain prompt
-- One source pack: table/memo/transcript
-- Fixed settings for A/B runs
+- Name things well (`main.py`, `estimate_arima()`, ...)
+- Comments and documentation matter!
 
-## What models care about
+1) Write unit-test
+2) Prompt agent to write code and to *test it*
+3) Iterate until ✅
 
-- First/last prompt zones dominate
-- Structure beats clever wording
-- Keep constraints explicit and testable
+## {background-video="../../assets/videos/context.mp4" background-size="contain"}
 
-## Instruction hierarchy
+## Plan mode
 
-```{mermaid}
-flowchart TD
-  A[Role and objective] --> B[Task and scope]
-  B --> C[Constraints and evidence rules]
-  C --> D[Output schema]
-  D --> E[Stop rule and self-check]
+::: {.r-fit-text}
+
+Sometimes, the agent can write its own context
+
+:::
+
+## {background-video="../../assets/videos/plan_mode.mp4" background-size="contain"}
+
+## Housekeeping for better retrieval
+
+| Messy | Clean |
+|---|---|
+| vague file names | descriptive file names |
+| no folder map | `INDEX.md` per folder |
+
+> Agents infer intent from names, hierarchy, and metadata
+
+## Boundaries and Workarounds
+
+| Boundary | Workaround | Required disclosure |
+|---|---|---|
+| personal data | redact + summarize | state data omitted |
+| copyrighted text | use abstract/metadata | state evidence gaps |
+
+
+## Context-window fatigue
+
+![@anthropicContextEngineering2025](../../assets/images/prompt.png)
+
+## Token-economics
+
+- Summary of context
+- Split into multiple sessions with "handoff"
+
+| Reduce "Intelligence" | Computations |
+|---|---|
+| lower reasoning effort | caching |
+| weaker LLM | batching |
+
+
+## Structured outputs
+
+```json
+{
+  "text": "string",
+  "rating": "integer"
+}
 ```
+Validate datatypes and required keys
 
-## Reusable prompting techniques
+## References
 
-- Few-shot sets target distribution
-- Chain-of-thought decomposes tasks
-- Meta-prompting templates structure
+::: {#refs}
 
-## Weak to strong rewrite pattern
-
-```text
-Weak: "Read this earnings call and give insights."
-
-Stronger:
-Role: Research assistant.
-Task: Code statements into labels: demand, pricing, costs, guidance, risk.
-Constraints:
-1) Use exact quotes only.
-2) If absent, return "not found".
-3) No causal claims without textual support.
-Output: markdown table (label | quote | confidence_1_to_5 | analyst_note)
-Quality check: final line = "main uncertainty: ..."
-```
-
-## A/B method (one-variable changes)
-
-| Round | Variant A | Variant B | Hold constant |
-|---|---|---|---|
-| 1 | no role line | role line added | data, settings |
-| 2 | free output | fixed schema | data, settings |
-| 3 | no check | self-check line | data, settings |
-
-## Hands-on (E2) {background-color="black"}
-
-- Rewrite one weak prompt
-- Run three fair A/B comparisons
-- Submit pair + A/B table: `/docs/live-exercises?exercise=E2`
-
-## Registry references {.smaller}
-
-- Prompting + personas: R005, R030
-- In-context behavior: R032
-- Foundation context: R031
-
-## Common failure modes
-
-- Too many variables changed
-- Constraints conflict internally
-- Failure explanation stays vague
-
-## Debrief
-
-- What assumption failed first?
-- What evidence would falsify output?
-- What should not be delegated?
+:::
