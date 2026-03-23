@@ -8,84 +8,82 @@ format:
     embed-resources: true
 ---
 
-## Memory is leverage and risk {.center}
+## Context = Short-Term Memory [^s1]
 
-::: {.r-fit-text}
-Persist only what you can defend.
-:::
+The session ("chat") is the agent's context (i.e. short-term memory).
 
-## Objective
+We can also edit this history (e.g. in LangChain)!
 
-- Separate working and persistent memory
-- Mitigate stale memory risks
-- Apply memory-safe writing (E4)
+> But: Context window is finite and session-bound! 
 
-## Working vs persistent memory
+[^s1]: Sources: @langchainShortTermMemory @MicrosoftMemorySchool
 
-| Type | Scope | Risk |
-|---|---|---|
-| Working memory | current task/session | stale context in long threads |
-| Persistent memory | cross-session/project | privacy leaks, irrelevant carryover |
+## Long-Term Memory
 
-## Privacy red flags
+Memory system that 
 
-- Early paper drafts
-- Raw NDA data
-- Personal data (names/emails/addresses)
+- persists across sessions
+- can be (much) larger than context window
 
-## Safe alternatives
+-> *injects* relevant info into context
 
-- Institutional secure chat instances
-- Local models (e.g., Ollama)
-- Cluster-hosted open models
+[^s3]: Sources: @willisonAgenticPatterns; @lewis2020rag
 
-## Writing workflow
+## Long-Term Memory (Level 1): MEMORY.md [^s4]
 
-```{mermaid}
-flowchart TD
-  A[Draft claim] --> B[Attach source]
-  B --> C[Check citation scope]
-  C --> D[Add uncertainty line]
-  D --> E[Add disclosure line]
-```
-
-## Transparency and authorship
-
-- Disclose model, version, provider
-- Document prompt and verification
-- LLMs are not authors
-
-## Documentation template
+- Policy in AGENTS.md
+- Facts/logs in MEMORY.md
 
 ```markdown
-## Model Information
-- Model:
-- Provider:
-- Date:
-- Temperature:
+# AGENTS.md (memory policy)
 
-## Usage Purpose
-- Drafting / coding / retrieval
+## Memory policy
+- Load `MEMORY.md` at session start.
+- Append durable facts to `memory/YYYY-MM-DD.md`.
+- If user says "remember this", write it down immediately.
+- Promote stable preferences/decisions into `MEMORY.md`.
 
-## Verification
-- Checks performed:
-- Remaining uncertainty:
+## Editing rules
+- Keep entries short, factual, and timestamped.
+- Remove stale items when contradicted by newer evidence.
 ```
 
-## Hands-on (E4) {background-color="black"}
+[^s4]: Sources: @opencodeDocs; @openclawDocs
 
-- Draft one evidence-backed paragraph
-- Add claim-evidence table + disclosure
-- Submit: `/docs/live-exercises?exercise=E4`
+## Long-Term Memory (Level 2): "Clever" MEMORY.md [^s5]
 
-## Registry references {.smaller}
+We can post-process MEMORY.md:
 
-- Memory + learning risk: R024
-- Appropriate reliance: R041, R042
-- Safety warning signs: R051, R052
+- Summarize (compress)
+- Prune it
+- Introduce hierarchy (INDEX.md file pointing to other MEMORY.md files)
 
-## Debrief
+![](../../assets/images/openclaw.png)
 
-- Which sentence was hardest to verify?
-- What evidence would falsify your claim?
-- Where should delegation stop?
+[^s5]: Sources: @willisonAgenticPatterns; @microsoftMemorySchool
+
+## Long-Term Memory (Level 3): [^s6]
+
+Retrieval-Augmented Generation (RAG) (*... and fancy systems on top of it*)
+
+- Embed documents into vector space
+- Compare query embedding to document embeddings (cosine similarity)
+- Inject relevant passages into context
+
+[^s6]: Sources: @lewis2020rag; @langchainRetrieval
+
+
+##
+
+![[Figure from LangChain](https://docs.langchain.com/oss/python/langchain/rag)](../../assets/images/rag_embed.png)
+
+##
+
+![[Figure from LangChain](https://docs.langchain.com/oss/python/langchain/rag)](../../assets/images/rag_retrieve.png)
+
+
+# References
+
+::: {#refs}
+
+:::

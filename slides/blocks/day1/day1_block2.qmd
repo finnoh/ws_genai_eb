@@ -8,176 +8,124 @@ format:
     embed-resources: true
 ---
 
-## LLM vs Agent {.center}
+## Training Objective at the Core [^s1]
+
+$P \left (x_t \mid x_{<t}, \theta \right )$
+
+- $x_t$: next token
+- $x_{<t}$: previous tokens
+- $\theta$: learned parameters
+
+
+
+[^s1]: Sources: @vaswani2017attention; @brown2020fewshot
+
+## AI agents are 🧅s {.center}
 
 ::: {.r-fit-text}
-An LLM predicts the next token.
-:::
 
-::: {.fragment}
-An agent adds goals, tools, and checks.
-:::
-
-## Objective
-
-- Build a mental model of LLMs
-- Separate model, agent, and tool
-- Produce one strong E1 artifact
-
-## How are LLMs created? {.smaller}
-
-:::: {.columns}
-
-::: {.column width="60%"}
-
-```{mermaid}
-flowchart TD
-  A[Pretraining] --> B[Human alignment]
-  B --> C[Model deployment]
-  C --> D[Collect user interactions]
-  D -->|update| B
-```
+LLM at the center
 
 :::
 
-::: {.column width="40%"}
+It is still next-token prediction![^s2]
 
-**Registry anchors:**
+[^s2]: Sources: @brown2020fewshot; @kaplan2020scaling
 
-- R031/R032: foundations + few-shot
-- R033: scaling behavior
-- R034: compute-data trade-offs
+## Pre-training [^s3] {.center}
 
+::: {.center}
+![](../../assets/images/gao2021.png){width="74%"}
 :::
 
-::::
+[^s3]: Sources: @kaplan2020scaling; @hoffmann2022chinchilla
 
-## Training data intuition {.center}
+## Post-training [^s4]
 
-![](../../assets/images/gao2021.png){width="78%"}
-
-::: {.smaller}
-Visual adapted from the workshop_pe chapter deck (The Pile overview).
-:::
-
-## {.center auto-animate=true}
-
-::: {.r-fit-text data-id="coreline"}
-An LLM auto-regressively predicts the next token in a sequence of tokens.
-:::
-
-## {.center auto-animate=true}
-
-::: {.r-fit-text data-id="coreline"}
-An LLM <span class="highlight">auto-regressively</span> predicts the next token in a sequence of tokens.
-:::
-
-::: {.fragment}
-*it repeats this step by step*
-:::
-
-## {.center auto-animate=true}
-
-::: {.r-fit-text data-id="coreline"}
-An LLM auto-regressively predicts the next <span class="highlight">token</span> in a sequence of tokens.
-:::
-
-::: {.fragment}
-*token != word (can be sub-word or symbol)*
-:::
-
-## {.center auto-animate=true}
-
-::: {.r-fit-text data-id="coreline"}
-An LLM auto-regressively predicts the next token in a <span class="highlight">sequence of tokens</span>.
-:::
-
-::: {.fragment}
-*the sequence is your current context window*
-:::
-
-## Core mechanism
-
-An LLM auto-regressively predicts the next token in a sequence of tokens.
-
-$$P(x_t | x_{<t}, \theta)$$
-
-## What changes model behavior?
-
-- Prompting changes context window
-- Fine-tuning changes parameters
-- Sampling settings change variability
-
-## What changes agent behavior?
-
-- Tool calls inject external state
-- Plan/check loops enforce process
-- Human escalation sets boundaries
-
-## What is an agent?
-
-```{mermaid}
-flowchart TD
-  U[User goal] --> P[Plan]
-  P --> M[Model step]
-  M --> T[Tool call if needed]
-  T --> M
-  M --> V[Verify against constraints]
-  V -->|pass| O[Output]
-  V -->|fail| P
-```
-
-## Context, tools, skills, memory
-
-| Component | Question it answers | Typical failure |
+| Stage | Main goal | Typical effect |
 |---|---|---|
-| Context | What is this task now? | Missing constraints |
-| Tools | What can I do externally? | Unverified tool output |
-| Skills | Which procedure should I apply? | Wrong workflow |
-| Memory | What should persist? | Stale carryover |
+| Pre-training | Generation | Capability |
+| Post-training | Alignment | Compliance |
 
-## Prompt anatomy example
+[^s4]: Sources: @rafailov2023dpo; @brown2020fewshot
 
-```text
-Role: You are a coding assistant for a field experiment.
-Task: Label each quote as Trust, Price, or Service.
-Context: Use only this codebook.
-Constraint: Return strict JSON only.
-Output schema: {"label":"...","confidence":0-1,"rationale_1_sentence":"..."}
-Verification: If confidence < 0.65, return "needs_human_review": true.
+## Tokens Can Become Actions [^s5] {.center}
+
+```json
+{"tool":"web_search","query":"latest ECB inflation forecast"}
 ```
 
-## Hands-on: E1 prompt anatomy lab {background-color="black"}
+::: {.center}
+```{mermaid}
+sequenceDiagram
+  participant M as LLM
+  participant T as Tool/API
+  M->>T: action token -> tool call
+  T->>M: observation/result
+```
+:::
 
-- Inputs: weak prompt + anatomy checklist + use case
-- Deliverable: before/after pair + short rationale
-- Timebox/submission: 20/30/10, `/docs/live-exercises?exercise=E1`
 
-## E1 evaluation rubric
+[^s5]: Sources: @schick2023toolformer; @yao2022react
 
-- Core: usefulness/correctness/reproducibility/risk
-- Diagnose weak prompts clearly
-- Tighten constraints and output schema
+## Actions can pull in fresh context [^s6]
 
-## Common failure modes
+::: {.center}
+```{mermaid}
+flowchart LR
+  Q[Prompt] --> R[Web-search]
+  R --> K[Filter]
+  K --> C[Read]
+  C --> G[Continue generation]
+```
+:::
 
-- Vague task boundary
-- Missing schema and check
-- Assumptions stay implicit
+[^s6]: Sources: @lewis2020rag; @yao2022react
 
-## Optional extension
+## Agents ❤️ Code [^s7]
 
-- Rewrite for a second audience
-- Compare policy vs academic version
+```python
+result = run_python("sum([2.1, 3.4, 5.0])")
+context += f"Observed: {result}"
+answer = llm(context)
+```
 
-## Registry references (for this block) {.smaller}
+> Powerful!
 
-- Foundations: R031, R032
-- Scaling + compute: R033, R034
-- Prompting personas: R005, R030
+<!--
+TODO MEDIA: Insert video showing a tool call
+<video width="72%" autoplay loop muted playsinline>
+  <source src="../../assets/videos/day1_block2_tool_loop.mp4" type="video/mp4">
+</video> -->
 
-## Debrief
+[^s7]: Sources: @schick2023toolformer; @yao2022react
 
-- Which assumption failed first?
-- What evidence would falsify output?
-- What should remain human-owned?
+##
+
+
+```{mermaid}
+
+flowchart TD
+  C[Context] --> A[LLM]
+  
+  A -->|call| T[Tools]
+  A -->|write| M[Memory]
+  A -->|generate| END{END}
+  A -->|generate| C
+  
+  T --> E[Environment]
+  M --> C
+  E --> C
+
+  style A fill:#90EE90,stroke:#333,stroke-width:1px
+  style E fill:#bdd0ff,stroke:#f7f9fa,stroke-width:1px
+  
+```
+
+
+[^s8]: Sources: @yao2022react; @lewis2020rag; @schick2023toolformer
+
+## References
+
+::: {#refs}
+:::

@@ -196,9 +196,15 @@ curl -sL https://raw.githubusercontent.com/finnoh/ti-student-agent-pack/main/ins
 4. Chat with Jan (what does Jan do?)
 5. Can you customize Jan to your needs?
 
----
+## (A necessary) Disclaimer
 
-### References
+1) Massive amounts of work on this topic are happening right now
+2) Many, many (legal, ethical, environmental, social) questions are open
+3) AI is fuzzy + a lot of hype
+
+Wide overview -> Experiment on your own!
+
+## References
 
 ::: {#refs}
 :::

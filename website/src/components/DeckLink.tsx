@@ -9,5 +9,9 @@ type DeckLinkProps = {
 export default function DeckLink({path, label}: DeckLinkProps): JSX.Element {
   const href = useBaseUrl(path);
 
-  return <a href={href}>{label}</a>;
+  return (
+    <a href={href} target="_blank" rel="noreferrer">
+      {label}
+    </a>
+  );
 }

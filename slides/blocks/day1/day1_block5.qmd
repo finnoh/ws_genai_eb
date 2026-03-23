@@ -8,83 +8,174 @@ format:
     embed-resources: true
 ---
 
-## Multi-agent needs orchestration {.center}
+## Chapter Shift: User -> Builder [^s1]
 
-::: {.r-fit-text}
-Parallelism without contracts creates chaos.
-:::
+We know how to use use tools ...
 
-## Objective
+. . .
 
-- Use advanced tool patterns
-- Run parallel agents safely
-- Customize AGENTS.md constraints
+> ... but how do we build them?
 
-## Parallel strategy
+[^s1]: Sources: @willisonAgenticPatterns; @yao2022react
 
-- Split tasks by boundary
-- Merge with explicit contracts
-- Keep one shared verifier
+## SKILL.md [^s3]
 
-## Tree-of-thought to agent branches
+```markdown
+
+<!-- Too verbose — the agent already knows what PDFs are -->
+## Extract PDF text
+
+PDF (Portable Document Format) files are a common file format that contains
+text, images, and other content. To extract text from a PDF, you'll need to
+use a library. pdfplumber is recommended because it handles most cases well.
+
+<!-- Better — jumps straight to what the agent wouldn't know on its own -->
+## Extract PDF text
+
+Use pdfplumber for text extraction. For scanned documents, fall back to
+pdf2image with pytesseract.
+
+import pdfplumber
+
+with pdfplumber.open("file.pdf") as pdf:
+    text = pdf.pages[0].extract_text()
+```
+
+. . . 
+
+SKILL.md is high level; Precision: **Use scripts!**
+
+[^s3]: Sources: @agentskillsBestPractices
+
+
+## Scripts Inside Skills [^s4]
+
+```bash
+# Agent-friendly script usage
+python scripts/tool.py --help
+python scripts/tool.py --input data.csv --format json
+```
+
+- Scripts should be standalone (agents love CLIs)
+- Naming matters!
+- warnings, errors, info messages become context ...
+
+. . .
+
+Use an AI agent to create skills: [`skill-creator`](https://github.com/anthropics/skills/tree/main/skills/skill-creator)
+
+[^s4]: Sources: @agentskillsUsingScripts; @agentskillsEvaluatingSkills
+
+## Build your own MCP server [^s5]
+
+`weather.py`
+
+```python
+
+from mcp.server.fastmcp import FastMCP
+
+# Initialize FastMCP server
+mcp = FastMCP("weather")
+
+def call_weather_api(city: str, date: str) -> dict[str, Any] | None:
+    """Make a request to the Weather API"""
+    headers = {"City": city, "Date": date}
+    response = client.get(
+      api_key=WEATHER_API_KEY,
+      headers=headers,
+      timeout=30.0)
+      
+      return response.json()
+
+@mcp.tool()
+async def get_weather(city: str, date: str) -> str:
+    """Get weather information for a city.
+
+    Args:
+        city: Name of the city
+        date: Date for which to get weather information; options are "today", "tomorrow", or "YYYY-MM-DD"
+    """
+    try:
+      data = call_weather_api(city, date)
+    except Exception as e:
+      return f"Error fetching weather data: {str(e)}"
+    
+    return "\n---\n".join(data)
+
+```
+
+---
+
+Run your server in a terminal:
+
+```python
+...
+
+def main():
+    # Initialize and run the server
+    mcp.run(transport="stdio")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## Wire MCP to an Agent
+
+In the settings of your agent (e.g. MCP servers, ...) add
+
+```json
+{
+  "mcpServers": {
+    "weather": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/ABSOLUTE/PATH/TO/PARENT/FOLDER/weather",
+        "run",
+        "weather.py"
+      ]
+    }
+  }
+}
+```
+
+[^s5]: [MCP](https://modelcontextprotocol.io/docs/develop/build-server#quick-examples)
+
+## {.center}
+
+![](../../assets/images/mcp_tools.png)
+
+
+<!-- ## Dispatch Sub-Agents [^s7]
 
 ```{mermaid}
+%%| fig-align: "center"
 flowchart TD
-  I[Input task] --> A[Branch A]
-  I --> B[Branch B]
-  I --> C[Branch C]
-  B --> D[Best branch selected]
-  D --> E[Verifier check]
+  M[Manager Agent] --> R[Research Agent]
+  M --> C[Coding Agent]
+  R --> V[Verifier]
+  C --> V
+  V --> O[Integrated output]
 ```
 
-- Branch only with selection rules
-- Keep logs for reproducibility
+[^s7]: Sources: @willisonAgenticPatterns; @yao2022react
 
-## Self-feedback loop
+## LangChain: Building Agent Systems [^s8]
 
-- Generate a first pass
-- Ask model for specific critique
-- Revise once, then stop on criteria
+- Build agent graph quickly
+- Add routing and contracts
+- Trace and debug execution
 
-## Backlog scheduling
-
-- Queue small, testable issues
-- Prioritize risk and dependency
-- Use idle windows for low-risk
-
-## AGENTS.md customization (example)
-
-```yaml
-code_style:
-  prefer: explicit assumptions
-  require: reproducible scripts
-  avoid: hidden state
-testing:
-  require: at least one check per change
-handoff:
-  require: residual risk note
+```python
+from langchain.agents import create_agent
+agent = create_agent(model="claude-sonnet-4-6", tools=[npv_tool])
 ```
 
-## Hands-on
+[^s8]: Sources: @langchainDocs; @willisonAgenticPatterns -->
 
-- Run two agents in parallel on independent subtasks
-- Merge outputs through one verifier
-- Submit coordination note + verification trace
+## References
 
-## Registry references {.smaller}
+::: {#refs}
 
-- Agentic engineering patterns: R004
-- Architecture comparisons: R003
-- Coding-assistance evidence: R012
-
-## Common failure modes
-
-- Agents overwrite each other
-- Missing merge contract
-- No shared acceptance tests
-
-## Debrief
-
-- Which split paid off?
-- Which split increased risk?
-- What to simplify next run?
+:::

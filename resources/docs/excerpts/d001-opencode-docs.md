@@ -1,7 +1,7 @@
 # OpenCode Docs
 
 - URL: https://opencode.ai/docs/
-- Retrieved: 2026-03-17T14:48:12+00:00
+- Retrieved: 2026-03-23T13:35:07+00:00
 - Parsed title: Intro | OpenCode
 
 ## Context excerpt

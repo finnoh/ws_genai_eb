@@ -16,6 +16,7 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 - One weak prompt from your group domain.
 - Prompt anatomy checklist (role, task, constraints, output format).
 - One target use case from economics or business research.
+- Resource anchors: R031, R032, R033, R034, R005, R030.
 
 ### Deliverable (single micro artifact)
 
@@ -39,6 +40,7 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 - Risk awareness.
 - Prompt anatomy diagnosis quality.
 - Clarity of improved constraints.
+- Evidence anchor usage (at least one source-informed design choice).
 
 ### Common failure modes
 

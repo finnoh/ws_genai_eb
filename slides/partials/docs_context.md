@@ -1,6 +1,6 @@
 ## Context Pack: tool calling and agent orchestration
 
-Generated: 2026-03-17T14:48:14+00:00
+Generated: 2026-03-23T13:35:10+00:00
 
 Query terms: agent, calling, orchestration, tool
 
@@ -17,4 +17,4 @@ Query terms: agent, calling, orchestration, tool
 ### OpenClaw Docs
 - Relevance score: 13
 - Source: https://docs.openclaw.ai/
-- Suggested slide note: [agent] ... tent OpenClaw home page English Search... ⌘ K GitHub Releases Search... Navigation Home OpenClaw Get started Install Channels Agents Tools Models Platforms Gateway & Ops Reference Help Home OpenClaw Overview Showcase Core concepts Features First steps Getting Started Onboarding Overview Onboarding: CLI Onboarding: macOS App Guides Personal Assistant Setup CLI reference CLI aut ...
+- Suggested slide note: [agent] ... w home page English Search... ⌘ K GitHub Releases Discord Search... Navigation Overview OpenClaw Get started Install Channels Agents Tools & Plugins Models Platforms Gateway & Ops Reference Help Overview OpenClaw Showcase Features First steps Getting Started Onboarding Overview Onboarding: CLI Onboarding: macOS App Guides Personal Assistant Setup CLI reference CLI automation O ...

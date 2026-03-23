@@ -14,6 +14,7 @@ Scale for all criteria: 0 (missing), 1 (weak), 2 (acceptable), 3 (strong).
 - Correct context/tool/memory classification
 - Quality of improved prompt
 - Verification method stated
+- Source-anchored design choice (R031/R032/R033/R034/R005/R030)
 
 ## E2 - Prompt rewrite challenge
 - Constraint quality and specificity
