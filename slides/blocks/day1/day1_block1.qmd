@@ -180,11 +180,15 @@ Jan: +------------------------------------------+
 curl -sL https://raw.githubusercontent.com/finnoh/ti-student-agent-pack/main/install.sh | bash
 ```
 
+## {background-video="../../assets/videos/jan_install.mp4" background-size="contain" background-video-loop="true"}
+
 ## How to Use Jan
 
 1. Open a terminal
 2. `cd path/to/student-agent-pack`
 3. `opencode`
+
+## {background-video="../../assets/videos/how_to_use_jan.mp4" background-size="contain" background-video-loop="true"}
 
 ## Hands-on: Explore Jan {background-color="black"}
 

@@ -50,6 +50,8 @@ Memory system that
 
 [^s4]: Sources: @opencodeDocs; @openclawDocs
 
+## {background-video="../../assets/videos/memory_policy_workflow.mp4" background-size="contain" background-video-loop="true"}
+
 ## Long-Term Memory (Level 2): "Clever" MEMORY.md [^s5]
 
 We can post-process MEMORY.md:

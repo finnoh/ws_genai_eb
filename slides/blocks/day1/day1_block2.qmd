@@ -35,7 +35,7 @@ It is still next-token prediction![^s2]
 ## Pre-training [^s3] {.center}
 
 ::: {.center}
-![](../../assets/images/gao2021.png){width="74%"}
+![](../../assets/images/gao2021.png){width="74%" fig-align="center"}
 :::
 
 [^s3]: Sources: @kaplan2020scaling; @hoffmann2022chinchilla
@@ -57,6 +57,7 @@ It is still next-token prediction![^s2]
 
 ::: {.center}
 ```{mermaid}
+%%| fig-align: center
 sequenceDiagram
   participant M as LLM
   participant T as Tool/API
@@ -70,15 +71,14 @@ sequenceDiagram
 
 ## Actions can pull in fresh context [^s6]
 
-::: {.center}
 ```{mermaid}
+%%| fig-align: center
 flowchart LR
   Q[Prompt] --> R[Web-search]
   R --> K[Filter]
   K --> C[Read]
   C --> G[Continue generation]
 ```
-:::
 
 [^s6]: Sources: @lewis2020rag; @yao2022react
 
@@ -92,11 +92,7 @@ answer = llm(context)
 
 > Powerful!
 
-<!--
-TODO MEDIA: Insert video showing a tool call
-<video width="72%" autoplay loop muted playsinline>
-  <source src="../../assets/videos/day1_block2_tool_loop.mp4" type="video/mp4">
-</video> -->
+## {background-video="../../assets/videos/agents_tool_calls.mp4" background-size="contain" background-video-loop="false"}
 
 [^s7]: Sources: @schick2023toolformer; @yao2022react
 
@@ -104,8 +100,9 @@ TODO MEDIA: Insert video showing a tool call
 
 
 ```{mermaid}
-
-flowchart TD
+%%| fig-align: center
+%%| width: 100%
+flowchart LR
   C[Context] --> A[LLM]
   
   A -->|call| T[Tools]
