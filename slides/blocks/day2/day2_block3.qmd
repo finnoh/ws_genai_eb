@@ -1,86 +1,111 @@
 ---
-subtitle: "Literature Review and Research"
-title: "Day 2 - Block 3"
+title: "Literature Review"
+subtitle: "Day 2 - Block 3"
 format:
   revealjs:
     footer: "TI Workshop | D2 B3"
+    scrollable: true
+    bibliography:
+      - ../../../resources/workshop-citations.bib
+      - ../../assets/references.bib
+    embed-resources: true
 ---
 
-## Objective
+## (Literature) search is hard
 
-- Build retrieval workflow and claim-evidence ledger
-- Improve source triage and provenance
-- Produce one traceable synthesis artifact
+... especially if there are paywalls
 
-## Inputs
-
-- One focused research question
-- 4-6 candidate sources
-- Claim-evidence ledger template
-
-## Retrieval workflow
-
-```{mermaid}
-flowchart LR
-  Q[Research question] --> R[Retrieve]
-  R --> T[Triage]
-  T --> L[Claim-evidence ledger]
-  L --> S[Synthesis paragraph]
+```{=html}
+<div style="font-size:0.85em;">
+<div style="border-left:5px solid #d23f31; padding:0.8em 1em; background:#fff4f2; margin-bottom:0.8em;">
+<strong>Prompt:</strong> "Give me a literature table on <em>greenwashing</em> in top-tier marketing journals, with methods and key findings."
+</div>
 ```
 
-## RAG framing for literature work
+## {background-video="../../assets/videos/lit2.mp4" background-size="contain" background-video-loop="true"}
 
-- Retrieval-augmented generation reduces unsupported claims
-- Use external source snippets for every factual statement
-- Keep exact quote and source id in ledger
 
-## Provenance fields (minimum)
+## It might still work though (kind of) {.smaller}
 
-- Source title and id
-- Exact supporting sentence
-- Why the sentence supports the claim
-- Uncertainty note if evidence is weak
 
-## Hands-on
+| Journal                                                | Paper                                    | Method      | Key finding                                                                                                                           |
+| ------------------------------------------------------ | ---------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Journal of Consumer Research                           | Newman, Gorlin, Dhar (2014)              | Experiments | Green initiatives backfire when consumers infer self-serving motives; perceived hypocrisy drives negative evaluations.                |
+| Journal of Marketing                                   | Luchs et al. (2010)                      | Experiments | “Sustainability liability”: green products are seen as less effective in strength-related categories → indirect driver of skepticism. |
+| Journal of Consumer Psychology                         | Forehand & Grier (2003)                  | Experiments | Firm motive attribution → skepticism; ulterior motives reduce persuasion (core mechanism behind greenwashing perceptions).            |
 
-- Build ledger with 3 claim rows
-- Draft one paragraph from ledger only
-- Add one uncertainty/disclosure line
+‼️ [Wikipedia article "Greenwashing"](https://en.wikipedia.org/wiki/Greenwashing?utm_source=chatgpt.com)
 
-## Deliverable
+##
 
-- One evidence paragraph with provenance
-- One claim-evidence ledger (3 rows)
-- One verification + disclosure line
+![Keyword != Semantic search](../../assets/images/search.png)
 
-## Timebox
+## Some tips
 
-- 20 min lecture input
-- 30 min group build
-- 10 min debrief
+*Prompt for notification about paywalls*
 
-## Submission link
+> Otherwise fails silently and reports based on abstract
 
-- `/docs/live-exercises?exercise=MICRO_D2B3`
+*Provide list of journals*
 
-## Evaluation rubric
+> Quality ranking of research is weak so far (GPT likes researchgate, because its accessible!)
 
-- Claims grounded in cited evidence
-- Provenance trace is reproducible
-- Uncertainty stated concretely
+*Activate web-search*
 
-## Extension task (optional)
+> SOA models do this automatically; However, monitor whether it actually searches the web. Reduces hallucinations!
 
-- Add one contradictory source
-- Revise claim after contradiction
+## False results
 
-## Resource anchors
+We are aware of false positives ("hallucinations")
 
-- R017, R022, R035
-- R055, R063, R064
+(i.e. papers that do not exist but are "found")
 
-## Debrief
+. . .
 
-- Which claim had weakest evidence?
-- What would falsify the paragraph?
-- Which step should remain human-owned?
+For literature search, false negative are a huge problem too!
+
+(i.e. papers that do exist but are not "found")
+
+## Impose more structure on search
+
+![Research Rabbit](../../assets/images/lit0.png)
+
+## {background-iframe="https://elicit.com/" interactive=true}
+
+## {background-video="../../assets/videos/lit1.mp4" background-size="contain" background-video-loop="true"}
+
+
+## Build a literature agent: Tools
+
+arXiv MCP:
+
+- Let AI search and download arXiv papers
+
+Zotero MCP:
+
+- Automatic RAG on papers!
+- Citation via bibtex-key
+
+## {background-video="../../assets/videos/zotero_moon_summary.mp4" background-size="contain" background-video-loop="true"}
+
+## ⚠️ Copyright 
+
+```{=html}
+<div style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size:0.82em;">
+  <div style="border:2px solid #d23f31; border-radius:8px; padding:0.7em; background:#fff4f2;">
+    <strong>Don't</strong><br>
+    - Closed-source papers to LLM<br>
+    - Trust AI citations blindly
+  </div>
+  <div style="border:2px solid #2f7d32; border-radius:8px; padding:0.7em; background:#f3fff4;">
+    <strong>Do</strong><br>
+    - Log Paywall blocks<br>
+    - Use private AI models<br>
+  </div>
+</div>
+```
+
+## References
+
+::: {#refs}
+:::
