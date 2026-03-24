@@ -95,33 +95,43 @@ Follow the Stremersch 2024 paper and walk people through pipeline with AI suppor
 
 Can we integrate directly with qualtrics for a study design; Construct a synthetic respondent dataset; Qualitative interviews?
 
-- Lecture (20): AI for data collection: facilitate human data collection, imitate humans, synthetic respondents overview, dangers of AI supported stimuli design, APIs to directly integrate with qualitrics / prolific, conveo for qualitative interviews at large scale
-- Hands-on (30): synthetic stimulus design and synthetic respondents (Moon et al. 2024 background story), interviewing a synthetic respondents (E6)
+- Lecture (20): 3-fold taxonomy for AI in data collection: (A) AI supporting human collection (stimuli/survey/interview guide), (B) AI enabling new human-data modes (scalable qualitative interviewing, role-players in negotiation/game-theory tasks), (C) AI as study subject (synthetic respondents, AI decision behavior)
+- Lecture emphasis: validity risks by mode - framing bias/construct drift (A), interaction effects from persona/prompt settings (B), external validity/model-population mismatch (C)
+- Hands-on (30): choose A/B/C and build an E6 design choice memo with one verification plan
+- Debrief (10): compare mode choice and risk controls
 
 #### Day 2 Block 3: Literature review and research
 
 Introduce zotero and arxiv MCP, talk about copyright, (deep) research, prompt for paywalls
 
-- Lecture (20): retrieval workflow, claim-evidence ledger, source triage, traceable synthesis
-- Hands-on (30): evidence paragraph with provenance (non-E micro artifact)
+- Lecture (20): faster retrieval, stricter verification - web-search-first prompting, source triage, claim-evidence ledger, and traceable synthesis
+- Lecture emphasis: copyright/paywalls (no fake access; log paywall hits), Zotero/MCP as curated memory (RAG over owned library), citation integrity checks
+- Practical anti-hallucination citation workflow:
+  1) Draft with inline citation keys (`AuthorYear` or `[@key]`)
+  2) Parse cited keys from manuscript
+  3) Compare against `.bib` keys (set difference = missing)
+  4) Require retrievable source snippet/DOI/page note per cited claim
+  5) Fail review if unresolved keys remain
+- Hands-on (30): evidence paragraph + ledger micro artifact (claim, source, quote/snippet, confidence, unresolved gaps)
 - Debrief (10): verification and disclosure
 
-#### Day 2 Block 4: Data analysis & Coding 1
+#### Day 2 Block 4: Data Analysis + Modeling
 
-Show IDE, show coding agents, show background agents; Customize setup to nudge towards more ECON style programming
+Positioning: can I produce valid research outputs with agents?
 
-IDE agent vs coding agent, plan mode
-- Lecture (20): analysis plan scaffolding, reproducible code prompts, test-first checks
-- Hands-on (30): orchestrated workflow design with contracts (E5)
-- Debrief (10): architecture tradeoff review
+- Lecture (20): merged production stack - data pipeline (clean -> merge -> baseline analysis) + modeling layer (robustness/spec search/simulation) + reliability controls (tests, logs, keep/reject criteria)
+- Hands-on (30): one reproducible analysis+model run
+- Debrief (10): assumptions, verification note, and tradeoffs
+- Deliverable: reproducible analysis+model artifact with assumptions + verification note
 
-#### Day 2 Block 5: Data analysis & Coding 2
+#### Day 2 Block 5: Workflows
 
-Introduce Handy, introduce (ghostty) terminal splits -> move to coding across multiple projects, integration with Github
+Positioning: can I run this reliably across projects and collaborators?
 
-- Lecture (20): reliability controls (timeouts, retries, fallbacks, logging), parallel execution economics
-- Hands-on (30): reliability-enhanced analysis agent
-- Debrief (10): red-team one design assumption
+- Lecture (20): research workflow stack - multi-project terminal setup (split panes/sessions, project isolation, shared conventions), feedback capture loop (voice-to-text + handwritten notes to structured LaTeX), issue-to-agent-to-PR loop
+- Hands-on (30): each group creates two GitHub issues from research tasks, dispatches one to an agent, reviews resulting PR diff and test evidence
+- Debrief (10): what failed, where human review was essential, and what team policy to adopt
+- Micro-artifact: workflow runbook (terminal/project layout, feedback-to-doc protocol, issue template, PR review checklist, background-agent safety rules)
 
 #### Day 2 Block 6: Writing & Valorization
 

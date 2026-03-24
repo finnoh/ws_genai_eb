@@ -1,6 +1,6 @@
 ---
-title: "Day 1 - Block 2"
-subtitle: "LLMs and AI Agents"
+title: "LLMs and AI Agents"
+subtitle: "Day 1 - Block 2"
 format:
   revealjs:
     footer: "TI Workshop | D1 B2"

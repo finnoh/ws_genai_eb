@@ -1,6 +1,6 @@
 ---
-title: "Day 1 - Block 3"
-subtitle: "Context"
+title: "Context"
+subtitle: "Day 1 - Block 3"
 format:
   revealjs:
     footer: "TI Workshop | D1 B3"
@@ -29,7 +29,7 @@ Engineer context, not just prompts.
 2) Prompt agent to write code and to *test it*
 3) Iterate until ✅
 
-## {background-video="../../assets/videos/context.mp4" background-size="contain"}
+## {background-video="../../assets/videos/context.mp4" background-size="contain" background-video-loop="true"}
 
 ## Plan mode
 
@@ -39,7 +39,7 @@ Sometimes, the agent can write its own context
 
 :::
 
-## {background-video="../../assets/videos/plan_mode.mp4" background-size="contain"}
+## {background-video="../../assets/videos/plan_mode.mp4" background-size="contain" background-video-loop="true"}
 
 ## Housekeeping for better retrieval
 

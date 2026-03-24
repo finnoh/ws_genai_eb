@@ -1,63 +1,108 @@
 ---
-title: "Day 2 - Block 1"
-subtitle: "Ideation and Idea Validation"
+title: "Ideation with AI Agents"
+subtitle: "Day 2 - Block 1"
 format:
   revealjs:
     footer: "TI Workshop | D2 B1"
+    bibliography:
+      - ../../../resources/workshop-citations.bib
+      - ../../assets/references.bib
+    embed-resources: true
 ---
 
-## Objective
+## R&D ➡️ Academia [^s1]
 
-- Apply Stremersch ideation pipeline
-- Move from ideas to tests
-- Produce one micro artifact
+```{mermaid}
+%%| fig-align: center
+flowchart LR
+  A[Domain Exploration] --> B[Domain Selection]
+  B --> C[Domain Immersion]
+  C --> D[Research Question Selection]
+  D --> E[Idea Napkin]
+```
 
-## Inputs
+## Projects in ChatGPT / Claude
 
-- Stremersch (2024) ideation paper
-- Your domain and collaborator map
-- One target stakeholder context
+We can define "projects" (folders) in ChatGPT / Claude
 
-## Core Moves (Stremersch 4S)
+The resources and chats in here reference each other
 
-- Isolate -> immerse
-- Few/narrow -> many/wide
-- Late share -> early share
+> A "canvas" to ideate (also with collaborators!)
 
-## Three-Phase Workflow
+## {background-video="../../assets/videos/project_setup.mp4" background-size="contain" background-video-loop="true"}
 
-- Domain exploration
-- Domain immersion
-- Project design
+## Domain exploration
 
-## Deliverable
+- What skills do you and your collaborators have?
+- What is the state of the world?
+- ...
 
-- One-page idea pipeline card
-- 1 insight + 2 HMW prompts
-- 1 falsifiable research question
+## {background-video="../../assets/videos/add_cv_resource.mp4" background-size="contain" background-video-loop="true"}
 
-## Timebox
+## Domain exploration
 
-- 20 min lecture input
-- 30 min group build
-- 10 min debrief
+> In light of your contstraints, what domains should we explore?
 
-## Submission link
+## {background-video="../../assets/videos/domain_exploration.mp4" background-size="contain" background-video-loop="true"}
 
-- `/docs/live-exercises?exercise=MICRO_D2B1`
+## Domain selection
 
-## Evaluation rubric
+For example, by scoring ideation domains [@stremersch2024how]:
 
-- Relevance to stakeholder problem
-- Falsifiability and testability
-- Feasibility this semester
+| Domain                | Interest | Feasibility | Timeliness | 
+| --------------------- | -------- | ----------- | ---------- | 
+| GenAI as Market Actor | 5        | 5           | 5          | 
+| AI Business Models    | 4        | 4           | 5          | 
+| Sustainability        | 3        | 4           | 4          | 
 
-## Resource anchors
+> Caveat: AI scoring is not solved yet
 
-- R004, R009/R010, R022
-- R038, R044/R045
+## Domain immersion
 
-## Extension task (optional)
+After selecting a domain, we need to create more context for it:
 
-- Add one dark-horse variant
-- Add one kill criterion
+- Deep research (e.g. with agents)
+- Pulling in resources (e.g. papers, datasets, news, ...)
+
+More sophisticated things are possible (e.g. RAG, ...)
+
+## {background-video="../../assets/videos/domain_immersion.mp4" background-size="contain" background-video-loop="true"}
+
+
+## Ideation in this domain {.smaller}
+
+| Dimension |                                         |             AI             |
+| :----------------: | --------------------------------------- | :------------------------: |
+|       Source       | Isolate → Immerse                       |       Deep Research        |
+|       Scope        | Few & narrow → Many & wide              |     @meincke2024using      |
+|       Share        | Late → Early                            |      Sparring with AI      |
+|       Select       | Unstructured & slow → Structured & fast | Canvas & Prototyping |
+: Adapted from @stremersch2024how
+
+## ⚠️ IP and HARKING [^s8]
+
+- IP is messy: Shield is Human-AI collaboration!
+- Researcher obligation [@blanchardNewToolsNew2025]
+- What does it mean to do preliminary analysis with AI? (e.g. for HARKING)
+
+> Hybrid is the key!
+
+[^s1]: Sources: @stremersch2024how
+[^s0]: Sources: @stremersch2024how
+[^s1a]: Sources: @stremersch2024how; @lewis2020rag
+[^s1b]: Sources: @stremersch2024how; @meincke2024using
+[^s1c]: Sources: @stremersch2024how; @arora2025ai
+[^s1d]: Sources: @stremersch2024how; @willisonAgenticPatterns
+[^s2]: Sources: @stremersch2024how; @willisonAgenticPatterns
+[^s3]: Sources: @stremersch2024how; @lewis2020rag
+[^s4]: Sources: @stremersch2024how; @arora2025ai
+[^s5]: Sources: @girotra2023ideas
+[^s6]: Sources: @brandUsingGPTMarket2023b; @liFrontiersDeterminingValidity2024
+[^s7]: Sources: @arora2025ai; @willisonAgenticPatterns
+[^s8]: Sources: @stremersch2024how; @blanchardNewToolsNew2025; @linSixFallaciesSubstituting2025; @arora2025ai
+
+## References
+
+::: {#refs}
+
+:::

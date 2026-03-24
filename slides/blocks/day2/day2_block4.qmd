@@ -1,6 +1,6 @@
 ---
-title: "Day 2 - Block 4"
 subtitle: "Data Analysis & Coding 1"
+title: "Day 2 - Block 4"
 format:
   revealjs:
     footer: "TI Workshop | D2 B4"

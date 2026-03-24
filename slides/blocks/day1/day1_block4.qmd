@@ -1,6 +1,6 @@
 ---
-title: "Day 1 - Block 4"
-subtitle: "Tools 1"
+title: "Tools 1"
+subtitle: "Day 1 - Block 4"
 format:
   revealjs:
     footer: "TI Workshop | D1 B4"
