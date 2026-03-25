@@ -1,94 +1,195 @@
 ---
-subtitle: "Data Analysis & Coding 2"
-title: "Day 2 - Block 5"
+title: "Research Workflows"
+subtitle: "Day 2 - Block 5"
 format:
   revealjs:
     footer: "TI Workshop | D2 B5"
+    scrollable: true
+    bibliography:
+      - ../../../resources/workshop-citations.bib
+      - ../../assets/references.bib
+    embed-resources: true
 ---
 
-## Objective
+## Workflow first [^s1]
 
-- Add reliability controls to analysis agents
-- Balance speed, cost, and reproducibility
-- Stress one failure pathway
+- Research needs repeatable systems
+- Not just better prompts
+- Team reliability beats solo speed
 
-## Inputs
+```{=html}
+<div style="border:1px dashed #999; padding:0.7em; background:#fafafa; font-size:0.8em; margin-top:0.6em;">
+<strong>PLACEHOLDER:</strong> add one visual for "solo vs team workflow"<br>
+<code>slides/assets/placeholders/d2b5_workflow_compare.png</code>
+</div>
+```
 
-- Existing workflow from D2B4
-- Reliability policy template
-- Logging schema (stage/attempt/latency)
-
-## Reliability control loop
+## Issue -> PR loop [^s2]
 
 ```{mermaid}
 flowchart LR
-  A[Run stage] --> B{Timeout?}
-  B -->|No| C[Accept]
-  B -->|Yes| D[Retry budget check]
-  D -->|left| E[Backoff + rerun]
-  E --> B
-  D -->|empty| F[Fallback output]
-  F --> G[Human review flag]
+  I[GitHub issue] --> A[Agent branch work]
+  A --> T[Tests and evidence]
+  T --> P[Pull request]
+  P --> H[Human review]
+  H --> M[Merge or changes requested]
 ```
 
-## Efficiency guardrails (from prior workshop)
+- Issue defines intent
+- PR shows diff and evidence
+- Review is mandatory gate
 
-**DO**
-- Right-size models for task complexity
-- Use efficient hardware and precision
-- Prefer batching and caching when possible
+## Using Github
 
-**DON'T**
-- Use largest model by default
-- Use reasoning models for simple tasks
-- Generate large outputs without purpose
+Embrace the role of an architect
 
-## Batching and caching
+1) Write Github Issues
+2) Hand Issue to an AI agent
+3) Review their proposal (Pull request)
 
-- Batch non-urgent workloads
-- Cache deterministic intermediate results
-- Reuse embeddings/retrieval results across runs
+> This is integrated with Github; Hence save!
 
-## Hands-on
+## An Issue
 
-- Add timeout/retry/fallback policy
-- Run one failure injection
-- Capture logs: stage, attempt, latency, fallback reason
+```md
+Title: Add verification checklist to E6 page
 
-## Deliverable
+Why
+- Groups skip verification notes
+- Review discussion gets uneven
 
-- Reliability-enhanced workflow spec
-- One injected failure test result
-- One log excerpt with diagnosis
+Done when
+- E6 page shows 3-step checklist
+- rubric mentions verification note
+- page builds without errors
+```
 
-## Timebox
+## Create issue with `gh`
 
-- 20 min lecture input
-- 30 min group build
-- 10 min debrief
+```bash
+gh issue create \
+  --title "Add verification checklist to E6 page" \
+  --body-file issue.md
+```
 
-## Submission link
+## Fresh session handoff
 
-- `/docs/live-exercises?exercise=MICRO_D2B5`
+```text
+Read GitHub issue #17 in this repo.
+Create a branch, implement the change,
+run relevant checks, and open a PR.
+Use the issue as the source of truth.
+```
 
-## Evaluation rubric
+## Handoff loop demo
 
-- Control-loop completeness
-- Failure handling transparency
-- Cost-speed tradeoff justification
+```{=html}
+<video controls preload="metadata" style="width:100%; max-height:72vh; border:1px solid #ccc; border-radius:8px; background:#000;">
+  <source src="../../assets/videos/d2b5_hl.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+```
 
-## Extension task (optional)
+## {background-video-loop="../../assets/videos/pr.mp4"}
 
-- Add second fallback strategy
-- Compare latency/cost outcomes
 
-## Resource anchors
 
-- R004, R018, R023
-- R027, R028, R040
+## {background-video-loop="../../assets/videos/hl.mp4"}
 
-## Debrief
 
-- What failed first?
-- Which safeguard helped most?
-- Which simplification gives biggest gain?
+## Voice capture
+
+```{=html}
+<div style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size:0.83em;">
+  <div style="border:2px solid #1f4b99; border-radius:8px; padding:0.7em; background:#f3f7ff;">
+    <strong>Option A</strong><br>
+    handy.computer for dictation
+  </div>
+  <div style="border:2px solid #995c1f; border-radius:8px; padding:0.7em; background:#fff8f0;">
+    <strong>Option B</strong><br>
+    aquavoice.com for dictation
+  </div>
+</div>
+```
+
+```{=html}
+<div style="margin-top:0.7em; border:1px dashed #999; padding:0.7em; background:#fafafa; font-size:0.8em;">
+<strong>PLACEHOLDER:</strong> add website screenshots and one transcript clip<br>
+<code>slides/assets/placeholders/d2b5_handy.png</code><br>
+<code>slides/assets/placeholders/d2b5_aquavoice.png</code><br>
+<code>slides/assets/placeholders/d2b5_voice_raw.txt</code>
+</div>
+```
+
+## Transcript -> notes [^s3]
+
+```{mermaid}
+flowchart LR
+  V[Voice transcript] --> L[LLM post-process prompt]
+  L --> N[Structured notes]
+  N --> I[Issue drafts]
+  N --> R[Rubric feedback]
+```
+
+- Keep raw transcript attached
+- Add confidence and uncertainty
+- Human checks before sending
+
+## Feedback example
+
+```text
+Raw voice: "Group 3 has a clear idea, but identification is weak. Add robustness and cite one contrary result."
+
+Post-processed note:
+- Strength: clear research question
+- Gap: weak identification strategy
+- Action 1: add one robustness check
+- Action 2: add one contradictory source
+- Priority: high
+```
+
+```{=html}
+<div style="border:1px dashed #999; padding:0.6em; background:#fafafa; font-size:0.8em; margin-top:0.5em;">
+<strong>PLACEHOLDER:</strong> add assignment feedback screenshot<br>
+<code>slides/assets/placeholders/d2b5_feedback_note.png</code>
+</div>
+```
+
+## Team safety rules [^s4]
+
+- No merge without review
+- Require test evidence in PR
+- Keep rollback instructions ready
+
+```{=html}
+<div style="margin-top:0.6em; border:1px solid #ddd; border-radius:8px; padding:0.7em; background:#f8fbff; font-size:0.82em;">
+<strong>Policy prompt:</strong> Where is human review mandatory in your workflow?
+</div>
+```
+
+## Runbook output [^s5]
+
+- Terminal layout and roles
+- Voice-to-notes protocol
+- Issue and PR checklist
+
+## PR checklist
+
+- Link issue in PR body
+- Include test evidence
+- State human review gate
+
+```{=html}
+<div style="font-size:0.65em; opacity:0.85; margin-top:0.8em;">
+[^s1]: Sources: @nber:2024; @stremersch2024how<br>
+[^s2]: Sources: @willisonAgenticPatterns; @opencodeDocs; @yao2022react<br>
+[^s3]: Sources: @anthropicContextEngineering2025; @blanchardNewToolsNew2025; @ragSkillMcpRlm<br>
+[^s4]: Sources: @willisonAgenticPatterns; @metr:2025<br>
+[^s5]: Sources: @opencodeDocs; @stremersch2024how
+</div>
+```
+
+## References
+
+::: {#refs}
+:::

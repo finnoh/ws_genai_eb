@@ -1,89 +1,158 @@
 ---
-subtitle: "Data Analysis & Coding 1"
-title: "Day 2 - Block 4"
+title: "Rigorous Analysis with AI Agents"
+subtitle: "Day 2 - Block 4"
 format:
   revealjs:
     footer: "TI Workshop | D2 B4"
+    scrollable: true
+    bibliography:
+      - ../../../resources/workshop-citations.bib
+      - ../../assets/references.bib
+    embed-resources: true
 ---
 
-## Objective
+## AI is fuzzy, code is not
 
-- Design an orchestrated analysis workflow
-- Define tool and memory contracts
-- Submit E5 architecture artifact
+<blockquote class="twitter-tweet" data-dnt="true" align="center"><p lang="en" dir="ltr">The hottest new programming language is English</p>&mdash; Andrej Karpathy (@karpathy) <a href="https://twitter.com/karpathy/status/1617979122625712128?ref_src=twsrc%5Etfw">January 24, 2023</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-## Inputs
 
-- One analysis question
-- Data schema and constraints
-- Tool/memory contract template
+## Tips
 
-## API-first scaffold
+Open source is powerful
+
+> AI can edit the code of the tool!
+
+. . .
+
+Get comfortable with markdown
+
+> Language that AI uses!
+
+. . .
+
+Get comfortable in the terminal
+
+> simple, scriptable!
+
+## Unit-tests
 
 ```python
-# assisted by Cursor AI
 
-def run_analysis_task(data, task_spec):
-    response = client.chat.completions.create(
-        model="gpt-4",
-        messages=[
-            {"role": "system", "content": "You are a reproducible analysis assistant."},
-            {"role": "user", "content": f"Task: {task_spec}\nData summary: {data}"}
-        ],
-        temperature=0.2,
-    )
-    return response.choices[0].message.content
+import numpy as np
+
+def ols_beta(X, y):
+    ...
+
+def test_ols_function():
+    x = np.array([1, 2, 3, 4])
+    X = np.column_stack([np.ones(len(x)), x])
+    y = 2 + 3 * x  # true model
+
+    beta_hat = ols_beta(X, y)
+
+    assert np.allclose(beta_hat, [2.0, 3.0], atol=1e-10)
 ```
 
-## Workflow contract
+> Write these yourself or in separate AI session!
 
-- Owner per stage
-- Input/output schema per handoff
-- Escalation target on failure
-- Required logging fields
+## {background-iframe="https://docs.pytest.org/en/stable/#" interactive=true}
 
-## Test-first acceptance checklist
+## {background-iframe="https://lean-lang.org/" interactive=true}
 
-- Correctness check defined before generation
-- One edge case included
-- One residual risk recorded
-- Re-run steps documented
+## 
 
-## Hands-on (E5)
+```{mermaid}
+%%| fig-align: center
+flowchart LR
+  P[Prompt] --> C[AI writes code]
+  C --> R[Run code]
+  R --> T[Unit tests]
+  T -->|pass| K[Keep]
+  T -->|fail| F[Fix and rerun]
+  F --> C
+```
 
-- Architecture sketch + one contract + one fallback path
-- Submission: `/docs/live-exercises?exercise=E5`
+> Write code to solve tasks!
 
-## Deliverable
+## Example: Edit Excel with AI
 
-- Workflow architecture diagram
-- One stage contract with schema
-- One fallback and escalation path
+![[link](https://www.google.com/imgres?q=ms%20copilot%20excel&imgurl=https%3A%2F%2Fwww.i2e-llc.com%2Fwp-content%2Fuploads%2F2024%2F12%2FCopilot-for-Excel.png&imgrefurl=https%3A%2F%2Fwww.i2e-llc.com%2Fpd%2Fmicrosoft-copilot-for-excel%2F&docid=kVsGAFbTQ1iD0M&tbnid=kDWbWqc95zBKYM&vet=12ahUKEwi3nLX5gLmTAxUU0QIHHWV1A2oQnPAOegQIFxAB..i&w=1800&h=1200&hcb=2&ved=2ahUKEwi3nLX5gLmTAxUU0QIHHWV1A2oQnPAOegQIFxAB)](../../assets/images/copilot.png){width="60%"}
 
-## Timebox
+. . .
 
-- 20 min lecture input
-- 30 min group build
-- 10 min debrief
+```python
+import pandas as pd
 
-## Evaluation rubric
+df = pd.read_excel("raw_survey.xlsx", sheet_name="responses")
+df["age_bucket"] = pd.cut(df["age"], bins=[17, 29, 44, 65, 120])
+df.to_excel("processed_survey.xlsx", index=False)
+```
 
-- Contract clarity at handoffs
-- Reproducibility of workflow steps
-- Risk and escalation completeness
+## Example: Autoresearch
 
-## Extension task (optional)
+![[link](https://ykumar.me/blog/eclip-autoresearch/)](../../assets/images/autoresearch.png)
 
-- Add one monitoring metric
-- Add one rollback rule
+## Example: Autoresearch
 
-## Resource anchors
+![[link](https://github.com/karpathy/autoresearch)](../../assets/images/autoresearch2.png)
 
-- R004, R018, R023
-- R035, R044/R045
 
-## Debrief
+## Data privacy: hide data, expose metadata [^s6]
 
-- Which split paid off first?
-- What would falsify this architecture?
-- Where is mandatory human escalation?
+```{mermaid}
+flowchart LR
+  D[SPSS raw data] -->|hidden| X[No direct model access]
+  M[Metadata: columns labels scales types] --> A[Agent writes analysis code]
+  A --> H[Human runs code locally]
+  H --> O[Verified output]
+```
+
+- Share schema, not records
+- Agent drafts code safely
+- Human executes on secure machine
+
+## Specific modes for coding agent
+
+```json
+    "plan": {
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false,
+        "read": true,
+        "grep": true,
+        "glob": true
+      }
+    }
+```
+
+## Specific modes for coding agent
+
+```json
+"data": {
+      "tools": {
+        "write": true,
+        "edit": false,
+        "bash": false,
+        "read": true,
+        "grep": true,
+        "glob": true
+      }
+    }
+```
+
+## Restrict access of coding agent
+
+```json
+  read: {
+        "*": "allow",
+        "*.env": "ask",
+        "sensitive_*": "deny"
+      }
+```
+
+## References
+
+::: {#refs}
+:::
