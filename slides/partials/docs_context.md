@@ -1,11 +1,11 @@
 ## Context Pack: tool calling and agent orchestration
 
-Generated: 2026-03-23T17:12:03+00:00
+Generated: 2026-03-26T10:55:56+00:00
 
 Query terms: agent, calling, orchestration, tool
 
 ### OpenAI API Docs
-- Relevance score: 42
+- Relevance score: 41
 - Source: https://developers.openai.com/api/docs/
 - Suggested slide note: [agent] ... concepts Text generation Code generation Images and vision Audio and speech Structured output Function calling Responses API Agents Overview Build agents Agent Builder Node reference Safety in building agents Agents SDK Deploy in your product ChatKit Custom theming Widgets Actions Advanced integration Optimize Agent evals Trace grading Voice agents Tools Using tools Web searc ...
 

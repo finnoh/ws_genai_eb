@@ -33,7 +33,10 @@ if [[ -f "${SLIDES_DIR}/day2_advanced.pdf" ]]; then
   cp "${SLIDES_DIR}/day2_advanced.pdf" "${OUTPUT_DIR}/day2_advanced.pdf"
 fi
 
-while IFS= read -r block_qmd; do
+for block_qmd in \
+  "${SLIDES_DIR}/blocks/day1/day1_block"[1-6]".qmd" \
+  "${SLIDES_DIR}/blocks/day2/day2_block"[1-6]".qmd"; do
+  [[ -f "${block_qmd}" ]] || continue
   rel_path="${block_qmd#${SLIDES_DIR}/blocks/}"
   rel_no_ext="${rel_path%.qmd}"
   out_dir="${BLOCKS_OUTPUT_DIR}/$(dirname "${rel_no_ext}")"
@@ -50,6 +53,6 @@ while IFS= read -r block_qmd; do
   if [[ -f "${block_qmd%.qmd}.pdf" ]]; then
     cp "${block_qmd%.qmd}.pdf" "${BLOCKS_OUTPUT_DIR}/${rel_no_ext}.pdf"
   fi
-done < <(find "${SLIDES_DIR}/blocks" -name "*.qmd" | sort)
+done
 
 echo "Slides rendered to ${OUTPUT_DIR}"
