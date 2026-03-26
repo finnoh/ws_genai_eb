@@ -88,6 +88,8 @@ Zotero MCP:
 
 ## {background-video="../../assets/videos/zotero_moon_summary.mp4" background-size="contain" background-video-loop="true"}
 
+## {background-image="../../assets/images/literature_claude.png" background-size="contain"}
+
 ## ⚠️ Copyright 
 
 ```{=html}

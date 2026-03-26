@@ -21,6 +21,8 @@ flowchart LR
   D --> E[Idea Napkin]
 ```
 
+## {background-image="../../assets/images/ideation_star.png" background-size="contain"}
+
 ## Projects in ChatGPT / Claude
 
 We can define "projects" (folders) in ChatGPT / Claude

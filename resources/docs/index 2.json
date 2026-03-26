@@ -1,0 +1,54 @@
+[
+  {
+    "id": "D001",
+    "name": "OpenCode Docs",
+    "url": "https://opencode.ai/docs/",
+    "topic": "coding-agents",
+    "tags": "opencode,agent,ide",
+    "status": "active",
+    "parsed_title": "Intro | OpenCode",
+    "fetched_at": "2026-03-13T10:14:13+00:00",
+    "word_count": 1238,
+    "text_path": "resources/docs/text/d001-opencode-docs.txt",
+    "excerpt_path": "resources/docs/excerpts/d001-opencode-docs.md"
+  },
+  {
+    "id": "D002",
+    "name": "OpenClaw Docs",
+    "url": "https://docs.openclaw.ai/",
+    "topic": "agent-systems",
+    "tags": "openclaw,framework,orchestration",
+    "status": "active",
+    "parsed_title": "OpenClaw - OpenClaw",
+    "fetched_at": "2026-03-13T10:14:13+00:00",
+    "word_count": 674,
+    "text_path": "resources/docs/text/d002-openclaw-docs.txt",
+    "excerpt_path": "resources/docs/excerpts/d002-openclaw-docs.md"
+  },
+  {
+    "id": "D003",
+    "name": "Claude Platform Docs",
+    "url": "https://platform.claude.com/docs/en/home",
+    "topic": "api-platform",
+    "tags": "claude,anthropic,api",
+    "status": "active",
+    "parsed_title": "Documentation - Claude API Docs",
+    "fetched_at": "2026-03-13T10:14:13+00:00",
+    "word_count": 738,
+    "text_path": "resources/docs/text/d003-claude-platform-docs.txt",
+    "excerpt_path": "resources/docs/excerpts/d003-claude-platform-docs.md"
+  },
+  {
+    "id": "D004",
+    "name": "OpenAI API Docs",
+    "url": "https://developers.openai.com/api/docs/",
+    "topic": "api-platform",
+    "tags": "openai,api,tool-calling",
+    "status": "active",
+    "parsed_title": "OpenAI API Platform Documentation",
+    "fetched_at": "2026-03-13T10:14:13+00:00",
+    "word_count": 1314,
+    "text_path": "resources/docs/text/d004-openai-api-docs.txt",
+    "excerpt_path": "resources/docs/excerpts/d004-openai-api-docs.md"
+  }
+]

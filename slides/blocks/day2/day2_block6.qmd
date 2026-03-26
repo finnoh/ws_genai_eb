@@ -1,5 +1,5 @@
 ---
-title: "Writing & Valorization"
+title: "Writing & Syndication"
 subtitle: "Day 2 - Block 6"
 format:
   revealjs:
@@ -11,20 +11,11 @@ format:
     embed-resources: true
 ---
 
-## Good work first [^s1]
+## Thinking first {background-image="../../assets/images/notebook.jpg"}
 
-- Programming, writing, thinking
-- AI helps across all three
-- But you still own quality
 
-```{=html}
-<div style="margin-top:0.6em; border:1px dashed #999; padding:0.7em; background:#fafafa; font-size:0.8em;">
-<strong>PLACEHOLDER:</strong> add one visual for internal -> core -> broad work<br>
-<code>slides/assets/placeholders/d2b6_work_layers.png</code>
-</div>
-```
 
-## Bring thinking online [^s2]
+## Bring thinking online
 
 ```{mermaid}
 flowchart LR
@@ -33,36 +24,7 @@ flowchart LR
   M --> A[AI-assisted structuring]
 ```
 
-- Slow down before generation
-- Keep messy notes first
-- Digitize without losing ownership
-
-## Write with AI, not by AI [^s3]
-
-- Pure AI writing is weak
-- Generic tone hurts quality
-- Human argument still matters
-
-```{=html}
-<div style="margin-top:0.6em; border:1px dashed #999; padding:0.7em; background:#fafafa; font-size:0.8em;">
-<strong>PLACEHOLDER:</strong> add bad-vs-revised paragraph comparison<br>
-<code>slides/assets/placeholders/d2b6_ai_vs_human_paragraph.png</code>
-</div>
-```
-
-## Use an IDE [^s4]
-
-```{mermaid}
-flowchart LR
-  T[Markdown or LaTeX] --> R[Render with Quarto or Pandoc]
-  R --> D[docx pdf html slides]
-```
-
-- Text files are inspectable
-- Version control works naturally
-- Render to many formats
-
-## Bullet -> draft -> edit [^s5]
+## Bullets ➡️ Draft ➡️ Edit
 
 ```text
 1. Write bullet outline
@@ -70,23 +32,23 @@ flowchart LR
 3. Edit it yourself
 ```
 
-- Best simple workflow
-- Structure stays human-owned
-- Revision improves specificity
+## Voice is powerful
 
-## Voice -> paragraph [^s6]
 
-```{mermaid}
-flowchart LR
-  V[Voice stream of thought] --> T[Transcript]
-  T --> L[LLM cleanup]
-  L --> P[Paragraph draft]
-  P --> H[Human review]
-```
+Speech-to-text has gotten really good
 
-- Dictate when ideas move fast
-- Review before reuse
-- Useful for rough drafts
+- runs locally & fast (different languages, conversations, ...)
+- can post-process transcripts with LLM (e.g. email formatting)
+- 2x faster than typing
+
+. . . 
+
+(and yes, you can also speak with the AI)
+
+## {background-iframe="https://handy.computer/" interactive=true}
+
+
+## Speak your draft
 
 ```text
 Voice: "Main point: firms adopt AI unevenly. We should connect productivity gains to substitution risk and say evidence is still mixed."
@@ -94,65 +56,38 @@ Voice: "Main point: firms adopt AI unevenly. We should connect productivity gain
 AI draft: "AI adoption appears uneven across firms, with productivity gains coexisting alongside substitution risks, while current evidence remains mixed."
 ```
 
+## {background-image="../../assets/images/recordings.png" background-size="contain"}
+
+
+## {background-image="../../assets/images/feedback.png" background-size="contain"}
+
+
 ## Journal policies
+
+<!-- TODO: update this with top marketing, finance, econ, ectr journal -->
 
 - Disclosure rules differ
 - Check journal guidance first
 - Keep human accountability explicit
 
-```{=html}
-<div style="margin-top:0.6em; border:1px dashed #999; padding:0.7em; background:#fafafa; font-size:0.8em;">
-<strong>PLACEHOLDER:</strong> add screenshot collage of AI-writing policies<br>
-<code>slides/assets/placeholders/d2b6_journal_policies.png</code>
-</div>
-```
 
-## Feedback -> TODOs [^s7]
-
-```text
-Voice note or PDF annotation
--> AI extracts concrete tasks
--> TODO comments in markdown / LaTeX / docx
-```
-
-- Feedback becomes actionable
-- Keep raw comments attached
-- Review before applying edits
-
-## One project, many outputs [^s8]
+## Syndication of research
 
 ```{mermaid}
-flowchart LR
-  P[Research project] --> W[Website]
-  P --> S[Slide deck]
-  P --> B[Brief or memo]
-  P --> L[LinkedIn post]
-  P --> O[Podcast or app]
+%%| fig-align: center
+flowchart TD
+  P[Paper] --> W[Website]
+  P --> S[Slides]
+  P --> L[LinkedIn]
+  P --> O[Podcast]
+  P --> K[...]
 ```
 
-- Same core ideas
-- Different audiences
-- AI plus code makes this easier
+## {background-video="../../assets/videos/companion.mp4" background-size="contain"}
 
-## E7 + E8 handoff [^s9]
 
-- Score two outputs
-- Draft adoption memo
-- Write personal verification protocol
+## {background-video="../../assets/videos/companion2.mp4" background-size="contain"}
 
-```{=html}
-<div style="font-size:0.65em; opacity:0.85; margin-top:0.8em;">
-[^s1]: Sources: @stremersch2024how; @nber:2024; @willisonAgenticPatterns<br>
-[^s2]: Sources: @willisonAgenticPatterns; @anthropicContextEngineering2025; @ragSkillMcpRlm<br>
-[^s3]: Sources: @blanchardNewToolsNew2025; @linSixFallaciesSubstituting2025<br>
-[^s4]: Sources: @opencodeDocs; @claudePlatformDocs; @openaiApiDocs; @willisonAgenticPatterns<br>
-[^s5]: Sources: @blanchardNewToolsNew2025; @anthropicContextEngineering2025; @stremersch2024how<br>
-[^s6]: Sources: @nber:2024; @stremersch2024how<br>
-[^s7]: Sources: @anthropicContextEngineering2025; @blanchardNewToolsNew2025; @ragSkillMcpRlm<br>
-[^s8]: Sources: @stremersch2024how; @nber:2024; @opencodeDocs<br>
-[^s9]: Sources: @blanchardNewToolsNew2025; @stremersch2024how
-</div>
-```
 
 ## References
 

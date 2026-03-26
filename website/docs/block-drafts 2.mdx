@@ -1,0 +1,145 @@
+---
+sidebar_position: 4
+---
+
+import DeckLink from '@site/src/components/DeckLink';
+
+# Block Drafts
+
+These are the working drafts for each scheduled teaching block, aligned to `AGENTS.md`.
+
+If a deck says "not found", render slides first from repo root:
+
+```bash
+./scripts/render_slides.sh
+```
+
+Shared defaults for every block:
+
+- Timebox: 20/30/10
+- Evaluation: usefulness, correctness, reproducibility, risk awareness
+- Debrief prompts: failed assumption, falsification evidence, hallucination risk, non-delegable step
+
+## Day 1 - Foundations
+
+### Block 1 - Orientation + baseline setup
+
+- Deck: <DeckLink path="/slides/blocks/day1/day1_b1_orientation.html" label="D1 B1 deck" />
+- Objective: align workflow norms and verify setup
+- Inputs: workshop repo, tool access, team roles
+- Deliverable: baseline prompt output + blocker note
+- Submission link: [Live Exercises](/docs/live-exercises)
+- Common failure modes: missing access, unclear role ownership, no saved baseline
+- Extension task: define team verification checklist
+
+### Block 2 - LLM and agent fundamentals (E1)
+
+- Deck: <DeckLink path="/slides/blocks/day1/day1_b2_llm_fundamentals.html" label="D1 B2 deck" />
+- Objective: distinguish model behavior from agent behavior
+- Inputs: weak prompt sample, prompt anatomy template
+- Deliverable: labeled prompt anatomy + rewritten prompt
+- Submission link: [/docs/live-exercises?exercise=E1](/docs/live-exercises?exercise=E1)
+- Common failure modes: vague task scope, missing constraints, no validation step
+- Extension task: rewrite prompt for second audience
+
+### Block 3 - Prompting and context engineering I
+
+- Deck: <DeckLink path="/slides/blocks/day1/day1_b3_prompting_i.html" label="D1 B3 deck" />
+- Objective: produce reliable prompt structure via A/B testing
+- Inputs: weak prompt set, output target format
+- Deliverable: A/B comparison with one selected prompt
+- Submission link: [Live Exercises](/docs/live-exercises)
+- Common failure modes: test conditions changed, constraints omitted, weak output format
+- Extension task: add self-check step to winning prompt
+
+### Block 4 - Prompting and context engineering II (E2)
+
+- Deck: <DeckLink path="/slides/blocks/day1/day1_b4_prompting_ii.html" label="D1 B4 deck" />
+- Objective: apply decomposition and rubric-first prompting
+- Inputs: E2 rubric, decomposition checklist, sample task
+- Deliverable: final prompt + scored output rationale
+- Submission link: [/docs/live-exercises?exercise=E2](/docs/live-exercises?exercise=E2)
+- Common failure modes: overlong prompts, missing rubric traceability, no error analysis
+- Extension task: create reusable rubric template
+
+### Block 5 - Tools, MCP, and coding agents (E3)
+
+- Deck: <DeckLink path="/slides/blocks/day1/day1_b5_tools_mcp_ide.html" label="D1 B5 deck" />
+- Objective: complete one verified coding-agent sprint
+- Inputs: small bug/refactor issue, IDE agent, test command
+- Deliverable: patch diff + verification trace
+- Submission link: [/docs/live-exercises?exercise=E3](/docs/live-exercises?exercise=E3)
+- Common failure modes: no reproduction step, skipped tests, unverified agent claims
+- Extension task: add fallback plan for failing tools
+
+### Block 6 - AI-assisted writing and safety (E4)
+
+- Deck: <DeckLink path="/slides/blocks/day1/day1_b6_writing_safety.html" label="D1 B6 deck" />
+- Objective: draft claim-evidence paragraph with safeguards
+- Inputs: source set, citation workflow, risk checklist
+- Deliverable: revised paragraph + citation checks + disclosure note
+- Submission link: [/docs/live-exercises?exercise=E4](/docs/live-exercises?exercise=E4)
+- Common failure modes: unsupported claims, weak citations, missing disclosure language
+- Extension task: add uncertainty statement per claim
+
+## Day 2 - Advanced Practice
+
+### Block 1 - Recap + reliability mindset
+
+- Deck: <DeckLink path="/slides/blocks/day2/day2_b1_recap_reliability.html" label="D2 B1 deck" />
+- Objective: calibrate confidence against verification evidence
+- Inputs: day-1 artifacts, reliability checklist
+- Deliverable: audited artifact with improved verification steps
+- Submission link: [Live Exercises](/docs/live-exercises)
+- Common failure modes: confidence inflation, weak evidence logs, no reproducible trace
+- Extension task: define minimum reliability bar by task type
+
+### Block 2 - Agent systems and orchestration I
+
+- Deck: <DeckLink path="/slides/blocks/day2/day2_b2_orchestration_i.html" label="D2 B2 deck" />
+- Objective: design minimal orchestrated workflow with contracts
+- Inputs: architecture template, tool/memory contract sheet
+- Deliverable: workflow sketch with explicit handoffs
+- Submission link: [Live Exercises](/docs/live-exercises)
+- Common failure modes: overengineering, undefined interfaces, unclear human escalation
+- Extension task: estimate cost and latency budget
+
+### Block 3 - Orchestration II with reliability controls (E5)
+
+- Deck: <DeckLink path="/slides/blocks/day2/day2_b3_orchestration_ii.html" label="D2 B3 deck" />
+- Objective: add timeout/retry/fallback behavior and test failure path
+- Inputs: block-2 workflow, failure taxonomy, logging pattern
+- Deliverable: failure-aware architecture + injected failure trace
+- Submission link: [/docs/live-exercises?exercise=E5](/docs/live-exercises?exercise=E5)
+- Common failure modes: silent retries, no fallback criteria, missing human override
+- Extension task: red-team one hidden dependency
+
+### Block 4 - Research pipeline design with agents I
+
+- Deck: <DeckLink path="/slides/blocks/day2/day2_b4_pipeline_i.html" label="D2 B4 deck" />
+- Objective: map ideation-to-protocol pipeline with role boundaries
+- Inputs: pipeline canvas, validity checklist
+- Deliverable: mini pipeline with stage-level ownership
+- Submission link: [Live Exercises](/docs/live-exercises)
+- Common failure modes: blurred boundaries, skipped validity checks, non-reproducible steps
+- Extension task: add preregistration checkpoints
+
+### Block 5 - Research pipeline design with agents II (E6)
+
+- Deck: <DeckLink path="/slides/blocks/day2/day2_b5_pipeline_ii.html" label="D2 B5 deck" />
+- Objective: generate pilot stimuli with caveats and limits
+- Inputs: synthetic respondent prompt, protocol template
+- Deliverable: pilot stimuli set + limitations note
+- Submission link: [/docs/live-exercises?exercise=E6](/docs/live-exercises?exercise=E6)
+- Common failure modes: unrealistic stimuli, replacement fallacies, weak limitation statements
+- Extension task: design small human validation sample
+
+### Block 6 - Evaluation, adoption, and resilience (E7/E8)
+
+- Deck: <DeckLink path="/slides/blocks/day2/day2_b6_evaluation_adoption_resilience.html" label="D2 B6 deck" />
+- Objective: evaluate outputs and make adoption recommendation
+- Inputs: scoring rubric, adoption memo structure, cost/risk sheet
+- Deliverable: scored outputs + memo + personal resilience protocol
+- Submission links: [/docs/live-exercises?exercise=E7](/docs/live-exercises?exercise=E7), [/docs/live-exercises?exercise=E8](/docs/live-exercises?exercise=E8)
+- Common failure modes: judge over-trust, unclear governance, no verification protocol
+- Extension task: compare local-vs-API deployment assumptions
