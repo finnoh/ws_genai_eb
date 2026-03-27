@@ -9,52 +9,74 @@ Scale for all criteria: 0 (missing), 1 (weak), 2 (acceptable), 3 (strong).
 - Reproducibility: can another group rerun it?
 - Risk awareness: are key risks identified and mitigated?
 
-## E1 - Prompt anatomy lab
-- Problem framing clarity
-- Correct context/tool/memory classification
-- Quality of improved prompt
-- Verification method stated
-- Source-anchored design choice (R031/R032/R033/R034/R005/R030)
+## E1 - Jan setup and first programmable task
 
-## E2 - Prompt rewrite challenge
-- Constraint quality and specificity
-- A/B test design and fairness
-- Failure analysis depth
-- Iteration quality of final prompt
-- Confidence and uncertainty quality
+- Environment setup completeness
+- Correct execution evidence
+- Quality of Jan customization note
 
-## E3 - IDE coding sprint
-- Task decomposition and prompting
-- Correctness of code change
-- Verification quality (tests/manual checks)
-- Confidence and uncertainty quality
+## E2 - LangChain prompt anatomy in code
 
-## E4 - Draft and verify paragraph
-- Argument clarity and structure
-- Citation support quality
-- Risk checklist completeness
-- Verification method stated
+- Prompt contract clarity
+- Structured output validity
+- Test-case coverage quality
 
-## E5 - Design an agent workflow
-- Workflow decomposition quality
-- Tool and memory contract clarity
-- Reliability safeguards
-- Confidence and uncertainty quality
+## E3 - Context pipeline with retrieval
 
-## E6 - Build a mini pipeline
-- Pipeline completeness
-- Stimuli/protocol quality
-- Feasibility and validation plan
-- Confidence and uncertainty quality
+- Retrieval relevance
+- A/B comparison fairness
+- Failure analysis specificity
 
-## E7 - Evaluate two outputs
-- Rubric application consistency
-- Quality of comparative reasoning
-- Actionability of adoption memo
-- Confidence and uncertainty quality
+## E4 - Tool-calling mini-agent
 
-## E8 - Resilience protocol plan
-- Cost/risk identification quality
-- Verification protocol specificity
-- Realism of personal plan
-- Explicit non-delegation boundaries
+- Tool interface design quality
+- Correct tool selection behavior
+- Output verification quality
+
+## E5 - Build and connect a tiny MCP tool
+
+- Tool implementation clarity
+- Agent wiring quality
+- Sanity-check quality
+
+## E6 - Memory behavior: session + retrieval
+
+- Memory policy quality
+- Correct short-term behavior
+- Correct long-term retrieval behavior
+
+## E7 - Ideation project + idea napkin
+
+- Domain selection logic
+- Idea napkin clarity
+- IP/HARKING risk awareness
+
+## E8 - AI data-collection design memo
+
+- Mode-choice justification (A/B/C)
+- Threat model clarity
+- Verification feasibility
+
+## E9 - Evidence paragraph + claim ledger
+
+- Claim-evidence traceability
+- Source reliability and paywall logging
+- Gap disclosure quality
+
+## E10 - Reproducible analysis loop in VS Code
+
+- Prompt-code-test loop completeness
+- Verification rigor
+- Keep/reject decision quality
+
+## E11 - Issue -> agent -> PR workflow drill
+
+- Issue scope clarity
+- Handoff prompt quality
+- PR review rigor
+
+## E12 - Writing + syndication sprint
+
+- Brief clarity and structure
+- Syndication plan specificity
+- Disclosure quality

@@ -18,49 +18,74 @@
 - `uncertainty_note`
 - `verification_method`
 
+## Environment defaults
+
+- Day 1 default: Jupyter + LangChain + Jan support.
+- Day 2 default: VS Code + OpenCode; ChatGPT allowed for ideation/evaluation tasks.
+- Notebook fallback: use `.py` with same logic and submit command/output trace.
+
 ## Day 1
 
-### E1 - Prompt anatomy lab
-- Start from one weak prompt.
-- Label missing context, tools, memory.
-- Submit one improved prompt and why decomposition is needed (or not needed).
+### E1 - Jan setup and first programmable task
 
-### E2 - Prompt rewrite challenge
-- Rewrite one prompt with constraints.
-- Run A/B test (old vs new).
-- Submit failure analysis and final prompt.
-- Include confidence score and uncertainty note.
+- Set up Jan and run one tiny task end-to-end.
+- Submit execution evidence + one customization choice.
 
-### E3 - IDE coding sprint
-- Use IDE agent for one task.
-- Complete one bugfix or refactor.
-- Submit trace and verification evidence.
-- Include confidence score and uncertainty note.
+### E2 - LangChain prompt anatomy in code
 
-### E4 - Draft and verify paragraph
-- Draft one research paragraph with AI.
-- Add citation support and checks.
-- Submit paragraph plus risk checklist.
+- Build one prompt template in code.
+- Enforce structured output.
+- Run 2 test inputs.
+
+### E3 - Context pipeline with retrieval
+
+- Build retrieve -> compress -> inject flow.
+- Compare baseline vs retrieval-enhanced answer.
+
+### E4 - Tool-calling mini-agent
+
+- Implement at least two tools.
+- Run one multi-step query and submit tool trace.
+
+### E5 - Build and connect a tiny MCP tool
+
+- Implement one tiny tool service.
+- Wire to agent workflow and submit one successful call trace.
+
+### E6 - Memory behavior: session + retrieval
+
+- Define memory policy.
+- Show short-term and long-term memory behavior in a short trace.
 
 ## Day 2
 
-### E5 - Design an agent workflow
-- Pick one research task.
-- Decide single-agent vs multi-agent and justify.
-- Define workflow steps, tool boundary, and fallback.
-- Submit architecture sketch + verification plan.
+### E7 - Ideation project + idea napkin
 
-### E6 - Build a mini pipeline
-- Build a small research pipeline.
-- Generate pilot stimuli.
-- Submit protocol draft with one explicit limitation.
+- Build one idea napkin from project-based ideation.
+- Include one domain scoring rationale and one risk note.
 
-### E7 - Evaluate two outputs
-- Compare two agent outputs.
-- Score with provided rubric.
-- Submit short adoption memo with one non-delegation boundary.
+### E8 - AI data-collection design memo
 
-### E8 - Resilience protocol plan
-- Estimate cost and risks.
-- Define personal verification protocol.
-- Submit resilience plan.
+- Choose A/B/C mode.
+- Submit one-page protocol with validation plan.
+
+### E9 - Evidence paragraph + claim ledger
+
+- Produce one paragraph grounded in sources.
+- Submit claim-evidence ledger with any unresolved gap.
+
+### E10 - Reproducible analysis loop in VS Code
+
+- Execute prompt -> code -> run -> test -> fix.
+- Submit verification evidence and one keep/reject decision.
+
+### E11 - Issue -> agent -> PR workflow drill
+
+- Draft one scoped issue.
+- Create one agent handoff prompt.
+- Submit PR review verdict using checklist.
+
+### E12 - Writing + syndication sprint
+
+- Draft a short brief from notes or voice transcript.
+- Add a 3-channel syndication plan and disclosure statement.

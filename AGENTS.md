@@ -43,106 +43,73 @@ Each block page should use this exact structure:
 
 ### Day 1 - Building AI Agents (basic to intermediate)
 
-#### Day 1 Block 1: Intro
+#### Day 1 Block 1: Course Kickoff - Why AI Agents Now
 
-- Lecture (20): course setup and admin, motivation and relevance of AI agents in research
-- Hands-on (30): install and get familiar with Jan; explore how an agent works
+- Lecture (20): workshop framing, motivation from current science use-cases, course flow, and introduction of Jan as the course tutor
+- Hands-on (30): install Jan (`ti-student-agent-pack`), explore project structure, run first interactions, and customize behavior
 
 #### Day 1 Block 2: LLMs and AI Agents
 
-monitor token usage and context window, running LLMs locally, sustainability?
-
-- Lecture (20): next-token prediction, alignment overview, what counts as an agent, LM formula and fine-tuning
-- Hands-on (30): prompt anatomy lab, classify context/tool/memory needs (E1)
+- Lecture (20): next-token prediction objective, pre-training vs post-training, and how tool-calls/memory turn LLMs into agent loops
+- Hands-on (30): prompt anatomy lab (E1) and classify tasks by context/tool/memory requirements
 
 #### Day 1 Block 3: Context
 
-- Lecture (20): instruction hierarchy, solution space narrowing, agents collecting their own context (web, docs, codebases, web-search, browser use,...), context window fatigue, AGENTS.md customization
-- Hands-on (30): Compressing context, parsing context to markdown, codebases as context, preventing files from entering context
+- Lecture (20): context engineering, plan mode, retrieval-oriented project hygiene (names, folder indexes), boundaries (privacy/copyright), token economics, and structured outputs
+- Hands-on (30): rewrite messy context into agent-ready markdown, add file/index conventions, and define a strict output schema
 
 #### Day 1 Block 4: Tools 1
 
-Introduce MCPs and Skills for coding agents
-
-- Lecture (20): Claude cowork, Gallery of usefull tools, chrome dev tools, MCP basics, Skills
-- Hands-on (30): Install agent skills, search arxiv, editing excel w/o Microsoft permission (via python excel modules ...)
+- Lecture (20): tools-as-tokens/action-observation loop, Skills (`SKILL.md` + scripts), MCP basics, Skills vs MCP framing, and tool gallery
+- Hands-on (30): install/use selected skills (e.g., arXiv/xlsx), inspect one real skill package, and execute one tool-backed workflow
 
 #### Day 1 Block 5: Tools 2
 
-Build a custom MCP and use it with LangChain?
-
-- Lecture (20): advanced tool use, agent teams (orchestrator, recent distributed systems paper), parallel agents
-- Hands-on (30): build an agent team with LangChain, build your own MCP server and let an agent work with it (FastAPI locally, something easy but "econ" like, for example and ARIMA simulator, a NPV calculator, a dice roll, ...)
+- Lecture (20): shift from tool user to tool builder, good `SKILL.md` design patterns, script-first skill design, and minimal MCP server architecture
+- Hands-on (30): build a simple FastMCP server (e.g., weather/NPV toy tool), wire it into an agent, and test end-to-end calls
 
 #### Day 1 Block 6: Memory
 
-TODO: Check how memory is relevant?
-Show how memory can help for coding agents; build small RAG system
+- Lecture (20): short-term context vs long-term memory, memory policy via `AGENTS.md` + `MEMORY.md`, memory compression/hierarchy, and RAG basics (embed/retrieve/inject)
+- Hands-on (30): implement a memory policy, log durable facts, and prototype a small RAG retrieval flow
 
-- Lecture (20): context vs memory, MEMORY.md (openclaw), RAG systems
-- Hands-on (30): AGENTS.md instruction for populating memory, build a small RAG system
+### Day 2 - AI Agents in Research (intermediate to advanced)
 
-### Day 2 - AI agents in Research (intermediate to advanced)
+#### Day 2 Block 1: Ideation with AI Agents
 
-#### Day 2 Block 1: Ideation and idea validation
+- Lecture (20): Stremersch-style pipeline (explore -> select -> immerse -> question -> idea napkin), project-based ideation setup, and IP/HARKING caveats
+- Hands-on (30): create an ideation project, score candidate domains, and draft one idea napkin for a selected domain
 
-Follow the Stremersch 2024 paper and walk people through pipeline with AI support
+#### Day 2 Block 2: AI in Data Collection
 
-- Lecture (20): overview of Stremersch 2024 paper; idea that AI agents can help
-- Hands-on (30): ChatGPT projects, ideation start with domain mapping (deep research), maturation, validation, positioning,...
+- Lecture (20): DGP-instrument framing (natural/same, natural/new, AI DGP), synthetic respondent workflow, and validity risks with mixed empirical evidence
+- Hands-on (30): choose collection mode A/B/C and produce E6 design memo with one explicit verification plan
+- Debrief (10): compare mode choices and threat-mitigation strategies
 
-#### Day 2 Block 2: Data collection (design, synthetic respondents, ...)
+#### Day 2 Block 3: Literature Review
 
-Can we integrate directly with qualtrics for a study design; Construct a synthetic respondent dataset; Qualitative interviews?
+- Lecture (20): paywalls, hallucinated citations, false negatives, keyword vs semantic retrieval, and structured search workflows (web, Elicit, ResearchRabbit, arXiv/Zotero MCP)
+- Lecture emphasis: copyright-safe retrieval, paywall logging, and verifiable citation practice
+- Hands-on (30): produce one evidence paragraph plus claim-evidence ledger (claim/source/snippet/confidence/gap)
+- Debrief (10): verify unresolved gaps and disclosure quality
 
-- Lecture (20): 3-fold taxonomy for AI in data collection: (A) AI supporting human collection (stimuli/survey/interview guide), (B) AI enabling new human-data modes (scalable qualitative interviewing, role-players in negotiation/game-theory tasks), (C) AI as study subject (synthetic respondents, AI decision behavior)
-- Lecture emphasis: validity risks by mode - framing bias/construct drift (A), interaction effects from persona/prompt settings (B), external validity/model-population mismatch (C)
-- Hands-on (30): choose A/B/C and build an E6 design choice memo with one verification plan
-- Debrief (10): compare mode choice and risk controls
+#### Day 2 Block 4: Rigorous Analysis with AI Agents
 
-#### Day 2 Block 3: Literature review and research
+- Lecture (20): reproducible AI coding loop (prompt -> code -> run -> test -> fix), unit-test-first habits, metadata-only data access, and tool-access restrictions
+- Hands-on (30): run one reproducible analysis/model workflow with explicit tests and verification note
+- Debrief (10): discuss assumptions, failures, and keep/reject decisions
 
-Introduce zotero and arxiv MCP, talk about copyright, (deep) research, prompt for paywalls
+#### Day 2 Block 5: Research Workflows
 
-- Lecture (20): faster retrieval, stricter verification - web-search-first prompting, source triage, claim-evidence ledger, and traceable synthesis
-- Lecture emphasis: copyright/paywalls (no fake access; log paywall hits), Zotero/MCP as curated memory (RAG over owned library), citation integrity checks
-- Practical anti-hallucination citation workflow:
-  1) Draft with inline citation keys (`AuthorYear` or `[@key]`)
-  2) Parse cited keys from manuscript
-  3) Compare against `.bib` keys (set difference = missing)
-  4) Require retrievable source snippet/DOI/page note per cited claim
-  5) Fail review if unresolved keys remain
-- Hands-on (30): evidence paragraph + ledger micro artifact (claim, source, quote/snippet, confidence, unresolved gaps)
-- Debrief (10): verification and disclosure
+- Lecture (20): issue-to-agent-to-PR workflow, GitHub CLI handoffs, and human review checkpoints for safe collaboration with coding agents
+- Hands-on (30): create scoped GitHub issues, dispatch one to an agent, and review PR diff + checks evidence
+- Debrief (10): capture team policy for when to trust/override agent outputs
 
-#### Day 2 Block 4: Data Analysis + Modeling
+#### Day 2 Block 6: Writing and Syndication
 
-Positioning: can I produce valid research outputs with agents?
-
-- Lecture (20): merged production stack - data pipeline (clean -> merge -> baseline analysis) + modeling layer (robustness/spec search/simulation) + reliability controls (tests, logs, keep/reject criteria)
-- Hands-on (30): one reproducible analysis+model run
-- Debrief (10): assumptions, verification note, and tradeoffs
-- Deliverable: reproducible analysis+model artifact with assumptions + verification note
-
-#### Day 2 Block 5: Workflows
-
-Positioning: can I run this reliably across projects and collaborators?
-
-- Lecture (20): research workflow stack - multi-project terminal setup (split panes/sessions, project isolation, shared conventions), feedback capture loop (voice-to-text + handwritten notes to structured LaTeX), issue-to-agent-to-PR loop
-- Hands-on (30): each group creates two GitHub issues from research tasks, dispatches one to an agent, reviews resulting PR diff and test evidence
-- Debrief (10): what failed, where human review was essential, and what team policy to adopt
-- Micro-artifact: workflow runbook (terminal/project layout, feedback-to-doc protocol, issue template, PR review checklist, background-agent safety rules)
-
-#### Day 2 Block 6: Writing & Valorization
-
-Giving and receiving human feedback, writing style of LLMs, writing workflow, Handy
-Turn your paper into a website, app, product, ...
-
-Write a 3 page brief om your research agenda
-
-- Lecture (20): output evaluation, LLM-as-judge limits, adoption memo, governance, companion websites
-- Hands-on (30): score two outputs + draft adoption memo (E7) + personal verification protocol (E8)
-- Debrief (10): compare scoring disagreement
+- Lecture (20): writing pipeline (notes -> OCR/text -> markdown -> AI structuring), voice-first drafting, journal disclosure constraints, and multi-channel research syndication
+- Hands-on (30): draft a short research brief from bullets/voice notes and create a minimal syndication plan (website/slides/post)
+- Debrief (10): compare editing choices, disclosure statements, and publication-ready outputs
 
 ### Day 1 resource anchors:
 
@@ -187,25 +154,25 @@ Write a 3 page brief om your research agenda
 
 ### Note on exercise IDs:
 
-- Keep exercise submissions as E1-E8 for Google Form compatibility.
-- Use the remaining blocks for micro deliverables (whiteboard, prompt, rubric, architecture note).
+- Use one exercise per teaching block: E1-E12.
+- Keep `exercise_id` as free text in Google Form so IDs can scale without schema changes.
 
 ### Exercise registry (keep updated):
 
 | exercise_id | block | short title | prefill link | status |
 |---|---|---|---|---|
-| E1 | Block 2 | Prompt anatomy lab | TODO | draft |
-| E2 | Block 3 | Prompt rewrite challenge | TODO | draft |
-| E3 | Block 4 | IDE coding sprint | TODO | draft |
-| E4 | Block 6 (Day 1) | Memory-aware writing | TODO | draft |
-| E5 | Block 4 (Day 2) | Design agent workflow | TODO | draft |
-| E6 | Block 2 (Day 2) | Build mini pipeline | TODO | draft |
-| E7 | Block 6 (Day 2) | Evaluate two outputs | TODO | draft |
-| E8 | Block 6 (Day 2) | Resilience protocol plan | TODO | draft |
-
-Note: E4 appears in Day 1 Block 6 (Memory) but focuses on memory-aware writing with citation integrity.  
-E5 is in Day 2 Block 4 (Data analysis & Coding 1).  
-E6 is in Day 2 Block 2 (Data collection).  
+| E1 | Day 1 Block 1 | Jan setup and first programmable task | TODO | draft |
+| E2 | Day 1 Block 2 | LangChain prompt anatomy in code | TODO | draft |
+| E3 | Day 1 Block 3 | Context pipeline with retrieval | TODO | draft |
+| E4 | Day 1 Block 4 | Tool-calling mini-agent | TODO | draft |
+| E5 | Day 1 Block 5 | Build and connect a tiny MCP tool | TODO | draft |
+| E6 | Day 1 Block 6 | Memory behavior: session + retrieval | TODO | draft |
+| E7 | Day 2 Block 1 | Ideation project + idea napkin | TODO | draft |
+| E8 | Day 2 Block 2 | AI data-collection design memo | TODO | draft |
+| E9 | Day 2 Block 3 | Evidence paragraph + claim ledger | TODO | draft |
+| E10 | Day 2 Block 4 | Reproducible analysis loop in VS Code | TODO | draft |
+| E11 | Day 2 Block 5 | Issue -> agent -> PR workflow drill | TODO | draft |
+| E12 | Day 2 Block 6 | Writing + syndication sprint | TODO | draft |
 
 ### Resource gaps to fill next:
 
@@ -287,18 +254,22 @@ Keep this table current whenever exercises or links change.
 
 | exercise_id | block | short title | prefill link | status |
 |---|---|---|---|---|
-| E1 | Block 2 | Prompt anatomy lab | TODO | draft |
-| E2 | Block 3 | Prompt rewrite challenge | TODO | draft |
-| E3 | Block 4 | IDE coding sprint | TODO | draft |
-| E4 | Block 6 (Day 1) | Memory-aware writing | TODO | draft |
-| E5 | Block 4 (Day 2) | Design agent workflow | TODO | draft |
-| E6 | Block 2 (Day 2) | Build mini pipeline | TODO | draft |
-| E7 | Block 6 (Day 2) | Evaluate two outputs | TODO | draft |
-| E8 | Block 6 (Day 2) | Resilience protocol plan | TODO | draft |
+| E1 | Day 1 Block 1 | Jan setup and first programmable task | TODO | draft |
+| E2 | Day 1 Block 2 | LangChain prompt anatomy in code | TODO | draft |
+| E3 | Day 1 Block 3 | Context pipeline with retrieval | TODO | draft |
+| E4 | Day 1 Block 4 | Tool-calling mini-agent | TODO | draft |
+| E5 | Day 1 Block 5 | Build and connect a tiny MCP tool | TODO | draft |
+| E6 | Day 1 Block 6 | Memory behavior: session + retrieval | TODO | draft |
+| E7 | Day 2 Block 1 | Ideation project + idea napkin | TODO | draft |
+| E8 | Day 2 Block 2 | AI data-collection design memo | TODO | draft |
+| E9 | Day 2 Block 3 | Evidence paragraph + claim ledger | TODO | draft |
+| E10 | Day 2 Block 4 | Reproducible analysis loop in VS Code | TODO | draft |
+| E11 | Day 2 Block 5 | Issue -> agent -> PR workflow drill | TODO | draft |
+| E12 | Day 2 Block 6 | Writing + syndication sprint | TODO | draft |
 
 Canonical exercise draft source:
 
-- `exercises/drafts.md` is the source-of-truth markdown for E1-E8 briefs.
+- `exercises/drafts.md` is the source-of-truth markdown for E1-E12 briefs.
 
 ### Google Form tracking (keep updated)
 

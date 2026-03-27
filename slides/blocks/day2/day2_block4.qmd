@@ -35,6 +35,12 @@ Get comfortable in the terminal
 
 > simple, scriptable!
 
+## Stata-first workflow
+
+- Use AI to draft `.do` files and comments
+- Run locally, inspect logs, iterate with errors
+- Keep one verification note per run
+
 ## Unit-tests
 
 ```python

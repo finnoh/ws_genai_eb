@@ -1,369 +1,337 @@
-# Exercise Drafts (E1-E8)
+# Exercise Drafts (E1-E12)
 
-First-draft briefs for all workshop exercises. Each draft follows the same block template and submission schema.
+One exercise per teaching block (12 total). Each exercise is scoped to be solvable in ~30 minutes with Jan support and room for discussion/hiccups.
+
+Execution defaults:
+
+- Day 1: LangChain-first, Jupyter preferred (with `.py` fallback)
+- Day 2: VS Code + OpenCode by default; ChatGPT allowed where task fit is stronger (ideation/evaluation)
 
 Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 3 (strong).
 
-## E1 - Prompt anatomy lab (Day 1, Block 2: LLMs and AI Agents)
+## E1 - Jan setup and first programmable task (Day 1, Block 1)
 
 ### Objective
 
-- Diagnose why a weak prompt fails.
-- Produce one stronger prompt with explicit constraints.
+- Get operational with Jan and the workshop toolchain.
+- Complete one tiny programming task via Jan with a verifiable output.
 
 ### Inputs
 
-- One weak prompt from your group domain.
-- Prompt anatomy checklist (role, task, constraints, output format).
-- One target use case from economics or business research.
-- Resource anchors: R031, R032, R033, R034, R005, R030.
+- Jan installed and running.
+- Starter task: parse a tiny CSV and compute one summary stat.
 
 ### Deliverable (single micro artifact)
 
-- One short before/after prompt pair with 3-5 line rationale.
+- One screenshot/log snippet showing Jan ran a task end-to-end, plus one sentence on what to customize in Jan.
 
 ### Timebox
 
-- 20 minutes lecture input.
-- 30 minutes hands-on work.
-- 10 minutes debrief.
+- 20 minutes lecture, 30 minutes hands-on, 10 minutes debrief.
 
 ### Submission link
 
 - `/docs/live-exercises?exercise=E1`
 
-### Evaluation rubric
-
-- Usefulness.
-- Correctness.
-- Reproducibility.
-- Risk awareness.
-- Prompt anatomy diagnosis quality.
-- Clarity of improved constraints.
-- Evidence anchor usage (at least one source-informed design choice).
-
-### Common failure modes
-
-- Vague task intent.
-- Missing output format.
-- Hidden assumptions not stated.
-
 ### Extension task (optional)
 
-- Rewrite the same prompt for a second audience (policy vs academic).
+- Add one custom instruction to Jan and rerun the same task.
 
-## E2 - Prompt rewrite challenge (Day 1, Block 3: Context)
+## E2 - LangChain prompt anatomy in code (Day 1, Block 2)
 
 ### Objective
 
-- Improve a prompt through A/B iteration and explicit failure analysis.
+- Move prompt anatomy into runnable LangChain code.
 
 ### Inputs
 
-- Baseline weak prompt.
-- E2 rubric in `exercises/rubrics.md`.
-- Comparison protocol (keep model/task fixed).
+- Jupyter notebook or `.py`.
+- LangChain prompt template + structured output parser.
 
 ### Deliverable (single micro artifact)
 
-- A/B comparison note with final prompt and one identified failure pattern.
+- One runnable snippet that returns valid structured output for 2 inputs.
 
 ### Timebox
 
-- 20 minutes lecture input.
-- 30 minutes hands-on work.
-- 10 minutes debrief.
+- 20/30/10.
 
 ### Submission link
 
 - `/docs/live-exercises?exercise=E2`
 
-### Evaluation rubric
-
-- Usefulness.
-- Correctness.
-- Reproducibility.
-- Risk awareness.
-- Constraint quality and specificity.
-- A/B fairness and failure-analysis depth.
-
-### Common failure modes
-
-- Changed too many variables between A and B.
-- Added constraints that conflict.
-- No concrete failure explanation.
-
 ### Extension task (optional)
 
-- Add a self-check step and rerun a C variant.
+- Add one adversarial test input and tighten constraints.
 
-## E3 - IDE coding sprint (Day 1, Block 4: Tools 1)
+## E3 - Context pipeline with retrieval (Day 1, Block 3)
 
 ### Objective
 
-- Complete one small coding task with verifiable evidence.
+- Build a minimal retrieval context pipeline and compare against no-context baseline.
 
 ### Inputs
 
-- One bugfix or refactor target.
-- IDE agent (Cursor/Copilot/OpenCode).
-- One test or validation command.
+- 3-5 short local docs.
+- LangChain document loading + splitting + retrieval components.
 
 ### Deliverable (single micro artifact)
 
-- Patch summary plus verification trace (test output or reproducible check).
+- A/B note with one failure fixed by retrieval context.
 
 ### Timebox
 
-- 20 minutes lecture input.
-- 30 minutes hands-on work.
-- 10 minutes debrief.
+- 20/30/10.
 
 ### Submission link
 
 - `/docs/live-exercises?exercise=E3`
 
-### Evaluation rubric
-
-- Usefulness.
-- Correctness.
-- Reproducibility.
-- Risk awareness.
-- Task decomposition quality.
-- Verification rigor.
-
-### Common failure modes
-
-- No reproduction of original issue.
-- Trusting agent output without running checks.
-- No rollback/fallback noted.
-
 ### Extension task (optional)
 
-- Add one guardrail test that would catch regression.
+- Add metadata filtering and report precision difference.
 
-## E4 - Memory-aware writing (Day 1, Block 6: Memory)
+## E4 - Tool-calling mini-agent (Day 1, Block 4)
 
 ### Objective
 
-- Produce one research paragraph with claim-evidence traceability.
-- Apply memory safety and disclosure principles.
+- Build a LangChain agent that calls at least two tools.
 
 ### Inputs
 
-- One narrow research claim.
-- 1-3 sources (preferably from `resources/registry.csv`).
-- Citation integrity checklist.
+- Two simple tools (e.g., `calc_stat`, `lookup_term`).
+- One multi-step question requiring both tools.
 
 ### Deliverable (single micro artifact)
 
-- One paragraph with citations and a mini verification checklist.
+- One run trace proving tool selection + one output verification check.
 
 ### Timebox
 
-- 20 minutes lecture input.
-- 30 minutes hands-on work.
-- 10 minutes debrief.
+- 20/30/10.
 
 ### Submission link
 
 - `/docs/live-exercises?exercise=E4`
 
-### Evaluation rubric
-
-- Usefulness.
-- Correctness.
-- Reproducibility.
-- Risk awareness.
-- Citation support quality.
-- Explicit uncertainty and disclosure quality.
-
-### Common failure modes
-
-- Unsupported factual claim.
-- Citation does not match claim.
-- Missing uncertainty statement.
-
 ### Extension task (optional)
 
-- Split paragraph into claim/evidence/limitation sentence tags.
+- Add graceful fallback for a forced tool failure.
 
-## E5 - Design an agent workflow (Day 2, Block 4: Data Analysis & Coding 1)
+## E5 - Build and connect a tiny MCP tool (Day 1, Block 5)
 
 ### Objective
 
-- Specify a reliability-aware workflow for one research task.
+- Shift from tool user to tool builder.
+- Implement one tiny MCP-like tool service and wire it to agent workflow.
 
 ### Inputs
 
-- Candidate task (literature scan, coding check, protocol drafting, etc.).
-- Single-agent vs multi-agent decision frame.
-- Failure taxonomy (timeout, bad tool output, stale context).
+- FastMCP template (or equivalent local tool interface).
+- Toy domain function (NPV, breakeven, or ARIMA toy forecast).
 
 ### Deliverable (single micro artifact)
 
-- Architecture sketch with tool/memory contracts and fallback path.
+- Tool call demo: input -> tool output -> agent explanation, with one sanity check.
 
 ### Timebox
 
-- 20 minutes lecture input.
-- 30 minutes hands-on work.
-- 10 minutes debrief.
+- 20/30/10.
 
 ### Submission link
 
 - `/docs/live-exercises?exercise=E5`
 
-### Evaluation rubric
-
-- Usefulness.
-- Correctness.
-- Reproducibility.
-- Risk awareness.
-- Contract clarity (tools/memory/human handoff).
-- Fallback and retry design quality.
-
-### Common failure modes
-
-- No explicit human escalation point.
-- Ambiguous tool ownership.
-- Retry without stop condition.
-
 ### Extension task (optional)
 
-- Add one red-team scenario and mitigation.
+- Add one argument validation rule and show error handling.
 
-## E6 - Build a mini pipeline (Day 2, Block 2: Data Collection)
+## E6 - Memory behavior: session + retrieval memory (Day 1, Block 6)
 
 ### Objective
 
-- Prototype a small end-to-end research pipeline with clear limits.
+- Demonstrate short-term memory and retriever-backed long-term memory behavior.
 
 ### Inputs
 
-- Pipeline canvas (ideation -> generation -> filtering -> review).
-- Synthetic stimulus prompt template.
-- Limitation logging checklist.
+- Tiny memory policy (store/ignore/prune).
+- 3-5 turn scripted conversation + one retrievable note.
 
 ### Deliverable (single micro artifact)
 
-- Protocol mini-note with sample stimuli and one explicit limitation.
+- Chat trace showing remembered preference + retrieved fact + one memory risk disclosure.
 
 ### Timebox
 
-- 20 minutes lecture input.
-- 30 minutes hands-on work.
-- 10 minutes debrief.
+- 20/30/10.
 
 ### Submission link
 
 - `/docs/live-exercises?exercise=E6`
 
-### Evaluation rubric
-
-- Usefulness.
-- Correctness.
-- Reproducibility.
-- Risk awareness.
-- Pipeline completeness.
-- Validation feasibility.
-
-### Common failure modes
-
-- Overly broad pipeline scope.
-- Generated stimuli not fit for purpose.
-- No validation checkpoint.
-
 ### Extension task (optional)
 
-- Define a minimum human-sample validation plan.
+- Add a stale-memory correction step.
 
-## E7 - Evaluate two outputs (Day 2, Block 6: Writing & Valorization)
+## E7 - Ideation project + idea napkin (Day 2, Block 1)
 
 ### Objective
 
-- Apply a rubric consistently and make one adoption recommendation.
+- Run the explore -> select -> immerse -> question -> napkin workflow.
 
 ### Inputs
 
-- Two outputs for the same task.
-- Scoring rubric and memo template.
-- One organizational context assumption.
+- ChatGPT/Claude project or VS Code notes.
+- One candidate domain with basic constraints.
 
 ### Deliverable (single micro artifact)
 
-- Scored comparison table plus short adoption memo.
+- One idea napkin with domain scorecard and one IP/HARKING risk note.
 
 ### Timebox
 
-- 20 minutes lecture input.
-- 30 minutes hands-on work.
-- 10 minutes debrief.
+- 20/30/10.
 
 ### Submission link
 
 - `/docs/live-exercises?exercise=E7`
 
-### Evaluation rubric
-
-- Usefulness.
-- Correctness.
-- Reproducibility.
-- Risk awareness.
-- Rubric consistency across outputs.
-- Actionability of recommendation.
-
-### Common failure modes
-
-- Score inflation without evidence.
-- No disagreement note between raters.
-- Adoption memo lacks governance boundary.
-
 ### Extension task (optional)
 
-- Re-score with blinded output labels and compare drift.
+- Add a second domain and a tie-break rule.
 
-## E8 - Resilience protocol plan (Day 2, Block 6: Writing & Valorization)
+## E8 - AI data-collection design memo (Day 2, Block 2)
 
 ### Objective
 
-- Define a personal operating protocol for safe, sustainable AI use.
+- Choose mode A/B/C and design a credible collection protocol.
 
 ### Inputs
 
-- Cost/risk calculator assumptions.
-- Personal task profile (coding, writing, research design).
-- Non-delegation boundary checklist.
+- Research question.
+- DGP/instrument choice and validation lens.
 
 ### Deliverable (single micro artifact)
 
-- One-page resilience protocol with trigger conditions.
+- One-page memo with mode choice, threat model, and one explicit verification plan.
 
 ### Timebox
 
-- 20 minutes lecture input.
-- 30 minutes hands-on work.
-- 10 minutes debrief.
+- 20/30/10.
 
 ### Submission link
 
 - `/docs/live-exercises?exercise=E8`
 
-### Evaluation rubric
+### Extension task (optional)
 
-- Usefulness.
-- Correctness.
-- Reproducibility.
-- Risk awareness.
-- Specificity of verification protocol.
-- Realism of cost/risk assumptions.
+- Add pilot criteria (sample size, stop/continue rule).
 
-### Common failure modes
+## E9 - Evidence paragraph + claim ledger (Day 2, Block 3)
 
-- Generic rules with no task context.
-- No trigger for manual verification.
-- No explicit non-delegation boundary.
+### Objective
+
+- Produce one evidence-backed paragraph with traceable claims.
+
+### Inputs
+
+- Search stack of choice (web/Elicit/ResearchRabbit/arXiv/Zotero).
+- Paywall logging rule.
+
+### Deliverable (single micro artifact)
+
+- One paragraph + claim-evidence ledger (claim/source/snippet/confidence/gap).
+
+### Timebox
+
+- 20/30/10.
+
+### Submission link
+
+- `/docs/live-exercises?exercise=E9`
 
 ### Extension task (optional)
 
-- Add a weekly self-audit checklist with 3 metrics.
+- Add one unresolved gap and exact follow-up search query.
+
+## E10 - Reproducible analysis loop in VS Code (Day 2, Block 4)
+
+### Objective
+
+- Run prompt -> code -> run -> test -> fix with one explicit keep/reject decision.
+
+### Inputs
+
+- VS Code + OpenCode/Jan.
+- Tiny dataset and one analysis question.
+
+### Deliverable (single micro artifact)
+
+- Minimal code artifact + test/check output + verification note (assumption + limitation).
+
+### Timebox
+
+- 20/30/10.
+
+### Submission link
+
+- `/docs/live-exercises?exercise=E10`
+
+### Extension task (optional)
+
+- Add one edge-case test that initially fails.
+
+## E11 - Issue -> agent -> PR workflow drill (Day 2, Block 5)
+
+### Objective
+
+- Practice safe collaboration pattern with coding agents.
+
+### Inputs
+
+- One scoped GitHub issue.
+- Agent handoff prompt.
+- PR review checklist.
+
+### Deliverable (single micro artifact)
+
+- Workflow runbook snippet: issue text, handoff prompt, and PR review verdict.
+
+### Timebox
+
+- 20/30/10.
+
+### Submission link
+
+- `/docs/live-exercises?exercise=E11`
+
+### Extension task (optional)
+
+- Add one policy rule for when human override is mandatory.
+
+## E12 - Writing + syndication sprint (Day 2, Block 6)
+
+### Objective
+
+- Convert rough notes into a short research brief and multi-channel syndication plan.
+
+### Inputs
+
+- Bullet notes or voice transcript.
+- One target audience (academic, policy, practitioner).
+
+### Deliverable (single micro artifact)
+
+- 300-500 word brief + 3-channel syndication plan + disclosure note.
+
+### Timebox
+
+- 20/30/10.
+
+### Submission link
+
+- `/docs/live-exercises?exercise=E12`
+
+### Extension task (optional)
+
+- Add one platform-specific rewrite (e.g., website intro vs LinkedIn post).
