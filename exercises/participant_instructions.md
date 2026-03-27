@@ -33,9 +33,10 @@
 
 ### E2 - LangChain prompt anatomy in code
 
-- Build one prompt template in code.
-- Enforce structured output.
-- Run 2 test inputs.
+- Run a first LangChain prompt and capture output.
+- Solve country extraction from noisy text.
+- Return a structured Python list.
+- Add a short model and docs orientation note.
 
 ### E3 - Context pipeline with retrieval
 

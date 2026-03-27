@@ -17,9 +17,10 @@ Scale for all criteria: 0 (missing), 1 (weak), 2 (acceptable), 3 (strong).
 
 ## E2 - LangChain prompt anatomy in code
 
-- Prompt contract clarity
-- Structured output validity
-- Test-case coverage quality
+- First prompt run and output capture quality
+- Country extraction correctness (cleaning + filtering)
+- Structured output validity (Python list)
+- Orientation note quality and relevance
 
 ## E3 - Context pipeline with retrieval
 

@@ -41,16 +41,23 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 ### Objective
 
-- Move prompt anatomy into runnable LangChain code.
+- Run a first LangChain prompt and capture its output in Python.
+- Solve one concrete country-extraction task from noisy text.
+- Add structured output and a short model/docs orientation note.
 
 ### Inputs
 
 - Jupyter notebook or `.py`.
-- LangChain prompt template + structured output parser.
+- LangChain prompt template + simple structured output.
+- Noisy country paragraph from scaffold.
+- Orientation links:
+  - https://openrouter.ai/rankings
+  - https://opencode.ai/docs/
+  - https://docs.langchain.com/oss/python/deepagents/harness
 
 ### Deliverable (single micro artifact)
 
-- One runnable snippet that returns valid structured output for 2 inputs.
+- One runnable snippet that returns a Python list of cleaned country names for the noisy paragraph, plus a short orientation note with one model choice rationale and two practical takeaways from docs.
 
 ### Timebox
 
@@ -62,7 +69,7 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 ### Extension task (optional)
 
-- Add one adversarial test input and tighten constraints.
+- Run the same extraction task with one alternative OpenRouter model and briefly compare quality/speed/cost expectation.
 
 ## E3 - Context pipeline with retrieval (Day 1, Block 3)
 

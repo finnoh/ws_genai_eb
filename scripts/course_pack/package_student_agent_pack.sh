@@ -73,7 +73,7 @@ curl -sL https://raw.githubusercontent.com/finnoh/ti-student-agent-pack/main/ins
 1. Open the `student-agent-pack/` folder in your coding agent
 2. Edit `config/form_config.json` with your Google Form details
 3. Complete `BOOTSTRAP.md` with your information
-4. Start working on exercises in the `work/` directory
+4. Start working on exercises in the `exercises/` directory
 
 ## More Information
 
