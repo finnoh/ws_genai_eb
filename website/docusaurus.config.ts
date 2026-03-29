@@ -2,16 +2,19 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-const googleFormUrl = process.env.GOOGLE_FORM_URL ?? '';
-const googleFormExerciseField = process.env.GOOGLE_FORM_EXERCISE_FIELD ?? '';
+const googleFormUrl =
+  process.env.GOOGLE_FORM_URL ??
+  'https://docs.google.com/forms/d/e/1FAIpQLSd1ihRroDZ7lSsCxWb3CKDH9DGrn6anGA6Avd93c3zFiPLXJg/viewform?usp=dialog';
+const googleFormExerciseField = process.env.GOOGLE_FORM_EXERCISE_FIELD ?? '820055728';
 const googleFormGroupField = process.env.GOOGLE_FORM_GROUP_FIELD ?? '';
-const activeExerciseId = process.env.ACTIVE_EXERCISE_ID ?? '';
-const liveResultsSheetCsvUrl = process.env.LIVE_RESULTS_SHEET_CSV_URL ?? '';
-const liveResultsJsonUrl = process.env.LIVE_RESULTS_JSON_URL ?? '';
+const activeExerciseId = process.env.ACTIVE_EXERCISE_ID ?? 'E01';
+const resultsSheetUrl =
+  process.env.RESULTS_SHEET_URL ??
+  'https://docs.google.com/spreadsheets/d/1qqicPGhyus2fT0RVaOQgHbPStTSJMKnFlCbTJgM2W1k/edit?usp=sharing';
 
 const config: Config = {
   title: 'TI AI Agents Workshop',
-  tagline: 'Companion site for slides, exercises, and live results',
+  tagline: 'Course mirror for slides and student exercises',
   favicon: 'img/favicon.svg',
   future: {
     v4: true,
@@ -34,7 +37,8 @@ const config: Config = {
   themeConfig: {
     colorMode: {
       defaultMode: 'light',
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
+      disableSwitch: true,
     },
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
@@ -45,17 +49,8 @@ const config: Config = {
         src: 'img/favicon.svg',
       },
       items: [
-        {to: '/', label: 'Home', position: 'left'},
-        {to: '/docs/live-hub', label: 'Live', position: 'left'},
-        {to: '/docs/self-study', label: 'Learn', position: 'left'},
-        {to: '/docs/materials-index', label: 'Materials', position: 'left'},
-        {to: '/docs/run-this-workshop', label: 'Instructor Kit', position: 'left'},
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          label: 'All Docs',
-          position: 'right',
-        },
+        {to: '/docs/schedule', label: 'Workshop', position: 'left'},
+        {to: '/docs/about', label: 'About', position: 'left'},
         {
           href: 'https://github.com/finnoh/ws_genai_eb',
           label: 'GitHub',
@@ -71,29 +66,28 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Live Workshop',
+          title: 'Workshop',
           items: [
-            {label: 'Live Hub', to: '/docs/live-hub'},
-            {label: 'Start Here', to: '/docs/start-here'},
-            {label: 'Live Exercises', to: '/docs/live-exercises'},
-            {label: 'Live Results', to: '/docs/live-results'},
             {label: 'Schedule', to: '/docs/schedule'},
+            {label: 'Exercises', to: '/docs/live-exercises'},
+            {label: 'About', to: '/docs/about'},
           ],
         },
         {
-          title: 'Learn and Reuse',
+          title: 'Content',
           items: [
-            {label: 'Self-Study', to: '/docs/self-study'},
-            {label: 'Materials Index', to: '/docs/materials-index'},
-            {label: 'Patterns', to: '/docs/patterns'},
-            {label: 'Failure Library', to: '/docs/failure-library'},
+            {label: 'Building AI Agents', to: '/docs/content/day1-1'},
+            {label: 'AI Agents in Research', to: '/docs/content/day2-1'},
           ],
         },
         {
-          title: 'Instructor',
+          title: 'Links',
           items: [
-            {label: 'Run This Workshop', to: '/docs/run-this-workshop'},
-            {label: 'Repository', href: 'https://github.com/finnoh/ws_genai_eb'},
+            {
+              label: 'Tinbergen course page',
+              href: 'https://tinbergen.nl/ai-agents-in-economics-and%20business-research',
+            },
+            {label: 'GitHub repository', href: 'https://github.com/finnoh/ws_genai_eb'},
           ],
         },
       ],
@@ -110,7 +104,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/finnoh/ws_genai_eb/tree/main/website/',
+          editUrl: 'https://github.com/finnoh/ws_genai_eb/edit/main/website/',
           showLastUpdateTime: true,
           showLastUpdateAuthor: false,
         },
@@ -138,8 +132,7 @@ const config: Config = {
     googleFormExerciseField,
     googleFormGroupField,
     activeExerciseId,
-    liveResultsSheetCsvUrl,
-    liveResultsJsonUrl,
+    resultsSheetUrl,
   },
 };
 

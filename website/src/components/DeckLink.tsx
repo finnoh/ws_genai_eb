@@ -6,8 +6,8 @@ type DeckLinkProps = {
   label: string;
 };
 
-export default function DeckLink({path, label}: DeckLinkProps): JSX.Element {
-  const href = useBaseUrl(path);
+export default function DeckLink({path, label}: DeckLinkProps): React.ReactElement {
+  const href = `${useBaseUrl(path)}#/title-slide`;
 
   return (
     <a href={href} target="_blank" rel="noreferrer">

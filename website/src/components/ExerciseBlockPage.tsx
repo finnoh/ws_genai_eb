@@ -4,14 +4,13 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './ExerciseBlockPage.module.css';
 
 import {
-  canonicalRubricDimensions,
-  canonicalTimebox,
   getExerciseById,
   type ExerciseId,
 } from '@site/src/data/exercises';
 
 type Props = {
   exerciseId: ExerciseId;
+  embedded?: boolean;
 };
 
 function withParam(url: string, key: string, value: string): string {
@@ -20,7 +19,7 @@ function withParam(url: string, key: string, value: string): string {
   return parsedUrl.toString();
 }
 
-export default function ExerciseBlockPage({exerciseId}: Props): React.ReactElement {
+export default function ExerciseBlockPage({exerciseId, embedded = false}: Props): React.ReactElement {
   const exercise = getExerciseById(exerciseId);
   const {siteConfig} = useDocusaurusContext();
   const customFields = siteConfig.customFields || {};
@@ -33,15 +32,23 @@ export default function ExerciseBlockPage({exerciseId}: Props): React.ReactEleme
 
   return (
     <div className={styles.page}>
-      <section className={`courseHero ${styles.hero}`}>
-        <p className="courseKicker">
-          {exercise.day} · {exercise.block}
-        </p>
-        <h1 className={styles.heroTitle}>
-          {exercise.id} - {exercise.title}
-        </h1>
-        <p className="courseLead">{exercise.objective}</p>
-      </section>
+      {embedded ? (
+        <section className="courseBand">
+          <p>
+            <strong>Exercise overview:</strong> {exercise.title}
+          </p>
+        </section>
+      ) : (
+        <section className={`courseHero ${styles.hero}`}>
+          <p className="courseKicker">
+            {exercise.day} · {exercise.block}
+          </p>
+          <h1 className={styles.heroTitle}>
+            {exercise.id} - {exercise.title}
+          </h1>
+          <p className="courseLead">{exercise.objective}</p>
+        </section>
+      )}
 
       <section className="courseGrid">
         <article className="courseCard">
@@ -56,12 +63,8 @@ export default function ExerciseBlockPage({exerciseId}: Props): React.ReactEleme
         <article className="courseCard">
           <h3>Deliverable</h3>
           <p>{exercise.deliverable}</p>
-          <h3 className={styles.subhead}>Timebox</h3>
-          <ul>
-            <li>Lecture: {canonicalTimebox.lectureMinutes} min</li>
-            <li>Hands-on: {canonicalTimebox.handsOnMinutes} min</li>
-            <li>Debrief: {canonicalTimebox.debriefMinutes} min</li>
-          </ul>
+          <h3 className={styles.subhead}>Target</h3>
+          <p>{exercise.prompt}</p>
         </article>
       </section>
 
@@ -74,7 +77,10 @@ export default function ExerciseBlockPage({exerciseId}: Props): React.ReactEleme
             </li>
             {submissionHref ? (
               <li>
-                Direct prefilled form: <a href={submissionHref}>{exercise.id} submission link</a>
+                Direct prefilled form:{' '}
+                <a href={submissionHref} target="_blank" rel="noreferrer">
+                  {exercise.id} submission link
+                </a>
               </li>
             ) : (
               <li>Direct form unavailable until form settings are configured.</li>
@@ -83,14 +89,11 @@ export default function ExerciseBlockPage({exerciseId}: Props): React.ReactEleme
         </article>
 
         <article className="courseCard">
-          <h3>Evaluation rubric</h3>
+          <h3>Checklist</h3>
           <ul>
-            {canonicalRubricDimensions.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-            {exercise.rubricSpecific.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
+            <li>Make one explicit design decision.</li>
+            <li>Include one verification check.</li>
+            <li>State one limitation or risk.</li>
           </ul>
         </article>
       </section>

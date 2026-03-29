@@ -4,25 +4,50 @@
   padding: 2.25rem 1rem 4rem;
 }
 
+.lowerLayout {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
 .heroShell {
   border: 1px solid var(--ti-border-soft);
   border-radius: 26px;
   padding: clamp(1.4rem, 3vw, 2.4rem);
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1.25fr 1fr;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(245, 247, 246, 0.76));
+  display: flex;
+  align-items: center;
+  background-image:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(245, 247, 246, 0.74)),
+    url('/assets/images/background_ti.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   overflow: clip;
+  min-height: 260px;
 }
 
 [data-theme='dark'] .heroShell {
-  background: linear-gradient(135deg, rgba(16, 23, 26, 0.92), rgba(18, 17, 15, 0.85));
+  background-image:
+    linear-gradient(135deg, rgba(16, 23, 26, 0.92), rgba(18, 17, 15, 0.85)),
+    url('/assets/images/background_ti.jpg');
 }
 
 .heroCopy {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.heroTextBox {
+  border: 1px solid color-mix(in srgb, var(--ti-border-soft) 92%, white);
+  border-radius: 14px;
+  padding: 1rem 1.05rem;
+  background: color-mix(in srgb, #d1d5db 28%, var(--ifm-background-color));
+  backdrop-filter: blur(1px);
 }
 
 .kicker {
@@ -49,12 +74,12 @@
 .tagline {
   color: var(--ifm-font-color-base);
   font-size: clamp(1rem, 2.2vw, 1.22rem);
-  margin: 0.95rem 0 0.7rem;
+  margin: 0.65rem 0 0.5rem;
   max-width: 44ch;
 }
 
 .contextLine {
-  margin: 0 0 1.35rem;
+  margin: 0;
   max-width: 52ch;
 }
 
@@ -122,14 +147,15 @@
 }
 
 .ghostAction {
-  color: var(--ifm-font-color-base);
-  background: color-mix(in srgb, var(--ifm-background-surface-color) 92%, transparent);
+  color: #0f172a;
+  background: color-mix(in srgb, #e2e8f0 76%, white);
+  border-color: color-mix(in srgb, #64748b 30%, var(--ti-border-soft));
 }
 
 .ghostAction:hover {
-  color: var(--ifm-heading-color);
+  color: #0b1220;
   transform: translateY(-1px);
-  border-color: color-mix(in srgb, var(--ifm-color-primary) 40%, var(--ti-border-soft));
+  border-color: color-mix(in srgb, #334155 45%, var(--ti-border-soft));
 }
 
 .pathways {
@@ -194,11 +220,18 @@
   color: inherit;
   background: color-mix(in srgb, var(--ifm-background-surface-color) 92%, transparent);
   transition: transform 220ms ease, border-color 220ms ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .linkCard:hover {
   transform: translateY(-3px);
   border-color: color-mix(in srgb, var(--ifm-color-primary) 36%, var(--ti-border-soft));
+}
+
+.wideCard {
+  grid-column: 1 / -1;
 }
 
 .cardLabel {
@@ -330,8 +363,11 @@
     padding-top: 1.8rem;
   }
 
-  .heroShell {
+  .lowerLayout {
     grid-template-columns: 1fr;
+  }
+
+  .heroShell {
     border-radius: 20px;
   }
 

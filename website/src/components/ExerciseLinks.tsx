@@ -1,25 +1,16 @@
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {useMemo, useState} from 'react';
+import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {exercises, type ExerciseItem} from '@site/src/data/exercises';
+import {blocks} from '@site/src/data/blocks';
 
 import styles from './ExerciseLinks.module.css';
 
 type ExerciseLink = ExerciseItem & {href: string; qrHref: string};
 
-const STORAGE_ACTIVE_KEY = 'ti.live.activeExercise';
-const STORAGE_GROUP_KEY = 'ti.live.groupCode';
-const STORAGE_START_KEY = 'ti.live.startIso';
-
-function readStoredValue(key: string): string {
-  if (typeof window === 'undefined') {
-    return '';
-  }
-  return window.localStorage.getItem(key)?.trim() || '';
-}
-
-function sanitizeExerciseId(value: string): string {
-  return value.trim().toUpperCase();
-}
+const slidePathByExerciseId = Object.fromEntries(
+  blocks.map((block) => [block.exerciseId, block.slidePath]),
+) as Record<string, string>;
 
 function withParam(url: string, key: string, value: string): string {
   const parsedUrl = new URL(url);
@@ -30,76 +21,13 @@ function withParam(url: string, key: string, value: string): string {
 export default function ExerciseLinks(): React.ReactElement {
   const {siteConfig} = useDocusaurusContext();
   const customFields = siteConfig.customFields || {};
+  const baseUrl = (siteConfig.baseUrl || '/').replace(/\/$/, '');
   const formUrl = (customFields.googleFormUrl as string | undefined)?.trim() || '';
   const exerciseField =
     (customFields.googleFormExerciseField as string | undefined)?.trim() || '';
-  const groupField = (customFields.googleFormGroupField as string | undefined)?.trim() || '';
-  const configuredActive = (customFields.activeExerciseId as string | undefined)?.trim() || '';
-
-  const pageParams =
-    typeof window === 'undefined'
-      ? new URLSearchParams('')
-      : new URLSearchParams(window.location.search);
-  const hostMode = pageParams.get('host') === '1';
-  const urlExerciseId = sanitizeExerciseId(pageParams.get('exercise') || '');
-  const urlGroup = (pageParams.get('group') || '').trim();
-  const urlStart = (pageParams.get('start') || '').trim();
+  const resultsSheetUrl = (customFields.resultsSheetUrl as string | undefined)?.trim() || '';
 
   const [copiedId, setCopiedId] = useState<string>('');
-  const [now, setNow] = useState<number>(Date.now());
-  const [activeExerciseId, setActiveExerciseId] = useState<string>(
-    urlExerciseId || sanitizeExerciseId(readStoredValue(STORAGE_ACTIVE_KEY)) || sanitizeExerciseId(configuredActive),
-  );
-  const [groupCode, setGroupCode] = useState<string>(urlGroup || readStoredValue(STORAGE_GROUP_KEY));
-  const [startIso, setStartIso] = useState<string>(urlStart || readStoredValue(STORAGE_START_KEY));
-  const [showAll, setShowAll] = useState<boolean>(
-    !(urlExerciseId || readStoredValue(STORAGE_ACTIVE_KEY) || configuredActive),
-  );
-  const [hostMinutes, setHostMinutes] = useState<number>(30);
-
-  useEffect(() => {
-    if (!activeExerciseId) {
-      setShowAll(true);
-    }
-  }, [activeExerciseId]);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') {
-      return;
-    }
-    if (activeExerciseId) {
-      window.localStorage.setItem(STORAGE_ACTIVE_KEY, activeExerciseId);
-    } else {
-      window.localStorage.removeItem(STORAGE_ACTIVE_KEY);
-    }
-  }, [activeExerciseId]);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') {
-      return;
-    }
-    if (groupCode) {
-      window.localStorage.setItem(STORAGE_GROUP_KEY, groupCode);
-    } else {
-      window.localStorage.removeItem(STORAGE_GROUP_KEY);
-    }
-  }, [groupCode]);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') {
-      return;
-    }
-    if (startIso) {
-      window.localStorage.setItem(STORAGE_START_KEY, startIso);
-    } else {
-      window.localStorage.removeItem(STORAGE_START_KEY);
-    }
-  }, [startIso]);
-
-  useEffect(() => {
-    const timer = window.setInterval(() => setNow(Date.now()), 30000);
-    return () => window.clearInterval(timer);
-  }, []);
 
   const links = useMemo<ExerciseLink[]>(() => {
     if (!formUrl || !exerciseField) {
@@ -107,10 +35,7 @@ export default function ExerciseLinks(): React.ReactElement {
     }
 
     return exercises.map((exercise) => {
-      let href = withParam(formUrl, `entry.${exerciseField}`, exercise.id);
-      if (groupField && groupCode) {
-        href = withParam(href, `entry.${groupField}`, groupCode);
-      }
+      const href = withParam(formUrl, `entry.${exerciseField}`, exercise.id);
       const qrHref = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(href)}`;
       return {
         ...exercise,
@@ -118,7 +43,7 @@ export default function ExerciseLinks(): React.ReactElement {
         qrHref,
       };
     });
-  }, [exerciseField, formUrl, groupCode, groupField]);
+  }, [exerciseField, formUrl]);
 
   async function copyLink(link: ExerciseLink): Promise<void> {
     try {
@@ -130,78 +55,56 @@ export default function ExerciseLinks(): React.ReactElement {
     }
   }
 
-  const activeLink = links.find((link) => link.id === activeExerciseId);
-  const visibleLinks = activeLink && !showAll ? [activeLink] : links;
+  const day1Links = links.filter((link) => link.day === 'Day 1');
+  const day2Links = links.filter((link) => link.day === 'Day 2');
+  const rowCount = Math.max(day1Links.length, day2Links.length);
 
-  const parsedStart = startIso ? new Date(startIso).getTime() : Number.NaN;
-  const hasCountdown = Boolean(activeLink) && Number.isFinite(parsedStart);
-  const remainingMs =
-    hasCountdown && activeLink
-      ? parsedStart + activeLink.durationMinutes * 60_000 - now
-      : Number.NaN;
-  const remainingMinutes = Math.max(0, Math.ceil(remainingMs / 60000));
-
-  useEffect(() => {
-    if (activeLink) {
-      setHostMinutes(activeLink.durationMinutes);
-    }
-  }, [activeLink]);
-
-  function syncUrl(next: {exercise?: string; group?: string; start?: string}): void {
-    if (typeof window === 'undefined') {
-      return;
-    }
-    const url = new URL(window.location.href);
-    if (hostMode) {
-      url.searchParams.set('host', '1');
-    }
-    if (next.exercise) {
-      url.searchParams.set('exercise', next.exercise);
-    } else {
-      url.searchParams.delete('exercise');
-    }
-    if (next.group) {
-      url.searchParams.set('group', next.group);
-    } else {
-      url.searchParams.delete('group');
-    }
-    if (next.start) {
-      url.searchParams.set('start', next.start);
-    } else {
-      url.searchParams.delete('start');
-    }
-    window.history.replaceState({}, '', url.toString());
+  function toSitePath(path: string): string {
+    return `${baseUrl}${path}#/title-slide`;
   }
 
-  function activateNow(): void {
-    if (!activeExerciseId) {
-      return;
+  function renderCard(link: ExerciseLink | undefined): React.ReactElement {
+    if (!link) {
+      return <div className={styles.cardSpacer} aria-hidden="true" />;
     }
-    const start = new Date().toISOString();
-    setStartIso(start);
-    syncUrl({exercise: activeExerciseId, group: groupCode, start});
-  }
 
-  function clearLiveState(): void {
-    setStartIso('');
-    setActiveExerciseId('');
-    setShowAll(true);
-    if (typeof window !== 'undefined') {
-      window.localStorage.removeItem(STORAGE_START_KEY);
-      window.localStorage.removeItem(STORAGE_ACTIVE_KEY);
-    }
-    syncUrl({group: groupCode});
-  }
-
-  function activateWithOffset(): void {
-    if (!activeExerciseId || !activeLink) {
-      return;
-    }
-    const boundedMinutesLeft = Math.min(activeLink.durationMinutes, Math.max(0, hostMinutes));
-    const elapsedMinutes = activeLink.durationMinutes - boundedMinutesLeft;
-    const start = new Date(Date.now() - elapsedMinutes * 60_000).toISOString();
-    setStartIso(start);
-    syncUrl({exercise: activeExerciseId, group: groupCode, start});
+    return (
+      <article key={link.id} className={styles.card}>
+        <p className={styles.meta}>
+          {link.day} • {link.durationMinutes} min • {link.answerType}
+        </p>
+        <h3>
+          <Link to={link.detailPath}>
+            {link.title}
+          </Link>
+        </h3>
+        <p className={styles.prompt}>{link.prompt}</p>
+        <div className={styles.actions}>
+          <a href={link.href} target="_blank" rel="noreferrer" className={styles.primaryButton}>
+            Open form
+          </a>
+          {resultsSheetUrl ? (
+            <a href={resultsSheetUrl} target="_blank" rel="noreferrer" className={styles.secondaryButton}>
+              Results sheet
+            </a>
+          ) : null}
+          {slidePathByExerciseId[link.id] ? (
+            <a href={toSitePath(slidePathByExerciseId[link.id])} target="_blank" rel="noreferrer" className={styles.secondaryButton}>
+              Slide deck
+            </a>
+          ) : null}
+          <button
+            type="button"
+            className={styles.secondaryButton}
+            onClick={() => void copyLink(link)}>
+            {copiedId === link.id ? 'Copied' : 'Copy link'}
+          </button>
+          <a href={link.qrHref} target="_blank" rel="noreferrer" className={styles.secondaryButton}>
+            QR
+          </a>
+        </div>
+      </article>
+    );
   }
 
   if (!formUrl) {
@@ -221,114 +124,19 @@ export default function ExerciseLinks(): React.ReactElement {
   }
 
   return (
-      <div>
-      {hostMode ? (
-        <div className={styles.hostPanel}>
-          <strong>Host controls</strong>
-          <div className={styles.hostControls}>
-            <label>
-              Active exercise
-              <select
-                value={activeExerciseId}
-                onChange={(event) => setActiveExerciseId(sanitizeExerciseId(event.target.value))}>
-                <option value="">None</option>
-                {exercises.map((exercise) => (
-                  <option key={exercise.id} value={exercise.id}>
-                    {exercise.id} - {exercise.title}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label>
-              Group code
-              <input value={groupCode} onChange={(event) => setGroupCode(event.target.value.trim())} />
-            </label>
-            <label>
-              Timer minutes
-              <input
-                type="number"
-                min={1}
-                max={240}
-                value={hostMinutes}
-                onChange={(event) => setHostMinutes(Number(event.target.value) || 30)}
-              />
-            </label>
+    <div>
+      <div className={styles.dayHeadings}>
+        <h3 className={styles.dayHeading}>Day 1 (E01-E06)</h3>
+        <h3 className={styles.dayHeading}>Day 2 (E07-E12)</h3>
+      </div>
+
+      <div className={styles.dayRows}>
+        {Array.from({length: rowCount}).map((_, idx) => (
+          <div key={`row-${idx}`} className={styles.dayRow}>
+            {renderCard(day1Links[idx])}
+            {renderCard(day2Links[idx])}
           </div>
-          <div className={styles.statusActions}>
-            <button type="button" className={styles.primaryButton} onClick={activateNow}>
-              Start now
-            </button>
-            <button type="button" className={styles.secondaryButton} onClick={activateWithOffset}>
-              Set time left
-            </button>
-            <button type="button" className={styles.secondaryButton} onClick={clearLiveState}>
-              Clear
-            </button>
-          </div>
-        </div>
-      ) : (
-        <div className={styles.participantBar}>
-          <label>
-            Group code
-            <input value={groupCode} onChange={(event) => setGroupCode(event.target.value.trim())} />
-          </label>
-        </div>
-      )}
-      {activeLink ? (
-        <div className={styles.statusBanner}>
-          <p>
-            Live now: <strong>{activeLink.id}</strong> - {activeLink.title}
-            {hasCountdown ? ` | Time left: ${remainingMinutes} min` : ''}
-          </p>
-          <div className={styles.statusActions}>
-            <a href={activeLink.href} target="_blank" rel="noreferrer" className={styles.primaryButton}>
-              Open active form
-            </a>
-            <a href={activeLink.detailPath} className={styles.secondaryButton}>
-              Block details
-            </a>
-            <button type="button" className={styles.secondaryButton} onClick={() => setShowAll(!showAll)}>
-              {showAll ? 'Show active only' : 'Show all exercises'}
-            </button>
-          </div>
-        </div>
-      ) : null}
-      <p className={styles.hint}>
-        URL params: <code>?exercise=E3</code>, <code>?group=A</code>,{' '}
-        <code>?start=2026-03-09T09:30:00</code>, and <code>?host=1</code> for instructor mode.
-      </p>
-      <div className={styles.grid}>
-        {visibleLinks.map((link) => {
-          const isActive = link.id === activeExerciseId;
-          return (
-            <article key={link.id} className={`${styles.card} ${isActive ? styles.active : ''}`}>
-              <p className={styles.meta}>
-                {link.day} • {link.durationMinutes} min • {link.answerType}
-              </p>
-              <h3>
-                {link.id}: {link.title}
-              </h3>
-              <p className={styles.prompt}>{link.prompt}</p>
-              <div className={styles.actions}>
-                <a href={link.href} target="_blank" rel="noreferrer" className={styles.primaryButton}>
-                  Open form
-                </a>
-                <a href={link.detailPath} className={styles.secondaryButton}>
-                  Block details
-                </a>
-                <button
-                  type="button"
-                  className={styles.secondaryButton}
-                  onClick={() => void copyLink(link)}>
-                  {copiedId === link.id ? 'Copied' : 'Copy link'}
-                </button>
-                <a href={link.qrHref} target="_blank" rel="noreferrer" className={styles.secondaryButton}>
-                  QR
-                </a>
-              </div>
-            </article>
-          );
-        })}
+        ))}
       </div>
     </div>
   );

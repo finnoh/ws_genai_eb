@@ -47,8 +47,9 @@ Set these before building/deploying when using Google Forms live submissions:
 ```bash
 GOOGLE_FORM_URL=https://docs.google.com/forms/d/e/<FORM_ID>/viewform?usp=pp_url
 GOOGLE_FORM_EXERCISE_FIELD=<ENTRY_ID_FOR_EXERCISE>
-GOOGLE_FORM_GROUP_FIELD=<ENTRY_ID_FOR_GROUP> # optional
-ACTIVE_EXERCISE_ID=E1 # optional
+GOOGLE_FORM_STUDENT_NAME_FIELD=<ENTRY_ID_FOR_NAME> # optional
+ACTIVE_EXERCISE_ID=E01 # optional
+# Optional if live results board is re-enabled later:
 LIVE_RESULTS_JSON_URL=<PUBLISHED_JSON_ENDPOINT>
 LIVE_RESULTS_SHEET_CSV_URL=<PUBLISHED_CSV_ENDPOINT>
 # optional runtime IDs used by scripts/google/*.py

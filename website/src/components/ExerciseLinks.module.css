@@ -3,6 +3,34 @@
   font-size: 0.92rem;
 }
 
+.dayHeadings {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.dayHeading {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.dayRows {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.dayRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.cardSpacer {
+  visibility: hidden;
+}
+
 .participantBar,
 .hostPanel {
   border: 1px solid var(--ti-border-soft);
@@ -69,6 +97,8 @@
   border-radius: 12px;
   padding: 0.95rem;
   background: color-mix(in srgb, var(--ifm-background-surface-color) 92%, transparent);
+  display: flex;
+  flex-direction: column;
 }
 
 .active {
@@ -96,17 +126,24 @@
 }
 
 .actions {
+  margin-top: auto;
   display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  gap: 0.4rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 0.15rem;
+}
+
+.actions > * {
+  flex: 0 0 auto;
 }
 
 .primaryButton,
 .secondaryButton {
   border: 1px solid var(--ti-border-soft);
   border-radius: 8px;
-  padding: 0.4rem 0.68rem;
-  font-size: 0.9rem;
+  padding: 0.34rem 0.55rem;
+  font-size: 0.82rem;
   font-weight: 600;
   line-height: 1.2;
   text-decoration: none;
@@ -129,8 +166,18 @@
 }
 
 @media (max-width: 996px) {
+  .dayHeadings,
+  .dayRow,
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .dayRows {
+    gap: 0;
+  }
+
+  .cardSpacer {
+    display: none;
   }
 
   .hostControls {

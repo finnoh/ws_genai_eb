@@ -5,186 +5,82 @@ import Layout from '@theme/Layout';
 
 import styles from './index.module.css';
 
-const quickAccess = [
-  {
-    title: 'Live Exercises',
-    description: 'Launch the active form with prefilled exercise context.',
-    to: '/docs/live-exercises',
-  },
-  {
-    title: 'Live Results',
-    description: 'Review incoming submissions during debrief.',
-    to: '/docs/live-results',
-  },
-  {
-    title: 'Two-Day Schedule',
-    description: 'See timing and block sequence at a glance.',
-    to: '/docs/schedule',
-  },
-  {
-    title: 'Materials Index',
-    description: 'Open all reusable assets and references.',
-    to: '/docs/materials-index',
-  },
+const day1Blocks = [
+  {label: 'Course Kickoff: Why AI Agents Now', to: '/docs/content/day1-1'},
+  {label: 'LLMs and AI Agents', to: '/docs/content/day1-2'},
+  {label: 'Context', to: '/docs/content/day1-3'},
+  {label: 'Tools 1', to: '/docs/content/day1-4'},
+  {label: 'Tools 2', to: '/docs/content/day1-5'},
+  {label: 'Memory', to: '/docs/content/day1-6'},
 ];
 
-const highlights = [
-  {
-    label: 'Live cohorts',
-    value: '2 days',
-    note: 'Foundations + advanced system design',
-  },
-  {
-    label: 'Exercise flow',
-    value: 'E1-E8',
-    note: 'Single-form submissions with live review',
-  },
-  {
-    label: 'Teaching loop',
-    value: '20/30/10',
-    note: 'Lecture, build sprint, adversarial debrief',
-  },
-];
-
-const janInstallCommand =
-  'curl -sL https://raw.githubusercontent.com/finnoh/ti-student-agent-pack/main/install.sh | bash';
-
-const pathways = [
-  {
-    title: 'Join Live Workshop',
-    audience: 'For participants in this cohort',
-    description:
-      'Use one page as your operating panel for the full classroom loop: launch task, submit artifact, review debrief.',
-    primaryLabel: 'Open Live Hub',
-    primaryTo: '/docs/live-hub',
-    secondaryLabel: 'Read Start Here',
-    secondaryTo: '/docs/start-here',
-    checkpoints: [
-      'Launch the active exercise quickly',
-      'Submit one group artifact per block',
-      'Review outputs in the live debrief flow',
-    ],
-  },
-  {
-    title: 'Self-Study and Portfolio',
-    audience: 'For visitors and after-class learners',
-    description:
-      'Follow a structured learning path, then reuse templates and examples to produce artifacts you can show publicly.',
-    primaryLabel: 'Start Self-Study Track',
-    primaryTo: '/docs/self-study',
-    secondaryLabel: 'View Course Summary',
-    secondaryTo: '/docs/public-course-summary',
-    checkpoints: [
-      'Follow the guided module sequence',
-      'Use patterns and failure libraries',
-      'Publish one reproducible portfolio artifact',
-    ],
-  },
+const day2Blocks = [
+  {label: 'Ideation with AI Agents', to: '/docs/content/day2-1'},
+  {label: 'AI in Data Collection', to: '/docs/content/day2-2'},
+  {label: 'Literature Review', to: '/docs/content/day2-3'},
+  {label: 'Rigorous Analysis with AI Agents', to: '/docs/content/day2-4'},
+  {label: 'Research Workflows', to: '/docs/content/day2-5'},
+  {label: 'Writing & Syndication', to: '/docs/content/day2-6'},
 ];
 
 export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
 
   return (
-    <Layout title={siteConfig.title} description="Companion website for AI agents workshop">
+    <Layout title={siteConfig.title} description="AI agents for economics and business research">
       <main className={styles.page}>
         <section className={styles.heroShell}>
           <div className={styles.heroCopy}>
             <p className={styles.kicker}>Tinbergen Institute</p>
-            <h1>{siteConfig.title}</h1>
-            <p className={styles.tagline}>{siteConfig.tagline}</p>
-            <p className={styles.contextLine}>
-              A practical course website for live classroom delivery, reproducible self-study,
-              and rapid artifact review.
-            </p>
-            <div className={styles.actions}>
-              <Link className={styles.primaryAction} to="/docs/live-hub">
-                Open live hub
-              </Link>
-              <Link className={styles.ghostAction} to="/docs/self-study">
-                Start self-study
-              </Link>
-            </div>
-            <div className={styles.installBox}>
-              <p className={styles.installLabel}>Install Jan agent (copy/paste)</p>
-              <code className={styles.installCommand}>{janInstallCommand}</code>
-              <p className={styles.installHint}>
-                Opens the student workspace locally with Jan and all E1-E8 materials.
+            <div className={styles.heroTextBox}>
+              <h1>{siteConfig.title}</h1>
+              <p className={styles.tagline}>
+                <a href="https://tinbergen.nl/ai-agents-in-economics-and%20business-research" target="_blank" rel="noreferrer">
+                  AI agents for economics and business research.
+                </a>
               </p>
             </div>
-          </div>
-
-          <div className={styles.heroPanel}>
-            <p className={styles.panelLabel}>Course control panel</p>
-            <div className={styles.metricRow}>
-              {highlights.map((item) => (
-                <article key={item.label} className={styles.metricCard}>
-                  <p>{item.label}</p>
-                  <strong>{item.value}</strong>
-                  <span>{item.note}</span>
-                </article>
-              ))}
-            </div>
-
-            <article className={styles.miniTimeline}>
-              <h2>This hour in class</h2>
-              <ol>
-                <li>Observe one concrete decision.</li>
-                <li>Build one micro artifact.</li>
-                <li>Verify with explicit evidence.</li>
-              </ol>
-              <Link className={styles.inlineLink} to="/docs/schedule">
-                View full two-day schedule
+            <div className={styles.actions}>
+              <Link className={styles.primaryAction} to="/docs/schedule">
+                Open schedule 📅
               </Link>
-            </article>
+              <Link className={styles.ghostAction} to="/docs/live-exercises">
+                Open exercises ✏️
+              </Link>
+            </div>
           </div>
         </section>
 
-        <section className={styles.pathways}>
-          {pathways.map((pathway) => (
-            <article key={pathway.title} className={styles.pathwayCard}>
-              <p className={styles.pathwayAudience}>{pathway.audience}</p>
-              <h2>{pathway.title}</h2>
-              <p>{pathway.description}</p>
-              <ul className={styles.checkpoints}>
-                {pathway.checkpoints.map((checkpoint) => (
-                  <li key={checkpoint}>{checkpoint}</li>
-                ))}
-              </ul>
-              <div className={styles.pathwayActions}>
-                <Link className={styles.primaryAction} to={pathway.primaryTo}>
-                  {pathway.primaryLabel}
-                </Link>
-                <Link className={styles.ghostAction} to={pathway.secondaryTo}>
-                  {pathway.secondaryLabel}
-                </Link>
-              </div>
-            </article>
-          ))}
-        </section>
+        <section className={styles.lowerLayout}>
+          <Link className={styles.linkCard} to="/docs/live-exercises">
+            <p className={styles.cardLabel}>Exercise pages</p>
+            <h2>Exercises</h2>
+            <p>Open live exercises.</p>
+          </Link>
 
-        <section className={styles.linkGrid}>
-          {quickAccess.map((item) => (
-            <Link key={item.to} className={styles.linkCard} to={item.to}>
-              <p className={styles.cardLabel}>Quick access</p>
-              <h2>{item.title}</h2>
-              <p>{item.description}</p>
-              <span className={styles.cardAction}>Open section -&gt;</span>
-            </Link>
-          ))}
-        </section>
+          <article className={styles.linkCard}>
+            <p className={styles.cardLabel}>Day 1</p>
+            <h2>Building AI Agents</h2>
+            <ul>
+              {day1Blocks.map((block) => (
+                <li key={block.to}>
+                  <Link to={block.to}>{block.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </article>
 
-        <section className={styles.proof}>
-          <h2>Workshop operating loop</h2>
-          <p>Observe -&gt; Build -&gt; Fail -&gt; Verify -&gt; Reflect</p>
-          <div className={styles.pathwayActions}>
-            <Link className={styles.ghostAction} to="/docs/overview">
-              Read workshop overview
-            </Link>
-            <Link className={styles.ghostAction} to="/docs/run-this-workshop">
-              Open instructor toolkit
-            </Link>
-          </div>
+          <article className={styles.linkCard}>
+            <p className={styles.cardLabel}>Day 2</p>
+            <h2>AI Agents in Research</h2>
+            <ul>
+              {day2Blocks.map((block) => (
+                <li key={block.to}>
+                  <Link to={block.to}>{block.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </article>
         </section>
       </main>
     </Layout>
