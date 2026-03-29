@@ -23,6 +23,7 @@ export type ExerciseItem = {
   answerType: 'text' | 'code' | 'link';
   prompt: string;
   objective: string;
+  objectiveBullets?: string[];
   inputs: string[];
   deliverable: string;
   rubricSpecific: string[];
@@ -257,7 +258,7 @@ const exerciseSeed: ExerciseItem[] = [
   },
 ];
 
-type ExerciseOverride = Partial<Pick<ExerciseItem, 'title' | 'prompt' | 'objective' | 'inputs' | 'deliverable'>>;
+type ExerciseOverride = Partial<Pick<ExerciseItem, 'title' | 'prompt' | 'objective' | 'objectiveBullets' | 'inputs' | 'deliverable'>>;
 
 const normalizedOverrides = e01e06Overrides as Partial<Record<ExerciseId, ExerciseOverride>>;
 

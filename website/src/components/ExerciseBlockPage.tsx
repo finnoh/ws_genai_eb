@@ -13,6 +13,22 @@ type Props = {
   embedded?: boolean;
 };
 
+const URL_REGEX = /(https?:\/\/[^\s)]+)/g;
+
+function renderWithLinks(text: string): React.ReactNode {
+  const parts = text.split(URL_REGEX);
+  return parts.map((part, idx) => {
+    if (/^https?:\/\//.test(part)) {
+      return (
+        <a key={`url-${idx}`} href={part} target="_blank" rel="noreferrer">
+          {part}
+        </a>
+      );
+    }
+    return <React.Fragment key={`txt-${idx}`}>{part}</React.Fragment>;
+  });
+}
+
 function withParam(url: string, key: string, value: string): string {
   const parsedUrl = new URL(url);
   parsedUrl.searchParams.set(key, value);
@@ -46,7 +62,15 @@ export default function ExerciseBlockPage({exerciseId, embedded = false}: Props)
           <h1 className={styles.heroTitle}>
             {exercise.id} - {exercise.title}
           </h1>
-          <p className="courseLead">{exercise.objective}</p>
+          {exercise.objectiveBullets && exercise.objectiveBullets.length > 0 ? (
+            <ul className="courseLead">
+              {exercise.objectiveBullets.map((item) => (
+                <li key={item}>{renderWithLinks(item)}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="courseLead">{renderWithLinks(exercise.objective)}</p>
+          )}
         </section>
       )}
 
@@ -55,16 +79,16 @@ export default function ExerciseBlockPage({exerciseId, embedded = false}: Props)
           <h3>Inputs</h3>
           <ul>
             {exercise.inputs.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item}>{renderWithLinks(item)}</li>
             ))}
           </ul>
         </article>
 
         <article className="courseCard">
           <h3>Deliverable</h3>
-          <p>{exercise.deliverable}</p>
+          <p>{renderWithLinks(exercise.deliverable)}</p>
           <h3 className={styles.subhead}>Target</h3>
-          <p>{exercise.prompt}</p>
+          <p>{renderWithLinks(exercise.prompt)}</p>
         </article>
       </section>
 
@@ -103,14 +127,14 @@ export default function ExerciseBlockPage({exerciseId, embedded = false}: Props)
           <h3>Common failure modes</h3>
           <ul>
             {exercise.commonFailureModes.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item}>{renderWithLinks(item)}</li>
             ))}
           </ul>
         </article>
 
         <article className="courseCard">
           <h3>Extension task (optional)</h3>
-          <p>{exercise.extensionTask}</p>
+          <p>{renderWithLinks(exercise.extensionTask)}</p>
         </article>
       </section>
     </div>
