@@ -10,7 +10,7 @@ The stack is intentionally lightweight and reliable:
 
 - Quarto revealjs for slides
 - Docusaurus for participant companion website
-- Google Forms + Google Sheets for exercise submissions and live classroom review
+- Google Forms + Google Sheets for exercise submissions
 - resources are in resources/ , especially resources/registry.csv is relevant
 This file is the operational memory for future agent sessions.
 
@@ -51,7 +51,7 @@ Each block page should use this exact structure:
 #### Day 1 Block 2: LLMs and AI Agents
 
 - Lecture (20): next-token prediction objective, pre-training vs post-training, and how tool-calls/memory turn LLMs into agent loops
-- Hands-on (30): prompt anatomy lab (E1) and classify tasks by context/tool/memory requirements
+- Hands-on (30): prompt anatomy lab (E02) and classify tasks by context/tool/memory requirements
 
 #### Day 1 Block 3: Context
 
@@ -83,7 +83,7 @@ Each block page should use this exact structure:
 #### Day 2 Block 2: AI in Data Collection
 
 - Lecture (20): DGP-instrument framing (natural/same, natural/new, AI DGP), synthetic respondent workflow, and validity risks with mixed empirical evidence
-- Hands-on (30): choose collection mode A/B/C and produce E6 design memo with one explicit verification plan
+- Hands-on (30): choose collection mode A/B/C and produce E08 design memo with one explicit verification plan
 - Debrief (10): compare mode choices and threat-mitigation strategies
 
 #### Day 2 Block 3: Literature Review
@@ -154,22 +154,22 @@ Each block page should use this exact structure:
 
 ### Note on exercise IDs:
 
-- Use one exercise per teaching block: E1-E12.
+- Use one exercise per teaching block: E01-E12.
 - Keep `exercise_id` as free text in Google Form so IDs can scale without schema changes.
 
 ### Exercise registry (keep updated):
 
 | exercise_id | block | short title | prefill link | status |
 |---|---|---|---|---|
-| E1 | Day 1 Block 1 | Jan setup and first programmable task | TODO | draft |
-| E2 | Day 1 Block 2 | LangChain prompt anatomy in code | TODO | draft |
-| E3 | Day 1 Block 3 | Context pipeline with retrieval | TODO | draft |
-| E4 | Day 1 Block 4 | Tool-calling mini-agent | TODO | draft |
-| E5 | Day 1 Block 5 | Build and connect a tiny MCP tool | TODO | draft |
-| E6 | Day 1 Block 6 | Memory behavior: session + retrieval | TODO | draft |
-| E7 | Day 2 Block 1 | Ideation project + idea napkin | TODO | draft |
-| E8 | Day 2 Block 2 | AI data-collection design memo | TODO | draft |
-| E9 | Day 2 Block 3 | Evidence paragraph + claim ledger | TODO | draft |
+| E01 | Day 1 Block 1 | Jan setup and first programmable task | TODO | draft |
+| E02 | Day 1 Block 2 | LangChain prompt anatomy in code | TODO | draft |
+| E03 | Day 1 Block 3 | Context pipeline with retrieval | TODO | draft |
+| E04 | Day 1 Block 4 | Tool-calling mini-agent | TODO | draft |
+| E05 | Day 1 Block 5 | Build and connect a tiny MCP tool | TODO | draft |
+| E06 | Day 1 Block 6 | Memory behavior: session + retrieval | TODO | draft |
+| E07 | Day 2 Block 1 | Ideation project + idea napkin | TODO | draft |
+| E08 | Day 2 Block 2 | AI data-collection design memo | TODO | draft |
+| E09 | Day 2 Block 3 | Evidence paragraph + claim ledger | TODO | draft |
 | E10 | Day 2 Block 4 | Reproducible analysis loop in VS Code | TODO | draft |
 | E11 | Day 2 Block 5 | Issue -> agent -> PR workflow drill | TODO | draft |
 | E12 | Day 2 Block 6 | Writing + syndication sprint | TODO | draft |
@@ -181,21 +181,18 @@ Each block page should use this exact structure:
 - Zotero + AI workflow integration guide
 - Self-hosting cost calculator reference (local vs API)
 
-## Teaching Schedule (09:00-17:00, 1h lunch)
+## Teaching Schedule (09-17:00, 1h lunch)
 
-### Daily time grid (same for both days)
+### Daily time grid
 
-- 09:00-10:00: Block 1
-- 10:00-10:15: break
-- 10:15-11:15: Block 2
-- 11:15-11:30: break
-- 11:30-12:30: Block 3
-- 12:30-13:30: lunch
+- 09-10:00: Block 1
+- 10-11:15: Block 2 + Coffee
+- 11:15-12:30: Block 3
+- 12:30-13:30: Lunch (Day 1: provided)
 - 13:30-14:30: Block 4
-- 14:30-14:45: break
-- 14:45-15:45: Block 5
-- 15:45-16:00: break
-- 16:00-17:00: Block 6
+- 14:30-16:00: Block 5 + Coffee
+- 16-17:00: Block 6
+- Day 2 only: Drinks after 17:00
 
 Default within each block:
 
@@ -206,7 +203,7 @@ Default within each block:
 ### Coverage note
 
 - This grid provides six full teaching blocks per day (6 contact hours/day).
-- If you need seven teaching hours on a specific day, add a 08:30-09:00 kickoff clinic or convert one break into a guided lab extension.
+- If you need seven teaching hours on a specific day, add a 08:30-09:00 kickoff clinic or extend guided lab time.
 
 ## Slide Style Rules
 
@@ -232,21 +229,18 @@ In this repo, keep slide content concise and keep explanatory detail in speaker 
 1. Participants open exercise links from companion website.
 2. They submit through a single Google Form.
 3. Responses land in Google Sheets.
-4. Companion website live-results page reads sheet output.
-5. Slides embed the live-results page for immediate discussion.
+4. Companion website shows exercise links and submission instructions.
+5. Instructors can inspect the response sheet directly when needed.
 
 ### Submission schema
 
 Use one form with these fields:
 
-- `exercise_id` (short text)
-- `group_id` (short text)
-- `answer_type` (multiple choice: text/code/link/upload)
-- `answer` (paragraph)
-- `artifact_url` (optional link)
-- `confidence` (1-5 self-rating)
-- `uncertainty_note` (one uncertainty or failure point)
-- `verification_method` (how output was checked)
+- `exercise_id` (two-digit code: E01...E12)
+- `Name` (short text)
+- `Answer` (paragraph)
+
+Optional form fields can be added later, but keep this minimal core stable.
 
 ### Exercise registry (keep updated)
 
@@ -254,49 +248,50 @@ Keep this table current whenever exercises or links change.
 
 | exercise_id | block | short title | prefill link | status |
 |---|---|---|---|---|
-| E1 | Day 1 Block 1 | Jan setup and first programmable task | TODO | draft |
-| E2 | Day 1 Block 2 | LangChain prompt anatomy in code | TODO | draft |
-| E3 | Day 1 Block 3 | Context pipeline with retrieval | TODO | draft |
-| E4 | Day 1 Block 4 | Tool-calling mini-agent | TODO | draft |
-| E5 | Day 1 Block 5 | Build and connect a tiny MCP tool | TODO | draft |
-| E6 | Day 1 Block 6 | Memory behavior: session + retrieval | TODO | draft |
-| E7 | Day 2 Block 1 | Ideation project + idea napkin | TODO | draft |
-| E8 | Day 2 Block 2 | AI data-collection design memo | TODO | draft |
-| E9 | Day 2 Block 3 | Evidence paragraph + claim ledger | TODO | draft |
+| E01 | Day 1 Block 1 | Jan setup and first programmable task | TODO | draft |
+| E02 | Day 1 Block 2 | LangChain prompt anatomy in code | TODO | draft |
+| E03 | Day 1 Block 3 | Context pipeline with retrieval | TODO | draft |
+| E04 | Day 1 Block 4 | Tool-calling mini-agent | TODO | draft |
+| E05 | Day 1 Block 5 | Build and connect a tiny MCP tool | TODO | draft |
+| E06 | Day 1 Block 6 | Memory behavior: session + retrieval | TODO | draft |
+| E07 | Day 2 Block 1 | Ideation project + idea napkin | TODO | draft |
+| E08 | Day 2 Block 2 | AI data-collection design memo | TODO | draft |
+| E09 | Day 2 Block 3 | Evidence paragraph + claim ledger | TODO | draft |
 | E10 | Day 2 Block 4 | Reproducible analysis loop in VS Code | TODO | draft |
 | E11 | Day 2 Block 5 | Issue -> agent -> PR workflow drill | TODO | draft |
 | E12 | Day 2 Block 6 | Writing + syndication sprint | TODO | draft |
 
 Canonical exercise draft source:
 
-- `exercises/drafts.md` is the source-of-truth markdown for E1-E12 briefs.
+- `exercises/drafts.md` is the source-of-truth markdown for E01-E12 briefs.
 
 ### Google Form tracking (keep updated)
 
-- `GOOGLE_FORM_URL`:
-- `GOOGLE_FORM_EXERCISE_FIELD`:
-- `GOOGLE_FORM_GROUP_FIELD`:
-- `WORKSHOP_FORM_ID`:
+- `GOOGLE_FORM_URL`: `https://docs.google.com/forms/d/e/1FAIpQLSd1ihRroDZ7lSsCxWb3CKDH9DGrn6anGA6Avd93c3zFiPLXJg/viewform?usp=dialog`
+- `GOOGLE_FORM_EXERCISE_FIELD`: `820055728`
+- `GOOGLE_FORM_STUDENT_NAME_FIELD`: `723079393`
+- `GOOGLE_FORM_ANSWER_FIELD`: `1512152126`
+- `WORKSHOP_FORM_ID`: `1FAIpQLSd1ihRroDZ7lSsCxWb3CKDH9DGrn6anGA6Avd93c3zFiPLXJg`
 - `WORKSHOP_SPREADSHEET_ID`:
 - Active collection sheet URL:
-- Live results CSV URL:
-- Live results JSON URL:
+- Live results CSV URL (optional, currently paused):
+- Live results JSON URL (optional, currently paused):
 
 Future agents must update these values after form setup or any migration.
 
 ### Operational defaults
 
 - no sign-in requirement
-- group code based submissions
+- per-student submissions
 - keep one global form for all exercises
 - exercise link uses prefilled `exercise_id`
-- require confidence + uncertainty capture on key exercises (E2, E3, E5, E6, E7)
+- keep required fields minimal (`exercise_id`, `Name`, `Answer`)
 
 ### During class
 
 - launch exercise from website `Live Exercises`
 - let groups submit within a fixed timebox
-- open `Live Results` and discuss examples
+- open the response sheet directly and discuss examples
 - use the built-in group picker in slides for presentations
 
 ### Fallbacks

@@ -400,6 +400,8 @@ sequenceDiagram
 
 ::::
 
+{{< include ../_exercise_slide.qmd >}}
+
 ## References
 
 ::: {#refs}

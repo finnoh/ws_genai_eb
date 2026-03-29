@@ -9,14 +9,9 @@
 
 ## Submission fields (every response)
 
-- `exercise_id`
-- `group_id`
-- `answer_type`
-- `answer`
-- `artifact_url` (if used)
-- `confidence` (1-5)
-- `uncertainty_note`
-- `verification_method`
+- `exercise_id` (two-digit code, `E01`...`E12`)
+- `Name`
+- `Answer`
 
 ## Environment defaults
 
@@ -26,51 +21,51 @@
 
 ## Day 1
 
-### E1 - Jan setup and first programmable task
+### E01 - Jan setup and first programmable task
 
 - Set up Jan and run one tiny task end-to-end.
-- Submit execution evidence + one customization choice.
+- Run `exercises/01/hello_world.py` and complete one `TODO-STUDENT` tweak.
+- Submit execution evidence + one manual check + one TODO note.
 
-### E2 - LangChain prompt anatomy in code
+### E02 - LangChain prompt anatomy in code
 
-- Run a first LangChain prompt and capture output.
-- Solve country extraction from noisy text.
-- Return a structured Python list.
-- Add a short model and docs orientation note.
+- Run `exercises/02/prompt_lab.py`.
+- Complete one `TODO-STUDENT` prompt tweak and compare output.
+- Return a structured Python list and verification note.
 
-### E3 - Context pipeline with retrieval
+### E03 - Context pipeline with retrieval
 
-- Build retrieve -> compress -> inject flow.
-- Compare baseline vs retrieval-enhanced answer.
+- Run `exercises/03/retrieval_ab.py` and complete its `TODO-STUDENT` steps.
+- Compare baseline vs retrieval-enhanced answer with one source-backed fix.
 
-### E4 - Tool-calling mini-agent
+### E04 - Tool-calling mini-agent
 
-- Implement at least two tools.
-- Run one multi-step query and submit tool trace.
+- Run `exercises/04/tool_agent.py`.
+- Complete one `TODO-STUDENT` change and submit the tool trace.
 
-### E5 - Build and connect a tiny MCP tool
+### E05 - Build and connect a tiny MCP tool
 
-- Implement one tiny tool service.
-- Wire to agent workflow and submit one successful call trace.
+- Run `exercises/05/mcp_tool.py` with MCP time server.
+- Submit one successful call trace and one handled error path.
 
-### E6 - Memory behavior: session + retrieval
+### E06 - Memory behavior: session + retrieval
 
-- Define memory policy.
+- Run `exercises/06/memory_demo.py` and try one `TODO-STUDENT` modification.
 - Show short-term and long-term memory behavior in a short trace.
 
 ## Day 2
 
-### E7 - Ideation project + idea napkin
+### E07 - Ideation project + idea napkin
 
 - Build one idea napkin from project-based ideation.
 - Include one domain scoring rationale and one risk note.
 
-### E8 - AI data-collection design memo
+### E08 - AI data-collection design memo
 
 - Choose A/B/C mode.
 - Submit one-page protocol with validation plan.
 
-### E9 - Evidence paragraph + claim ledger
+### E09 - Evidence paragraph + claim ledger
 
 - Produce one paragraph grounded in sources.
 - Submit claim-evidence ledger with any unresolved gap.

@@ -62,7 +62,7 @@ curl -sL https://raw.githubusercontent.com/finnoh/ti-student-agent-pack/main/ins
 
 ## What's Included
 
-- Exercise files (E1-E8)
+- Exercise files (E01-E12)
 - Submission tools
 - TIA coaching agent (AGENTS.md)
 - Progress dashboard

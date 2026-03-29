@@ -107,6 +107,8 @@ Zotero MCP:
 </div>
 ```
 
+{{< include ../_exercise_slide.qmd >}}
+
 ## References
 
 ::: {#refs}

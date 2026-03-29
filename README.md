@@ -10,19 +10,37 @@
 If you're a student looking for the exercise workspace:
 
 **Option 1: One-line Install (Recommended)**
+
+Mac/Linux:
 ```bash
 curl -sL https://raw.githubusercontent.com/finnoh/ti-student-agent-pack/main/install.sh | bash
 ```
 
+Windows PowerShell (no admin, no WSL):
+```powershell
+irm https://raw.githubusercontent.com/finnoh/ti-student-agent-pack/main/install.ps1 | iex
+```
+
 This will clone the repository to `student-agent-pack/` and set up your environment.
+
+Notes:
+- Windows users normally do not have Bash in PowerShell/CMD by default, so use `install.ps1`.
+- Installers now include fallback paths: `uv` bootstrap, uv-managed Python, and ZIP download when `git` is missing.
 
 **Option 2: Download and Install**
 1. Download the latest release from [github.com/finnoh/ti-student-agent-pack](https://github.com/finnoh/ti-student-agent-pack/releases)
 2. Extract the zip file to a new folder
-3. Run:
+3. Run one of:
+
+   Mac/Linux:
    ```bash
    chmod +x install.sh
    ./install.sh
+   ```
+
+   Windows PowerShell:
+   ```powershell
+   .\install.ps1
    ```
 
 **Option 3: Use this repository**
@@ -102,6 +120,7 @@ To package it for distribution:
 ./scripts/course_pack/package_student_agent_pack.sh
 ```
 
-The packagen script creates a zip file with:
+The packaging script creates a zip file with:
 - Root-level `install.sh` for easy one-line installation
+- Root-level `install.ps1` for Windows PowerShell installation
 - `student-agent-pack/` directory with all exercise files and tools

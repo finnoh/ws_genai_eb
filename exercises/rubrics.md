@@ -9,56 +9,56 @@ Scale for all criteria: 0 (missing), 1 (weak), 2 (acceptable), 3 (strong).
 - Reproducibility: can another group rerun it?
 - Risk awareness: are key risks identified and mitigated?
 
-## E1 - Jan setup and first programmable task
+## E01 - Jan setup and first programmable task
 
 - Environment setup completeness
 - Correct execution evidence
 - Quality of Jan customization note
 
-## E2 - LangChain prompt anatomy in code
+## E02 - LangChain prompt anatomy in code
 
 - First prompt run and output capture quality
 - Country extraction correctness (cleaning + filtering)
 - Structured output validity (Python list)
 - Orientation note quality and relevance
 
-## E3 - Context pipeline with retrieval
+## E03 - Context pipeline with retrieval
 
 - Retrieval relevance
 - A/B comparison fairness
 - Failure analysis specificity
 
-## E4 - Tool-calling mini-agent
+## E04 - Tool-calling mini-agent
 
 - Tool interface design quality
 - Correct tool selection behavior
 - Output verification quality
 
-## E5 - Build and connect a tiny MCP tool
+## E05 - Build and connect a tiny MCP tool
 
 - Tool implementation clarity
 - Agent wiring quality
 - Sanity-check quality
 
-## E6 - Memory behavior: session + retrieval
+## E06 - Memory behavior: session + retrieval
 
 - Memory policy quality
 - Correct short-term behavior
 - Correct long-term retrieval behavior
 
-## E7 - Ideation project + idea napkin
+## E07 - Ideation project + idea napkin
 
 - Domain selection logic
 - Idea napkin clarity
 - IP/HARKING risk awareness
 
-## E8 - AI data-collection design memo
+## E08 - AI data-collection design memo
 
 - Mode-choice justification (A/B/C)
 - Threat model clarity
 - Verification feasibility
 
-## E9 - Evidence paragraph + claim ledger
+## E09 - Evidence paragraph + claim ledger
 
 - Claim-evidence traceability
 - Source reliability and paywall logging

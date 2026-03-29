@@ -6,8 +6,8 @@ You are grading one workshop submission for Exercise 2.
 Evaluate prompt-engineering quality, not writing style. Be strict, consistent, and concise.
 
 ## Input fields
-- `group_id`
-- `exercise_id` (must be `E2`)
+- `Name`
+- `exercise_id` (must be `E02`)
 - `original_prompt`
 - `rewritten_prompt`
 - `ab_test_summary`

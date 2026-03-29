@@ -217,6 +217,8 @@ Traditionally:
 ![[Toubia et al.](https://huggingface.co/datasets/LLM-Digital-Twin/Twin-2K-500)](../../assets/images/twin2k.png)
 
 
+{{< include ../_exercise_slide.qmd >}}
+
 ## References
 
 ::: {#refs}

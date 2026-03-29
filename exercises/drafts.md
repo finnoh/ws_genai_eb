@@ -1,4 +1,4 @@
-# Exercise Drafts (E1-E12)
+# Exercise Drafts (E01-E12)
 
 One exercise per teaching block (12 total). Each exercise is scoped to be solvable in ~30 minutes with Jan support and room for discussion/hiccups.
 
@@ -9,21 +9,22 @@ Execution defaults:
 
 Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 3 (strong).
 
-## E1 - Jan setup and first programmable task (Day 1, Block 1)
+## E01 - Jan setup and first programmable task (Day 1, Block 1)
 
 ### Objective
 
 - Get operational with Jan and the workshop toolchain.
-- Complete one tiny programming task via Jan with a verifiable output.
+- Run `exercises/01/hello_world.py` and capture one successful output.
+- Complete the `TODO-STUDENT` change in `exercises/01/hello_world.py` and rerun.
 
 ### Inputs
 
 - Jan installed and running.
-- Starter task: parse a tiny CSV and compute one summary stat.
+- `exercises/01/data/tiny.csv` and `exercises/01/hello_world.py`.
 
 ### Deliverable (single micro artifact)
 
-- One screenshot/log snippet showing Jan ran a task end-to-end, plus one sentence on what to customize in Jan.
+- One startup screenshot/log, one script run output, one manual check from `tiny.csv`, and one sentence describing your TODO change.
 
 ### Timebox
 
@@ -31,24 +32,23 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 ### Submission link
 
-- `/docs/live-exercises?exercise=E1`
+- `/docs/live-exercises?exercise=E01`
 
 ### Extension task (optional)
 
 - Add one custom instruction to Jan and rerun the same task.
 
-## E2 - LangChain prompt anatomy in code (Day 1, Block 2)
+## E02 - LangChain prompt anatomy in code (Day 1, Block 2)
 
 ### Objective
 
 - Run a first LangChain prompt and capture its output in Python.
 - Solve one concrete country-extraction task from noisy text.
-- Add structured output and a short model/docs orientation note.
+- Complete one `TODO-STUDENT` prompt tweak in `exercises/02/prompt_lab.py` and compare output.
 
 ### Inputs
 
-- Jupyter notebook or `.py`.
-- LangChain prompt template + simple structured output.
+- `exercises/02/prompt_lab.py`.
 - Noisy country paragraph from scaffold.
 - Orientation links:
   - https://openrouter.ai/rankings
@@ -57,7 +57,7 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 ### Deliverable (single micro artifact)
 
-- One runnable snippet that returns a Python list of cleaned country names for the noisy paragraph, plus a short orientation note with one model choice rationale and two practical takeaways from docs.
+- One runnable output returning cleaned country names as a Python list plus one verification note and one TODO experiment note.
 
 ### Timebox
 
@@ -65,26 +65,27 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 ### Submission link
 
-- `/docs/live-exercises?exercise=E2`
+- `/docs/live-exercises?exercise=E02`
 
 ### Extension task (optional)
 
 - Run the same extraction task with one alternative OpenRouter model and briefly compare quality/speed/cost expectation.
 
-## E3 - Context pipeline with retrieval (Day 1, Block 3)
+## E03 - Context pipeline with retrieval (Day 1, Block 3)
 
 ### Objective
 
 - Build a minimal retrieval context pipeline and compare against no-context baseline.
+- Complete all `TODO-STUDENT` prompts in `exercises/03/retrieval_ab.py`.
 
 ### Inputs
 
-- 3-5 short local docs.
-- LangChain document loading + splitting + retrieval components.
+- `exercises/03/retrieval_ab.py`.
+- Local docs in `exercises/03/local_docs/`.
 
 ### Deliverable (single micro artifact)
 
-- A/B note with one failure fixed by retrieval context.
+- A/B note with one failure fixed by retrieval context and one source-backed comparison note.
 
 ### Timebox
 
@@ -92,26 +93,27 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 ### Submission link
 
-- `/docs/live-exercises?exercise=E3`
+- `/docs/live-exercises?exercise=E03`
 
 ### Extension task (optional)
 
 - Add metadata filtering and report precision difference.
 
-## E4 - Tool-calling mini-agent (Day 1, Block 4)
+## E04 - Tool-calling mini-agent (Day 1, Block 4)
 
 ### Objective
 
 - Build a LangChain agent that calls at least two tools.
+- Complete one `TODO-STUDENT` change in `exercises/04/tool_agent.py` and rerun.
 
 ### Inputs
 
-- Two simple tools (e.g., `calc_stat`, `lookup_term`).
+- `exercises/04/tool_agent.py` with two wired tools.
 - One multi-step question requiring both tools.
 
 ### Deliverable (single micro artifact)
 
-- One run trace proving tool selection + one output verification check.
+- One run trace proving both tool calls + one plausibility/verification check + one TODO change note.
 
 ### Timebox
 
@@ -119,27 +121,27 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 ### Submission link
 
-- `/docs/live-exercises?exercise=E4`
+- `/docs/live-exercises?exercise=E04`
 
 ### Extension task (optional)
 
 - Add graceful fallback for a forced tool failure.
 
-## E5 - Build and connect a tiny MCP tool (Day 1, Block 5)
+## E05 - Build and connect a tiny MCP tool (Day 1, Block 5)
 
 ### Objective
 
-- Shift from tool user to tool builder.
-- Implement one tiny MCP-like tool service and wire it to agent workflow.
+- Connect a LangChain agent to `mcp-server-time` via MCP.
+- Complete `TODO-STUDENT` experiments in `exercises/05/mcp_tool.py`.
 
 ### Inputs
 
-- FastMCP template (or equivalent local tool interface).
-- Toy domain function (NPV, breakeven, or ARIMA toy forecast).
+- `exercises/05/mcp_tool.py`.
+- MCP server: `mcp-server-time` via `uvx`.
 
 ### Deliverable (single micro artifact)
 
-- Tool call demo: input -> tool output -> agent explanation, with one sanity check.
+- MCP tool-call demo: one success path + one error path + one sanity check.
 
 ### Timebox
 
@@ -147,26 +149,27 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 ### Submission link
 
-- `/docs/live-exercises?exercise=E5`
+- `/docs/live-exercises?exercise=E05`
 
 ### Extension task (optional)
 
-- Add one argument validation rule and show error handling.
+- Connect to one additional MCP server and run one extra call.
 
-## E6 - Memory behavior: session + retrieval memory (Day 1, Block 6)
+## E06 - Memory behavior: session + retrieval memory (Day 1, Block 6)
 
 ### Objective
 
 - Demonstrate short-term memory and retriever-backed long-term memory behavior.
+- Complete one `TODO-STUDENT` modification in `exercises/06/memory_demo.py`.
 
 ### Inputs
 
-- Tiny memory policy (store/ignore/prune).
-- 3-5 turn scripted conversation + one retrievable note.
+- `exercises/06/memory_demo.py`.
+- Long-term store file (`exercises/06/long_term_store.json`) and session resets.
 
 ### Deliverable (single micro artifact)
 
-- Chat trace showing remembered preference + retrieved fact + one memory risk disclosure.
+- Chat trace showing remembered preference + retrieved fact across reset + one memory risk disclosure.
 
 ### Timebox
 
@@ -174,13 +177,13 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 ### Submission link
 
-- `/docs/live-exercises?exercise=E6`
+- `/docs/live-exercises?exercise=E06`
 
 ### Extension task (optional)
 
 - Add a stale-memory correction step.
 
-## E7 - Ideation project + idea napkin (Day 2, Block 1)
+## E07 - Ideation project + idea napkin (Day 2, Block 1)
 
 ### Objective
 
@@ -201,13 +204,13 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 ### Submission link
 
-- `/docs/live-exercises?exercise=E7`
+- `/docs/live-exercises?exercise=E07`
 
 ### Extension task (optional)
 
 - Add a second domain and a tie-break rule.
 
-## E8 - AI data-collection design memo (Day 2, Block 2)
+## E08 - AI data-collection design memo (Day 2, Block 2)
 
 ### Objective
 
@@ -228,13 +231,13 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 ### Submission link
 
-- `/docs/live-exercises?exercise=E8`
+- `/docs/live-exercises?exercise=E08`
 
 ### Extension task (optional)
 
 - Add pilot criteria (sample size, stop/continue rule).
 
-## E9 - Evidence paragraph + claim ledger (Day 2, Block 3)
+## E09 - Evidence paragraph + claim ledger (Day 2, Block 3)
 
 ### Objective
 
@@ -255,7 +258,7 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 ### Submission link
 
-- `/docs/live-exercises?exercise=E9`
+- `/docs/live-exercises?exercise=E09`
 
 ### Extension task (optional)
 

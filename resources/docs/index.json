@@ -7,7 +7,7 @@
     "tags": "opencode,agent,ide",
     "status": "active",
     "parsed_title": "Intro | OpenCode",
-    "fetched_at": "2026-03-26T10:55:54+00:00",
+    "fetched_at": "2026-03-29T17:29:26+00:00",
     "word_count": 1238,
     "text_path": "resources/docs/text/d001-opencode-docs.txt",
     "excerpt_path": "resources/docs/excerpts/d001-opencode-docs.md"
@@ -20,8 +20,8 @@
     "tags": "openclaw,framework,orchestration",
     "status": "active",
     "parsed_title": "OpenClaw - OpenClaw",
-    "fetched_at": "2026-03-26T10:55:54+00:00",
-    "word_count": 687,
+    "fetched_at": "2026-03-29T17:29:26+00:00",
+    "word_count": 683,
     "text_path": "resources/docs/text/d002-openclaw-docs.txt",
     "excerpt_path": "resources/docs/excerpts/d002-openclaw-docs.md"
   },
@@ -33,8 +33,8 @@
     "tags": "claude,anthropic,api",
     "status": "active",
     "parsed_title": "Documentation - Claude API Docs",
-    "fetched_at": "2026-03-26T10:55:54+00:00",
-    "word_count": 738,
+    "fetched_at": "2026-03-29T17:29:26+00:00",
+    "word_count": 775,
     "text_path": "resources/docs/text/d003-claude-platform-docs.txt",
     "excerpt_path": "resources/docs/excerpts/d003-claude-platform-docs.md"
   },
@@ -46,8 +46,8 @@
     "tags": "openai,api,tool-calling",
     "status": "active",
     "parsed_title": "OpenAI API Platform Documentation",
-    "fetched_at": "2026-03-26T10:55:54+00:00",
-    "word_count": 1355,
+    "fetched_at": "2026-03-29T17:29:26+00:00",
+    "word_count": 1384,
     "text_path": "resources/docs/text/d004-openai-api-docs.txt",
     "excerpt_path": "resources/docs/excerpts/d004-openai-api-docs.md"
   }

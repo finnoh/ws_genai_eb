@@ -1,3 +1,5 @@
+import e01e06Overrides from './exercises_e01_e06_overrides.json';
+
 export type ExerciseId =
   | 'E01'
   | 'E02'
@@ -42,7 +44,7 @@ export const canonicalTimebox = {
   debriefMinutes: 10,
 };
 
-export const exercises: ExerciseItem[] = [
+const exerciseSeed: ExerciseItem[] = [
   {
     id: 'E01',
     title: 'Setup Jan + OpenRouter + hello world',
@@ -51,12 +53,12 @@ export const exercises: ExerciseItem[] = [
     durationMinutes: 30,
     answerType: 'text',
     prompt:
-      'Minimum: submit startup evidence + one Jan response. Full: add hello-world output, manual verification note, and one customization note.',
+      'Submit startup evidence, one run of exercises/01/hello_world.py, one manual check from tiny.csv, and one TODO-STUDENT change note.',
     objective:
-      'Get setup operational with a minimum viability check first; run hello-world coding if setup is stable and time permits.',
-    inputs: ['Install workflow', 'OpenRouter key in .env', 'Tiny CSV with a numeric column'],
+      'Get setup operational, run the hello-world script, and practice one small student-side script edit.',
+    inputs: ['Install workflow', 'OpenRouter key in .env', 'exercises/01/hello_world.py + tiny.csv'],
     deliverable:
-      'Minimum startup evidence + Jan response; full submission adds hello-world run + manual verification + customization note.',
+      'Startup evidence + Jan response + script output + manual verification + TODO update note.',
     rubricSpecific: ['Environment setup is reproducible.', 'Manual verification evidence is explicit.'],
     commonFailureModes: ['Missing OPENROUTER_API_KEY or base URL.', 'Skipping minimum startup evidence before coding.'],
     extensionTask: 'Switch to a second free OpenRouter model and compare output quality or speed.',
@@ -70,11 +72,11 @@ export const exercises: ExerciseItem[] = [
     durationMinutes: 30,
     answerType: 'code',
     prompt:
-      'Submit a runnable snippet returning cleaned country names as a Python list plus a short model/docs orientation note (minimum one practical takeaway).',
-    objective: 'Turn a noisy extraction task into structured Python output and document one model/docs rationale.',
-    inputs: ['Noisy country paragraph', 'LangChain prompt + structured output', 'Orientation links (OpenRouter, OpenCode, LangChain docs)'],
+      'Submit output from exercises/02/prompt_lab.py, including one TODO-STUDENT prompt tweak and one verification note.',
+    objective: 'Turn noisy extraction into structured Python output and compare one prompt tweak.',
+    inputs: ['exercises/02/prompt_lab.py', 'Noisy country paragraph', 'One TODO-STUDENT prompt variant'],
     deliverable:
-      'Runnable snippet returning cleaned country names as a Python list + short orientation note (minimum one practical takeaway).',
+      'Runnable output with cleaned country list + verification evidence + TODO experiment note.',
     rubricSpecific: ['Output is a valid Python list.', 'Cleaning/filtering logic is correct and explicit.'],
     commonFailureModes: ['Output format drifts from strict list.', 'Typos fixed inconsistently or fictional places included.'],
     extensionTask:
@@ -89,11 +91,11 @@ export const exercises: ExerciseItem[] = [
     durationMinutes: 30,
     answerType: 'text',
     prompt:
-      'Submit a fair A/B comparison (same question, same model) with one baseline failure fixed by retrieval, one quoted source chunk, and one boundary disclosure.',
-    objective: 'Build a tiny local corpus and run a fair A/B test (no retrieval vs retrieval) on the same question.',
-    inputs: ['Local corpus with 4-6 short files', 'LangChain loading/splitting/retrieval components'],
+      'Submit an A/B comparison from exercises/03/retrieval_ab.py, including TODO-STUDENT variants (question + k).',
+    objective: 'Run baseline vs retrieval on the same question and document one retrieval-fixed failure.',
+    inputs: ['exercises/03/retrieval_ab.py', 'Local corpus in exercises/03/local_docs'],
     deliverable:
-      'A/B note with one retrieval-fixed failure + one quoted supporting chunk + one privacy/copyright boundary disclosure.',
+      'A/B note with one retrieval-fixed failure + one quoted chunk + one comparison note.',
     rubricSpecific: ['A/B comparison controls key variables.', 'Improvement is traceable to retrieved evidence.'],
     commonFailureModes: [
       'Baseline and retrieval runs use different prompts/settings.',
@@ -110,16 +112,15 @@ export const exercises: ExerciseItem[] = [
     durationMinutes: 30,
     answerType: 'code',
     prompt:
-      'Submit a trace showing two-tool use (including one existing tool), one verification check, one failure-mode note, and a no-auth fallback path.',
+      'Submit trace from exercises/04/tool_agent.py showing two tool calls, plausibility check, and one TODO-STUDENT change.',
     objective:
-      'Integrate at least one existing tool and define a no-auth local fallback for a two-tool, multi-step research question.',
+      'Run a two-tool LangChain agent and verify output with one reproducible check.',
     inputs: [
-      'One existing research-relevant tool',
-      'One local helper tool',
-      'One no-auth fallback path',
+      'exercises/04/tool_agent.py',
+      'Two tools: label lookup + average',
       'One multi-step question requiring both tools',
     ],
-    deliverable: 'Tool trace + output verification + failure-mode note + fallback plan.',
+    deliverable: 'Tool trace + plausibility check + one TODO update note.',
     rubricSpecific: ['Tool selection behavior is observable and justified.', 'Output check is explicit and plausible.'],
     commonFailureModes: ['Agent answers directly without using both tools.', 'No no-auth fallback when external tool setup fails.'],
     extensionTask: 'Add graceful fallback for a forced tool failure and show fallback trace.',
@@ -127,18 +128,18 @@ export const exercises: ExerciseItem[] = [
   },
   {
     id: 'E05',
-    title: 'Build and connect tiny MCP tool',
+    title: 'Connect LangChain agent to MCP time server',
     day: 'Day 1',
     block: 'Block 5',
     durationMinutes: 30,
     answerType: 'code',
-    prompt: 'Submit an input -> tool output -> agent explanation demo with one sanity check and one handled error case.',
-    objective: 'Build one tiny custom tool, define input/output contract, and wire it into an agent workflow.',
-    inputs: ['Tiny domain tool idea (e.g., NPV, breakeven, elasticity)', 'I/O contract (arguments, units, return fields)'],
-    deliverable: 'Connected custom tool demo + sanity check + error-path evidence.',
-    rubricSpecific: ['Tool contract is clear and testable.', 'Integration run demonstrates success and error behavior.'],
-    commonFailureModes: ['Missing argument validation.', 'Tool works in isolation but not in workflow.'],
-    extensionTask: 'Expose the function via a minimal local MCP server and rerun one call.',
+    prompt: 'Submit MCP run evidence from exercises/05/mcp_tool.py with one success path, one error path, and TODO-STUDENT experiments.',
+    objective: 'Connect LangChain to mcp-server-time via MCP and verify success/error handling.',
+    inputs: ['exercises/05/mcp_tool.py', 'mcp-server-time via uvx', 'LangChain MCP adapters'],
+    deliverable: 'MCP tool-call demo + sanity check + handled error-path evidence.',
+    rubricSpecific: ['MCP connection is working and observable.', 'Success and error paths are both documented.'],
+    commonFailureModes: ['uvx/mcp-server-time not available.', 'No explicit error-path evidence.'],
+    extensionTask: 'Connect one additional MCP server and run one extra query.',
     detailPath: '/docs/blocks/e5-design-agent-workflow',
   },
   {
@@ -148,10 +149,10 @@ export const exercises: ExerciseItem[] = [
     block: 'Block 6',
     durationMinutes: 30,
     answerType: 'text',
-    prompt: 'Submit a trace with remembered preference, retrieved project fact, and one memory risk disclosure.',
-    objective: 'Define memory policy and show short-term vs retriever-backed long-term memory behavior.',
-    inputs: ['Memory policy (store/ignore/prune)', 'AGENTS.md and MEMORY.md alignment', 'PROJECT_BACKGROUND.md note'],
-    deliverable: 'Trace showing remembered preference + retrieved project fact + risk note.',
+    prompt: 'Submit run evidence from exercises/06/memory_demo.py showing short-term reset behavior, long-term recall, and one TODO-STUDENT change note.',
+    objective: 'Show short-term vs long-term memory behavior with a reproducible script run.',
+    inputs: ['exercises/06/memory_demo.py', 'Session reset behavior', 'long_term_store.json'],
+    deliverable: 'Trace showing remembered preference + retrieved project fact across reset + risk note.',
     rubricSpecific: ['Short-term vs long-term memory is clearly separated.', 'Risk disclosure is concrete and relevant.'],
     commonFailureModes: ['Memory behavior claimed without trace evidence.', 'Unsafe or stale memory retained without correction.'],
     extensionTask: 'Compress memory notes and re-evaluate retrieval quality.',
@@ -255,6 +256,22 @@ export const exercises: ExerciseItem[] = [
     detailPath: '/docs/blocks/e12-writing-syndication-sprint',
   },
 ];
+
+type ExerciseOverride = Partial<Pick<ExerciseItem, 'title' | 'prompt' | 'objective' | 'inputs' | 'deliverable'>>;
+
+const normalizedOverrides = e01e06Overrides as Partial<Record<ExerciseId, ExerciseOverride>>;
+
+export const exercises: ExerciseItem[] = exerciseSeed.map((item) => {
+  const override = normalizedOverrides[item.id];
+  if (!override) {
+    return item;
+  }
+  return {
+    ...item,
+    ...override,
+    inputs: override.inputs ?? item.inputs,
+  };
+});
 
 export function getExerciseById(exerciseId: ExerciseId): ExerciseItem {
   const item = exercises.find((exercise) => exercise.id === exerciseId);

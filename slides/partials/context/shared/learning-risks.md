@@ -1,6 +1,6 @@
 ## Context Pack: learning-risks
 
-Generated: 2026-03-26T10:55:54+00:00
+Generated: 2026-03-29T17:29:26+00:00
 
 Use these resource notes in speaker notes and cite by resource ID.
 

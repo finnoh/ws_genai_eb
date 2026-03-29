@@ -16,7 +16,7 @@ We can also edit this history (e.g. in LangChain)!
 
 > But: Context window is finite and session-bound! 
 
-[^s1]: Sources: @langchainShortTermMemory @MicrosoftMemorySchool
+[^s1]: Sources: @langchainShortTermMemory
 
 ## Long-Term Memory
 
@@ -83,6 +83,8 @@ Retrieval-Augmented Generation (RAG) (*... and fancy systems on top of it*)
 
 ![[Figure from LangChain](https://docs.langchain.com/oss/python/langchain/rag)](../../assets/images/rag_retrieve.png)
 
+
+{{< include ../_exercise_slide.qmd >}}
 
 ## References {.scrollable}
 

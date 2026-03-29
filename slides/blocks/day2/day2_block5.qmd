@@ -36,14 +36,14 @@ Embrace the role of an architect
 ## An Issue
 
 ```md
-Title: Add verification checklist to E6 page
+Title: Add verification checklist to E06 page
 
 Why
 - Groups skip verification notes
 - Review discussion gets uneven
 
 Done when
-- E6 page shows 3-step checklist
+- E06 page shows 3-step checklist
 - rubric mentions verification note
 - page builds without errors
 ```
@@ -54,7 +54,7 @@ You can teach an agent to use the CLI
 
 ```bash
 gh issue create \
-  --title "Add verification checklist to E6 page" \
+  --title "Add verification checklist to E06 page" \
   --body-file issue.md
 ```
 
@@ -90,6 +90,8 @@ AI changes the timing of actions
 
 ## {background-video="../../assets/videos/d2b5_hl.mp4" background-size="contain"}
 
+
+{{< include ../_exercise_slide.qmd >}}
 
 ## References
 
