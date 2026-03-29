@@ -1,0 +1,107 @@
+version: 1
+source: exercises/drafts.md
+rubric_source: exercises/rubrics.md
+scale:
+  "0": missing
+  "1": weak
+  "2": acceptable
+  "3": strong
+base_rubric:
+  - Usefulness: does the output help the stated task?
+  - Correctness: is it factually/procedurally sound?
+  - Reproducibility: can another group rerun it?
+  - Risk awareness: are key risks identified and mitigated?
+execution_defaults:
+  day1: LangChain + OpenRouter by default, Jupyter preferred (.py fallback)
+  day2: VS Code + OpenCode by default, LangChain + OpenRouter for coding tasks; ChatGPT allowed for ideation/evaluation
+
+exercises:
+  - id: E01
+    title: Getting started with Jan + hello world script
+    day: 1
+    block: 1
+    submission_link: /docs/live-exercises?exercise=E01
+    student_description:
+      objective:
+        - Start Jan in `student-agent-pack/` and run basic startup checks.
+        - Take a look at the student-agent-pack, especially AGENTS.md, BOOTSTRAP.md, tools/, exercises/, and also opencode.json
+        - Run `python exercises/01/hello_world.py` and capture output.
+        - Edit the `TODO-STUDENT` in `exercises/01/hello_world.py` and rerun once.
+        - Verify one value manually from `exercises/01/data/tiny.csv`.
+      deliverable: startup evidence + one script run + one manual check + one TODO change note.
+
+  - id: E02
+    title: Prompt anatomy in runnable Python
+    day: 1
+    block: 2
+    submission_link: /docs/live-exercises?exercise=E02
+    student_description:
+      objective:
+        - Familiarize yourself with LangChain https://docs.langchain.com/ and OpenRouter https://docs.openrouter.ai/ by browsing their docs and examples.
+        - What all can you do with LangChain?
+        - What are some of the most powerful models on OpenRouter? What are the "best value" models? What do they say about privacy and data usage?
+        - Run `python exercises/02/prompt_lab.py`.
+        - Inspect `TODO-STUDENT` prompt instruction and modify strictness once.
+        - Re-run and compare extraction output quality.
+        - Verify the resulting list excludes fictional places.
+      deliverable: one runnable extraction output + one verification note + one TODO experiment note.
+
+  - id: E03
+    title: Retrieval A/B with local corpus
+    day: 1
+    block: 3
+    submission_link: /docs/live-exercises?exercise=E03
+    student_description:
+      objective:
+        - Can you look up some services that offer RAG systems? How expensive is this?
+        - Imagine you would have a PDF. What steps are necessary to get it into a retriever? 
+        - Now imagine you would have an image or even a video. Could you (perhaps in a "hacky" way) get that into a retriever?
+        - Run `python exercises/03/retrieval_ab.py`.
+        - Complete all `TODO-STUDENT` steps in the script (question change + k change + comparison note).
+        - Record one baseline failure fixed by retrieval.
+      deliverable: A/B run trace + one retrieval-fixed failure + one source-backed comparison note.
+
+  - id: E04
+    title: Tool-calling mini-agent
+    day: 1
+    block: 4
+    submission_link: /docs/live-exercises?exercise=E04
+    student_description:
+      objective:
+        - Take a look at the LangChain documentation for tool use
+        - Think about your work. What kind of "tool" would be handy there?
+        - Take a look at https://agentskills.io/home and create a mockup of an agent skill that would be useful for your work. 
+        - Run `python exercises/04/tool_agent.py`.
+        - Modify one `TODO-STUDENT` item (region map or question format) and rerun.
+        - Keep and report the trace showing both tool calls and plausibility check.
+      deliverable: tool trace with two tool calls + plausibility check + one TODO change note.
+
+  - id: E05
+    title: Connect LangChain agent to MCP time server
+    day: 1
+    block: 5
+    submission_link: /docs/live-exercises?exercise=E05
+    student_description:
+      objective:
+        - Take a look at https://docs.langchain.com/oss/python/langchain/human-in-the-loop ; when would this be useful in your work?
+        - Why would one use an MCP server? What are the benefits and risks? How is it different from the tools before?
+        - Familiarize yourself with the MCP (watch out, this is very computer science heavy---but actually quite simple past the jargon) https://docs.langchain.com/oss/python/langchain/mcp
+        - Run `python exercises/05/mcp_tool.py`.
+        - Complete the `TODO-STUDENT` variants (timezone pair and error-path tweak).
+        - Record one success call and one handled error path.
+      deliverable: MCP tool-call evidence (success + error) + sanity check + one TODO change note.
+
+  - id: E06
+    title: Memory behavior with session and long-term store
+    day: 1
+    block: 6
+    submission_link: /docs/live-exercises?exercise=E06
+    student_description:
+      objective:
+        - Why would your agent need memory?
+        - How is memory different from context? How does it relate to tools?
+        - Take a look at OpenClaw. What is it? How is it different from your coding agent? What are the benefits and risks of using it? https://docs.openclaw.ai/
+        - Run `python exercises/06/memory_demo.py`.
+        - Try one `TODO-STUDENT` modification and rerun.
+        - Show short-term reset behavior and long-term retrieval behavior.
+      deliverable: memory trace proving short-term vs long-term distinction + one risk note.
