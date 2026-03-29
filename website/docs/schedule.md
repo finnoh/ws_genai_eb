@@ -2,13 +2,6 @@
 sidebar_position: 2
 ---
 
-# Schedule
-
-<div className="courseHero">
-  <p className="courseKicker">Daily Timetable</p>
-  <p className="courseLead">Each teaching block runs on a 20/30/10 rhythm: 20 minutes lecture, 30 minutes hands-on, 10 minutes debrief.</p>
-</div>
-
 ## Day 1 - Building AI Agents
 
 | Time | Session |
@@ -40,7 +33,3 @@ sidebar_position: 2
 | 14:45-15:45 | Block 5: Data Analysis & Coding 2 |
 | 15:45-16:00 | Break |
 | 16:00-17:00 | Block 6: Writing & Valorization (E7/E8) |
-
-<div className="courseBand">
-  <p>For objectives and deliverables per block, open the <a href="/docs/content/day1-1">Course Content by Block</a> pages.</p>
-</div>
