@@ -105,3 +105,86 @@ exercises:
         - Try one `TODO-STUDENT` modification and rerun.
         - Show short-term reset behavior and long-term retrieval behavior.
       deliverable: memory trace proving short-term vs long-term distinction + one risk note.
+
+  - id: E07
+    title: Team ideation sprint in ChatGPT/Claude project
+    day: 2
+    block: 1
+    submission_link: /docs/live-exercises?exercise=E07
+    student_description:
+      objective:
+        - Form a research team of 3 and create one shared project in ChatGPT or Claude (invite each other if possible).
+        - With AI, brainstorm possible research domains that fit your combined team skills and interests.
+        - (With AI and yourself) Score candidate domains on interest, feasibility, and timeliness (1-5) and select one domain.
+        - Together with AI, for the selected domain, draft 3 separate idea napkins (3 distinct possible projects).
+        - Add one short note on why each napkin is promising and what the main risk is.
+      deliverable: shared project evidence + scored domain table + 3 idea napkins with risk notes.
+
+  - id: E08
+    title: Three AI data-collection modes by example
+    day: 2
+    block: 2
+    submission_link: /docs/live-exercises?exercise=E08
+    student_description:
+      objective:
+        - Natural DGP + same instrument: design A/B experimental stimuli with AI (e.g., two highly similar images that differ only on one treatment).
+        - Natural DGP + new instrument: research how Prolific could be connected to an AI agent and propose one new data-collection flow.
+        - AI DGP: build a tiny synthetic-respondent demo using a few observations inspired by Twin-2K-500 (Toubia et al.).
+        - Interview at least one synthetic respondent and assess whether the answers seem plausible.
+        - Ask the synthetic respondent survey questions that you are interested in
+      deliverable: one worked example per mode + plausibility note + cross-mode comparison table.
+
+  - id: E09
+    title: AI-only literature mapping in a known stream
+    day: 2
+    block: 3
+    submission_link: /docs/live-exercises?exercise=E09
+    student_description:
+      objective:
+        - Pick a small research stream you know well, but do not name specific papers to the AI.
+        - Ask AI to map the stream, retrieve core papers, and generate a structured literature table.
+        - Ask AI to create a 2D scatterplot positioning papers on two meaningful dimensions.
+        - Evaluate what is missing, incorrect, or hallucinated against your own domain knowledge.
+        - Optional extension: install Zotero MCP and test whether your coding agent can recall papers from your Zotero library.
+      deliverable: AI-generated table + 2D map + verification note (and optional Zotero MCP test note).
+
+  - id: E10
+    title: Journal AI-policy to agent policy
+    day: 2
+    block: 4
+    submission_link: /docs/live-exercises?exercise=E10
+    student_description:
+      objective:
+        - Choose one target journal where you may want to publish and locate its AI-use guidelines.
+        - Identify what the journal expects for disclosure and documentation of AI assistance.
+        - Translate these requirements into a practical checklist for your own research workflow.
+        - Define how to encode this checklist directly into your AI-agent instructions and templates.
+      deliverable: journal policy summary + agent-ready AI-usage checklist + repository pattern note.
+
+  - id: E11
+    title: Template repo + issue-to-agent workflow drill
+    day: 2
+    block: 5
+    submission_link: /docs/live-exercises?exercise=E11
+    student_description:
+      objective:
+        - Create a new GitHub repository in your account and clone it locally with help from an AI agent.
+        - Configure the workflow so the agent can commit locally and push to the remote repository.
+        - Write multiple GitHub issues based on different chapters/aspects of the Genskow and Shapiro style guide.
+        - Send your coding agent to solve issues step by step and to open pull requests for each solved issue.
+        - Keep this repo as a reusable template for future programming/research projects (consider the "template" repository type).
+      deliverable: new template repo + issue set + agent PR evidence across style-guide tasks.
+
+  - id: E12
+    title: AI-assisted research writing + optional website
+    day: 2
+    block: 6
+    submission_link: /docs/live-exercises?exercise=E12
+    student_description:
+      objective:
+        - In VS Code (or similar), draft about a third of a page on your current research agenda with AI support.
+        - Try one workflow: bullet outline -> AI draft -> your manual edit.
+        - Try one workflow: voice-to-text dictation -> AI cleanup/edit.
+        - Compare which workflow feels more natural and where quality improves or degrades.
+        - Optional extension: choose one completed/older project and ask an AI agent to scaffold a simple research website repositor (e.g. with Astro).
+      deliverable: half-page agenda draft + workflow reflection note + optional website scaffold evidence.

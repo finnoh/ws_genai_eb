@@ -84,7 +84,6 @@ Retrieval-Augmented Generation (RAG) (*... and fancy systems on top of it*)
 ![[Figure from LangChain](https://docs.langchain.com/oss/python/langchain/rag)](../../assets/images/rag_retrieve.png)
 
 
-{{< include ../_exercise_slide.qmd >}}
 
 ## References {.scrollable}
 

@@ -91,7 +91,6 @@ AI changes the timing of actions
 ## {background-video="../../assets/videos/d2b5_hl.mp4" background-size="contain"}
 
 
-{{< include ../_exercise_slide.qmd >}}
 
 ## References
 

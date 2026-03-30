@@ -158,7 +158,6 @@ flowchart LR
       }
 ```
 
-{{< include ../_exercise_slide.qmd >}}
 
 ## References
 

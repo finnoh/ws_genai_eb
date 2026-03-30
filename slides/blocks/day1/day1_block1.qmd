@@ -106,59 +106,7 @@ ggplot(ddBenefits, aes(x = reorder(sBenefit, dPercent), y = dPercent)) +
 
 ## {background-iframe="https://openai.com/index/new-result-theoretical-physics/" interactive=true}
 
-## {background-iframe="https://epoch.ai/frontiermath/open-problems/ramsey-hypergraphs" interactive=true}
-
-
-## Course Structure {.smaller}
-
-::::{.columns}
-
-:::{.column width="50%"}
-
-**AI Agents ...**
-
-1. Course Kickoff (this block)
-2. LLMs and AI Agents
-3. Context
-4. Tools 1
-5. Tools 2
-6. Memory
-
-:::
-
-:::{.column width="50%"}
-
-**... in research**
-
-1. Ideation with AI Agents
-2. Data Collection
-3. Literature Review
-4. Rigorous Analysis with AI Agents
-5. Research Workflows
-6. Writing & Syndication
-
-:::
-
-::::
-
----
-
-## Each Block {.center}
-
-- Lecture ~ 20min
-- Workshop ~ 30min
-- Debrief ~ 10min
-
-## Each Day {.center}
-
-- 09-10:00 Block 1
-- 10-11:15 Block 2 + Coffee
-- 11:15-12:30 Block 3
-- 12:30-13:30 Lunch (provided)
-- 13:30-14:30 Block 4
-- 14:30-16:00 Block 5 + Coffee
-- 16-17:00 Block 6
-- Day 2: Drinks after 17:00
+## {background-image="../../assets/videos/epoch_ai.png"}
 
 ## {background-iframe="https://finnoh.github.io/ws_genai_eb/" interactive=true}
 
@@ -410,8 +358,6 @@ curl -sL https://raw.githubusercontent.com/finnoh/ti-student-agent-pack/main/ins
 4. Chat with Jan (what does Jan do?)
 5. Can you customize Jan to your needs?
 
-
-{{< include ../_exercise_slide.qmd >}}
 
 ## References
 

@@ -103,7 +103,6 @@ More sophisticated things are possible (e.g. RAG, ...)
 [^s7]: Sources: @arora2025ai; @willisonAgenticPatterns
 [^s8]: Sources: @stremersch2024how; @blanchardNewToolsNew2025; @linSixFallaciesSubstituting2025; @arora2025ai
 
-{{< include ../_exercise_slide.qmd >}}
 
 ## References
 

@@ -1,6 +1,6 @@
 ## Context Pack: research-methods
 
-Generated: 2026-03-29T17:29:26+00:00
+Generated: 2026-03-30T06:45:28+00:00
 
 Use these resource notes in speaker notes and cite by resource ID.
 

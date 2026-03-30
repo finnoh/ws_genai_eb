@@ -85,11 +85,11 @@ def answer_with_retrieval(question: str, docs: list[Document], k: int = 2) -> tu
 def main() -> int:
     docs_folder = Path(__file__).resolve().parent / "local_docs"
     # TODO-STUDENT: Run this and observe. Change the question to a question about revenue growth in the different regions and repeat.
-    question = "How fast does IT replace the laptop?"
+    question = "What was the revenue of the different regions?"
 
     docs = load_docs(docs_folder)
     # TODO-STUDENT: Try k=1 or k=3 and compare retrieved chunks.
-    with_retrieval, hits = answer_with_retrieval(question, docs, k=2)
+    with_retrieval, hits = answer_with_retrieval(question, docs, k=3)
     baseline = answer_without_retrieval(question)
 
     print("baseline_answer=")

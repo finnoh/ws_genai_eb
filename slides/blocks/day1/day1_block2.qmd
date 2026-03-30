@@ -127,7 +127,6 @@ flowchart LR
 - Add sustainability implications of AI use
 - Cover energy, water, and e-waste tradeoffs
 
-{{< include ../_exercise_slide.qmd >}}
 
 ## References
 

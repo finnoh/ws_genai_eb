@@ -14,7 +14,11 @@ if str(ROOT) not in sys.path:
 from live_llm import build_live_model, to_text
 
 
-REGION_LABELS = {"A": "North region", "B": "South region", "C": "West region"}
+REGION_LABELS = {
+    "A": "North region",
+    "B": "South region",
+    "C": "West region"
+    }
 
 
 @tool
@@ -22,8 +26,6 @@ def lookup_label_tool(code: str) -> str:
     """Return a human-readable region label from a short region code."""
     # TODO-STUDENT: Add your own region codes (for example D/E) and rerun.
     return REGION_LABELS.get(code.upper(), "Unknown region")
-
-# TODO-STUDENT: Can you write a tool that looks up the label for a region? Try to wire it into the LLM below...
 
 @tool
 def calc_average_tool(values: list[float]) -> str:

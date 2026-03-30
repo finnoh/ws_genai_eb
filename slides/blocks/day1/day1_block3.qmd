@@ -83,7 +83,6 @@ Sometimes, the agent can write its own context
 ```
 Validate datatypes and required keys
 
-{{< include ../_exercise_slide.qmd >}}
 
 ## References
 

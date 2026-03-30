@@ -89,7 +89,6 @@ flowchart TD
 ## {background-video="../../assets/videos/companion2.mp4" background-size="contain"}
 
 
-{{< include ../_exercise_slide.qmd >}}
 
 ## References
 
