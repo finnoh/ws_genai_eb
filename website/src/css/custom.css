@@ -83,6 +83,11 @@ a {
   text-underline-offset: 0.18em;
 }
 
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--ifm-color-primary) 72%, white);
+  outline-offset: 3px;
+}
+
 .navbar {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--ti-border-soft);
@@ -392,6 +397,17 @@ td {
 
 .footer {
   border-top: 1px solid var(--ti-border-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @media (max-width: 996px) {

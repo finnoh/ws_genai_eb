@@ -95,10 +95,11 @@
 .card {
   border: 1px solid var(--ti-border-soft);
   border-radius: 12px;
-  padding: 0.95rem;
+  padding: 0.85rem;
   background: color-mix(in srgb, var(--ifm-background-surface-color) 92%, transparent);
   display: flex;
   flex-direction: column;
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
 }
 
 .active {
@@ -116,26 +117,24 @@
 }
 
 .card h3 {
-  margin: 0.42rem 0 0.75rem;
+  margin: 0.36rem 0 0.55rem;
   font-size: 1.03rem;
 }
 
 .prompt {
-  margin: 0 0 0.8rem;
+  margin: 0 0 0.65rem;
   font-size: 0.93rem;
 }
 
 .actions {
   margin-top: auto;
   display: flex;
+  flex-wrap: wrap;
   gap: 0.4rem;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding-bottom: 0.15rem;
 }
 
 .actions > * {
-  flex: 0 0 auto;
+  flex: 0 1 auto;
 }
 
 .primaryButton,
