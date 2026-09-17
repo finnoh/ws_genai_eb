@@ -120,7 +120,8 @@ export default function Home(): ReactNode {
               </h1>
               <p className={styles.heroDescription}>
                 A two-day workshop on using and building AI agents for economics and business
-                research, with practical exercises in research workflows and output verification.
+                research, with practical exercises in research workflows and output verification.{' '}
+                See <a href="https://tinbergen.nl/ai-agents-in-economics-and%20business-research">here for the course page at Tinbergen Institute</a>.
               </p>
               <div className={styles.actions}>
                 <Link className={styles.primaryAction} to="/docs/schedule">
