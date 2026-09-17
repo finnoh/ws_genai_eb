@@ -31,6 +31,11 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: 'doc',
+      id: 'about',
+      label: 'About',
+    },
   ],
 };
 

@@ -12,7 +12,6 @@ export type ExerciseId =
   | 'E11'
   | 'E12';
 
-
 export type ExerciseItem = {
   id: ExerciseId;
   title: string;
@@ -352,6 +351,7 @@ const exerciseSeed: ExerciseItem[] = [
     detailPath: '/docs/blocks/e12-research-writing',
   },
 ];
+
 export const exercises: ExerciseItem[] = exerciseSeed;
 
 

@@ -40,25 +40,16 @@ GIT_USER=<Your GitHub username> npm run deploy
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
-## Live exercise environment variables
+## Live exercise runtime environment variables
 
-Set these before building/deploying when using Google Forms live submissions:
+Set these before building or deploying the live exercise site. Docusaurus exposes them to the exercise UI through its runtime configuration.
 
 ```bash
 GOOGLE_FORM_URL=https://docs.google.com/forms/d/e/<FORM_ID>/viewform?usp=pp_url
 GOOGLE_FORM_EXERCISE_FIELD=<ENTRY_ID_FOR_EXERCISE>
-GOOGLE_FORM_STUDENT_NAME_FIELD=<ENTRY_ID_FOR_NAME> # optional
-ACTIVE_EXERCISE_ID=E01 # optional
-# Optional if live results board is re-enabled later:
-LIVE_RESULTS_JSON_URL=<PUBLISHED_JSON_ENDPOINT>
-LIVE_RESULTS_SHEET_CSV_URL=<PUBLISHED_CSV_ENDPOINT>
-# optional runtime IDs used by scripts/google/*.py
-WORKSHOP_FORM_ID=<FORM_ID>
-WORKSHOP_SPREADSHEET_ID=<SPREADSHEET_ID>
+GOOGLE_FORM_GROUP_FIELD=<ENTRY_ID_FOR_GROUP> # leave blank: the current exercise UI does not prefill a group
+ACTIVE_EXERCISE_ID=E01 # exposed for exercise-aware pages; currently not consumed by the exercise UI
+RESULTS_SHEET_URL=https://docs.google.com/spreadsheets/d/<SHEET_ID>/edit
 ```
 
-You can generate these values with:
-
-```bash
-./scripts/google/bootstrap_workshop.sh --write-env-file website/.env.local
-```
+`GOOGLE_FORM_URL` and `GOOGLE_FORM_EXERCISE_FIELD` are required to generate prefilled exercise links. `RESULTS_SHEET_URL` enables the Results sheet link. `GOOGLE_FORM_GROUP_FIELD` remains available for future group-prefill support but is not used by the current UI.
