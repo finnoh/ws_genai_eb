@@ -217,14 +217,7 @@
   padding-top: clamp(2.75rem, 6vw, 5rem);
 }
 
-.sectionHeading {
-  align-items: end;
-  display: flex;
-  gap: 1rem 3rem;
-  justify-content: space-between;
-}
-
-.sectionHeading h2,
+.curriculum h2,
 .approach h2 {
   color: var(--ifm-heading-color);
   font-family: 'Geist Variable', Inter, system-ui, sans-serif;
@@ -407,10 +400,6 @@
     max-width: 30rem;
   }
 
-  .sectionHeading {
-    align-items: start;
-    flex-direction: column;
-  }
 
   .approachCopy {
     padding-top: 0;

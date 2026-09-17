@@ -12,44 +12,33 @@ const slidePathByExerciseId = Object.fromEntries(
   blocks.map((block) => [block.exerciseId, block.slidePath]),
 ) as Record<string, string>;
 
-function withParam(url: string, key: string, value: string): string {
-  const parsedUrl = new URL(url);
-  parsedUrl.searchParams.set(key, value);
-  return parsedUrl.toString();
-}
+const availabilityPath = '/course-availability';
 
 export default function ExerciseLinks(): React.ReactElement {
   const {siteConfig} = useDocusaurusContext();
-  const customFields = siteConfig.customFields || {};
   const baseUrl = (siteConfig.baseUrl || '/').replace(/\/$/, '');
-  const formUrl = (customFields.googleFormUrl as string | undefined)?.trim() || '';
-  const exerciseField =
-    (customFields.googleFormExerciseField as string | undefined)?.trim() || '';
-  const resultsSheetUrl = (customFields.resultsSheetUrl as string | undefined)?.trim() || '';
+  const availabilityHref = `${baseUrl}${availabilityPath}`;
 
   const [copiedId, setCopiedId] = useState<string>('');
   const [selectedId, setSelectedId] = useState<string>('');
   const cardRefs = useRef<Record<string, HTMLElement | null>>({});
 
   const links = useMemo<ExerciseLink[]>(() => {
-    if (!formUrl || !exerciseField) {
-      return [];
-    }
-
     return exercises.map((exercise) => {
-      const href = withParam(formUrl, `entry.${exerciseField}`, exercise.id);
-      const qrHref = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(href)}`;
+      const href = `${availabilityHref}?exercise=${exercise.id}`;
+      const shareUrl = new URL(href, siteConfig.url).href;
+      const qrHref = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(shareUrl)}`;
       return {
         ...exercise,
         href,
         qrHref,
       };
     });
-  }, [exerciseField, formUrl]);
+  }, [availabilityHref, siteConfig.url]);
 
   async function copyLink(link: ExerciseLink): Promise<void> {
     try {
-      await navigator.clipboard.writeText(link.href);
+      await navigator.clipboard.writeText(new URL(link.href, window.location.origin).href);
       setCopiedId(link.id);
       window.setTimeout(() => setCopiedId(''), 1200);
     } catch {
@@ -102,14 +91,12 @@ export default function ExerciseLinks(): React.ReactElement {
         </h3>
         <p className={styles.prompt}>{link.prompt}</p>
         <div className={styles.actions}>
-          <a href={link.href} target="_blank" rel="noreferrer" className={styles.primaryButton}>
+          <Link to={`${availabilityPath}?exercise=${link.id}`} className={styles.primaryButton}>
             Open form
-          </a>
-          {resultsSheetUrl ? (
-            <a href={resultsSheetUrl} target="_blank" rel="noreferrer" className={styles.secondaryButton}>
-              Results sheet
-            </a>
-          ) : null}
+          </Link>
+          <Link to={availabilityPath} className={styles.secondaryButton}>
+            Results sheet
+          </Link>
           {slidePathByExerciseId[link.id] ? (
             <a href={toSitePath(slidePathByExerciseId[link.id])} target="_blank" rel="noreferrer" className={styles.secondaryButton}>
               Slide deck
@@ -126,22 +113,6 @@ export default function ExerciseLinks(): React.ReactElement {
           </a>
         </div>
       </article>
-    );
-  }
-
-  if (!formUrl) {
-    return (
-      <p>
-        Configure <code>GOOGLE_FORM_URL</code> to enable exercise links.
-      </p>
-    );
-  }
-
-  if (!exerciseField) {
-    return (
-      <p>
-        Configure <code>GOOGLE_FORM_EXERCISE_FIELD</code> to enable prefilled exercise links.
-      </p>
     );
   }
 

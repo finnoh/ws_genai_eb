@@ -12,7 +12,7 @@ const curriculum = [
     dateTime: '2027-05-13',
     level: 'Beginner',
     title: 'AI Agents in Research',
-    description: 'Explore where agents fit into the research process, from the first idea to the final manuscript.',
+    description: 'Applications of AI agents to ideation, data collection, literature review, analysis, research workflows, and writing.',
     blocks: [
       {number: '01', label: 'Ideation with AI Agents', to: '/docs/content/day2-1'},
       {number: '02', label: 'AI in Data Collection', to: '/docs/content/day2-2'},
@@ -28,7 +28,7 @@ const curriculum = [
     dateTime: '2027-05-14',
     level: 'Advanced',
     title: 'Building AI Agents',
-    description: 'Look inside an agent: how models, context, tools, and memory come together in a working system.',
+    description: 'The components of an AI agent: language models, context, tool use, and memory.',
     blocks: [
       {number: '02', label: 'LLMs and AI Agents', to: '/docs/content/day1-2'},
       {number: '03', label: 'Context', to: '/docs/content/day1-3'},
@@ -119,8 +119,8 @@ export default function Home(): ReactNode {
                 <span className={styles.titleSubject}>in Economics &amp;<br />Business Research</span>
               </h1>
               <p className={styles.heroDescription}>
-                From using agents in research to building them. Explore the workflows, tools,
-                and decisions that connect AI systems to the work of a researcher.
+                A two-day workshop on using and building AI agents for economics and business
+                research, with practical exercises in research workflows and output verification.
               </p>
               <div className={styles.actions}>
                 <Link className={styles.primaryAction} to="/docs/schedule">
@@ -136,10 +136,7 @@ export default function Home(): ReactNode {
         </section>
 
         <section className={styles.curriculum} aria-labelledby="curriculum-title">
-          <div className={styles.sectionHeading}>
-            <p className={styles.kicker}>The curriculum</p>
-            <h2 id="curriculum-title">Two days. From application to architecture.</h2>
-          </div>
+          <h2 id="curriculum-title">Course programme</h2>
           <div className={styles.dayGrid}>
             {curriculum.map((day) => (
               <article className={styles.day} key={day.day}>
@@ -168,11 +165,10 @@ export default function Home(): ReactNode {
 
         <section className={styles.approach} aria-labelledby="approach-title">
           <div>
-            <p className={styles.kicker}>The approach</p>
-            <h2 id="approach-title">Work with agents.<br />Keep your judgment.</h2>
+            <h2 id="approach-title">Practical exercises and verification</h2>
           </div>
           <div className={styles.approachCopy}>
-            <p>Use the exercises to put ideas into practice. Examine the evidence behind an output, check the work, and decide where human judgment is needed.</p>
+            <p>Each block includes exercises applying AI methods to research tasks. Participants examine supporting evidence, verify outputs, and identify decisions that require researcher judgment.</p>
             <Link to="/docs/live-exercises">Go to the exercises <span aria-hidden="true">→</span></Link>
           </div>
         </section>

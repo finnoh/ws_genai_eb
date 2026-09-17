@@ -6,7 +6,7 @@ title: About
 
 ## AI Agents for Economics and Business Research
 
-AI Agents in Economics and Business Research is a two-day, practice-first workshop focused on how researchers and practitioners can use modern AI systems responsibly in real workflows.
+AI Agents in Economics and Business Research is a two-day workshop on the use and development of AI agents in research and business workflows.
 
 The workshop takes place on **May 13–14, 2027**:
 
@@ -21,9 +21,9 @@ The workshop combines conceptual foundations with hands-on implementation across
 - AI-supported programming and reproducible workflows
 - responsible AI use, including reliability and bias awareness
 
-Participants work through block-based exercises and apply the methods directly to research and business-style use cases.
+Participants complete block-based exercises on research and business use cases.
 
-This workshop equips both researchers and practitioners with the conceptual foundations and hands-on tools needed to apply AI models in economics and business research, as well as the responsible use of AI models. The content emphasizes how AI can support market research, innovation (e.g. ideation), and everyday tasks such as programming. Beyond the foundations, key themes will include context engineering, the use of AI agents, and an overview of image, video, world models. In this intense workshop, participants will be diving into the state of the art and practice using AI in hands-on practice. 
+Additional topics include applications in market research, innovation, and programming; context engineering; and an overview of image, video, and world models.
 
 Source: [Tinbergen Institute course page](https://tinbergen.nl/ai-agents-in-economics-and%20business-research)
 
@@ -31,4 +31,4 @@ Source: [Tinbergen Institute course page](https://tinbergen.nl/ai-agents-in-econ
 
 Finn-Ole Höner is the instructor for this workshop. He is a PhD candidate developing AI methods for innovation management and market research.
 
-With a background spanning computer science, data science, and econometrics, he bridges technical and marketing disciplines in both his teaching and research. He has taught in courses on text analytics, natural language processing, and machine learning, combining hands-on programming expertise with a deep understanding of data-driven decision-making and AI.
+His background includes computer science, data science, and econometrics. He has taught courses on text analytics, natural language processing, and machine learning.

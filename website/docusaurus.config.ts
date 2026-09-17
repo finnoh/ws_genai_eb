@@ -2,16 +2,6 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-const googleFormUrl =
-  process.env.GOOGLE_FORM_URL ??
-  'https://docs.google.com/forms/d/e/1FAIpQLSd1ihRroDZ7lSsCxWb3CKDH9DGrn6anGA6Avd93c3zFiPLXJg/viewform?usp=dialog';
-const googleFormExerciseField = process.env.GOOGLE_FORM_EXERCISE_FIELD ?? '820055728';
-const googleFormGroupField = process.env.GOOGLE_FORM_GROUP_FIELD ?? '';
-const activeExerciseId = process.env.ACTIVE_EXERCISE_ID ?? 'E01';
-const resultsSheetUrl =
-  process.env.RESULTS_SHEET_URL ??
-  'https://docs.google.com/spreadsheets/d/1qqicPGhyus2fT0RVaOQgHbPStTSJMKnFlCbTJgM2W1k/edit?usp=sharing';
-
 const config: Config = {
   title: 'TI AI Agents Workshop',
   tagline: 'AI agents in economics and business research · May 13–14, 2027',
@@ -127,13 +117,6 @@ const config: Config = {
       },
     ],
   ],
-  customFields: {
-    googleFormUrl,
-    googleFormExerciseField,
-    googleFormGroupField,
-    activeExerciseId,
-    resultsSheetUrl,
-  },
 };
 
 export default config;

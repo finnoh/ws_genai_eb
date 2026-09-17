@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './ExerciseBlockPage.module.css';
 
 import {
@@ -29,22 +28,8 @@ function renderWithLinks(text: string): React.ReactNode {
   });
 }
 
-function withParam(url: string, key: string, value: string): string {
-  const parsedUrl = new URL(url);
-  parsedUrl.searchParams.set(key, value);
-  return parsedUrl.toString();
-}
-
 export default function ExerciseBlockPage({exerciseId, embedded = false}: Props): React.ReactElement {
   const exercise = getExerciseById(exerciseId);
-  const {siteConfig} = useDocusaurusContext();
-  const customFields = siteConfig.customFields || {};
-  const formUrl = (customFields.googleFormUrl as string | undefined)?.trim() || '';
-  const exerciseField =
-    (customFields.googleFormExerciseField as string | undefined)?.trim() || '';
-
-  const submissionHref =
-    formUrl && exerciseField ? withParam(formUrl, `entry.${exerciseField}`, exercise.id) : '';
 
   return (
     <div className={styles.page}>
@@ -99,16 +84,11 @@ export default function ExerciseBlockPage({exerciseId, embedded = false}: Props)
             <li>
               Use the live launcher: <Link to={`/docs/live-exercises?exercise=${exercise.id}`}>Live Exercises</Link>
             </li>
-            {submissionHref ? (
-              <li>
-                Direct prefilled form:{' '}
-                <a href={submissionHref} target="_blank" rel="noreferrer">
-                  {exercise.id} submission link
-                </a>
-              </li>
-            ) : (
-              <li>Direct form unavailable until form settings are configured.</li>
-            )}
+            <li>
+              <Link to={`/course-availability?exercise=${exercise.id}`}>
+                {exercise.id} submission link
+              </Link>
+            </li>
           </ul>
         </article>
 
