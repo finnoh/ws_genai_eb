@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <path d="M72 78H1128" stroke="#e5e5e8"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#111113">
+    <text x="72" y="56" font-size="17" letter-spacing="2">TINBERGEN INSTITUTE / WORKSHOP</text>
+    <text x="72" y="238" font-size="112" font-weight="700" letter-spacing="-6">AI Agents</text>
+    <text x="76" y="313" font-size="43" letter-spacing="-1">in Economics &amp;</text>
+    <text x="76" y="367" font-size="43" letter-spacing="-1">Business Research</text>
+    <text x="76" y="456" font-size="23" fill="#62626a">Research applications. Agent engineering.</text>
+    <text x="72" y="574" font-size="20">MAY 13–14, 2027</text>
+    <text x="1128" y="574" text-anchor="end" font-size="17" fill="#62626a">A TWO-DAY, PRACTICE-FIRST WORKSHOP</text>
+  </g>
+  <path d="M72 533H1128" stroke="#e5e5e8"/>
+  <g stroke="#b6bfd1" stroke-width="2" fill="none">
+    <path d="M810 300H924M924 300L1055 188M924 300L1055 412"/>
+    <path d="M924 300V166M924 300V434"/>
+  </g>
+  <g fill="#fff" stroke="#b6bfd1" stroke-width="2">
+    <circle cx="810" cy="300" r="10"/><circle cx="1055" cy="188" r="10"/>
+    <circle cx="1055" cy="412" r="10"/><circle cx="924" cy="166" r="10"/>
+    <circle cx="924" cy="434" r="10"/>
+  </g>
+  <circle cx="924" cy="300" r="24" fill="#2457d6"/>
+  <circle cx="924" cy="300" r="6" fill="#fff"/>
+</svg>
