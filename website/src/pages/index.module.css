@@ -175,7 +175,7 @@
 .edgeLabels text {
   fill: var(--ti-text-muted);
   font-family: 'Geist Mono Variable', ui-monospace, monospace;
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .graphNode rect,
@@ -189,7 +189,7 @@
 .agentNode text {
   fill: var(--ifm-heading-color);
   font-family: 'Geist Mono Variable', ui-monospace, monospace;
-  font-size: 12px;
+  font-size: 14px;
   text-anchor: middle;
 }
 

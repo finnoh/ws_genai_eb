@@ -72,10 +72,10 @@ function AgentWorkflow(): ReactNode {
         </g>
         <g className={styles.edgeLabels}>
           <text x="135" y="156">task</text>
-          <text x="236" y="122" textAnchor="start">inform</text>
+          <text x="250" y="122" textAnchor="start">inform</text>
           <text x="297" y="156">act</text>
           <text x="385" y="234" textAnchor="start">gather</text>
-          <text x="263" y="311">check &amp; refine</text>
+          <text x="222" y="332">check &amp; refine</text>
         </g>
         <g className={styles.graphNode}>
           <rect x="172" y="22" width="100" height="48" rx="3" />

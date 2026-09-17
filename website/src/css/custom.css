@@ -1,5 +1,5 @@
-@import '@fontsource-variable/geist/latin.css';
-@import '@fontsource-variable/geist-mono/latin.css';
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
 
 :root {
   --ifm-color-primary: #2457d6;
@@ -242,19 +242,19 @@ main,
   color: var(--ti-text-muted);
 }
 
-.courseHero > p.courseLead > strong {
-  display: block;
+.courseHero .courseTitle {
+  margin: 0.75rem 0 1rem;
   font-size: clamp(2rem, 3.6vw, 3.25rem);
   font-weight: 600;
   letter-spacing: -0.045em;
   line-height: 1.12;
 }
 
-.courseHero > p.courseLead > strong a {
+.courseTitle a {
   color: var(--ifm-heading-color);
 }
 
-.courseHero > p.courseLead > strong a:hover {
+.courseTitle a:hover {
   color: var(--ifm-color-primary);
 }
 
