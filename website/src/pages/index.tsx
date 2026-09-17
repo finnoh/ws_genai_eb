@@ -14,12 +14,12 @@ const curriculum = [
     title: 'AI Agents in Research',
     description: 'Explore where agents fit into the research process, from the first idea to the final manuscript.',
     blocks: [
-      {label: 'Ideation with AI Agents', to: '/docs/content/day2-1'},
-      {label: 'AI in Data Collection', to: '/docs/content/day2-2'},
-      {label: 'Literature Review', to: '/docs/content/day2-3'},
-      {label: 'Rigorous Analysis with AI Agents', to: '/docs/content/day2-4'},
-      {label: 'Research Workflows', to: '/docs/content/day2-5'},
-      {label: 'Writing & Syndication', to: '/docs/content/day2-6'},
+      {number: '01', label: 'Ideation with AI Agents', to: '/docs/content/day2-1'},
+      {number: '02', label: 'AI in Data Collection', to: '/docs/content/day2-2'},
+      {number: '03', label: 'Literature Review', to: '/docs/content/day2-3'},
+      {number: '04', label: 'Rigorous Analysis with AI Agents', to: '/docs/content/day2-4'},
+      {number: '05', label: 'Research Workflows', to: '/docs/content/day2-5'},
+      {number: '06', label: 'Writing & Syndication', to: '/docs/content/day2-6'},
     ],
   },
   {
@@ -30,11 +30,11 @@ const curriculum = [
     title: 'Building AI Agents',
     description: 'Look inside an agent: how models, context, tools, and memory come together in a working system.',
     blocks: [
-      {label: 'LLMs and AI Agents', to: '/docs/content/day1-2'},
-      {label: 'Context', to: '/docs/content/day1-3'},
-      {label: 'Tools 1', to: '/docs/content/day1-4'},
-      {label: 'Tools 2', to: '/docs/content/day1-5'},
-      {label: 'Memory', to: '/docs/content/day1-6'},
+      {number: '02', label: 'LLMs and AI Agents', to: '/docs/content/day1-2'},
+      {number: '03', label: 'Context', to: '/docs/content/day1-3'},
+      {number: '04', label: 'Tools 1', to: '/docs/content/day1-4'},
+      {number: '05', label: 'Tools 2', to: '/docs/content/day1-5'},
+      {number: '06', label: 'Memory', to: '/docs/content/day1-6'},
     ],
   },
 ];
@@ -151,10 +151,10 @@ export default function Home(): ReactNode {
                 <h3>{day.title}</h3>
                 <p className={styles.dayDescription}>{day.description}</p>
                 <ol className={styles.sessionList}>
-                  {day.blocks.map((block, index) => (
+                  {day.blocks.map((block) => (
                     <li key={block.to}>
                       <Link to={block.to}>
-                        <span className={styles.sessionNumber} aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                        <span className={styles.sessionNumber} aria-hidden="true">{block.number}</span>
                         <span>{block.label}</span>
                         <span className={styles.sessionArrow} aria-hidden="true">↗</span>
                       </Link>
