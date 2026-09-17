@@ -14,7 +14,7 @@ const resultsSheetUrl =
 
 const config: Config = {
   title: 'TI AI Agents Workshop',
-  tagline: 'Course mirror for slides and student exercises',
+  tagline: 'AI agents in economics and business research · May 13–14, 2027',
   favicon: 'img/favicon.svg',
   future: {
     v4: true,
@@ -42,10 +42,10 @@ const config: Config = {
     },
     image: 'img/ti-ai-agents-social-card.png',
     navbar: {
-      hideOnScroll: true,
+      hideOnScroll: false,
       title: 'TI AI Agents',
       logo: {
-        alt: 'Sparkles logo',
+        alt: 'AI Agents Workshop',
         src: 'img/favicon.svg',
       },
       items: [
@@ -63,7 +63,7 @@ const config: Config = {
       ],
     },
     footer: {
-      style: 'dark',
+      style: 'light',
       links: [
         {
           title: 'Workshop',
@@ -76,8 +76,8 @@ const config: Config = {
         {
           title: 'Content',
           items: [
-            {label: 'Building AI Agents', to: '/docs/content/day1-1'},
             {label: 'AI Agents in Research', to: '/docs/content/day2-1'},
+            {label: 'Building AI Agents', to: '/docs/content/day1-2'},
           ],
         },
         {

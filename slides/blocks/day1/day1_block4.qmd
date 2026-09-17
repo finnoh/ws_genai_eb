@@ -1,9 +1,9 @@
 ---
 title: "Tools 1"
-subtitle: "Day 1 - Block 4"
+subtitle: "Day 2 - Block 4 | May 14, 2027 | Building AI Agents (Advanced)"
 format:
   revealjs:
-    footer: "TI Workshop | D1 B4"
+    footer: "TI Workshop | D2 B4"
     bibliography: ../../../resources/workshop-citations.bib
     embed-resources: true
     code-overflow: wrap

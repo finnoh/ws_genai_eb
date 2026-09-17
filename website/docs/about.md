@@ -8,6 +8,11 @@ title: About
 
 AI Agents in Economics and Business Research is a two-day, practice-first workshop focused on how researchers and practitioners can use modern AI systems responsibly in real workflows.
 
+The workshop takes place on **May 13–14, 2027**:
+
+- **Day 1 — May 13: AI Agents in Research (Beginner)**
+- **Day 2 — May 14: Building AI Agents (Advanced)**
+
 The workshop combines conceptual foundations with hands-on implementation across topics such as:
 
 - large language models and AI agents

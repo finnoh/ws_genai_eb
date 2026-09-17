@@ -15,11 +15,11 @@
 
 ## Environment defaults
 
-- Day 1 default: Jupyter + LangChain + Jan support.
-- Day 2 default: VS Code + OpenCode; ChatGPT allowed for ideation/evaluation tasks.
+- Day 1 — Research with AI Agents (beginner), May 13, 2027: VS Code + OpenCode; ChatGPT allowed for ideation/evaluation tasks.
+- Day 2 — Building AI Agents (advanced), May 14, 2027: Jupyter + LangChain + Jan support.
 - Notebook fallback: use `.py` with same logic and submit command/output trace.
 
-## Day 1
+## Day 2 — Building AI Agents (advanced)
 
 ### E01 - Jan setup and first programmable task
 
@@ -53,7 +53,7 @@
 - Run `exercises/06/memory_demo.py` and try one `TODO-STUDENT` modification.
 - Show short-term and long-term memory behavior in a short trace.
 
-## Day 2
+## Day 1 — Research with AI Agents (beginner)
 
 ### E07 - Ideation project + idea napkin
 

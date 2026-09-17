@@ -1,9 +1,9 @@
 ---
 title: "AI in Data Collection"
-subtitle: "Day 2 - Block 2"
+subtitle: "Day 1 - Block 2 | May 13, 2027 | AI Agents in Research (Beginner)"
 format:
   revealjs:
-    footer: "TI Workshop | D2 B2"
+    footer: "TI Workshop | D1 B2"
     scrollable: true
     bibliography:
       - ../../../resources/workshop-citations.bib

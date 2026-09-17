@@ -9,4 +9,6 @@ format:
     transition: fade
     center: true
     embed-resources: true
+    hash: false
+    history: false
     theme: default

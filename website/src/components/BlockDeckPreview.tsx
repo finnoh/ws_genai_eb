@@ -1,4 +1,4 @@
-import React, {useMemo, useRef} from 'react';
+import React, {useRef} from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import styles from './BlockDeckPreview.module.css';
@@ -8,12 +8,9 @@ type Props = {
   title: string;
 }
 
-const firstSlideIndex = 0;
-
 export default function BlockDeckPreview({slidePath, title}: Props): React.ReactElement {
   const frameRef = useRef<HTMLIFrameElement | null>(null);
-  const baseDeckUrl = useBaseUrl(slidePath);
-  const src = useMemo(() => `${baseDeckUrl}#/${firstSlideIndex}`, [baseDeckUrl]);
+  const src = useBaseUrl(slidePath);
 
   function openFullscreen(): void {
     const frame = frameRef.current;
@@ -39,6 +36,7 @@ export default function BlockDeckPreview({slidePath, title}: Props): React.React
           title={`${title} slide preview`}
           className={styles.frame}
           src={src}
+          sandbox="allow-scripts allow-popups"
           loading="lazy"
           allow="fullscreen"
           allowFullScreen

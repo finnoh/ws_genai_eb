@@ -1,10 +1,10 @@
 ---
 title: "AI Agents in Economics and Business Research"
-subtitle: "Day 2 - AI agents in Research"
+subtitle: "Day 1 - AI Agents in Research (Beginner) | May 13, 2027"
 author: "Tinbergen Institute"
 format:
   revealjs:
-    footer: "Tinbergen Institute | Day 2"
+    footer: "Tinbergen Institute | Day 1"
 ---
 
 ## {.center}
@@ -13,7 +13,7 @@ format:
 From useful prototypes to robust systems.
 :::
 
-## Day 2 structure
+## Day 1 structure
 
 - Six blocks, 60 minutes each
 - 20 lecture, 30 hands-on, 10 debrief
@@ -21,7 +21,7 @@ From useful prototypes to robust systems.
 
 ## Storyline
 
-- Recap day-1 artifacts quickly
+- Start with participants' research goals
 - Build orchestration and pipelines
 - End with adoption and resilience
 
@@ -45,7 +45,7 @@ From useful prototypes to robust systems.
 
 ## Task {.center background-color="black"}
 
-**Exercise flow for Day 2**
+**Exercise flow for Day 1**
 
 - E6 pilot stimuli + protocol note
 - Evidence paragraph with provenance
@@ -62,15 +62,15 @@ From useful prototypes to robust systems.
 
 ## Block deck links
 
-- `/slides/blocks/day2/day2_block1.html`
-- `/slides/blocks/day2/day2_block2.html`
-- `/slides/blocks/day2/day2_block3.html`
+- `/slides/blocks/day2/day2_block1.htm`
+- `/slides/blocks/day2/day2_block2.htm`
+- `/slides/blocks/day2/day2_block3.htm`
 
 ## Block deck links (cont.)
 
-- `/slides/blocks/day2/day2_block4.html`
-- `/slides/blocks/day2/day2_block5.html`
-- `/slides/blocks/day2/day2_block6.html`
+- `/slides/blocks/day2/day2_block4.htm`
+- `/slides/blocks/day2/day2_block5.htm`
+- `/slides/blocks/day2/day2_block6.htm`
 
 ## Close
 

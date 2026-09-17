@@ -57,7 +57,8 @@ for block_qmd in \
 
   mkdir -p "${out_dir}"
   quarto render "${block_qmd}"
-  cp "${block_qmd%.qmd}.html" "${BLOCKS_OUTPUT_DIR}/${rel_no_ext}.html"
+  rm -f "${BLOCKS_OUTPUT_DIR}/${rel_no_ext}.html"
+  cp "${block_qmd%.qmd}.html" "${BLOCKS_OUTPUT_DIR}/${rel_no_ext}.htm"
 
   # Copy assets to block output directory
   block_out_dir="$(dirname "${BLOCKS_OUTPUT_DIR}/${rel_no_ext}")"

@@ -2,8 +2,8 @@
 
 ## Default stack
 
-- Day 1 default: LangChain + OpenRouter, notebook or `.py` fallback.
-- Day 2 default: VS Code + OpenCode; ChatGPT/Claude allowed where task fit is stronger.
+- Day 1 — Research with AI Agents (beginner), May 13, 2027: VS Code + OpenCode; ChatGPT/Claude allowed where task fit is stronger.
+- Day 2 — Building AI Agents (advanced), May 14, 2027: LangChain + OpenRouter, notebook or `.py` fallback.
 - Root `.env` stores `OPENROUTER_API_KEY` and OpenRouter base URL.
 
 ## Standard block loop

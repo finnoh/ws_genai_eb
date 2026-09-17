@@ -41,94 +41,78 @@ Each block page should use this exact structure:
 - Evaluation rubric (4-dimension base + block-specific criteria)
 - Extension task (optional)
 
-### Day 1 - Building AI Agents (basic to intermediate)
+### Day 1 — Research with AI Agents (beginner) — May 13, 2027
 
-#### Day 1 Block 1: Course Kickoff - Why AI Agents Now
-
-- Lecture (20): workshop framing, motivation from current science use-cases, course flow, and introduction of Jan as the course tutor
-- Hands-on (30): install Jan (`ti-student-agent-pack`), explore project structure, run first interactions, and customize behavior
-
-#### Day 1 Block 2: LLMs and AI Agents
-
-- Lecture (20): next-token prediction objective, pre-training vs post-training, and how tool-calls/memory turn LLMs into agent loops
-- Hands-on (30): prompt anatomy lab (E02) and classify tasks by context/tool/memory requirements
-
-#### Day 1 Block 3: Context
-
-- Lecture (20): context engineering, plan mode, retrieval-oriented project hygiene (names, folder indexes), boundaries (privacy/copyright), token economics, and structured outputs
-- Hands-on (30): rewrite messy context into agent-ready markdown, add file/index conventions, and define a strict output schema
-
-#### Day 1 Block 4: Tools 1
-
-- Lecture (20): tools-as-tokens/action-observation loop, Skills (`SKILL.md` + scripts), MCP basics, Skills vs MCP framing, and tool gallery
-- Hands-on (30): install/use selected skills (e.g., arXiv/xlsx), inspect one real skill package, and execute one tool-backed workflow
-
-#### Day 1 Block 5: Tools 2
-
-- Lecture (20): shift from tool user to tool builder, good `SKILL.md` design patterns, script-first skill design, and minimal MCP server architecture
-- Hands-on (30): build a simple FastMCP server (e.g., weather/NPV toy tool), wire it into an agent, and test end-to-end calls
-
-#### Day 1 Block 6: Memory
-
-- Lecture (20): short-term context vs long-term memory, memory policy via `AGENTS.md` + `MEMORY.md`, memory compression/hierarchy, and RAG basics (embed/retrieve/inject)
-- Hands-on (30): implement a memory policy, log durable facts, and prototype a small RAG retrieval flow
-
-### Day 2 - AI Agents in Research (intermediate to advanced)
-
-#### Day 2 Block 1: Ideation with AI Agents
+#### Day 1 Block 1: Ideation with AI Agents
 
 - Lecture (20): Stremersch-style pipeline (explore -> select -> immerse -> question -> idea napkin), project-based ideation setup, and IP/HARKING caveats
 - Hands-on (30): create an ideation project, score candidate domains, and draft one idea napkin for a selected domain
 
-#### Day 2 Block 2: AI in Data Collection
+#### Day 1 Block 2: AI in Data Collection
 
 - Lecture (20): DGP-instrument framing (natural/same, natural/new, AI DGP), synthetic respondent workflow, and validity risks with mixed empirical evidence
 - Hands-on (30): choose collection mode A/B/C and produce E08 design memo with one explicit verification plan
 - Debrief (10): compare mode choices and threat-mitigation strategies
 
-#### Day 2 Block 3: Literature Review
+#### Day 1 Block 3: Literature Review
 
 - Lecture (20): paywalls, hallucinated citations, false negatives, keyword vs semantic retrieval, and structured search workflows (web, Elicit, ResearchRabbit, arXiv/Zotero MCP)
 - Lecture emphasis: copyright-safe retrieval, paywall logging, and verifiable citation practice
 - Hands-on (30): produce one evidence paragraph plus claim-evidence ledger (claim/source/snippet/confidence/gap)
 - Debrief (10): verify unresolved gaps and disclosure quality
 
-#### Day 2 Block 4: Rigorous Analysis with AI Agents
+#### Day 1 Block 4: Rigorous Analysis with AI Agents
 
 - Lecture (20): reproducible AI coding loop (prompt -> code -> run -> test -> fix), unit-test-first habits, metadata-only data access, and tool-access restrictions
 - Hands-on (30): run one reproducible analysis/model workflow with explicit tests and verification note
 - Debrief (10): discuss assumptions, failures, and keep/reject decisions
 
-#### Day 2 Block 5: Research Workflows
+#### Day 1 Block 5: Research Workflows
 
 - Lecture (20): issue-to-agent-to-PR workflow, GitHub CLI handoffs, and human review checkpoints for safe collaboration with coding agents
 - Hands-on (30): create scoped GitHub issues, dispatch one to an agent, and review PR diff + checks evidence
 - Debrief (10): capture team policy for when to trust/override agent outputs
 
-#### Day 2 Block 6: Writing and Syndication
+#### Day 1 Block 6: Writing and Syndication
 
 - Lecture (20): writing pipeline (notes -> OCR/text -> markdown -> AI structuring), voice-first drafting, journal disclosure constraints, and multi-channel research syndication
 - Hands-on (30): draft a short research brief from bullets/voice notes and create a minimal syndication plan (website/slides/post)
 - Debrief (10): compare editing choices, disclosure statements, and publication-ready outputs
 
-### Day 1 resource anchors:
+### Day 2 — Building AI Agents (advanced) — May 14, 2027
 
-- R004 Agentic engineering patterns
-- R003 RAG vs Skill vs MCP vs RLM
-- R031/R032/R033/R034 foundational LLM papers
-- R005 Giving LLMs a personality
-- R030 Virtual persona LLM article
-- R012 AI assistance and coding skills
-- R015 AI-assisted academic writing
-- R024 LLM use, note-taking, and memory
-- R041/R042 trust and automation-bias literature
-- R048 Six Fallacies in Substituting LLMs for Human Participants
-- R051 Alignment Faking in LLMs
-- R052 Deception Abilities in LLMs
-- R059 Whose Opinions Do Language Models Reflect?
-- R060 Diminished Diversity-of-Thought in LLMs
+#### Day 2 Block 1: Course Kickoff - Why AI Agents Now
 
-### Day 2 resource anchors:
+- Lecture (20): workshop framing, motivation from current science use-cases, course flow, and introduction of Jan as the course tutor
+- Hands-on (30): install Jan (`ti-student-agent-pack`), explore project structure, run first interactions, and customize behavior
+
+#### Day 2 Block 2: LLMs and AI Agents
+
+- Lecture (20): next-token prediction objective, pre-training vs post-training, and how tool-calls/memory turn LLMs into agent loops
+- Hands-on (30): prompt anatomy lab (E02) and classify tasks by context/tool/memory requirements
+
+#### Day 2 Block 3: Context
+
+- Lecture (20): context engineering, plan mode, retrieval-oriented project hygiene (names, folder indexes), boundaries (privacy/copyright), token economics, and structured outputs
+- Hands-on (30): rewrite messy context into agent-ready markdown, add file/index conventions, and define a strict output schema
+
+#### Day 2 Block 4: Tools 1
+
+- Lecture (20): tools-as-tokens/action-observation loop, Skills (`SKILL.md` + scripts), MCP basics, Skills vs MCP framing, and tool gallery
+- Hands-on (30): install/use selected skills (e.g., arXiv/xlsx), inspect one real skill package, and execute one tool-backed workflow
+
+#### Day 2 Block 5: Tools 2
+
+- Lecture (20): shift from tool user to tool builder, good `SKILL.md` design patterns, script-first skill design, and minimal MCP server architecture
+- Hands-on (30): build a simple FastMCP server (e.g., weather/NPV toy tool), wire it into an agent, and test end-to-end calls
+
+#### Day 2 Block 6: Memory
+
+- Lecture (20): short-term context vs long-term memory, memory policy via `AGENTS.md` + `MEMORY.md`, memory compression/hierarchy, and RAG basics (embed/retrieve/inject)
+- Hands-on (30): implement a memory policy, log durable facts, and prototype a small RAG retrieval flow
+
+
+### Day 1 resource anchors (Research with AI Agents)
 
 - R004 Agentic engineering patterns
 - R018 Unlocking multi-agent systems in organizations
@@ -152,27 +136,47 @@ Each block page should use this exact structure:
 - R040 Generative AI at Work (NBER)
 - R043/R046 organizational adoption and substitution evidence
 
+### Day 2 resource anchors (Building AI Agents)
+
+- R004 Agentic engineering patterns
+- R003 RAG vs Skill vs MCP vs RLM
+- R031/R032/R033/R034 foundational LLM papers
+- R005 Giving LLMs a personality
+- R030 Virtual persona LLM article
+- R012 AI assistance and coding skills
+- R015 AI-assisted academic writing
+- R024 LLM use, note-taking, and memory
+- R041/R042 trust and automation-bias literature
+- R048 Six Fallacies in Substituting LLMs for Human Participants
+- R051 Alignment Faking in LLMs
+- R052 Deception Abilities in LLMs
+- R059 Whose Opinions Do Language Models Reflect?
+- R060 Diminished Diversity-of-Thought in LLMs
+
+
 ### Note on exercise IDs:
 
 - Use one exercise per teaching block: E01-E12.
 - Keep `exercise_id` as free text in Google Form so IDs can scale without schema changes.
+- Exercise IDs, internal block IDs, and physical paths are stable historical identifiers, not chronological labels: E01-E06, D1B, and `slides/blocks/day1/` identify Building (current Day 2); E07-E12, D2B, and `slides/blocks/day2/` identify Research (current Day 1).
+- Do not rename those IDs or paths when updating chronological labels.
 
 ### Exercise registry (keep updated):
 
 | exercise_id | block | short title | prefill link | status |
 |---|---|---|---|---|
-| E01 | Day 1 Block 1 | Jan setup and first programmable task | TODO | draft |
-| E02 | Day 1 Block 2 | LangChain prompt anatomy in code | TODO | draft |
-| E03 | Day 1 Block 3 | Context pipeline with retrieval | TODO | draft |
-| E04 | Day 1 Block 4 | Tool-calling mini-agent | TODO | draft |
-| E05 | Day 1 Block 5 | Build and connect a tiny MCP tool | TODO | draft |
-| E06 | Day 1 Block 6 | Memory behavior: session + retrieval | TODO | draft |
-| E07 | Day 2 Block 1 | Ideation project + idea napkin | TODO | draft |
-| E08 | Day 2 Block 2 | AI data-collection design memo | TODO | draft |
-| E09 | Day 2 Block 3 | Evidence paragraph + claim ledger | TODO | draft |
-| E10 | Day 2 Block 4 | Reproducible analysis loop in VS Code | TODO | draft |
-| E11 | Day 2 Block 5 | Issue -> agent -> PR workflow drill | TODO | draft |
-| E12 | Day 2 Block 6 | Writing + syndication sprint | TODO | draft |
+| E01 | Day 2 Block 1 | Jan setup and first programmable task | TODO | draft |
+| E02 | Day 2 Block 2 | LangChain prompt anatomy in code | TODO | draft |
+| E03 | Day 2 Block 3 | Context pipeline with retrieval | TODO | draft |
+| E04 | Day 2 Block 4 | Tool-calling mini-agent | TODO | draft |
+| E05 | Day 2 Block 5 | Build and connect a tiny MCP tool | TODO | draft |
+| E06 | Day 2 Block 6 | Memory behavior: session + retrieval | TODO | draft |
+| E07 | Day 1 Block 1 | Ideation project + idea napkin | TODO | draft |
+| E08 | Day 1 Block 2 | AI data-collection design memo | TODO | draft |
+| E09 | Day 1 Block 3 | Evidence paragraph + claim ledger | TODO | draft |
+| E10 | Day 1 Block 4 | Reproducible analysis loop in VS Code | TODO | draft |
+| E11 | Day 1 Block 5 | Issue -> agent -> PR workflow drill | TODO | draft |
+| E12 | Day 1 Block 6 | Writing + syndication sprint | TODO | draft |
 
 ### Resource gaps to fill next:
 
@@ -248,18 +252,18 @@ Keep this table current whenever exercises or links change.
 
 | exercise_id | block | short title | prefill link | status |
 |---|---|---|---|---|
-| E01 | Day 1 Block 1 | Jan setup and first programmable task | TODO | draft |
-| E02 | Day 1 Block 2 | LangChain prompt anatomy in code | TODO | draft |
-| E03 | Day 1 Block 3 | Context pipeline with retrieval | TODO | draft |
-| E04 | Day 1 Block 4 | Tool-calling mini-agent | TODO | draft |
-| E05 | Day 1 Block 5 | Build and connect a tiny MCP tool | TODO | draft |
-| E06 | Day 1 Block 6 | Memory behavior: session + retrieval | TODO | draft |
-| E07 | Day 2 Block 1 | Ideation project + idea napkin | TODO | draft |
-| E08 | Day 2 Block 2 | AI data-collection design memo | TODO | draft |
-| E09 | Day 2 Block 3 | Evidence paragraph + claim ledger | TODO | draft |
-| E10 | Day 2 Block 4 | Reproducible analysis loop in VS Code | TODO | draft |
-| E11 | Day 2 Block 5 | Issue -> agent -> PR workflow drill | TODO | draft |
-| E12 | Day 2 Block 6 | Writing + syndication sprint | TODO | draft |
+| E01 | Day 2 Block 1 | Jan setup and first programmable task | TODO | draft |
+| E02 | Day 2 Block 2 | LangChain prompt anatomy in code | TODO | draft |
+| E03 | Day 2 Block 3 | Context pipeline with retrieval | TODO | draft |
+| E04 | Day 2 Block 4 | Tool-calling mini-agent | TODO | draft |
+| E05 | Day 2 Block 5 | Build and connect a tiny MCP tool | TODO | draft |
+| E06 | Day 2 Block 6 | Memory behavior: session + retrieval | TODO | draft |
+| E07 | Day 1 Block 1 | Ideation project + idea napkin | TODO | draft |
+| E08 | Day 1 Block 2 | AI data-collection design memo | TODO | draft |
+| E09 | Day 1 Block 3 | Evidence paragraph + claim ledger | TODO | draft |
+| E10 | Day 1 Block 4 | Reproducible analysis loop in VS Code | TODO | draft |
+| E11 | Day 1 Block 5 | Issue -> agent -> PR workflow drill | TODO | draft |
+| E12 | Day 1 Block 6 | Writing + syndication sprint | TODO | draft |
 
 Canonical exercise draft source:
 
@@ -302,8 +306,8 @@ Future agents must update these values after form setup or any migration.
 
 ## Key Paths
 
-- `slides/day1_foundations.qmd`
-- `slides/day2_advanced.qmd`
+- `slides/day1_foundations.qmd` (historical path for Building AI Agents, current Day 2)
+- `slides/day2_advanced.qmd` (historical path for Research with AI Agents, current Day 1)
 - `website/docs/overview.md`
 - `website/docs/live-results.mdx`
 - `exercises/participant_instructions.md`
@@ -312,15 +316,12 @@ Future agents must update these values after form setup or any migration.
 - `resources/links.md`
 - `resources/registry.csv`
 
-## Block File Naming Convention
+## Stable Historical Path Convention
 
-All block slide decks follow the pattern: `slides/blocks/dayX/dayX_blockY.qmd`
+Block slide decks retain the historical pattern `slides/blocks/dayX/dayX_blockY.qmd`; `dayX` does not identify the current chronological day.
 
-Where X = 1 or 2 (day number) and Y = 1-6 (block number within the day).
+- `slides/blocks/day1/` and internal D1B identify Building AI Agents, which is now chronological Day 2.
+- `slides/blocks/day2/` and internal D2B identify Research with AI Agents, which is now chronological Day 1.
+- For example, chronological Day 2 Building Block 1 remains `slides/blocks/day1/day1_block1.qmd`; chronological Day 1 Research Block 4 remains `slides/blocks/day2/day2_block4.qmd`.
 
-Example:
-- Day 1 Block 1: `slides/blocks/day1/day1_block1.qmd`
-- Day 1 Block 2: `slides/blocks/day1/day1_block2.qmd`
-- Day 2 Block 4: `slides/blocks/day2/day2_block4.qmd`
-
-This naming ensures modularity and easy lookup from both slides and the companion website.
+Keep these physical paths and internal IDs unchanged so slides and website links remain stable.

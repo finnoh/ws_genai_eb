@@ -1,9 +1,9 @@
 ---
 title: "Rigorous Analysis with AI Agents"
-subtitle: "Day 2 - Block 4"
+subtitle: "Day 1 - Block 4 | May 13, 2027 | AI Agents in Research (Beginner)"
 format:
   revealjs:
-    footer: "TI Workshop | D2 B4"
+    footer: "TI Workshop | D1 B4"
     scrollable: true
     bibliography:
       - ../../../resources/workshop-citations.bib

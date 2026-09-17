@@ -34,9 +34,9 @@ export const blocks: BlockItem[] = [
   {
     id: 'D1B1',
     title: 'Course Kickoff: Why AI Agents Now',
-    day: 'Day 1',
+    day: 'Day 2',
     block: 'Block 1',
-    slidePath: '/slides/blocks/day1/day1_block1.html',
+    slidePath: '/slides/blocks/day1/day1_block1.htm',
     objective:
       'Set up Jan, inspect the student-agent-pack, and complete the required hello-world script run, TODO change, and manual data check.',
     inputs: [
@@ -57,9 +57,9 @@ export const blocks: BlockItem[] = [
   {
     id: 'D1B2',
     title: 'LLMs and AI Agents',
-    day: 'Day 1',
+    day: 'Day 2',
     block: 'Block 2',
-    slidePath: '/slides/blocks/day1/day1_block2.html',
+    slidePath: '/slides/blocks/day1/day1_block2.htm',
     objective: 'Understand core LLM mechanics and map prompt anatomy to a runnable coding task.',
     inputs: ['Weak baseline prompt', 'Prompt anatomy checklist'],
     deliverable: 'Runnable prompt example with cleaned structured output and a short orientation note.',
@@ -75,9 +75,9 @@ export const blocks: BlockItem[] = [
   {
     id: 'D1B3',
     title: 'Context',
-    day: 'Day 1',
+    day: 'Day 2',
     block: 'Block 3',
-    slidePath: '/slides/blocks/day1/day1_block3.html',
+    slidePath: '/slides/blocks/day1/day1_block3.htm',
     objective:
       'Use context engineering and retrieval to improve reliability over a no-context baseline with one explicit boundary disclosure.',
     inputs: ['Baseline task output', 'One retrieval-ready context source'],
@@ -94,9 +94,9 @@ export const blocks: BlockItem[] = [
   {
     id: 'D1B4',
     title: 'Tools 1',
-    day: 'Day 1',
+    day: 'Day 2',
     block: 'Block 4',
-    slidePath: '/slides/blocks/day1/day1_block4.html',
+    slidePath: '/slides/blocks/day1/day1_block4.htm',
     objective:
       'Understand tool-calling loops and implement a small agent using multiple tools, with a no-auth local fallback path.',
     inputs: ['Tool-calling objective', 'At least two callable tools', 'No-auth fallback tool path'],
@@ -112,9 +112,9 @@ export const blocks: BlockItem[] = [
   {
     id: 'D1B5',
     title: 'Tools 2',
-    day: 'Day 1',
+    day: 'Day 2',
     block: 'Block 5',
-    slidePath: '/slides/blocks/day1/day1_block5.html',
+    slidePath: '/slides/blocks/day1/day1_block5.htm',
     objective:
       'Connect a LangChain agent to the required MCP time server and document both a successful call and a handled error path.',
     inputs: ['exercises/05/mcp_tool.py', 'mcp-server-time via uvx', 'LangChain MCP adapters'],
@@ -131,9 +131,9 @@ export const blocks: BlockItem[] = [
   {
     id: 'D1B6',
     title: 'Memory',
-    day: 'Day 1',
+    day: 'Day 2',
     block: 'Block 6',
-    slidePath: '/slides/blocks/day1/day1_block6.html',
+    slidePath: '/slides/blocks/day1/day1_block6.htm',
     objective: 'Separate short-term context and persistent memory with an explicit memory policy.',
     inputs: ['Memory policy template', 'One session example with retrieval'],
     deliverable: 'Chat trace showing remembered preference, retrieved fact, and risk note.',
@@ -148,9 +148,9 @@ export const blocks: BlockItem[] = [
   {
     id: 'D2B1',
     title: 'Ideation with AI Agents',
-    day: 'Day 2',
+    day: 'Day 1',
     block: 'Block 1',
-    slidePath: '/slides/blocks/day2/day2_block1.html',
+    slidePath: '/slides/blocks/day2/day2_block1.htm',
     objective: 'Run a team ideation sprint in a shared ChatGPT/Claude project and produce three distinct idea napkins in one selected domain.',
     inputs: ['Shared ChatGPT/Claude project workspace', 'Domain scoring table (interest, feasibility, timeliness)', 'Idea napkin template'],
     deliverable: 'Shared project evidence + scored domain table + three idea napkins with risk notes.',
@@ -165,9 +165,9 @@ export const blocks: BlockItem[] = [
   {
     id: 'D2B2',
     title: 'AI in Data Collection',
-    day: 'Day 2',
+    day: 'Day 1',
     block: 'Block 2',
-    slidePath: '/slides/blocks/day2/day2_block2.html',
+    slidePath: '/slides/blocks/day2/day2_block2.htm',
     objective: 'Prototype all three AI data-collection modes with concrete examples and compare plausibility/validity risks.',
     inputs: ['A/B treatment idea for AI-generated stimuli', 'Prolific + AI-agent integration notes', 'Synthetic respondent setup inspired by Twin-2K-500'],
     deliverable: 'One worked example per mode plus plausibility note and cross-mode comparison table.',
@@ -182,9 +182,9 @@ export const blocks: BlockItem[] = [
   {
     id: 'D2B3',
     title: 'Literature Review',
-    day: 'Day 2',
+    day: 'Day 1',
     block: 'Block 3',
-    slidePath: '/slides/blocks/day2/day2_block3.html',
+    slidePath: '/slides/blocks/day2/day2_block3.htm',
     objective:
       'Map a familiar literature stream using AI only, then verify what is correct, missing, or hallucinated.',
     inputs: ['One familiar research stream', 'AI literature search workflow', 'Prompt to build a 2D paper map'],
@@ -201,9 +201,9 @@ export const blocks: BlockItem[] = [
   {
     id: 'D2B4',
     title: 'Rigorous Analysis with AI Agents',
-    day: 'Day 2',
+    day: 'Day 1',
     block: 'Block 4',
-    slidePath: '/slides/blocks/day2/day2_block4.html',
+    slidePath: '/slides/blocks/day2/day2_block4.htm',
     objective: 'Translate one target journal AI policy into an agent-enforceable documentation checklist.',
     inputs: ['Target journal AI-use guideline page', 'Disclosure/checklist draft', 'Current agent instruction file or template'],
     deliverable: 'Journal policy summary + agent-ready AI-usage checklist + repository pattern note.',
@@ -218,9 +218,9 @@ export const blocks: BlockItem[] = [
   {
     id: 'D2B5',
     title: 'Research Workflows',
-    day: 'Day 2',
+    day: 'Day 1',
     block: 'Block 5',
-    slidePath: '/slides/blocks/day2/day2_block5.html',
+    slidePath: '/slides/blocks/day2/day2_block5.htm',
     objective: 'Create a reusable template repository and practice issue -> agent -> PR iterations on style-guide tasks.',
     inputs: ['New GitHub repository', 'Issue templates mapped to Genskow and Shapiro style-guide chapters', 'Agent handoff prompt + PR review checklist'],
     deliverable: 'Template repo + issue set + agent PR evidence across style-guide tasks.',
@@ -236,9 +236,9 @@ export const blocks: BlockItem[] = [
   {
     id: 'D2B6',
     title: 'Writing & Syndication',
-    day: 'Day 2',
+    day: 'Day 1',
     block: 'Block 6',
-    slidePath: '/slides/blocks/day2/day2_block6.html',
+    slidePath: '/slides/blocks/day2/day2_block6.htm',
     objective: 'Draft a short agenda text with AI-assisted writing workflows and optionally scaffold a research website.',
     inputs: ['Current research agenda notes', 'Bullet-outline and voice-to-text writing workflows', 'Optional older project/paper for website scaffold'],
     deliverable: 'Half-page agenda draft + workflow reflection + optional website scaffold evidence.',

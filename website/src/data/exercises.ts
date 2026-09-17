@@ -47,7 +47,7 @@ const exerciseSeed: ExerciseItem[] = [
   {
     id: 'E01',
     title: 'Getting started with Jan + hello world script',
-    day: 'Day 1',
+    day: 'Day 2',
     block: 'Block 1',
     durationMinutes: 30,
     answerType: 'text',
@@ -71,7 +71,7 @@ const exerciseSeed: ExerciseItem[] = [
   {
     id: 'E02',
     title: 'Prompt anatomy in runnable Python',
-    day: 'Day 1',
+    day: 'Day 2',
     block: 'Block 2',
     durationMinutes: 30,
     answerType: 'code',
@@ -99,7 +99,7 @@ const exerciseSeed: ExerciseItem[] = [
   {
     id: 'E03',
     title: 'Retrieval A/B with local corpus',
-    day: 'Day 1',
+    day: 'Day 2',
     block: 'Block 3',
     durationMinutes: 30,
     answerType: 'text',
@@ -127,7 +127,7 @@ const exerciseSeed: ExerciseItem[] = [
   {
     id: 'E04',
     title: 'Tool-calling mini-agent',
-    day: 'Day 1',
+    day: 'Day 2',
     block: 'Block 4',
     durationMinutes: 30,
     answerType: 'code',
@@ -156,7 +156,7 @@ const exerciseSeed: ExerciseItem[] = [
   {
     id: 'E05',
     title: 'Connect LangChain agent to MCP time server',
-    day: 'Day 1',
+    day: 'Day 2',
     block: 'Block 5',
     durationMinutes: 30,
     answerType: 'code',
@@ -182,7 +182,7 @@ const exerciseSeed: ExerciseItem[] = [
   {
     id: 'E06',
     title: 'Memory behavior with session and long-term store',
-    day: 'Day 1',
+    day: 'Day 2',
     block: 'Block 6',
     durationMinutes: 30,
     answerType: 'text',
@@ -207,7 +207,7 @@ const exerciseSeed: ExerciseItem[] = [
   {
     id: 'E07',
     title: 'Team ideation sprint in ChatGPT/Claude project',
-    day: 'Day 2',
+    day: 'Day 1',
     block: 'Block 1',
     durationMinutes: 30,
     answerType: 'text',
@@ -234,7 +234,7 @@ const exerciseSeed: ExerciseItem[] = [
   {
     id: 'E08',
     title: 'Three AI data-collection modes by example',
-    day: 'Day 2',
+    day: 'Day 1',
     block: 'Block 2',
     durationMinutes: 30,
     answerType: 'text',
@@ -261,7 +261,7 @@ const exerciseSeed: ExerciseItem[] = [
   {
     id: 'E09',
     title: 'AI-only literature mapping in a known stream',
-    day: 'Day 2',
+    day: 'Day 1',
     block: 'Block 3',
     durationMinutes: 30,
     answerType: 'text',
@@ -285,7 +285,7 @@ const exerciseSeed: ExerciseItem[] = [
   {
     id: 'E10',
     title: 'Journal AI-policy to agent policy',
-    day: 'Day 2',
+    day: 'Day 1',
     block: 'Block 4',
     durationMinutes: 30,
     answerType: 'text',
@@ -307,7 +307,7 @@ const exerciseSeed: ExerciseItem[] = [
   {
     id: 'E11',
     title: 'Template repo + issue-to-agent workflow drill',
-    day: 'Day 2',
+    day: 'Day 1',
     block: 'Block 5',
     durationMinutes: 30,
     answerType: 'text',
@@ -330,7 +330,7 @@ const exerciseSeed: ExerciseItem[] = [
   {
     id: 'E12',
     title: 'Writing + syndication sprint',
-    day: 'Day 2',
+    day: 'Day 1',
     block: 'Block 6',
     durationMinutes: 30,
     answerType: 'text',

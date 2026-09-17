@@ -1,9 +1,9 @@
 ---
 title: "Context"
-subtitle: "Day 1 - Block 3"
+subtitle: "Day 2 - Block 3 | May 14, 2027 | Building AI Agents (Advanced)"
 format:
   revealjs:
-    footer: "TI Workshop | D1 B3"
+    footer: "TI Workshop | D2 B3"
     bibliography: ../../../resources/workshop-citations.bib
     embed-resources: true
 ---

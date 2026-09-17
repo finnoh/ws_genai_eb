@@ -4,12 +4,12 @@ One exercise per teaching block (12 total). Each exercise is scoped to be solvab
 
 Execution defaults:
 
-- Day 1: LangChain-first, Jupyter preferred (with `.py` fallback)
-- Day 2: VS Code + OpenCode by default; ChatGPT allowed where task fit is stronger (ideation/evaluation)
+- Day 1 — Research with AI Agents (beginner), May 13, 2027: VS Code + OpenCode by default; ChatGPT allowed where task fit is stronger (ideation/evaluation).
+- Day 2 — Building AI Agents (advanced), May 14, 2027: LangChain-first, Jupyter preferred (with `.py` fallback).
 
 Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 3 (strong).
 
-## E01 - Jan setup and first programmable task (Day 1, Block 1)
+## E01 - Jan setup and first programmable task (Day 2, Block 1)
 
 ### Objective
 
@@ -38,7 +38,7 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 - Add one custom instruction to Jan and rerun the same task.
 
-## E02 - LangChain prompt anatomy in code (Day 1, Block 2)
+## E02 - LangChain prompt anatomy in code (Day 2, Block 2)
 
 ### Objective
 
@@ -71,7 +71,7 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 - Run the same extraction task with one alternative OpenRouter model and briefly compare quality/speed/cost expectation.
 
-## E03 - Context pipeline with retrieval (Day 1, Block 3)
+## E03 - Context pipeline with retrieval (Day 2, Block 3)
 
 ### Objective
 
@@ -99,7 +99,7 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 - Add metadata filtering and report precision difference.
 
-## E04 - Tool-calling mini-agent (Day 1, Block 4)
+## E04 - Tool-calling mini-agent (Day 2, Block 4)
 
 ### Objective
 
@@ -127,7 +127,7 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 - Add graceful fallback for a forced tool failure.
 
-## E05 - Build and connect a tiny MCP tool (Day 1, Block 5)
+## E05 - Build and connect a tiny MCP tool (Day 2, Block 5)
 
 ### Objective
 
@@ -155,7 +155,7 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 - Connect to one additional MCP server and run one extra call.
 
-## E06 - Memory behavior: session + retrieval memory (Day 1, Block 6)
+## E06 - Memory behavior: session + retrieval memory (Day 2, Block 6)
 
 ### Objective
 
@@ -183,7 +183,7 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 - Add a stale-memory correction step.
 
-## E07 - Ideation project + idea napkin (Day 2, Block 1)
+## E07 - Ideation project + idea napkin (Day 1, Block 1)
 
 ### Objective
 
@@ -210,7 +210,7 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 - Add a second domain and a tie-break rule.
 
-## E08 - AI data-collection design memo (Day 2, Block 2)
+## E08 - AI data-collection design memo (Day 1, Block 2)
 
 ### Objective
 
@@ -237,7 +237,7 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 - Add pilot criteria (sample size, stop/continue rule).
 
-## E09 - Evidence paragraph + claim ledger (Day 2, Block 3)
+## E09 - Evidence paragraph + claim ledger (Day 1, Block 3)
 
 ### Objective
 
@@ -264,7 +264,7 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 - Add one unresolved gap and exact follow-up search query.
 
-## E10 - Reproducible analysis loop in VS Code (Day 2, Block 4)
+## E10 - Reproducible analysis loop in VS Code (Day 1, Block 4)
 
 ### Objective
 
@@ -291,7 +291,7 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 - Add one edge-case test that initially fails.
 
-## E11 - Issue -> agent -> PR workflow drill (Day 2, Block 5)
+## E11 - Issue -> agent -> PR workflow drill (Day 1, Block 5)
 
 ### Objective
 
@@ -319,7 +319,7 @@ Scale reference for all rubric criteria: 0 (missing), 1 (weak), 2 (acceptable), 
 
 - Add one policy rule for when human override is mandatory.
 
-## E12 - Writing + syndication sprint (Day 2, Block 6)
+## E12 - Writing + syndication sprint (Day 1, Block 6)
 
 ### Objective
 

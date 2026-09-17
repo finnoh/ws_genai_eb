@@ -62,8 +62,8 @@ chmod +x install.sh
 
 ## Course structure
 
-- Day 1: foundations (LLMs, prompting, coding agents, safety basics)
-- Day 2: advanced systems (MCP, memory, LangChain/OpenClaw, research workflows)
+- Day 1 — May 13, 2027: Research with AI Agents (beginner).
+- Day 2 — May 14, 2027: Building AI Agents (advanced).
 - Design target: roughly 50% hands-on exercises.
 
 ## Quick start

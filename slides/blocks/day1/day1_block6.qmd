@@ -1,9 +1,9 @@
 ---
 title: "Memory"
-subtitle: "Day 1 - Block 6"
+subtitle: "Day 2 - Block 6 | May 14, 2027 | Building AI Agents (Advanced)"
 format:
   revealjs:
-    footer: "TI Workshop | D1 B6"
+    footer: "TI Workshop | D2 B6"
     bibliography: ../../../resources/workshop-citations.bib
     embed-resources: true
 ---

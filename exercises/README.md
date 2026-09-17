@@ -16,6 +16,8 @@ Website + slides exercise surface area:
 - Live exercises page entrypoint: `website/docs/live-exercises.mdx`
 - Slide deck files: `slides/blocks/day1/day1_block1.qmd` ... `slides/blocks/day2/day2_block6.qmd`
 
+Historical paths are stable identifiers, not chronological labels: `slides/blocks/day1/` contains Building AI Agents (current Day 2), while `slides/blocks/day2/` contains Research with AI Agents (current Day 1). Exercise IDs are similarly stable: E01-E06 are current Day 2 and E07-E12 are current Day 1.
+
 Sync workflow for canonical E01-E06 text:
 
 ```bash

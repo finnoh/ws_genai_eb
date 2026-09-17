@@ -1,10 +1,10 @@
 ---
 title: "AI Agents in Economics and Business Research"
-subtitle: "Day 1 - Building AI Agents"
+subtitle: "Day 2 - Building AI Agents (Advanced) | May 14, 2027"
 author: "Tinbergen Institute"
 format:
   revealjs:
-    footer: "Tinbergen Institute | Day 1"
+    footer: "Tinbergen Institute | Day 2"
 ---
 
 ## {.center}
@@ -13,7 +13,7 @@ format:
 Build reliable habits before speed.
 :::
 
-## Day 1 structure
+## Day 2 structure
 
 - Six blocks, 60 minutes each
 - 20 lecture, 30 hands-on, 10 debrief
@@ -51,7 +51,7 @@ Build reliable habits before speed.
 
 ## Task {.center background-color="black"}
 
-**Exercise flow for Day 1**
+**Exercise flow for Day 2**
 
 - E1 prompt anatomy
 - E2 prompt rewrite + rubric
@@ -73,18 +73,18 @@ Build reliable habits before speed.
 
 ## Block deck links
 
-- `/slides/blocks/day1/day1_block1.html`
-- `/slides/blocks/day1/day1_block2.html`
-- `/slides/blocks/day1/day1_block3.html`
+- `/slides/blocks/day1/day1_block1.htm`
+- `/slides/blocks/day1/day1_block2.htm`
+- `/slides/blocks/day1/day1_block3.htm`
 
 ## Block deck links (cont.)
 
-- `/slides/blocks/day1/day1_block4.html`
-- `/slides/blocks/day1/day1_block5.html`
-- `/slides/blocks/day1/day1_block6.html`
+- `/slides/blocks/day1/day1_block4.htm`
+- `/slides/blocks/day1/day1_block5.htm`
+- `/slides/blocks/day1/day1_block6.htm`
 
 ## Wrap-up
 
 - Concepts -> workflows -> safeguards
-- Block artifacts feed day-2 work
+- Block artifacts support continued work after the workshop
 - Keep evidence with every claim

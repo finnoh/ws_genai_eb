@@ -1,9 +1,9 @@
 ---
 title: "Literature Review"
-subtitle: "Day 2 - Block 3"
+subtitle: "Day 1 - Block 3 | May 13, 2027 | AI Agents in Research (Beginner)"
 format:
   revealjs:
-    footer: "TI Workshop | D2 B3"
+    footer: "TI Workshop | D1 B3"
     scrollable: true
     bibliography:
       - ../../../resources/workshop-citations.bib

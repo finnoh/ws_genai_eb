@@ -76,17 +76,12 @@ export default function ExerciseLinks(): React.ReactElement {
 
   const day1Links = links.filter((link) => link.day === 'Day 1');
   const day2Links = links.filter((link) => link.day === 'Day 2');
-  const rowCount = Math.max(day1Links.length, day2Links.length);
 
   function toSitePath(path: string): string {
     return `${baseUrl}${path}#/title-slide`;
   }
 
-  function renderCard(link: ExerciseLink | undefined): React.ReactElement {
-    if (!link) {
-      return <div className={styles.cardSpacer} aria-hidden="true" />;
-    }
-
+  function renderCard(link: ExerciseLink): React.ReactElement {
     const isSelected = link.id === selectedId;
 
     return (
@@ -151,20 +146,17 @@ export default function ExerciseLinks(): React.ReactElement {
   }
 
   return (
-    <div>
-      <div className={styles.dayHeadings}>
-        <h3 className={styles.dayHeading}>Day 1 (E01-E06)</h3>
-        <h3 className={styles.dayHeading}>Day 2 (E07-E12)</h3>
-      </div>
-
-      <div className={styles.dayRows}>
-        {Array.from({length: rowCount}).map((_, idx) => (
-          <div key={`row-${idx}`} className={styles.dayRow}>
-            {renderCard(day1Links[idx])}
-            {renderCard(day2Links[idx])}
-          </div>
-        ))}
-      </div>
+    <div className={styles.dayColumns}>
+      <section>
+        <h3 className={styles.dayHeading}>Day 1 — AI Agents in Research</h3>
+        <p>May 13, 2027 · Beginner · E07–E12</p>
+        <div className={styles.dayCards}>{day1Links.map(renderCard)}</div>
+      </section>
+      <section>
+        <h3 className={styles.dayHeading}>Day 2 — Building AI Agents</h3>
+        <p>May 14, 2027 · Advanced · E01–E06</p>
+        <div className={styles.dayCards}>{day2Links.map(renderCard)}</div>
+      </section>
     </div>
   );
 }

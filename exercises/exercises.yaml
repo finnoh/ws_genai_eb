@@ -12,13 +12,13 @@ base_rubric:
   - Reproducibility: can another group rerun it?
   - Risk awareness: are key risks identified and mitigated?
 execution_defaults:
-  day1: LangChain + OpenRouter by default, Jupyter preferred (.py fallback)
-  day2: VS Code + OpenCode by default, LangChain + OpenRouter for coding tasks; ChatGPT allowed for ideation/evaluation
+  day1: VS Code + OpenCode by default, LangChain + OpenRouter for coding tasks; ChatGPT allowed for ideation/evaluation
+  day2: LangChain + OpenRouter by default, Jupyter preferred (.py fallback)
 
 exercises:
   - id: E01
     title: Getting started with Jan + hello world script
-    day: 1
+    day: 2
     block: 1
     submission_link: /docs/live-exercises?exercise=E01
     student_description:
@@ -32,7 +32,7 @@ exercises:
 
   - id: E02
     title: Prompt anatomy in runnable Python
-    day: 1
+    day: 2
     block: 2
     submission_link: /docs/live-exercises?exercise=E02
     student_description:
@@ -48,7 +48,7 @@ exercises:
 
   - id: E03
     title: Retrieval A/B with local corpus
-    day: 1
+    day: 2
     block: 3
     submission_link: /docs/live-exercises?exercise=E03
     student_description:
@@ -63,7 +63,7 @@ exercises:
 
   - id: E04
     title: Tool-calling mini-agent
-    day: 1
+    day: 2
     block: 4
     submission_link: /docs/live-exercises?exercise=E04
     student_description:
@@ -78,7 +78,7 @@ exercises:
 
   - id: E05
     title: Connect LangChain agent to MCP time server
-    day: 1
+    day: 2
     block: 5
     submission_link: /docs/live-exercises?exercise=E05
     student_description:
@@ -93,7 +93,7 @@ exercises:
 
   - id: E06
     title: Memory behavior with session and long-term store
-    day: 1
+    day: 2
     block: 6
     submission_link: /docs/live-exercises?exercise=E06
     student_description:
@@ -108,7 +108,7 @@ exercises:
 
   - id: E07
     title: Team ideation sprint in ChatGPT/Claude project
-    day: 2
+    day: 1
     block: 1
     submission_link: /docs/live-exercises?exercise=E07
     student_description:
@@ -122,7 +122,7 @@ exercises:
 
   - id: E08
     title: Three AI data-collection modes by example
-    day: 2
+    day: 1
     block: 2
     submission_link: /docs/live-exercises?exercise=E08
     student_description:
@@ -136,7 +136,7 @@ exercises:
 
   - id: E09
     title: AI-only literature mapping in a known stream
-    day: 2
+    day: 1
     block: 3
     submission_link: /docs/live-exercises?exercise=E09
     student_description:
@@ -150,7 +150,7 @@ exercises:
 
   - id: E10
     title: Journal AI-policy to agent policy
-    day: 2
+    day: 1
     block: 4
     submission_link: /docs/live-exercises?exercise=E10
     student_description:
@@ -163,7 +163,7 @@ exercises:
 
   - id: E11
     title: Template repo + issue-to-agent workflow drill
-    day: 2
+    day: 1
     block: 5
     submission_link: /docs/live-exercises?exercise=E11
     student_description:
@@ -177,7 +177,7 @@ exercises:
 
   - id: E12
     title: AI-assisted research writing + optional website
-    day: 2
+    day: 1
     block: 6
     submission_link: /docs/live-exercises?exercise=E12
     student_description:

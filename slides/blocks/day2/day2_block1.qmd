@@ -1,9 +1,9 @@
 ---
 title: "Ideation with AI Agents"
-subtitle: "Day 2 - Block 1"
+subtitle: "Day 1 - Block 1 | May 13, 2027 | AI Agents in Research (Beginner)"
 format:
   revealjs:
-    footer: "TI Workshop | D2 B1"
+    footer: "TI Workshop | D1 B1"
     bibliography:
       - ../../../resources/workshop-citations.bib
       - ../../assets/references.bib
