@@ -5,11 +5,12 @@ import styles from './BlockDeckPreview.module.css';
 
 type Props = {
   slidePath: string;
-};
+  title: string;
+}
 
 const firstSlideIndex = 0;
 
-export default function BlockDeckPreview({slidePath}: Props): React.ReactElement {
+export default function BlockDeckPreview({slidePath, title}: Props): React.ReactElement {
   const frameRef = useRef<HTMLIFrameElement | null>(null);
   const baseDeckUrl = useBaseUrl(slidePath);
   const src = useMemo(() => `${baseDeckUrl}#/${firstSlideIndex}`, [baseDeckUrl]);
@@ -26,12 +27,16 @@ export default function BlockDeckPreview({slidePath}: Props): React.ReactElement
   return (
     <div className={styles.wrap}>
       <div className={styles.frameShell}>
-        <button type="button" className={styles.fullscreenButton} onClick={openFullscreen}>
+        <button
+          type="button"
+          className={styles.fullscreenButton}
+          onClick={openFullscreen}
+          aria-label={`Open ${title} slide deck in full screen`}>
           Full screen
         </button>
         <iframe
           ref={frameRef}
-          title="Slide preview"
+          title={`${title} slide preview`}
           className={styles.frame}
           src={src}
           loading="lazy"

@@ -40,7 +40,7 @@ export default function BlockContentPage({blockId}: Props): React.ReactElement {
           </strong>
         </p>
         <p>{block.objective}</p>
-        <BlockDeckPreview slidePath={block.slidePath} />
+        <BlockDeckPreview slidePath={block.slidePath} title={block.title} />
       </section>
 
       {writeupSrc ? (

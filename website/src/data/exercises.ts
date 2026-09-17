@@ -1,5 +1,3 @@
-import e01e06Overrides from './exercises_e01_e06_overrides.json';
-
 export type ExerciseId =
   | 'E01'
   | 'E02'
@@ -13,6 +11,7 @@ export type ExerciseId =
   | 'E10'
   | 'E11'
   | 'E12';
+
 
 export type ExerciseItem = {
   id: ExerciseId;
@@ -48,62 +47,83 @@ export const canonicalTimebox = {
 const exerciseSeed: ExerciseItem[] = [
   {
     id: 'E01',
-    title: 'Setup Jan + OpenRouter + hello world',
+    title: 'Getting started with Jan + hello world script',
     day: 'Day 1',
     block: 'Block 1',
     durationMinutes: 30,
     answerType: 'text',
-    prompt:
-      'Submit startup evidence, one run of exercises/01/hello_world.py, one manual check from tiny.csv, and one TODO-STUDENT change note.',
+    prompt: 'Start Jan in `student-agent-pack/` and run basic startup checks.',
     objective:
-      'Get setup operational, run the hello-world script, and practice one small student-side script edit.',
+      'Start Jan in `student-agent-pack/` and run basic startup checks. Take a look at the student-agent-pack, especially AGENTS.md, BOOTSTRAP.md, tools/, exercises/, and also opencode.json Run `python exercises/01/hello_world.py` and capture output. Edit the `TODO-STUDENT` in `exercises/01/hello_world.py` and rerun once. Verify one value manually from `exercises/01/data/tiny.csv`.',
+    objectiveBullets: [
+      'Start Jan in `student-agent-pack/` and run basic startup checks.',
+      'Take a look at the student-agent-pack, especially AGENTS.md, BOOTSTRAP.md, tools/, exercises/, and also opencode.json',
+      'Run `python exercises/01/hello_world.py` and capture output.',
+      'Edit the `TODO-STUDENT` in `exercises/01/hello_world.py` and rerun once.',
+      'Verify one value manually from `exercises/01/data/tiny.csv`.',
+    ],
     inputs: ['Install workflow', 'OpenRouter key in .env', 'exercises/01/hello_world.py + tiny.csv'],
-    deliverable:
-      'Startup evidence + Jan response + script output + manual verification + TODO update note.',
+    deliverable: 'startup evidence + one script run + one manual check + one TODO change note.',
     rubricSpecific: ['Environment setup is reproducible.', 'Manual verification evidence is explicit.'],
     commonFailureModes: ['Missing OPENROUTER_API_KEY or base URL.', 'Skipping minimum startup evidence before coding.'],
     extensionTask: 'Switch to a second free OpenRouter model and compare output quality or speed.',
-    detailPath: '/docs/blocks/e1-prompt-anatomy-lab',
+    detailPath: '/docs/blocks/e01-hello-world',
   },
   {
     id: 'E02',
-    title: 'Prompt anatomy in LangChain code',
+    title: 'Prompt anatomy in runnable Python',
     day: 'Day 1',
     block: 'Block 2',
     durationMinutes: 30,
     answerType: 'code',
     prompt:
-      'Submit output from exercises/02/prompt_lab.py, including one TODO-STUDENT prompt tweak and one verification note.',
-    objective: 'Turn noisy extraction into structured Python output and compare one prompt tweak.',
+      'Familiarize yourself with LangChain https://docs.langchain.com/ and OpenRouter https://docs.openrouter.ai/ by browsing their docs and examples.',
+    objective:
+      'Familiarize yourself with LangChain https://docs.langchain.com/ and OpenRouter https://docs.openrouter.ai/ by browsing their docs and examples. What all can you do with LangChain? What are some of the most powerful models on OpenRouter? What are the "best value" models? What do they say about privacy and data usage? Run `python exercises/02/prompt_lab.py`. Inspect `TODO-STUDENT` prompt instruction and modify strictness once. Re-run and compare extraction output quality. Verify the resulting list excludes fictional places.',
+    objectiveBullets: [
+      'Familiarize yourself with LangChain https://docs.langchain.com/ and OpenRouter https://docs.openrouter.ai/ by browsing their docs and examples.',
+      'What all can you do with LangChain?',
+      'What are some of the most powerful models on OpenRouter? What are the "best value" models? What do they say about privacy and data usage?',
+      'Run `python exercises/02/prompt_lab.py`.',
+      'Inspect `TODO-STUDENT` prompt instruction and modify strictness once.',
+      'Re-run and compare extraction output quality.',
+      'Verify the resulting list excludes fictional places.',
+    ],
     inputs: ['exercises/02/prompt_lab.py', 'Noisy country paragraph', 'One TODO-STUDENT prompt variant'],
-    deliverable:
-      'Runnable output with cleaned country list + verification evidence + TODO experiment note.',
+    deliverable: 'one runnable extraction output + one verification note + one TODO experiment note.',
     rubricSpecific: ['Output is a valid Python list.', 'Cleaning/filtering logic is correct and explicit.'],
     commonFailureModes: ['Output format drifts from strict list.', 'Typos fixed inconsistently or fictional places included.'],
     extensionTask:
       'Optional multi-agent blackjack demo (Dealer, Gambler, Referee) using explicit standard rules: card values, initial deal, hit/stand, bust, dealer hits to 17+, blackjack precedence, and push on equal totals.',
-    detailPath: '/docs/blocks/e2-prompt-rewrite-challenge',
+    detailPath: '/docs/blocks/e02-prompt-anatomy',
   },
   {
     id: 'E03',
-    title: 'Context pipeline with retrieval',
+    title: 'Retrieval A/B with local corpus',
     day: 'Day 1',
     block: 'Block 3',
     durationMinutes: 30,
     answerType: 'text',
-    prompt:
-      'Submit an A/B comparison from exercises/03/retrieval_ab.py, including TODO-STUDENT variants (question + k).',
-    objective: 'Run baseline vs retrieval on the same question and document one retrieval-fixed failure.',
+    prompt: 'Can you look up some services that offer RAG systems? How expensive is this?',
+    objective:
+      'Can you look up some services that offer RAG systems? How expensive is this? Imagine you would have a PDF. What steps are necessary to get it into a retriever? Now imagine you would have an image or even a video. Could you (perhaps in a "hacky" way) get that into a retriever? Run `python exercises/03/retrieval_ab.py`. Complete all `TODO-STUDENT` steps in the script (question change + k change + comparison note). Record one baseline failure fixed by retrieval.',
+    objectiveBullets: [
+      'Can you look up some services that offer RAG systems? How expensive is this?',
+      'Imagine you would have a PDF. What steps are necessary to get it into a retriever?',
+      'Now imagine you would have an image or even a video. Could you (perhaps in a "hacky" way) get that into a retriever?',
+      'Run `python exercises/03/retrieval_ab.py`.',
+      'Complete all `TODO-STUDENT` steps in the script (question change + k change + comparison note).',
+      'Record one baseline failure fixed by retrieval.',
+    ],
     inputs: ['exercises/03/retrieval_ab.py', 'Local corpus in exercises/03/local_docs'],
-    deliverable:
-      'A/B note with one retrieval-fixed failure + one quoted chunk + one comparison note.',
+    deliverable: 'A/B run trace + one retrieval-fixed failure + one source-backed comparison note.',
     rubricSpecific: ['A/B comparison controls key variables.', 'Improvement is traceable to retrieved evidence.'],
     commonFailureModes: [
       'Baseline and retrieval runs use different prompts/settings.',
       'Improvement claimed without source chunk evidence or boundary disclosure.',
     ],
     extensionTask: 'Add metadata filtering and report precision difference.',
-    detailPath: '/docs/blocks/e3-ide-coding-sprint',
+    detailPath: '/docs/blocks/e03-retrieval',
   },
   {
     id: 'E04',
@@ -112,20 +132,27 @@ const exerciseSeed: ExerciseItem[] = [
     block: 'Block 4',
     durationMinutes: 30,
     answerType: 'code',
-    prompt:
-      'Submit trace from exercises/04/tool_agent.py showing two tool calls, plausibility check, and one TODO-STUDENT change.',
+    prompt: 'Take a look at the LangChain documentation for tool use',
     objective:
-      'Run a two-tool LangChain agent and verify output with one reproducible check.',
+      'Take a look at the LangChain documentation for tool use Think about your work. What kind of "tool" would be handy there? Take a look at https://agentskills.io/home and create a mockup of an agent skill that would be useful for your work. Run `python exercises/04/tool_agent.py`. Modify one `TODO-STUDENT` item (region map or question format) and rerun. Keep and report the trace showing both tool calls and plausibility check.',
+    objectiveBullets: [
+      'Take a look at the LangChain documentation for tool use',
+      'Think about your work. What kind of "tool" would be handy there?',
+      'Take a look at https://agentskills.io/home and create a mockup of an agent skill that would be useful for your work.',
+      'Run `python exercises/04/tool_agent.py`.',
+      'Modify one `TODO-STUDENT` item (region map or question format) and rerun.',
+      'Keep and report the trace showing both tool calls and plausibility check.',
+    ],
     inputs: [
       'exercises/04/tool_agent.py',
       'Two tools: label lookup + average',
       'One multi-step question requiring both tools',
     ],
-    deliverable: 'Tool trace + plausibility check + one TODO update note.',
+    deliverable: 'tool trace with two tool calls + plausibility check + one TODO change note.',
     rubricSpecific: ['Tool selection behavior is observable and justified.', 'Output check is explicit and plausible.'],
     commonFailureModes: ['Agent answers directly without using both tools.', 'No no-auth fallback when external tool setup fails.'],
     extensionTask: 'Add graceful fallback for a forced tool failure and show fallback trace.',
-    detailPath: '/docs/blocks/e4-draft-verify-paragraph',
+    detailPath: '/docs/blocks/e04-tool-calling',
   },
   {
     id: 'E05',
@@ -134,30 +161,49 @@ const exerciseSeed: ExerciseItem[] = [
     block: 'Block 5',
     durationMinutes: 30,
     answerType: 'code',
-    prompt: 'Submit MCP run evidence from exercises/05/mcp_tool.py with one success path, one error path, and TODO-STUDENT experiments.',
-    objective: 'Connect LangChain to mcp-server-time via MCP and verify success/error handling.',
+    prompt:
+      'Take a look at https://docs.langchain.com/oss/python/langchain/human-in-the-loop ; when would this be useful in your work?',
+    objective:
+      'Take a look at https://docs.langchain.com/oss/python/langchain/human-in-the-loop ; when would this be useful in your work? Why would one use an MCP server? What are the benefits and risks? How is it different from the tools before? Familiarize yourself with the MCP (watch out, this is very computer science heavy---but actually quite simple past the jargon) https://docs.langchain.com/oss/python/langchain/mcp Run `python exercises/05/mcp_tool.py`. Complete the `TODO-STUDENT` variants (timezone pair and error-path tweak). Record one success call and one handled error path.',
+    objectiveBullets: [
+      'Take a look at https://docs.langchain.com/oss/python/langchain/human-in-the-loop ; when would this be useful in your work?',
+      'Why would one use an MCP server? What are the benefits and risks? How is it different from the tools before?',
+      'Familiarize yourself with the MCP (watch out, this is very computer science heavy---but actually quite simple past the jargon) https://docs.langchain.com/oss/python/langchain/mcp',
+      'Run `python exercises/05/mcp_tool.py`.',
+      'Complete the `TODO-STUDENT` variants (timezone pair and error-path tweak).',
+      'Record one success call and one handled error path.',
+    ],
     inputs: ['exercises/05/mcp_tool.py', 'mcp-server-time via uvx', 'LangChain MCP adapters'],
-    deliverable: 'MCP tool-call demo + sanity check + handled error-path evidence.',
+    deliverable: 'MCP tool-call evidence (success + error) + sanity check + one TODO change note.',
     rubricSpecific: ['MCP connection is working and observable.', 'Success and error paths are both documented.'],
     commonFailureModes: ['uvx/mcp-server-time not available.', 'No explicit error-path evidence.'],
     extensionTask: 'Connect one additional MCP server and run one extra query.',
-    detailPath: '/docs/blocks/e5-design-agent-workflow',
+    detailPath: '/docs/blocks/e05-mcp',
   },
   {
     id: 'E06',
-    title: 'Memory behavior: session + retrieval',
+    title: 'Memory behavior with session and long-term store',
     day: 'Day 1',
     block: 'Block 6',
     durationMinutes: 30,
     answerType: 'text',
-    prompt: 'Submit run evidence from exercises/06/memory_demo.py showing short-term reset behavior, long-term recall, and one TODO-STUDENT change note.',
-    objective: 'Show short-term vs long-term memory behavior with a reproducible script run.',
+    prompt: 'Why would your agent need memory?',
+    objective:
+      'Why would your agent need memory? How is memory different from context? How does it relate to tools? Take a look at OpenClaw. What is it? How is it different from your coding agent? What are the benefits and risks of using it? https://docs.openclaw.ai/ Run `python exercises/06/memory_demo.py`. Try one `TODO-STUDENT` modification and rerun. Show short-term reset behavior and long-term retrieval behavior.',
+    objectiveBullets: [
+      'Why would your agent need memory?',
+      'How is memory different from context? How does it relate to tools?',
+      'Take a look at OpenClaw. What is it? How is it different from your coding agent? What are the benefits and risks of using it? https://docs.openclaw.ai/',
+      'Run `python exercises/06/memory_demo.py`.',
+      'Try one `TODO-STUDENT` modification and rerun.',
+      'Show short-term reset behavior and long-term retrieval behavior.',
+    ],
     inputs: ['exercises/06/memory_demo.py', 'Session reset behavior', 'long_term_store.json'],
-    deliverable: 'Trace showing remembered preference + retrieved project fact across reset + risk note.',
+    deliverable: 'memory trace proving short-term vs long-term distinction + one risk note.',
     rubricSpecific: ['Short-term vs long-term memory is clearly separated.', 'Risk disclosure is concrete and relevant.'],
     commonFailureModes: ['Memory behavior claimed without trace evidence.', 'Unsafe or stale memory retained without correction.'],
     extensionTask: 'Compress memory notes and re-evaluate retrieval quality.',
-    detailPath: '/docs/blocks/e6-build-mini-pipeline',
+    detailPath: '/docs/blocks/e06-memory',
   },
   {
     id: 'E07',
@@ -184,7 +230,7 @@ const exerciseSeed: ExerciseItem[] = [
     rubricSpecific: ['Domain scoring and selection logic is explicit.', 'Three napkins are clearly distinct and scoped.'],
     commonFailureModes: ['Only one idea napkin is submitted.', 'No explicit risk note per napkin.'],
     extensionTask: 'Invite collaborators into the same project and compare score disagreements before final selection.',
-    detailPath: '/docs/blocks/e7-evaluate-two-outputs',
+    detailPath: '/docs/blocks/e07-team-ideation',
   },
   {
     id: 'E08',
@@ -211,7 +257,7 @@ const exerciseSeed: ExerciseItem[] = [
     rubricSpecific: ['All three modes include concrete example artifacts.', 'Plausibility and validity risks are explicitly compared.'],
     commonFailureModes: ['Examples remain abstract without a concrete artifact.', 'No plausibility check for synthetic respondent interview.'],
     extensionTask: 'Add one external validation check for the synthetic respondent answers.',
-    detailPath: '/docs/blocks/e8-resilience-protocol-plan',
+    detailPath: '/docs/blocks/e08-data-collection',
   },
   {
     id: 'E09',
@@ -235,7 +281,7 @@ const exerciseSeed: ExerciseItem[] = [
     rubricSpecific: ['Map and table are structured and interpretable.', 'Verification clearly separates correct, missing, and hallucinated items.'],
     commonFailureModes: ['Papers are provided to AI up front, defeating the exercise.', 'No explicit verification against prior domain knowledge.'],
     extensionTask: 'Configure Zotero MCP and compare recall quality before vs after integration.',
-    detailPath: '/docs/blocks/e9-evidence-paragraph-claim-ledger',
+    detailPath: '/docs/blocks/e09-literature-mapping',
   },
   {
     id: 'E10',
@@ -257,7 +303,7 @@ const exerciseSeed: ExerciseItem[] = [
     rubricSpecific: ['Policy summary is precise and source-backed.', 'Checklist items are operational and agent-implementable.'],
     commonFailureModes: ['Journal policy is summarized without concrete workflow implications.', 'Checklist is too generic to enforce in agent instructions.'],
     extensionTask: 'Add one repository documentation pattern that enforces AI-use logging in commits or PRs.',
-    detailPath: '/docs/blocks/e10-reproducible-analysis-loop',
+    detailPath: '/docs/blocks/e10-ai-policy',
   },
   {
     id: 'E11',
@@ -280,7 +326,7 @@ const exerciseSeed: ExerciseItem[] = [
     rubricSpecific: ['Issues are scoped and map to distinct style-guide aspects.', 'PR evidence shows iterative agent handoff and review.'],
     commonFailureModes: ['Agent permissions are not configured for push/PR workflow.', 'Issues are too broad to verify step by step.'],
     extensionTask: 'Promote the repository to a GitHub template and document a starter checklist for future projects.',
-    detailPath: '/docs/blocks/e11-issue-agent-pr-workflow',
+    detailPath: '/docs/blocks/e11-agent-workflow',
   },
   {
     id: 'E12',
@@ -303,25 +349,11 @@ const exerciseSeed: ExerciseItem[] = [
     rubricSpecific: ['Draft has clear argument flow and explicit human editing.', 'Workflow reflection captures trade-offs, not just preferences.'],
     commonFailureModes: ['Output is AI-first prose without substantive human revision.', 'No explicit comparison between the two writing workflows.'],
     extensionTask: 'Ask an agent to scaffold a minimal research website for one completed project and review the output structure.',
-    detailPath: '/docs/blocks/e12-writing-syndication-sprint',
+    detailPath: '/docs/blocks/e12-research-writing',
   },
 ];
+export const exercises: ExerciseItem[] = exerciseSeed;
 
-type ExerciseOverride = Partial<Pick<ExerciseItem, 'title' | 'prompt' | 'objective' | 'objectiveBullets' | 'inputs' | 'deliverable'>>;
-
-const normalizedOverrides = e01e06Overrides as Partial<Record<ExerciseId, ExerciseOverride>>;
-
-export const exercises: ExerciseItem[] = exerciseSeed.map((item) => {
-  const override = normalizedOverrides[item.id];
-  if (!override) {
-    return item;
-  }
-  return {
-    ...item,
-    ...override,
-    inputs: override.inputs ?? item.inputs,
-  };
-});
 
 export function getExerciseById(exerciseId: ExerciseId): ExerciseItem {
   const item = exercises.find((exercise) => exercise.id === exerciseId);

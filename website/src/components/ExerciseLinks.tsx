@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from 'react';
+import React, {useEffect, useMemo, useRef, useState} from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {exercises, type ExerciseItem} from '@site/src/data/exercises';
@@ -28,6 +28,8 @@ export default function ExerciseLinks(): React.ReactElement {
   const resultsSheetUrl = (customFields.resultsSheetUrl as string | undefined)?.trim() || '';
 
   const [copiedId, setCopiedId] = useState<string>('');
+  const [selectedId, setSelectedId] = useState<string>('');
+  const cardRefs = useRef<Record<string, HTMLElement | null>>({});
 
   const links = useMemo<ExerciseLink[]>(() => {
     if (!formUrl || !exerciseField) {
@@ -55,6 +57,23 @@ export default function ExerciseLinks(): React.ReactElement {
     }
   }
 
+  useEffect(() => {
+    function selectExerciseFromQuery(): void {
+      const requestedId = new URLSearchParams(window.location.search).get('exercise')?.toUpperCase() || '';
+      setSelectedId(exercises.some((exercise) => exercise.id === requestedId) ? requestedId : '');
+    }
+
+    selectExerciseFromQuery();
+    window.addEventListener('popstate', selectExerciseFromQuery);
+    return () => window.removeEventListener('popstate', selectExerciseFromQuery);
+  }, []);
+
+  useEffect(() => {
+    if (selectedId) {
+      cardRefs.current[selectedId]?.focus();
+    }
+  }, [selectedId]);
+
   const day1Links = links.filter((link) => link.day === 'Day 1');
   const day2Links = links.filter((link) => link.day === 'Day 2');
   const rowCount = Math.max(day1Links.length, day2Links.length);
@@ -68,8 +87,16 @@ export default function ExerciseLinks(): React.ReactElement {
       return <div className={styles.cardSpacer} aria-hidden="true" />;
     }
 
+    const isSelected = link.id === selectedId;
+
     return (
-      <article key={link.id} className={styles.card}>
+      <article
+        key={link.id}
+        ref={(card) => {
+          cardRefs.current[link.id] = card;
+        }}
+        className={`${styles.card}${isSelected ? ` ${styles.active}` : ''}`}
+        tabIndex={isSelected ? -1 : undefined}>
         <p className={styles.meta}>
           {link.day} • {link.durationMinutes} min • {link.answerType}
         </p>

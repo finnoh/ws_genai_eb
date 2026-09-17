@@ -40,7 +40,7 @@ const config: Config = {
       respectPrefersColorScheme: false,
       disableSwitch: true,
     },
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/ti-ai-agents-social-card.png',
     navbar: {
       hideOnScroll: true,
       title: 'TI AI Agents',

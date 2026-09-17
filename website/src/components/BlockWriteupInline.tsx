@@ -3,7 +3,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 type Props = {
   src: string;
-};
+}
+
+type LoadState =
+  | {kind: 'loading'}
+  | {kind: 'ready'; html: string}
+  | {kind: 'unavailable'};
 
 function dirname(path: string): string {
   const idx = path.lastIndexOf('/');
@@ -20,18 +25,28 @@ function toAbsoluteAssetPath(value: string, baseDir: string): string {
 export default function BlockWriteupInline({src}: Props): React.ReactElement {
   const resolvedSrc = useBaseUrl(src);
   const baseDir = useMemo(() => dirname(resolvedSrc), [resolvedSrc]);
-  const [html, setHtml] = useState<string>('');
+  const [state, setState] = useState<LoadState>({kind: 'loading'});
 
   useEffect(() => {
     let cancelled = false;
 
     async function load(): Promise<void> {
+      setState({kind: 'loading'});
       try {
         const res = await fetch(resolvedSrc);
         if (!res.ok) {
+          if (!cancelled) {
+            setState({kind: 'unavailable'});
+          }
           return;
         }
         const text = await res.text();
+        if (!text.trim()) {
+          if (!cancelled) {
+            setState({kind: 'unavailable'});
+          }
+          return;
+        }
 
         const styleBlocks = Array.from(text.matchAll(/<style[\s\S]*?<\/style>/gi))
           .map((m) => m[0])
@@ -73,13 +88,21 @@ export default function BlockWriteupInline({src}: Props): React.ReactElement {
           node.innerHTML = `[${linked}]`;
         });
 
-        const merged = `${styleBlocks}<div>${bodyRoot.innerHTML}</div>`;
+        const bodyHtml = bodyRoot.innerHTML.trim();
+        if (!bodyHtml) {
+          if (!cancelled) {
+            setState({kind: 'unavailable'});
+          }
+          return;
+        }
+
+        const merged = `${styleBlocks}<div>${bodyHtml}</div>`;
         if (!cancelled) {
-          setHtml(merged);
+          setState({kind: 'ready', html: merged});
         }
       } catch {
         if (!cancelled) {
-          setHtml('');
+          setState({kind: 'unavailable'});
         }
       }
     }
@@ -90,9 +113,13 @@ export default function BlockWriteupInline({src}: Props): React.ReactElement {
     };
   }, [baseDir, resolvedSrc]);
 
-  if (!html) {
-    return <p>Loading write-up...</p>;
+  if (state.kind === 'loading') {
+    return <p role="status">Loading write-up...</p>;
   }
 
-  return <div dangerouslySetInnerHTML={{__html: html}} />;
+  if (state.kind === 'unavailable') {
+    return <p className="writeupUnavailable">This block write-up is unavailable.</p>;
+  }
+
+  return <div dangerouslySetInnerHTML={{__html: state.html}} />;
 }
