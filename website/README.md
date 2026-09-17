@@ -57,16 +57,8 @@ GIT_USER=<Your GitHub username> npm run deploy
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
-## Live exercise runtime environment variables
+## Submission and results availability
 
-Set these before building or deploying the live exercise site. Docusaurus exposes them to the exercise UI through its runtime configuration.
+Public submission and results links currently lead to `/course-availability`, which states that the forms and results sheets will be available during the course on **13–14 May 2027**. Exercise-specific links retain the `exercise` query parameter. Copied links and QR codes use the same notice rather than exposing the Google Form.
 
-```bash
-GOOGLE_FORM_URL=https://docs.google.com/forms/d/e/<FORM_ID>/viewform?usp=pp_url
-GOOGLE_FORM_EXERCISE_FIELD=<ENTRY_ID_FOR_EXERCISE>
-GOOGLE_FORM_GROUP_FIELD=<ENTRY_ID_FOR_GROUP> # leave blank: the current exercise UI does not prefill a group
-ACTIVE_EXERCISE_ID=E01 # exposed for exercise-aware pages; currently not consumed by the exercise UI
-RESULTS_SHEET_URL=https://docs.google.com/spreadsheets/d/<SHEET_ID>/edit
-```
-
-`GOOGLE_FORM_URL` and `GOOGLE_FORM_EXERCISE_FIELD` are required to generate prefilled exercise links. `RESULTS_SHEET_URL` enables the Results sheet link. `GOOGLE_FORM_GROUP_FIELD` remains available for future group-prefill support but is not used by the current UI.
+This is a static notice, not a date-triggered switch. Before the course, restore the live destinations in `ExerciseLinks.tsx` and `ExerciseBlockPage.tsx`, update the launcher instructions, and verify the form prefill and results-sheet access. The website no longer consumes the old form/results environment variables; the Google setup scripts and canonical form records remain unchanged.
